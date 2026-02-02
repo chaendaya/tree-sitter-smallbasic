@@ -796,7 +796,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 32,
+                                index: 11,
                             },
                             precedence: None,
                             associativity: None,
@@ -822,7 +822,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 11,
+                                index: 12,
                             },
                             precedence: None,
                             associativity: None,
@@ -866,7 +866,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 32,
+                                index: 11,
                             },
                             precedence: None,
                             associativity: None,
@@ -892,7 +892,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 11,
+                                index: 12,
                             },
                             precedence: None,
                             associativity: None,
@@ -947,7 +947,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 12,
+                                index: 13,
                             },
                             precedence: None,
                             associativity: None,
@@ -973,7 +973,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 11,
+                                index: 12,
                             },
                             precedence: None,
                             associativity: None,
@@ -1017,7 +1017,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 12,
+                                index: 13,
                             },
                             precedence: None,
                             associativity: None,
@@ -1043,7 +1043,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 11,
+                                index: 12,
                             },
                             precedence: None,
                             associativity: None,
@@ -1080,7 +1080,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 13,
+                                index: 14,
                             },
                             precedence: None,
                             associativity: None,
@@ -1098,7 +1098,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 14,
+                                index: 15,
                             },
                             precedence: None,
                             associativity: None,
@@ -1124,7 +1124,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 13,
+                                index: 14,
                             },
                             precedence: None,
                             associativity: None,
@@ -1205,7 +1205,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 15,
+                                index: 16,
                             },
                             precedence: None,
                             associativity: None,
@@ -1275,7 +1275,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 15,
+                                index: 16,
                             },
                             precedence: None,
                             associativity: None,
@@ -1301,7 +1301,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 16,
+                                index: 17,
                             },
                             precedence: None,
                             associativity: None,
@@ -1327,77 +1327,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 17,
-                            },
-                            precedence: None,
-                            associativity: None,
-                            alias: None,
-                            field_name: None,
-                            reserved_word_set_id: ReservedWordSetId(
-                                0,
-                            ),
-                        },
-                    ],
-                    dynamic_precedence: 0,
-                },
-                Production {
-                    steps: [
-                        ProductionStep {
-                            symbol: Symbol {
-                                kind: Terminal,
-                                index: 33,
-                            },
-                            precedence: None,
-                            associativity: None,
-                            alias: None,
-                            field_name: None,
-                            reserved_word_set_id: ReservedWordSetId(
-                                0,
-                            ),
-                        },
-                        ProductionStep {
-                            symbol: Symbol {
-                                kind: Terminal,
-                                index: 15,
-                            },
-                            precedence: None,
-                            associativity: None,
-                            alias: None,
-                            field_name: None,
-                            reserved_word_set_id: ReservedWordSetId(
-                                0,
-                            ),
-                        },
-                        ProductionStep {
-                            symbol: Symbol {
-                                kind: Terminal,
-                                index: 33,
-                            },
-                            precedence: None,
-                            associativity: None,
-                            alias: None,
-                            field_name: None,
-                            reserved_word_set_id: ReservedWordSetId(
-                                0,
-                            ),
-                        },
-                        ProductionStep {
-                            symbol: Symbol {
-                                kind: Terminal,
-                                index: 16,
-                            },
-                            precedence: None,
-                            associativity: None,
-                            alias: None,
-                            field_name: None,
-                            reserved_word_set_id: ReservedWordSetId(
-                                0,
-                            ),
-                        },
-                        ProductionStep {
-                            symbol: Symbol {
-                                kind: Terminal,
-                                index: 17,
+                                index: 18,
                             },
                             precedence: None,
                             associativity: None,
@@ -1441,7 +1371,77 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
+                                index: 33,
+                            },
+                            precedence: None,
+                            associativity: None,
+                            alias: None,
+                            field_name: None,
+                            reserved_word_set_id: ReservedWordSetId(
+                                0,
+                            ),
+                        },
+                        ProductionStep {
+                            symbol: Symbol {
+                                kind: Terminal,
                                 index: 17,
+                            },
+                            precedence: None,
+                            associativity: None,
+                            alias: None,
+                            field_name: None,
+                            reserved_word_set_id: ReservedWordSetId(
+                                0,
+                            ),
+                        },
+                        ProductionStep {
+                            symbol: Symbol {
+                                kind: Terminal,
+                                index: 18,
+                            },
+                            precedence: None,
+                            associativity: None,
+                            alias: None,
+                            field_name: None,
+                            reserved_word_set_id: ReservedWordSetId(
+                                0,
+                            ),
+                        },
+                    ],
+                    dynamic_precedence: 0,
+                },
+                Production {
+                    steps: [
+                        ProductionStep {
+                            symbol: Symbol {
+                                kind: Terminal,
+                                index: 33,
+                            },
+                            precedence: None,
+                            associativity: None,
+                            alias: None,
+                            field_name: None,
+                            reserved_word_set_id: ReservedWordSetId(
+                                0,
+                            ),
+                        },
+                        ProductionStep {
+                            symbol: Symbol {
+                                kind: Terminal,
+                                index: 17,
+                            },
+                            precedence: None,
+                            associativity: None,
+                            alias: None,
+                            field_name: None,
+                            reserved_word_set_id: ReservedWordSetId(
+                                0,
+                            ),
+                        },
+                        ProductionStep {
+                            symbol: Symbol {
+                                kind: Terminal,
+                                index: 18,
                             },
                             precedence: None,
                             associativity: None,
@@ -1669,7 +1669,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 18,
+                                index: 19,
                             },
                             precedence: None,
                             associativity: None,
@@ -1767,7 +1767,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 19,
+                                index: 20,
                             },
                             precedence: None,
                             associativity: None,
@@ -1835,7 +1835,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 20,
+                                index: 21,
                             },
                             precedence: None,
                             associativity: None,
@@ -1947,7 +1947,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 21,
+                                index: 22,
                             },
                             precedence: None,
                             associativity: None,
@@ -1997,50 +1997,6 @@ SyntaxGrammar {
             name: "CompExpr",
             kind: Named,
             productions: [
-                Production {
-                    steps: [
-                        ProductionStep {
-                            symbol: Symbol {
-                                kind: NonTerminal,
-                                index: 17,
-                            },
-                            precedence: None,
-                            associativity: None,
-                            alias: None,
-                            field_name: None,
-                            reserved_word_set_id: ReservedWordSetId(
-                                0,
-                            ),
-                        },
-                        ProductionStep {
-                            symbol: Symbol {
-                                kind: Terminal,
-                                index: 22,
-                            },
-                            precedence: None,
-                            associativity: None,
-                            alias: None,
-                            field_name: None,
-                            reserved_word_set_id: ReservedWordSetId(
-                                0,
-                            ),
-                        },
-                        ProductionStep {
-                            symbol: Symbol {
-                                kind: NonTerminal,
-                                index: 18,
-                            },
-                            precedence: None,
-                            associativity: None,
-                            alias: None,
-                            field_name: None,
-                            reserved_word_set_id: ReservedWordSetId(
-                                0,
-                            ),
-                        },
-                    ],
-                    dynamic_precedence: 0,
-                },
                 Production {
                     steps: [
                         ProductionStep {
@@ -2178,6 +2134,50 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: NonTerminal,
+                                index: 17,
+                            },
+                            precedence: None,
+                            associativity: None,
+                            alias: None,
+                            field_name: None,
+                            reserved_word_set_id: ReservedWordSetId(
+                                0,
+                            ),
+                        },
+                        ProductionStep {
+                            symbol: Symbol {
+                                kind: Terminal,
+                                index: 26,
+                            },
+                            precedence: None,
+                            associativity: None,
+                            alias: None,
+                            field_name: None,
+                            reserved_word_set_id: ReservedWordSetId(
+                                0,
+                            ),
+                        },
+                        ProductionStep {
+                            symbol: Symbol {
+                                kind: NonTerminal,
+                                index: 18,
+                            },
+                            precedence: None,
+                            associativity: None,
+                            alias: None,
+                            field_name: None,
+                            reserved_word_set_id: ReservedWordSetId(
+                                0,
+                            ),
+                        },
+                    ],
+                    dynamic_precedence: 0,
+                },
+                Production {
+                    steps: [
+                        ProductionStep {
+                            symbol: Symbol {
+                                kind: NonTerminal,
                                 index: 18,
                             },
                             precedence: None,
@@ -2215,7 +2215,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 26,
+                                index: 27,
                             },
                             precedence: None,
                             associativity: None,
@@ -2259,7 +2259,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 27,
+                                index: 28,
                             },
                             precedence: None,
                             associativity: None,
@@ -2327,7 +2327,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 28,
+                                index: 29,
                             },
                             precedence: None,
                             associativity: None,
@@ -2371,7 +2371,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 29,
+                                index: 30,
                             },
                             precedence: None,
                             associativity: None,
@@ -2426,7 +2426,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 27,
+                                index: 28,
                             },
                             precedence: None,
                             associativity: None,
@@ -2517,7 +2517,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 16,
+                                index: 17,
                             },
                             precedence: None,
                             associativity: None,
@@ -2543,7 +2543,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 17,
+                                index: 18,
                             },
                             precedence: None,
                             associativity: None,
@@ -2576,76 +2576,6 @@ SyntaxGrammar {
                 },
                 Production {
                     steps: [
-                        ProductionStep {
-                            symbol: Symbol {
-                                kind: Terminal,
-                                index: 33,
-                            },
-                            precedence: None,
-                            associativity: None,
-                            alias: None,
-                            field_name: None,
-                            reserved_word_set_id: ReservedWordSetId(
-                                0,
-                            ),
-                        },
-                        ProductionStep {
-                            symbol: Symbol {
-                                kind: Terminal,
-                                index: 15,
-                            },
-                            precedence: None,
-                            associativity: None,
-                            alias: None,
-                            field_name: None,
-                            reserved_word_set_id: ReservedWordSetId(
-                                0,
-                            ),
-                        },
-                        ProductionStep {
-                            symbol: Symbol {
-                                kind: Terminal,
-                                index: 33,
-                            },
-                            precedence: None,
-                            associativity: None,
-                            alias: None,
-                            field_name: None,
-                            reserved_word_set_id: ReservedWordSetId(
-                                0,
-                            ),
-                        },
-                    ],
-                    dynamic_precedence: 0,
-                },
-                Production {
-                    steps: [
-                        ProductionStep {
-                            symbol: Symbol {
-                                kind: Terminal,
-                                index: 33,
-                            },
-                            precedence: None,
-                            associativity: None,
-                            alias: None,
-                            field_name: None,
-                            reserved_word_set_id: ReservedWordSetId(
-                                0,
-                            ),
-                        },
-                        ProductionStep {
-                            symbol: Symbol {
-                                kind: Terminal,
-                                index: 15,
-                            },
-                            precedence: None,
-                            associativity: None,
-                            alias: None,
-                            field_name: None,
-                            reserved_word_set_id: ReservedWordSetId(
-                                0,
-                            ),
-                        },
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
@@ -2663,6 +2593,76 @@ SyntaxGrammar {
                             symbol: Symbol {
                                 kind: Terminal,
                                 index: 16,
+                            },
+                            precedence: None,
+                            associativity: None,
+                            alias: None,
+                            field_name: None,
+                            reserved_word_set_id: ReservedWordSetId(
+                                0,
+                            ),
+                        },
+                        ProductionStep {
+                            symbol: Symbol {
+                                kind: Terminal,
+                                index: 33,
+                            },
+                            precedence: None,
+                            associativity: None,
+                            alias: None,
+                            field_name: None,
+                            reserved_word_set_id: ReservedWordSetId(
+                                0,
+                            ),
+                        },
+                    ],
+                    dynamic_precedence: 0,
+                },
+                Production {
+                    steps: [
+                        ProductionStep {
+                            symbol: Symbol {
+                                kind: Terminal,
+                                index: 33,
+                            },
+                            precedence: None,
+                            associativity: None,
+                            alias: None,
+                            field_name: None,
+                            reserved_word_set_id: ReservedWordSetId(
+                                0,
+                            ),
+                        },
+                        ProductionStep {
+                            symbol: Symbol {
+                                kind: Terminal,
+                                index: 16,
+                            },
+                            precedence: None,
+                            associativity: None,
+                            alias: None,
+                            field_name: None,
+                            reserved_word_set_id: ReservedWordSetId(
+                                0,
+                            ),
+                        },
+                        ProductionStep {
+                            symbol: Symbol {
+                                kind: Terminal,
+                                index: 33,
+                            },
+                            precedence: None,
+                            associativity: None,
+                            alias: None,
+                            field_name: None,
+                            reserved_word_set_id: ReservedWordSetId(
+                                0,
+                            ),
+                        },
+                        ProductionStep {
+                            symbol: Symbol {
+                                kind: Terminal,
+                                index: 17,
                             },
                             precedence: None,
                             associativity: None,
@@ -2688,7 +2688,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 17,
+                                index: 18,
                             },
                             precedence: None,
                             associativity: None,
@@ -2719,7 +2719,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 15,
+                                index: 16,
                             },
                             precedence: None,
                             associativity: None,
@@ -2745,7 +2745,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 16,
+                                index: 17,
                             },
                             precedence: None,
                             associativity: None,
@@ -2758,7 +2758,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 17,
+                                index: 18,
                             },
                             precedence: None,
                             associativity: None,
@@ -2813,7 +2813,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 30,
+                                index: 31,
                             },
                             precedence: None,
                             associativity: None,
@@ -2839,7 +2839,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 31,
+                                index: 32,
                             },
                             precedence: None,
                             associativity: None,
@@ -2857,7 +2857,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 30,
+                                index: 31,
                             },
                             precedence: None,
                             associativity: None,
@@ -2883,7 +2883,7 @@ SyntaxGrammar {
                         ProductionStep {
                             symbol: Symbol {
                                 kind: Terminal,
-                                index: 31,
+                                index: 32,
                             },
                             precedence: None,
                             associativity: None,
@@ -3129,12 +3129,7 @@ SyntaxGrammar {
     external_tokens: [],
     supertype_symbols: [],
     variables_to_inline: [],
-    word_token: Some(
-        Symbol {
-            kind: Terminal,
-            index: 33,
-        },
-    ),
+    word_token: None,
     precedence_orderings: [],
     reserved_word_sets: [
         [],

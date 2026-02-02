@@ -6,7 +6,7 @@ module.exports = grammar({
 
     // debugging
     // 키워드(For, While 등)와 ID가 겹칠 때 자동으로 키워드가 우선순위
-    word: $ => $.ID,
+    // word: $ => $.ID,
 
     // Processing blank characters or annotation-related symbols
     // \s : Processing blank characters(Space/Tab/CR/NewLine/VerticalTab)
@@ -43,8 +43,8 @@ module.exports = grammar({
         seq(/[Gg][Oo][Tt][Oo]/, $.ID),
         seq(/[Ff][Oo][Rr]/, $.ID, "=", $.Expr, /[Tt][Oo]/, $.Expr, optional($.OptStep), repeat($.CRStmtCRs), /[Ee][Nn][Dd][Ff][Oo][Rr]/),
         seq(/[Ss][Uu][Bb]/, $.ID, $.CRStmtCRs, /[Ee][Nn][Dd][Ss][Uu][Bb]/),
-        seq($.If, $.Expr, /[Tt][Hh][Ee][Nn]/, repeat($.CRStmtCRs), $.MoreThanZeroElseIf)
-        //seq(/[Ii][Ff]/, $.Expr, /[Tt][Hh][Ee][Nn]/, repeat($.CRStmtCRs), $.MoreThanZeroElseIf)
+        // seq($.If, $.Expr, /[Tt][Hh][Ee][Nn]/, repeat($.CRStmtCRs), $.MoreThanZeroElseIf)
+        seq(/[Ii][Ff]/, $.Expr, /[Tt][Hh][Ee][Nn]/, repeat($.CRStmtCRs), $.MoreThanZeroElseIf)
       ),
       
       MoreThanZeroElseIf: $ => choice(
@@ -144,7 +144,7 @@ module.exports = grammar({
     
       // Terminal Symbols
       // Identifier & String & Number & CarriageReturn & Comment
-      If: _ => token(prec(1, /[Ii][Ff]/)),
+      // If: _ => token(prec(1, /[Ii][Ff]/)),
 
       ID: _ => /[_a-zA-Z][_a-zA-Z0-9]*/,
 
