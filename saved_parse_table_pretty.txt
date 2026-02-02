@@ -1,0 +1,3528 @@
+State #0
+  core_id: 0
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Recover
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Recover
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Recover
+    on ':'(T#3) => Recover
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Recover
+    on /[Ff][Oo][Rr]/(T#5) => Recover
+    on '='(T#6) => Recover
+    on /[Tt][Oo]/(T#7) => Recover
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Recover
+    on /[Ss][Uu][Bb]/(T#9) => Recover
+    on /[Ee][Nn][Dd][Ss][Uu][Bb]/(T#10) => Recover
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Recover
+    on /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) => Recover
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Recover
+    on /[Ee][Ll][Ss][Ee]/(T#14) => Recover
+    on '.'(T#15) => Recover
+    on '('(T#16) => Recover
+    on ')'(T#17) => Recover
+    on ','(T#18) => Recover
+    on /[Oo][Rr]/(T#19) => Recover
+    on /[Aa][Nn][Dd]/(T#20) => Recover
+    on '<>'(T#21) => Recover
+    on '<'(T#22) => Recover
+    on '<='(T#23) => Recover
+    on '>'(T#24) => Recover
+    on '>='(T#25) => Recover
+    on '+'(T#26) => Recover
+    on '-'(T#27) => Recover
+    on '*'(T#28) => Recover
+    on '/'(T#29) => Recover
+    on '['(T#30) => Recover
+    on ']'(T#31) => Recover
+    on If(T#32) => Recover
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Recover
+    on /\"[^\"]*\"/(T#34) => Recover
+    on /([0-9]*[.])?[0-9]+/(T#35) => Recover
+    on END => Recover
+  [Nonterminal gotos]
+
+State #1
+  core_id: 1
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on END => Reduce -> Start(NT#0) (children=0)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Shift -> state 46
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Shift -> state 181
+    on /[Ff][Oo][Rr]/(T#5) => Shift -> state 184
+    on /[Ss][Uu][Bb]/(T#9) => Shift -> state 178
+    on If(T#32) => Shift -> state 62
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 133
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Start(NT#0) => state 199
+    goto Prog(NT#1) => state 76
+    goto MoreThanOneStmt(NT#2) => state 117
+    goto Stmt(NT#4) => state 122
+    goto ExprStatement(NT#7) => state 124
+    goto Start_repeat1(NT#24) => state 76
+
+State #2
+  core_id: 16
+  lex_state_id: 6, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> Primary(NT#21) (children=1)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> Primary(NT#21) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> Primary(NT#21) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Primary(NT#21) (children=1)
+    on '<>'(T#21) => Reduce -> Primary(NT#21) (children=1)
+    on '<'(T#22) => Reduce -> Primary(NT#21) (children=1)
+    on '<='(T#23) => Reduce -> Primary(NT#21) (children=1)
+    on '>'(T#24) => Reduce -> Primary(NT#21) (children=1)
+    on '>='(T#25) => Reduce -> Primary(NT#21) (children=1)
+    on '+'(T#26) => Reduce -> Primary(NT#21) (children=1)
+    on '-'(T#27) => Reduce -> Primary(NT#21) (children=1)
+    on '*'(T#28) => Reduce -> Primary(NT#21) (children=1)
+    on '/'(T#29) => Reduce -> Primary(NT#21) (children=1)
+    on '.'(T#15) => Shift -> state 173
+    on '['(T#30) => Shift -> state 59
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> Primary(NT#21) (children=1)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Primary(NT#21) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Primary(NT#21) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Primary(NT#21) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Primary(NT#21) (children=1)
+    on If(T#32) => Reduce -> Primary(NT#21) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Primary(NT#21) (children=1)
+    on END => Reduce -> Primary(NT#21) (children=1)
+    on ']'(T#31) => Reduce -> Primary(NT#21) (children=1)
+    on /[Tt][Oo]/(T#7) => Reduce -> Primary(NT#21) (children=1)
+    on ','(T#18) => Reduce -> Primary(NT#21) (children=1)
+  [Nonterminal gotos]
+    goto Idxs(NT#22) => state 10
+
+State #3
+  core_id: 81
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> Idxs(NT#22) (children=3)
+    on '['(T#30) => Shift -> state 59
+    on Comment(T#38) => ShiftExtra
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> Idxs(NT#22) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> Idxs(NT#22) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Idxs(NT#22) (children=3)
+    on '<>'(T#21) => Reduce -> Idxs(NT#22) (children=3)
+    on '<'(T#22) => Reduce -> Idxs(NT#22) (children=3)
+    on '<='(T#23) => Reduce -> Idxs(NT#22) (children=3)
+    on '>'(T#24) => Reduce -> Idxs(NT#22) (children=3)
+    on '>='(T#25) => Reduce -> Idxs(NT#22) (children=3)
+    on '+'(T#26) => Reduce -> Idxs(NT#22) (children=3)
+    on '-'(T#27) => Reduce -> Idxs(NT#22) (children=3)
+    on '*'(T#28) => Reduce -> Idxs(NT#22) (children=3)
+    on '/'(T#29) => Reduce -> Idxs(NT#22) (children=3)
+    on ')'(T#17) => Reduce -> Idxs(NT#22) (children=3)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Idxs(NT#22) (children=3)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Idxs(NT#22) (children=3)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Idxs(NT#22) (children=3)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Idxs(NT#22) (children=3)
+    on If(T#32) => Reduce -> Idxs(NT#22) (children=3)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Idxs(NT#22) (children=3)
+    on END => Reduce -> Idxs(NT#22) (children=3)
+    on ']'(T#31) => Reduce -> Idxs(NT#22) (children=3)
+    on /[Tt][Oo]/(T#7) => Reduce -> Idxs(NT#22) (children=3)
+    on ','(T#18) => Reduce -> Idxs(NT#22) (children=3)
+  [Nonterminal gotos]
+    goto Idxs(NT#22) => state 5
+
+State #4
+  core_id: 61
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> Primary(NT#21) (children=3)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> Primary(NT#21) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> Primary(NT#21) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Primary(NT#21) (children=3)
+    on '<>'(T#21) => Reduce -> Primary(NT#21) (children=3)
+    on '<'(T#22) => Reduce -> Primary(NT#21) (children=3)
+    on '<='(T#23) => Reduce -> Primary(NT#21) (children=3)
+    on '>'(T#24) => Reduce -> Primary(NT#21) (children=3)
+    on '>='(T#25) => Reduce -> Primary(NT#21) (children=3)
+    on '+'(T#26) => Reduce -> Primary(NT#21) (children=3)
+    on '-'(T#27) => Reduce -> Primary(NT#21) (children=3)
+    on '*'(T#28) => Reduce -> Primary(NT#21) (children=3)
+    on '/'(T#29) => Reduce -> Primary(NT#21) (children=3)
+    on '('(T#16) => Shift -> state 26
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> Primary(NT#21) (children=3)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Primary(NT#21) (children=3)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Primary(NT#21) (children=3)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Primary(NT#21) (children=3)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Primary(NT#21) (children=3)
+    on If(T#32) => Reduce -> Primary(NT#21) (children=3)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Primary(NT#21) (children=3)
+    on END => Reduce -> Primary(NT#21) (children=3)
+    on ']'(T#31) => Reduce -> Primary(NT#21) (children=3)
+    on /[Tt][Oo]/(T#7) => Reduce -> Primary(NT#21) (children=3)
+    on ','(T#18) => Reduce -> Primary(NT#21) (children=3)
+  [Nonterminal gotos]
+
+State #5
+  core_id: 94
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> Idxs(NT#22) (children=4)
+    on Comment(T#38) => ShiftExtra
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> Idxs(NT#22) (children=4)
+    on /[Oo][Rr]/(T#19) => Reduce -> Idxs(NT#22) (children=4)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Idxs(NT#22) (children=4)
+    on '<>'(T#21) => Reduce -> Idxs(NT#22) (children=4)
+    on '<'(T#22) => Reduce -> Idxs(NT#22) (children=4)
+    on '<='(T#23) => Reduce -> Idxs(NT#22) (children=4)
+    on '>'(T#24) => Reduce -> Idxs(NT#22) (children=4)
+    on '>='(T#25) => Reduce -> Idxs(NT#22) (children=4)
+    on '+'(T#26) => Reduce -> Idxs(NT#22) (children=4)
+    on '-'(T#27) => Reduce -> Idxs(NT#22) (children=4)
+    on '*'(T#28) => Reduce -> Idxs(NT#22) (children=4)
+    on '/'(T#29) => Reduce -> Idxs(NT#22) (children=4)
+    on ')'(T#17) => Reduce -> Idxs(NT#22) (children=4)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Idxs(NT#22) (children=4)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Idxs(NT#22) (children=4)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Idxs(NT#22) (children=4)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Idxs(NT#22) (children=4)
+    on If(T#32) => Reduce -> Idxs(NT#22) (children=4)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Idxs(NT#22) (children=4)
+    on END => Reduce -> Idxs(NT#22) (children=4)
+    on ']'(T#31) => Reduce -> Idxs(NT#22) (children=4)
+    on /[Tt][Oo]/(T#7) => Reduce -> Idxs(NT#22) (children=4)
+    on ','(T#18) => Reduce -> Idxs(NT#22) (children=4)
+  [Nonterminal gotos]
+
+State #6
+  core_id: 17
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> Primary(NT#21) (children=1)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> Primary(NT#21) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> Primary(NT#21) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Primary(NT#21) (children=1)
+    on '<>'(T#21) => Reduce -> Primary(NT#21) (children=1)
+    on '<'(T#22) => Reduce -> Primary(NT#21) (children=1)
+    on '<='(T#23) => Reduce -> Primary(NT#21) (children=1)
+    on '>'(T#24) => Reduce -> Primary(NT#21) (children=1)
+    on '>='(T#25) => Reduce -> Primary(NT#21) (children=1)
+    on '+'(T#26) => Reduce -> Primary(NT#21) (children=1)
+    on '-'(T#27) => Reduce -> Primary(NT#21) (children=1)
+    on '*'(T#28) => Reduce -> Primary(NT#21) (children=1)
+    on '/'(T#29) => Reduce -> Primary(NT#21) (children=1)
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> Primary(NT#21) (children=1)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Primary(NT#21) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Primary(NT#21) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Primary(NT#21) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Primary(NT#21) (children=1)
+    on If(T#32) => Reduce -> Primary(NT#21) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Primary(NT#21) (children=1)
+    on END => Reduce -> Primary(NT#21) (children=1)
+    on ']'(T#31) => Reduce -> Primary(NT#21) (children=1)
+    on /[Tt][Oo]/(T#7) => Reduce -> Primary(NT#21) (children=1)
+    on ','(T#18) => Reduce -> Primary(NT#21) (children=1)
+  [Nonterminal gotos]
+
+State #7
+  core_id: 25
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '<>'(T#21) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '<'(T#22) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '<='(T#23) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '>'(T#24) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '>='(T#25) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '+'(T#26) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '-'(T#27) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '*'(T#28) => Shift -> state 113
+    on '/'(T#29) => Shift -> state 113
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on If(T#32) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on END => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on ']'(T#31) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on /[Tt][Oo]/(T#7) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on ','(T#18) => Reduce -> AdditiveExpr(NT#18) (children=1)
+  [Nonterminal gotos]
+
+State #8
+  core_id: 27
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '<>'(T#21) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '<'(T#22) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '<='(T#23) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '>'(T#24) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '>='(T#25) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '+'(T#26) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '-'(T#27) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '*'(T#28) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '/'(T#29) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on If(T#32) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on END => Reduce -> UnaryExpr(NT#20) (children=1)
+    on ']'(T#31) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on /[Tt][Oo]/(T#7) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on ','(T#18) => Reduce -> UnaryExpr(NT#20) (children=1)
+  [Nonterminal gotos]
+
+State #9
+  core_id: 39
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on /[Oo][Rr]/(T#19) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '<>'(T#21) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '<'(T#22) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '<='(T#23) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '>'(T#24) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '>='(T#25) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '+'(T#26) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '-'(T#27) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '*'(T#28) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '/'(T#29) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on If(T#32) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on END => Reduce -> UnaryExpr(NT#20) (children=2)
+    on ']'(T#31) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on /[Tt][Oo]/(T#7) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on ','(T#18) => Reduce -> UnaryExpr(NT#20) (children=2)
+  [Nonterminal gotos]
+
+State #10
+  core_id: 41
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> Primary(NT#21) (children=2)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> Primary(NT#21) (children=2)
+    on /[Oo][Rr]/(T#19) => Reduce -> Primary(NT#21) (children=2)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Primary(NT#21) (children=2)
+    on '<>'(T#21) => Reduce -> Primary(NT#21) (children=2)
+    on '<'(T#22) => Reduce -> Primary(NT#21) (children=2)
+    on '<='(T#23) => Reduce -> Primary(NT#21) (children=2)
+    on '>'(T#24) => Reduce -> Primary(NT#21) (children=2)
+    on '>='(T#25) => Reduce -> Primary(NT#21) (children=2)
+    on '+'(T#26) => Reduce -> Primary(NT#21) (children=2)
+    on '-'(T#27) => Reduce -> Primary(NT#21) (children=2)
+    on '*'(T#28) => Reduce -> Primary(NT#21) (children=2)
+    on '/'(T#29) => Reduce -> Primary(NT#21) (children=2)
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> Primary(NT#21) (children=2)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Primary(NT#21) (children=2)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Primary(NT#21) (children=2)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Primary(NT#21) (children=2)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Primary(NT#21) (children=2)
+    on If(T#32) => Reduce -> Primary(NT#21) (children=2)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Primary(NT#21) (children=2)
+    on END => Reduce -> Primary(NT#21) (children=2)
+    on ']'(T#31) => Reduce -> Primary(NT#21) (children=2)
+    on /[Tt][Oo]/(T#7) => Reduce -> Primary(NT#21) (children=2)
+    on ','(T#18) => Reduce -> Primary(NT#21) (children=2)
+  [Nonterminal gotos]
+
+State #11
+  core_id: 60
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> Primary(NT#21) (children=3)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> Primary(NT#21) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> Primary(NT#21) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Primary(NT#21) (children=3)
+    on '<>'(T#21) => Reduce -> Primary(NT#21) (children=3)
+    on '<'(T#22) => Reduce -> Primary(NT#21) (children=3)
+    on '<='(T#23) => Reduce -> Primary(NT#21) (children=3)
+    on '>'(T#24) => Reduce -> Primary(NT#21) (children=3)
+    on '>='(T#25) => Reduce -> Primary(NT#21) (children=3)
+    on '+'(T#26) => Reduce -> Primary(NT#21) (children=3)
+    on '-'(T#27) => Reduce -> Primary(NT#21) (children=3)
+    on '*'(T#28) => Reduce -> Primary(NT#21) (children=3)
+    on '/'(T#29) => Reduce -> Primary(NT#21) (children=3)
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> Primary(NT#21) (children=3)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Primary(NT#21) (children=3)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Primary(NT#21) (children=3)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Primary(NT#21) (children=3)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Primary(NT#21) (children=3)
+    on If(T#32) => Reduce -> Primary(NT#21) (children=3)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Primary(NT#21) (children=3)
+    on END => Reduce -> Primary(NT#21) (children=3)
+    on ']'(T#31) => Reduce -> Primary(NT#21) (children=3)
+    on /[Tt][Oo]/(T#7) => Reduce -> Primary(NT#21) (children=3)
+    on ','(T#18) => Reduce -> Primary(NT#21) (children=3)
+  [Nonterminal gotos]
+
+State #12
+  core_id: 26
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '<>'(T#21) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '<'(T#22) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '<='(T#23) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '>'(T#24) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '>='(T#25) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '+'(T#26) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '-'(T#27) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '*'(T#28) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '/'(T#29) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on If(T#32) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on END => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on ']'(T#31) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on /[Tt][Oo]/(T#7) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on ','(T#18) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+  [Nonterminal gotos]
+
+State #13
+  core_id: 71
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '<>'(T#21) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '<'(T#22) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '<='(T#23) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '>'(T#24) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '>='(T#25) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '+'(T#26) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '-'(T#27) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '*'(T#28) => Shift -> state 113
+    on '/'(T#29) => Shift -> state 113
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on If(T#32) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on END => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on ']'(T#31) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on /[Tt][Oo]/(T#7) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on ','(T#18) => Reduce -> AdditiveExpr(NT#18) (children=3)
+  [Nonterminal gotos]
+
+State #14
+  core_id: 72
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '<>'(T#21) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '<'(T#22) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '<='(T#23) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '>'(T#24) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '>='(T#25) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '+'(T#26) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '-'(T#27) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '*'(T#28) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '/'(T#29) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on If(T#32) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on END => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on ']'(T#31) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on /[Tt][Oo]/(T#7) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on ','(T#18) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+  [Nonterminal gotos]
+
+State #15
+  core_id: 95
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> Primary(NT#21) (children=5)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> Primary(NT#21) (children=5)
+    on /[Oo][Rr]/(T#19) => Reduce -> Primary(NT#21) (children=5)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Primary(NT#21) (children=5)
+    on '<>'(T#21) => Reduce -> Primary(NT#21) (children=5)
+    on '<'(T#22) => Reduce -> Primary(NT#21) (children=5)
+    on '<='(T#23) => Reduce -> Primary(NT#21) (children=5)
+    on '>'(T#24) => Reduce -> Primary(NT#21) (children=5)
+    on '>='(T#25) => Reduce -> Primary(NT#21) (children=5)
+    on '+'(T#26) => Reduce -> Primary(NT#21) (children=5)
+    on '-'(T#27) => Reduce -> Primary(NT#21) (children=5)
+    on '*'(T#28) => Reduce -> Primary(NT#21) (children=5)
+    on '/'(T#29) => Reduce -> Primary(NT#21) (children=5)
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> Primary(NT#21) (children=5)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Primary(NT#21) (children=5)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Primary(NT#21) (children=5)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Primary(NT#21) (children=5)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Primary(NT#21) (children=5)
+    on If(T#32) => Reduce -> Primary(NT#21) (children=5)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Primary(NT#21) (children=5)
+    on END => Reduce -> Primary(NT#21) (children=5)
+    on ']'(T#31) => Reduce -> Primary(NT#21) (children=5)
+    on /[Tt][Oo]/(T#7) => Reduce -> Primary(NT#21) (children=5)
+    on ','(T#18) => Reduce -> Primary(NT#21) (children=5)
+  [Nonterminal gotos]
+
+State #16
+  core_id: 102
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> Primary(NT#21) (children=6)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> Primary(NT#21) (children=6)
+    on /[Oo][Rr]/(T#19) => Reduce -> Primary(NT#21) (children=6)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Primary(NT#21) (children=6)
+    on '<>'(T#21) => Reduce -> Primary(NT#21) (children=6)
+    on '<'(T#22) => Reduce -> Primary(NT#21) (children=6)
+    on '<='(T#23) => Reduce -> Primary(NT#21) (children=6)
+    on '>'(T#24) => Reduce -> Primary(NT#21) (children=6)
+    on '>='(T#25) => Reduce -> Primary(NT#21) (children=6)
+    on '+'(T#26) => Reduce -> Primary(NT#21) (children=6)
+    on '-'(T#27) => Reduce -> Primary(NT#21) (children=6)
+    on '*'(T#28) => Reduce -> Primary(NT#21) (children=6)
+    on '/'(T#29) => Reduce -> Primary(NT#21) (children=6)
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> Primary(NT#21) (children=6)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Primary(NT#21) (children=6)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Primary(NT#21) (children=6)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Primary(NT#21) (children=6)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Primary(NT#21) (children=6)
+    on If(T#32) => Reduce -> Primary(NT#21) (children=6)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Primary(NT#21) (children=6)
+    on END => Reduce -> Primary(NT#21) (children=6)
+    on ']'(T#31) => Reduce -> Primary(NT#21) (children=6)
+    on /[Tt][Oo]/(T#7) => Reduce -> Primary(NT#21) (children=6)
+    on ','(T#18) => Reduce -> Primary(NT#21) (children=6)
+  [Nonterminal gotos]
+
+State #17
+  core_id: 24
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> CompExpr(NT#17) (children=1)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> CompExpr(NT#17) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> CompExpr(NT#17) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> CompExpr(NT#17) (children=1)
+    on '<>'(T#21) => Reduce -> CompExpr(NT#17) (children=1)
+    on '<'(T#22) => Reduce -> CompExpr(NT#17) (children=1)
+    on '<='(T#23) => Reduce -> CompExpr(NT#17) (children=1)
+    on '>'(T#24) => Reduce -> CompExpr(NT#17) (children=1)
+    on '>='(T#25) => Reduce -> CompExpr(NT#17) (children=1)
+    on '+'(T#26) => Shift -> state 104
+    on '-'(T#27) => Shift -> state 104
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> CompExpr(NT#17) (children=1)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> CompExpr(NT#17) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> CompExpr(NT#17) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> CompExpr(NT#17) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> CompExpr(NT#17) (children=1)
+    on If(T#32) => Reduce -> CompExpr(NT#17) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> CompExpr(NT#17) (children=1)
+    on END => Reduce -> CompExpr(NT#17) (children=1)
+    on ']'(T#31) => Reduce -> CompExpr(NT#17) (children=1)
+    on /[Tt][Oo]/(T#7) => Reduce -> CompExpr(NT#17) (children=1)
+    on ','(T#18) => Reduce -> CompExpr(NT#17) (children=1)
+  [Nonterminal gotos]
+
+State #18
+  core_id: 70
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> CompExpr(NT#17) (children=3)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> CompExpr(NT#17) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> CompExpr(NT#17) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> CompExpr(NT#17) (children=3)
+    on '<>'(T#21) => Reduce -> CompExpr(NT#17) (children=3)
+    on '<'(T#22) => Reduce -> CompExpr(NT#17) (children=3)
+    on '<='(T#23) => Reduce -> CompExpr(NT#17) (children=3)
+    on '>'(T#24) => Reduce -> CompExpr(NT#17) (children=3)
+    on '>='(T#25) => Reduce -> CompExpr(NT#17) (children=3)
+    on '+'(T#26) => Shift -> state 104
+    on '-'(T#27) => Shift -> state 104
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> CompExpr(NT#17) (children=3)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> CompExpr(NT#17) (children=3)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> CompExpr(NT#17) (children=3)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> CompExpr(NT#17) (children=3)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> CompExpr(NT#17) (children=3)
+    on If(T#32) => Reduce -> CompExpr(NT#17) (children=3)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> CompExpr(NT#17) (children=3)
+    on END => Reduce -> CompExpr(NT#17) (children=3)
+    on ']'(T#31) => Reduce -> CompExpr(NT#17) (children=3)
+    on /[Tt][Oo]/(T#7) => Reduce -> CompExpr(NT#17) (children=3)
+    on ','(T#18) => Reduce -> CompExpr(NT#17) (children=3)
+  [Nonterminal gotos]
+
+State #19
+  core_id: 23
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on '<>'(T#21) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on '<'(T#22) => Shift -> state 98
+    on '<='(T#23) => Shift -> state 98
+    on '>'(T#24) => Shift -> state 98
+    on '>='(T#25) => Shift -> state 98
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on If(T#32) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on END => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on ']'(T#31) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on /[Tt][Oo]/(T#7) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on ','(T#18) => Reduce -> EqNeqExpr(NT#16) (children=1)
+  [Nonterminal gotos]
+
+State #20
+  core_id: 16
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> Primary(NT#21) (children=1)
+    on '='(T#6) => Reduce -> Primary(NT#21) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> Primary(NT#21) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Primary(NT#21) (children=1)
+    on '<>'(T#21) => Reduce -> Primary(NT#21) (children=1)
+    on '<'(T#22) => Reduce -> Primary(NT#21) (children=1)
+    on '<='(T#23) => Reduce -> Primary(NT#21) (children=1)
+    on '>'(T#24) => Reduce -> Primary(NT#21) (children=1)
+    on '>='(T#25) => Reduce -> Primary(NT#21) (children=1)
+    on '+'(T#26) => Reduce -> Primary(NT#21) (children=1)
+    on '-'(T#27) => Reduce -> Primary(NT#21) (children=1)
+    on '*'(T#28) => Reduce -> Primary(NT#21) (children=1)
+    on '/'(T#29) => Reduce -> Primary(NT#21) (children=1)
+    on /\r\n/(T#36) => Reduce -> Primary(NT#21) (children=1)
+    on /\n/(T#37) => Reduce -> Primary(NT#21) (children=1)
+    on '.'(T#15) => Shift -> state 192
+    on '['(T#30) => Shift -> state 64
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> Primary(NT#21) (children=1)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> Primary(NT#21) (children=1)
+  [Nonterminal gotos]
+    goto Idxs(NT#22) => state 36
+
+State #21
+  core_id: 69
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on '<>'(T#21) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on '<'(T#22) => Shift -> state 98
+    on '<='(T#23) => Shift -> state 98
+    on '>'(T#24) => Shift -> state 98
+    on '>='(T#25) => Shift -> state 98
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on If(T#32) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on END => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on ']'(T#31) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on /[Tt][Oo]/(T#7) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on ','(T#18) => Reduce -> EqNeqExpr(NT#16) (children=3)
+  [Nonterminal gotos]
+
+State #22
+  core_id: 81
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> Idxs(NT#22) (children=3)
+    on '='(T#6) => Reduce -> Idxs(NT#22) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> Idxs(NT#22) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Idxs(NT#22) (children=3)
+    on '<>'(T#21) => Reduce -> Idxs(NT#22) (children=3)
+    on '<'(T#22) => Reduce -> Idxs(NT#22) (children=3)
+    on '<='(T#23) => Reduce -> Idxs(NT#22) (children=3)
+    on '>'(T#24) => Reduce -> Idxs(NT#22) (children=3)
+    on '>='(T#25) => Reduce -> Idxs(NT#22) (children=3)
+    on '+'(T#26) => Reduce -> Idxs(NT#22) (children=3)
+    on '-'(T#27) => Reduce -> Idxs(NT#22) (children=3)
+    on '*'(T#28) => Reduce -> Idxs(NT#22) (children=3)
+    on '/'(T#29) => Reduce -> Idxs(NT#22) (children=3)
+    on /\r\n/(T#36) => Reduce -> Idxs(NT#22) (children=3)
+    on /\n/(T#37) => Reduce -> Idxs(NT#22) (children=3)
+    on '['(T#30) => Shift -> state 64
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> Idxs(NT#22) (children=3)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> Idxs(NT#22) (children=3)
+  [Nonterminal gotos]
+    goto Idxs(NT#22) => state 41
+
+State #23
+  core_id: 61
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> Primary(NT#21) (children=3)
+    on '='(T#6) => Reduce -> Primary(NT#21) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> Primary(NT#21) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Primary(NT#21) (children=3)
+    on '<>'(T#21) => Reduce -> Primary(NT#21) (children=3)
+    on '<'(T#22) => Reduce -> Primary(NT#21) (children=3)
+    on '<='(T#23) => Reduce -> Primary(NT#21) (children=3)
+    on '>'(T#24) => Reduce -> Primary(NT#21) (children=3)
+    on '>='(T#25) => Reduce -> Primary(NT#21) (children=3)
+    on '+'(T#26) => Reduce -> Primary(NT#21) (children=3)
+    on '-'(T#27) => Reduce -> Primary(NT#21) (children=3)
+    on '*'(T#28) => Reduce -> Primary(NT#21) (children=3)
+    on '/'(T#29) => Reduce -> Primary(NT#21) (children=3)
+    on /\r\n/(T#36) => Reduce -> Primary(NT#21) (children=3)
+    on /\n/(T#37) => Reduce -> Primary(NT#21) (children=3)
+    on '('(T#16) => Shift -> state 24
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> Primary(NT#21) (children=3)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> Primary(NT#21) (children=3)
+  [Nonterminal gotos]
+
+State #24
+  core_id: 83
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on ')'(T#17) => Shift -> state 28
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Exprs(NT#10) => state 191
+    goto MoreThanOneExpr(NT#11) => state 182
+    goto Expr(NT#12) => state 166
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #25
+  core_id: 80
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on ')'(T#17) => Shift -> state 107
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Exprs(NT#10) => state 204
+    goto MoreThanOneExpr(NT#11) => state 182
+    goto Expr(NT#12) => state 166
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #26
+  core_id: 83
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on ')'(T#17) => Shift -> state 15
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Exprs(NT#10) => state 209
+    goto MoreThanOneExpr(NT#11) => state 182
+    goto Expr(NT#12) => state 166
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #27
+  core_id: 80
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on ')'(T#17) => Shift -> state 157
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Exprs(NT#10) => state 188
+    goto MoreThanOneExpr(NT#11) => state 182
+    goto Expr(NT#12) => state 166
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #28
+  core_id: 95
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> Primary(NT#21) (children=5)
+    on '='(T#6) => Reduce -> Primary(NT#21) (children=5)
+    on /[Oo][Rr]/(T#19) => Reduce -> Primary(NT#21) (children=5)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Primary(NT#21) (children=5)
+    on '<>'(T#21) => Reduce -> Primary(NT#21) (children=5)
+    on '<'(T#22) => Reduce -> Primary(NT#21) (children=5)
+    on '<='(T#23) => Reduce -> Primary(NT#21) (children=5)
+    on '>'(T#24) => Reduce -> Primary(NT#21) (children=5)
+    on '>='(T#25) => Reduce -> Primary(NT#21) (children=5)
+    on '+'(T#26) => Reduce -> Primary(NT#21) (children=5)
+    on '-'(T#27) => Reduce -> Primary(NT#21) (children=5)
+    on '*'(T#28) => Reduce -> Primary(NT#21) (children=5)
+    on '/'(T#29) => Reduce -> Primary(NT#21) (children=5)
+    on /\r\n/(T#36) => Reduce -> Primary(NT#21) (children=5)
+    on /\n/(T#37) => Reduce -> Primary(NT#21) (children=5)
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> Primary(NT#21) (children=5)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> Primary(NT#21) (children=5)
+  [Nonterminal gotos]
+
+State #29
+  core_id: 17
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> Primary(NT#21) (children=1)
+    on '='(T#6) => Reduce -> Primary(NT#21) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> Primary(NT#21) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Primary(NT#21) (children=1)
+    on '<>'(T#21) => Reduce -> Primary(NT#21) (children=1)
+    on '<'(T#22) => Reduce -> Primary(NT#21) (children=1)
+    on '<='(T#23) => Reduce -> Primary(NT#21) (children=1)
+    on '>'(T#24) => Reduce -> Primary(NT#21) (children=1)
+    on '>='(T#25) => Reduce -> Primary(NT#21) (children=1)
+    on '+'(T#26) => Reduce -> Primary(NT#21) (children=1)
+    on '-'(T#27) => Reduce -> Primary(NT#21) (children=1)
+    on '*'(T#28) => Reduce -> Primary(NT#21) (children=1)
+    on '/'(T#29) => Reduce -> Primary(NT#21) (children=1)
+    on /\r\n/(T#36) => Reduce -> Primary(NT#21) (children=1)
+    on /\n/(T#37) => Reduce -> Primary(NT#21) (children=1)
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> Primary(NT#21) (children=1)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> Primary(NT#21) (children=1)
+  [Nonterminal gotos]
+
+State #30
+  core_id: 85
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Shift -> state 63 (repetition)
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Shift -> state 202 (repetition)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on /[Ff][Oo][Rr]/(T#5) => Shift -> state 208 (repetition)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on /[Ss][Uu][Bb]/(T#9) => Shift -> state 203 (repetition)
+    on If(T#32) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on If(T#32) => Shift -> state 67 (repetition)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 134 (repetition)
+    on /\r\n/(T#36) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on /\n/(T#37) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on Comment(T#38) => ShiftExtra
+    on /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on /[Ee][Ll][Ss][Ee]/(T#14) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+  [Nonterminal gotos]
+    goto Stmt(NT#4) => state 151
+    goto ExprStatement(NT#7) => state 158
+    goto TheRest(NT#9) => state 30
+    goto CRStmtCRs_repeat1(NT#26) => state 30
+
+State #31
+  core_id: 25
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '='(T#6) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '<>'(T#21) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '<'(T#22) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '<='(T#23) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '>'(T#24) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '>='(T#25) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '+'(T#26) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '-'(T#27) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on /\r\n/(T#36) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on /\n/(T#37) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on '*'(T#28) => Shift -> state 127
+    on '/'(T#29) => Shift -> state 127
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> AdditiveExpr(NT#18) (children=1)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> AdditiveExpr(NT#18) (children=1)
+  [Nonterminal gotos]
+
+State #32
+  core_id: 27
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '='(T#6) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '<>'(T#21) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '<'(T#22) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '<='(T#23) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '>'(T#24) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '>='(T#25) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '+'(T#26) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '-'(T#27) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '*'(T#28) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on '/'(T#29) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on /\r\n/(T#36) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on /\n/(T#37) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> UnaryExpr(NT#20) (children=1)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> UnaryExpr(NT#20) (children=1)
+  [Nonterminal gotos]
+
+State #33
+  core_id: 102
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> Primary(NT#21) (children=6)
+    on '='(T#6) => Reduce -> Primary(NT#21) (children=6)
+    on /[Oo][Rr]/(T#19) => Reduce -> Primary(NT#21) (children=6)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Primary(NT#21) (children=6)
+    on '<>'(T#21) => Reduce -> Primary(NT#21) (children=6)
+    on '<'(T#22) => Reduce -> Primary(NT#21) (children=6)
+    on '<='(T#23) => Reduce -> Primary(NT#21) (children=6)
+    on '>'(T#24) => Reduce -> Primary(NT#21) (children=6)
+    on '>='(T#25) => Reduce -> Primary(NT#21) (children=6)
+    on '+'(T#26) => Reduce -> Primary(NT#21) (children=6)
+    on '-'(T#27) => Reduce -> Primary(NT#21) (children=6)
+    on '*'(T#28) => Reduce -> Primary(NT#21) (children=6)
+    on '/'(T#29) => Reduce -> Primary(NT#21) (children=6)
+    on /\r\n/(T#36) => Reduce -> Primary(NT#21) (children=6)
+    on /\n/(T#37) => Reduce -> Primary(NT#21) (children=6)
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> Primary(NT#21) (children=6)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> Primary(NT#21) (children=6)
+  [Nonterminal gotos]
+
+State #34
+  core_id: 26
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '='(T#6) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '<>'(T#21) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '<'(T#22) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '<='(T#23) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '>'(T#24) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '>='(T#25) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '+'(T#26) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '-'(T#27) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '*'(T#28) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on '/'(T#29) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on /\r\n/(T#36) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on /\n/(T#37) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> MultiplicativeExpr(NT#19) (children=1)
+  [Nonterminal gotos]
+
+State #35
+  core_id: 60
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> Primary(NT#21) (children=3)
+    on '='(T#6) => Reduce -> Primary(NT#21) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> Primary(NT#21) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Primary(NT#21) (children=3)
+    on '<>'(T#21) => Reduce -> Primary(NT#21) (children=3)
+    on '<'(T#22) => Reduce -> Primary(NT#21) (children=3)
+    on '<='(T#23) => Reduce -> Primary(NT#21) (children=3)
+    on '>'(T#24) => Reduce -> Primary(NT#21) (children=3)
+    on '>='(T#25) => Reduce -> Primary(NT#21) (children=3)
+    on '+'(T#26) => Reduce -> Primary(NT#21) (children=3)
+    on '-'(T#27) => Reduce -> Primary(NT#21) (children=3)
+    on '*'(T#28) => Reduce -> Primary(NT#21) (children=3)
+    on '/'(T#29) => Reduce -> Primary(NT#21) (children=3)
+    on /\r\n/(T#36) => Reduce -> Primary(NT#21) (children=3)
+    on /\n/(T#37) => Reduce -> Primary(NT#21) (children=3)
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> Primary(NT#21) (children=3)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> Primary(NT#21) (children=3)
+  [Nonterminal gotos]
+
+State #36
+  core_id: 41
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> Primary(NT#21) (children=2)
+    on '='(T#6) => Reduce -> Primary(NT#21) (children=2)
+    on /[Oo][Rr]/(T#19) => Reduce -> Primary(NT#21) (children=2)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Primary(NT#21) (children=2)
+    on '<>'(T#21) => Reduce -> Primary(NT#21) (children=2)
+    on '<'(T#22) => Reduce -> Primary(NT#21) (children=2)
+    on '<='(T#23) => Reduce -> Primary(NT#21) (children=2)
+    on '>'(T#24) => Reduce -> Primary(NT#21) (children=2)
+    on '>='(T#25) => Reduce -> Primary(NT#21) (children=2)
+    on '+'(T#26) => Reduce -> Primary(NT#21) (children=2)
+    on '-'(T#27) => Reduce -> Primary(NT#21) (children=2)
+    on '*'(T#28) => Reduce -> Primary(NT#21) (children=2)
+    on '/'(T#29) => Reduce -> Primary(NT#21) (children=2)
+    on /\r\n/(T#36) => Reduce -> Primary(NT#21) (children=2)
+    on /\n/(T#37) => Reduce -> Primary(NT#21) (children=2)
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> Primary(NT#21) (children=2)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> Primary(NT#21) (children=2)
+  [Nonterminal gotos]
+
+State #37
+  core_id: 39
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '='(T#6) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on /[Oo][Rr]/(T#19) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '<>'(T#21) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '<'(T#22) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '<='(T#23) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '>'(T#24) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '>='(T#25) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '+'(T#26) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '-'(T#27) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '*'(T#28) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on '/'(T#29) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on /\r\n/(T#36) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on /\n/(T#37) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> UnaryExpr(NT#20) (children=2)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> UnaryExpr(NT#20) (children=2)
+  [Nonterminal gotos]
+
+State #38
+  core_id: 45
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> CRStmtCRs(NT#8) (children=1)
+    on /\r\n/(T#36) => Reduce -> CRStmtCRs(NT#8) (children=1)
+    on /\n/(T#37) => Reduce -> CRStmtCRs(NT#8) (children=1)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Shift -> state 63
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Shift -> state 202
+    on /[Ff][Oo][Rr]/(T#5) => Shift -> state 208
+    on /[Ss][Uu][Bb]/(T#9) => Shift -> state 203
+    on If(T#32) => Shift -> state 67
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 134
+    on Comment(T#38) => ShiftExtra
+    on /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) => Reduce -> CRStmtCRs(NT#8) (children=1)
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Reduce -> CRStmtCRs(NT#8) (children=1)
+    on /[Ee][Ll][Ss][Ee]/(T#14) => Reduce -> CRStmtCRs(NT#8) (children=1)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> CRStmtCRs(NT#8) (children=1)
+  [Nonterminal gotos]
+    goto Stmt(NT#4) => state 151
+    goto ExprStatement(NT#7) => state 158
+    goto TheRest(NT#9) => state 39
+    goto CRStmtCRs_repeat1(NT#26) => state 39
+
+State #39
+  core_id: 64
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> CRStmtCRs(NT#8) (children=2)
+    on /\r\n/(T#36) => Reduce -> CRStmtCRs(NT#8) (children=2)
+    on /\n/(T#37) => Reduce -> CRStmtCRs(NT#8) (children=2)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Shift -> state 63
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Shift -> state 202
+    on /[Ff][Oo][Rr]/(T#5) => Shift -> state 208
+    on /[Ss][Uu][Bb]/(T#9) => Shift -> state 203
+    on If(T#32) => Shift -> state 67
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 134
+    on Comment(T#38) => ShiftExtra
+    on /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) => Reduce -> CRStmtCRs(NT#8) (children=2)
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Reduce -> CRStmtCRs(NT#8) (children=2)
+    on /[Ee][Ll][Ss][Ee]/(T#14) => Reduce -> CRStmtCRs(NT#8) (children=2)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> CRStmtCRs(NT#8) (children=2)
+  [Nonterminal gotos]
+    goto Stmt(NT#4) => state 151
+    goto ExprStatement(NT#7) => state 158
+    goto TheRest(NT#9) => state 30
+    goto CRStmtCRs_repeat1(NT#26) => state 30
+
+State #40
+  core_id: 71
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '='(T#6) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '<>'(T#21) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '<'(T#22) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '<='(T#23) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '>'(T#24) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '>='(T#25) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '+'(T#26) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '-'(T#27) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on /\r\n/(T#36) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on /\n/(T#37) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on '*'(T#28) => Shift -> state 127
+    on '/'(T#29) => Shift -> state 127
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> AdditiveExpr(NT#18) (children=3)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> AdditiveExpr(NT#18) (children=3)
+  [Nonterminal gotos]
+
+State #41
+  core_id: 94
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> Idxs(NT#22) (children=4)
+    on '='(T#6) => Reduce -> Idxs(NT#22) (children=4)
+    on /[Oo][Rr]/(T#19) => Reduce -> Idxs(NT#22) (children=4)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> Idxs(NT#22) (children=4)
+    on '<>'(T#21) => Reduce -> Idxs(NT#22) (children=4)
+    on '<'(T#22) => Reduce -> Idxs(NT#22) (children=4)
+    on '<='(T#23) => Reduce -> Idxs(NT#22) (children=4)
+    on '>'(T#24) => Reduce -> Idxs(NT#22) (children=4)
+    on '>='(T#25) => Reduce -> Idxs(NT#22) (children=4)
+    on '+'(T#26) => Reduce -> Idxs(NT#22) (children=4)
+    on '-'(T#27) => Reduce -> Idxs(NT#22) (children=4)
+    on '*'(T#28) => Reduce -> Idxs(NT#22) (children=4)
+    on '/'(T#29) => Reduce -> Idxs(NT#22) (children=4)
+    on /\r\n/(T#36) => Reduce -> Idxs(NT#22) (children=4)
+    on /\n/(T#37) => Reduce -> Idxs(NT#22) (children=4)
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> Idxs(NT#22) (children=4)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> Idxs(NT#22) (children=4)
+  [Nonterminal gotos]
+
+State #42
+  core_id: 72
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '='(T#6) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '<>'(T#21) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '<'(T#22) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '<='(T#23) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '>'(T#24) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '>='(T#25) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '+'(T#26) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '-'(T#27) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '*'(T#28) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on '/'(T#29) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on /\r\n/(T#36) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on /\n/(T#37) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> MultiplicativeExpr(NT#19) (children=3)
+  [Nonterminal gotos]
+
+State #43
+  core_id: 22
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> AndExpr(NT#15) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> AndExpr(NT#15) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> AndExpr(NT#15) (children=1)
+    on '='(T#6) => Shift -> state 92
+    on '<>'(T#21) => Shift -> state 92
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> AndExpr(NT#15) (children=1)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> AndExpr(NT#15) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> AndExpr(NT#15) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> AndExpr(NT#15) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> AndExpr(NT#15) (children=1)
+    on If(T#32) => Reduce -> AndExpr(NT#15) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> AndExpr(NT#15) (children=1)
+    on END => Reduce -> AndExpr(NT#15) (children=1)
+    on ']'(T#31) => Reduce -> AndExpr(NT#15) (children=1)
+    on /[Tt][Oo]/(T#7) => Reduce -> AndExpr(NT#15) (children=1)
+    on ','(T#18) => Reduce -> AndExpr(NT#15) (children=1)
+  [Nonterminal gotos]
+
+State #44
+  core_id: 101
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto MoreThanOneExpr(NT#11) => state 193
+    goto Expr(NT#12) => state 166
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #45
+  core_id: 68
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> AndExpr(NT#15) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> AndExpr(NT#15) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> AndExpr(NT#15) (children=3)
+    on '='(T#6) => Shift -> state 92
+    on '<>'(T#21) => Shift -> state 92
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> AndExpr(NT#15) (children=3)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> AndExpr(NT#15) (children=3)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> AndExpr(NT#15) (children=3)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> AndExpr(NT#15) (children=3)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> AndExpr(NT#15) (children=3)
+    on If(T#32) => Reduce -> AndExpr(NT#15) (children=3)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> AndExpr(NT#15) (children=3)
+    on END => Reduce -> AndExpr(NT#15) (children=3)
+    on ']'(T#31) => Reduce -> AndExpr(NT#15) (children=3)
+    on /[Tt][Oo]/(T#7) => Reduce -> AndExpr(NT#15) (children=3)
+    on ','(T#18) => Reduce -> AndExpr(NT#15) (children=3)
+  [Nonterminal gotos]
+
+State #46
+  core_id: 2
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 53
+    on '-'(T#27) => Shift -> state 145
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 20
+    on /\"[^\"]*\"/(T#34) => Shift -> state 29
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 29
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 132
+    goto CondExpr(NT#13) => state 143
+    goto OrExpr(NT#14) => state 142
+    goto AndExpr(NT#15) => state 116
+    goto EqNeqExpr(NT#16) => state 99
+    goto CompExpr(NT#17) => state 75
+    goto AdditiveExpr(NT#18) => state 51
+    goto MultiplicativeExpr(NT#19) => state 31
+    goto UnaryExpr(NT#20) => state 34
+    goto Primary(NT#21) => state 32
+
+State #47
+  core_id: 86
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 53
+    on '-'(T#27) => Shift -> state 145
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 20
+    on /\"[^\"]*\"/(T#34) => Shift -> state 29
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 29
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 101
+    goto CondExpr(NT#13) => state 143
+    goto OrExpr(NT#14) => state 142
+    goto AndExpr(NT#15) => state 116
+    goto EqNeqExpr(NT#16) => state 99
+    goto CompExpr(NT#17) => state 75
+    goto AdditiveExpr(NT#18) => state 51
+    goto MultiplicativeExpr(NT#19) => state 31
+    goto UnaryExpr(NT#20) => state 34
+    goto Primary(NT#21) => state 32
+
+State #48
+  core_id: 103
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 53
+    on '-'(T#27) => Shift -> state 145
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 20
+    on /\"[^\"]*\"/(T#34) => Shift -> state 29
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 29
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 152
+    goto CondExpr(NT#13) => state 143
+    goto OrExpr(NT#14) => state 142
+    goto AndExpr(NT#15) => state 116
+    goto EqNeqExpr(NT#16) => state 99
+    goto CompExpr(NT#17) => state 75
+    goto AdditiveExpr(NT#18) => state 51
+    goto MultiplicativeExpr(NT#19) => state 31
+    goto UnaryExpr(NT#20) => state 34
+    goto Primary(NT#21) => state 32
+
+State #49
+  core_id: 32
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 53
+    on '-'(T#27) => Shift -> state 145
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 20
+    on /\"[^\"]*\"/(T#34) => Shift -> state 29
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 29
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 165
+    goto CondExpr(NT#13) => state 143
+    goto OrExpr(NT#14) => state 142
+    goto AndExpr(NT#15) => state 116
+    goto EqNeqExpr(NT#16) => state 99
+    goto CompExpr(NT#17) => state 75
+    goto AdditiveExpr(NT#18) => state 51
+    goto MultiplicativeExpr(NT#19) => state 31
+    goto UnaryExpr(NT#20) => state 34
+    goto Primary(NT#21) => state 32
+
+State #50
+  core_id: 59
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 53
+    on '-'(T#27) => Shift -> state 145
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 20
+    on /\"[^\"]*\"/(T#34) => Shift -> state 29
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 29
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 154
+    goto CondExpr(NT#13) => state 143
+    goto OrExpr(NT#14) => state 142
+    goto AndExpr(NT#15) => state 116
+    goto EqNeqExpr(NT#16) => state 99
+    goto CompExpr(NT#17) => state 75
+    goto AdditiveExpr(NT#18) => state 51
+    goto MultiplicativeExpr(NT#19) => state 31
+    goto UnaryExpr(NT#20) => state 34
+    goto Primary(NT#21) => state 32
+
+State #51
+  core_id: 24
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> CompExpr(NT#17) (children=1)
+    on '='(T#6) => Reduce -> CompExpr(NT#17) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> CompExpr(NT#17) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> CompExpr(NT#17) (children=1)
+    on '<>'(T#21) => Reduce -> CompExpr(NT#17) (children=1)
+    on '<'(T#22) => Reduce -> CompExpr(NT#17) (children=1)
+    on '<='(T#23) => Reduce -> CompExpr(NT#17) (children=1)
+    on '>'(T#24) => Reduce -> CompExpr(NT#17) (children=1)
+    on '>='(T#25) => Reduce -> CompExpr(NT#17) (children=1)
+    on /\r\n/(T#36) => Reduce -> CompExpr(NT#17) (children=1)
+    on /\n/(T#37) => Reduce -> CompExpr(NT#17) (children=1)
+    on '+'(T#26) => Shift -> state 102
+    on '-'(T#27) => Shift -> state 102
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> CompExpr(NT#17) (children=1)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> CompExpr(NT#17) (children=1)
+  [Nonterminal gotos]
+
+State #52
+  core_id: 53
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 194
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #53
+  core_id: 14
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 179
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #54
+  core_id: 59
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 128
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #55
+  core_id: 70
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> CompExpr(NT#17) (children=3)
+    on '='(T#6) => Reduce -> CompExpr(NT#17) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> CompExpr(NT#17) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> CompExpr(NT#17) (children=3)
+    on '<>'(T#21) => Reduce -> CompExpr(NT#17) (children=3)
+    on '<'(T#22) => Reduce -> CompExpr(NT#17) (children=3)
+    on '<='(T#23) => Reduce -> CompExpr(NT#17) (children=3)
+    on '>'(T#24) => Reduce -> CompExpr(NT#17) (children=3)
+    on '>='(T#25) => Reduce -> CompExpr(NT#17) (children=3)
+    on /\r\n/(T#36) => Reduce -> CompExpr(NT#17) (children=3)
+    on /\n/(T#37) => Reduce -> CompExpr(NT#17) (children=3)
+    on '+'(T#26) => Shift -> state 102
+    on '-'(T#27) => Shift -> state 102
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> CompExpr(NT#17) (children=3)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> CompExpr(NT#17) (children=3)
+  [Nonterminal gotos]
+
+State #56
+  core_id: 79
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 53
+    on '-'(T#27) => Shift -> state 145
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 20
+    on /\"[^\"]*\"/(T#34) => Shift -> state 29
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 29
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 157
+    goto CondExpr(NT#13) => state 143
+    goto OrExpr(NT#14) => state 142
+    goto AndExpr(NT#15) => state 116
+    goto EqNeqExpr(NT#16) => state 99
+    goto CompExpr(NT#17) => state 75
+    goto AdditiveExpr(NT#18) => state 51
+    goto MultiplicativeExpr(NT#19) => state 31
+    goto UnaryExpr(NT#20) => state 34
+    goto Primary(NT#21) => state 32
+
+State #57
+  core_id: 14
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 177
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #58
+  core_id: 32
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 114
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #59
+  core_id: 35
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 185
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #60
+  core_id: 74
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 201
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #61
+  core_id: 79
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 107
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #62
+  core_id: 6
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 190
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #63
+  core_id: 2
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 53
+    on '-'(T#27) => Shift -> state 145
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 20
+    on /\"[^\"]*\"/(T#34) => Shift -> state 29
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 29
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 136
+    goto CondExpr(NT#13) => state 143
+    goto OrExpr(NT#14) => state 142
+    goto AndExpr(NT#15) => state 116
+    goto EqNeqExpr(NT#16) => state 99
+    goto CompExpr(NT#17) => state 75
+    goto AdditiveExpr(NT#18) => state 51
+    goto MultiplicativeExpr(NT#19) => state 31
+    goto UnaryExpr(NT#20) => state 34
+    goto Primary(NT#21) => state 32
+
+State #64
+  core_id: 35
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 183
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #65
+  core_id: 86
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 53
+    on '-'(T#27) => Shift -> state 145
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 20
+    on /\"[^\"]*\"/(T#34) => Shift -> state 29
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 29
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 106
+    goto CondExpr(NT#13) => state 143
+    goto OrExpr(NT#14) => state 142
+    goto AndExpr(NT#15) => state 116
+    goto EqNeqExpr(NT#16) => state 99
+    goto CompExpr(NT#17) => state 75
+    goto AdditiveExpr(NT#18) => state 51
+    goto MultiplicativeExpr(NT#19) => state 31
+    goto UnaryExpr(NT#20) => state 34
+    goto Primary(NT#21) => state 32
+
+State #66
+  core_id: 74
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 186
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #67
+  core_id: 6
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 197
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #68
+  core_id: 53
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Expr(NT#12) => state 205
+    goto CondExpr(NT#13) => state 77
+    goto OrExpr(NT#14) => state 73
+    goto AndExpr(NT#15) => state 70
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #69
+  core_id: 67
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> OrExpr(NT#14) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> OrExpr(NT#14) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Shift -> state 85
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> OrExpr(NT#14) (children=3)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> OrExpr(NT#14) (children=3)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> OrExpr(NT#14) (children=3)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> OrExpr(NT#14) (children=3)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> OrExpr(NT#14) (children=3)
+    on If(T#32) => Reduce -> OrExpr(NT#14) (children=3)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> OrExpr(NT#14) (children=3)
+    on END => Reduce -> OrExpr(NT#14) (children=3)
+    on ']'(T#31) => Reduce -> OrExpr(NT#14) (children=3)
+    on /[Tt][Oo]/(T#7) => Reduce -> OrExpr(NT#14) (children=3)
+    on ','(T#18) => Reduce -> OrExpr(NT#14) (children=3)
+  [Nonterminal gotos]
+
+State #70
+  core_id: 21
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> OrExpr(NT#14) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> OrExpr(NT#14) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Shift -> state 85
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> OrExpr(NT#14) (children=1)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> OrExpr(NT#14) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> OrExpr(NT#14) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> OrExpr(NT#14) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> OrExpr(NT#14) (children=1)
+    on If(T#32) => Reduce -> OrExpr(NT#14) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> OrExpr(NT#14) (children=1)
+    on END => Reduce -> OrExpr(NT#14) (children=1)
+    on ']'(T#31) => Reduce -> OrExpr(NT#14) (children=1)
+    on /[Tt][Oo]/(T#7) => Reduce -> OrExpr(NT#14) (children=1)
+    on ','(T#18) => Reduce -> OrExpr(NT#14) (children=1)
+  [Nonterminal gotos]
+
+State #71
+  core_id: 43
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> CR(NT#23) (children=1)
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> CR(NT#23) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> CR(NT#23) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> CR(NT#23) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> CR(NT#23) (children=1)
+    on If(T#32) => Reduce -> CR(NT#23) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> CR(NT#23) (children=1)
+    on /\r\n/(T#36) => Reduce -> CR(NT#23) (children=1)
+    on /\n/(T#37) => Reduce -> CR(NT#23) (children=1)
+    on Comment(T#38) => ShiftExtra
+    on /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) => Reduce -> CR(NT#23) (children=1)
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Reduce -> CR(NT#23) (children=1)
+    on /[Ee][Ll][Ss][Ee]/(T#14) => Reduce -> CR(NT#23) (children=1)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> CR(NT#23) (children=1)
+  [Nonterminal gotos]
+
+State #72
+  core_id: 84
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> TheRest(NT#9) (children=2)
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> TheRest(NT#9) (children=2)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> TheRest(NT#9) (children=2)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> TheRest(NT#9) (children=2)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> TheRest(NT#9) (children=2)
+    on If(T#32) => Reduce -> TheRest(NT#9) (children=2)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> TheRest(NT#9) (children=2)
+    on /\r\n/(T#36) => Reduce -> TheRest(NT#9) (children=2)
+    on /\n/(T#37) => Reduce -> TheRest(NT#9) (children=2)
+    on Comment(T#38) => ShiftExtra
+    on /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) => Reduce -> TheRest(NT#9) (children=2)
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Reduce -> TheRest(NT#9) (children=2)
+    on /[Ee][Ll][Ss][Ee]/(T#14) => Reduce -> TheRest(NT#9) (children=2)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> TheRest(NT#9) (children=2)
+  [Nonterminal gotos]
+
+State #73
+  core_id: 20
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> CondExpr(NT#13) (children=1)
+    on /[Oo][Rr]/(T#19) => Shift -> state 81
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> CondExpr(NT#13) (children=1)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> CondExpr(NT#13) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> CondExpr(NT#13) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> CondExpr(NT#13) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> CondExpr(NT#13) (children=1)
+    on If(T#32) => Reduce -> CondExpr(NT#13) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> CondExpr(NT#13) (children=1)
+    on END => Reduce -> CondExpr(NT#13) (children=1)
+    on ']'(T#31) => Reduce -> CondExpr(NT#13) (children=1)
+    on /[Tt][Oo]/(T#7) => Reduce -> CondExpr(NT#13) (children=1)
+    on ','(T#18) => Reduce -> CondExpr(NT#13) (children=1)
+  [Nonterminal gotos]
+
+State #74
+  core_id: 69
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on '='(T#6) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on '<>'(T#21) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on /\r\n/(T#36) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on /\n/(T#37) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on '<'(T#22) => Shift -> state 97
+    on '<='(T#23) => Shift -> state 97
+    on '>'(T#24) => Shift -> state 97
+    on '>='(T#25) => Shift -> state 97
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> EqNeqExpr(NT#16) (children=3)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> EqNeqExpr(NT#16) (children=3)
+  [Nonterminal gotos]
+
+State #75
+  core_id: 23
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on '='(T#6) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on '<>'(T#21) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on /\r\n/(T#36) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on /\n/(T#37) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on '<'(T#22) => Shift -> state 97
+    on '<='(T#23) => Shift -> state 97
+    on '>'(T#24) => Shift -> state 97
+    on '>='(T#25) => Shift -> state 97
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> EqNeqExpr(NT#16) (children=1)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> EqNeqExpr(NT#16) (children=1)
+  [Nonterminal gotos]
+
+State #76
+  core_id: 13
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on END => Reduce -> Start(NT#0) (children=1)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Shift -> state 46
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Shift -> state 181
+    on /[Ff][Oo][Rr]/(T#5) => Shift -> state 184
+    on /[Ss][Uu][Bb]/(T#9) => Shift -> state 178
+    on If(T#32) => Shift -> state 62
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 133
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Prog(NT#1) => state 78
+    goto MoreThanOneStmt(NT#2) => state 117
+    goto Stmt(NT#4) => state 122
+    goto ExprStatement(NT#7) => state 124
+    goto Start_repeat1(NT#24) => state 78
+
+State #77
+  core_id: 19
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Reduce -> Expr(NT#12) (children=1)
+    on Comment(T#38) => ShiftExtra
+    on ')'(T#17) => Reduce -> Expr(NT#12) (children=1)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Expr(NT#12) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Expr(NT#12) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Expr(NT#12) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Expr(NT#12) (children=1)
+    on If(T#32) => Reduce -> Expr(NT#12) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Expr(NT#12) (children=1)
+    on END => Reduce -> Expr(NT#12) (children=1)
+    on ']'(T#31) => Reduce -> Expr(NT#12) (children=1)
+    on /[Tt][Oo]/(T#7) => Reduce -> Expr(NT#12) (children=1)
+    on ','(T#18) => Reduce -> Expr(NT#12) (children=1)
+  [Nonterminal gotos]
+
+State #78
+  core_id: 37
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Start_repeat1(NT#24) (children=2)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Shift -> state 46 (repetition)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Start_repeat1(NT#24) (children=2)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Shift -> state 181 (repetition)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Start_repeat1(NT#24) (children=2)
+    on /[Ff][Oo][Rr]/(T#5) => Shift -> state 184 (repetition)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Start_repeat1(NT#24) (children=2)
+    on /[Ss][Uu][Bb]/(T#9) => Shift -> state 178 (repetition)
+    on If(T#32) => Reduce -> Start_repeat1(NT#24) (children=2)
+    on If(T#32) => Shift -> state 62 (repetition)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Start_repeat1(NT#24) (children=2)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 133 (repetition)
+    on END => Reduce -> Start_repeat1(NT#24) (children=2)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Prog(NT#1) => state 78
+    goto MoreThanOneStmt(NT#2) => state 117
+    goto Stmt(NT#4) => state 122
+    goto ExprStatement(NT#7) => state 124
+    goto Start_repeat1(NT#24) => state 78
+
+State #79
+  core_id: 47
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 53
+    on '-'(T#27) => Shift -> state 145
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 20
+    on /\"[^\"]*\"/(T#34) => Shift -> state 29
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 29
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto AndExpr(NT#15) => state 120
+    goto EqNeqExpr(NT#16) => state 99
+    goto CompExpr(NT#17) => state 75
+    goto AdditiveExpr(NT#18) => state 51
+    goto MultiplicativeExpr(NT#19) => state 31
+    goto UnaryExpr(NT#20) => state 34
+    goto Primary(NT#21) => state 32
+
+State #80
+  core_id: 45
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ss][Uu][Bb]/(T#10) => Reduce -> CRStmtCRs(NT#8) (children=1)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Shift -> state 63
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Shift -> state 202
+    on /[Ff][Oo][Rr]/(T#5) => Shift -> state 208
+    on /[Ss][Uu][Bb]/(T#9) => Shift -> state 203
+    on If(T#32) => Shift -> state 67
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 134
+    on Comment(T#38) => ShiftExtra
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Reduce -> CRStmtCRs(NT#8) (children=1)
+  [Nonterminal gotos]
+    goto Stmt(NT#4) => state 150
+    goto ExprStatement(NT#7) => state 158
+    goto TheRest(NT#9) => state 82
+    goto CRStmtCRs_repeat1(NT#26) => state 82
+
+State #81
+  core_id: 47
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto AndExpr(NT#15) => state 69
+    goto EqNeqExpr(NT#16) => state 43
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #82
+  core_id: 64
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ss][Uu][Bb]/(T#10) => Reduce -> CRStmtCRs(NT#8) (children=2)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Shift -> state 63
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Shift -> state 202
+    on /[Ff][Oo][Rr]/(T#5) => Shift -> state 208
+    on /[Ss][Uu][Bb]/(T#9) => Shift -> state 203
+    on If(T#32) => Shift -> state 67
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 134
+    on Comment(T#38) => ShiftExtra
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Reduce -> CRStmtCRs(NT#8) (children=2)
+  [Nonterminal gotos]
+    goto Stmt(NT#4) => state 150
+    goto ExprStatement(NT#7) => state 158
+    goto TheRest(NT#9) => state 83
+    goto CRStmtCRs_repeat1(NT#26) => state 83
+
+State #83
+  core_id: 85
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Shift -> state 63 (repetition)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Shift -> state 202 (repetition)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on /[Ff][Oo][Rr]/(T#5) => Shift -> state 208 (repetition)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on /[Ss][Uu][Bb]/(T#9) => Shift -> state 203 (repetition)
+    on /[Ee][Nn][Dd][Ss][Uu][Bb]/(T#10) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on If(T#32) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on If(T#32) => Shift -> state 67 (repetition)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 134 (repetition)
+    on Comment(T#38) => ShiftExtra
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Reduce -> CRStmtCRs_repeat1(NT#26) (children=2)
+  [Nonterminal gotos]
+    goto Stmt(NT#4) => state 150
+    goto ExprStatement(NT#7) => state 158
+    goto TheRest(NT#9) => state 83
+    goto CRStmtCRs_repeat1(NT#26) => state 83
+
+State #84
+  core_id: 48
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 53
+    on '-'(T#27) => Shift -> state 145
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 20
+    on /\"[^\"]*\"/(T#34) => Shift -> state 29
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 29
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto EqNeqExpr(NT#16) => state 100
+    goto CompExpr(NT#17) => state 75
+    goto AdditiveExpr(NT#18) => state 51
+    goto MultiplicativeExpr(NT#19) => state 31
+    goto UnaryExpr(NT#20) => state 34
+    goto Primary(NT#21) => state 32
+
+State #85
+  core_id: 48
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto EqNeqExpr(NT#16) => state 45
+    goto CompExpr(NT#17) => state 19
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #86
+  core_id: 108
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) => Shift -> state 60
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Shift -> state 129
+    on /[Ee][Ll][Ss][Ee]/(T#14) => Shift -> state 147
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto MoreThanZeroElseIf(NT#5) => state 111
+    goto OptionalElse(NT#6) => state 108
+    goto CRStmtCRs(NT#8) => state 91
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 91
+
+State #87
+  core_id: 78
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) => Shift -> state 60
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Shift -> state 129
+    on /[Ee][Ll][Ss][Ee]/(T#14) => Shift -> state 147
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto MoreThanZeroElseIf(NT#5) => state 119
+    goto OptionalElse(NT#6) => state 108
+    goto CRStmtCRs(NT#8) => state 91
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 91
+
+State #88
+  core_id: 55
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) => Shift -> state 60
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Shift -> state 129
+    on /[Ee][Ll][Ss][Ee]/(T#14) => Shift -> state 147
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto MoreThanZeroElseIf(NT#5) => state 118
+    goto OptionalElse(NT#6) => state 108
+    goto CRStmtCRs(NT#8) => state 87
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 87
+
+State #89
+  core_id: 98
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) => Shift -> state 60
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Shift -> state 129
+    on /[Ee][Ll][Ss][Ee]/(T#14) => Shift -> state 147
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto MoreThanZeroElseIf(NT#5) => state 109
+    goto OptionalElse(NT#6) => state 108
+    goto CRStmtCRs(NT#8) => state 86
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 86
+
+State #90
+  core_id: 49
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 53
+    on '-'(T#27) => Shift -> state 145
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 20
+    on /\"[^\"]*\"/(T#34) => Shift -> state 29
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 29
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CompExpr(NT#17) => state 74
+    goto AdditiveExpr(NT#18) => state 51
+    goto MultiplicativeExpr(NT#19) => state 31
+    goto UnaryExpr(NT#20) => state 34
+    goto Primary(NT#21) => state 32
+
+State #91
+  core_id: 66
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> Stmt_repeat1(NT#25) (children=2)
+    on /\r\n/(T#36) => Reduce -> Stmt_repeat1(NT#25) (children=2)
+    on /\r\n/(T#36) => Shift -> state 71 (repetition)
+    on /\n/(T#37) => Reduce -> Stmt_repeat1(NT#25) (children=2)
+    on /\n/(T#37) => Shift -> state 71 (repetition)
+    on Comment(T#38) => ShiftExtra
+    on /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) => Reduce -> Stmt_repeat1(NT#25) (children=2)
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Reduce -> Stmt_repeat1(NT#25) (children=2)
+    on /[Ee][Ll][Ss][Ee]/(T#14) => Reduce -> Stmt_repeat1(NT#25) (children=2)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> Stmt_repeat1(NT#25) (children=2)
+  [Nonterminal gotos]
+    goto CRStmtCRs(NT#8) => state 91
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 91
+
+State #92
+  core_id: 49
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CompExpr(NT#17) => state 21
+    goto AdditiveExpr(NT#18) => state 17
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #93
+  core_id: 98
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) => Shift -> state 66
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Shift -> state 172
+    on /[Ee][Ll][Ss][Ee]/(T#14) => Shift -> state 148
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto MoreThanZeroElseIf(NT#5) => state 162
+    goto OptionalElse(NT#6) => state 153
+    goto CRStmtCRs(NT#8) => state 95
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 95
+
+State #94
+  core_id: 78
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) => Shift -> state 66
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Shift -> state 172
+    on /[Ee][Ll][Ss][Ee]/(T#14) => Shift -> state 148
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto MoreThanZeroElseIf(NT#5) => state 156
+    goto OptionalElse(NT#6) => state 153
+    goto CRStmtCRs(NT#8) => state 91
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 91
+
+State #95
+  core_id: 108
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) => Shift -> state 66
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Shift -> state 172
+    on /[Ee][Ll][Ss][Ee]/(T#14) => Shift -> state 148
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto MoreThanZeroElseIf(NT#5) => state 164
+    goto OptionalElse(NT#6) => state 153
+    goto CRStmtCRs(NT#8) => state 91
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 91
+
+State #96
+  core_id: 55
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) => Shift -> state 66
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Shift -> state 172
+    on /[Ee][Ll][Ss][Ee]/(T#14) => Shift -> state 148
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto MoreThanZeroElseIf(NT#5) => state 168
+    goto OptionalElse(NT#6) => state 153
+    goto CRStmtCRs(NT#8) => state 94
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 94
+
+State #97
+  core_id: 50
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 53
+    on '-'(T#27) => Shift -> state 145
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 20
+    on /\"[^\"]*\"/(T#34) => Shift -> state 29
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 29
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto AdditiveExpr(NT#18) => state 55
+    goto MultiplicativeExpr(NT#19) => state 31
+    goto UnaryExpr(NT#20) => state 34
+    goto Primary(NT#21) => state 32
+
+State #98
+  core_id: 50
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto AdditiveExpr(NT#18) => state 18
+    goto MultiplicativeExpr(NT#19) => state 7
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #99
+  core_id: 22
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> AndExpr(NT#15) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> AndExpr(NT#15) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> AndExpr(NT#15) (children=1)
+    on /\r\n/(T#36) => Reduce -> AndExpr(NT#15) (children=1)
+    on /\n/(T#37) => Reduce -> AndExpr(NT#15) (children=1)
+    on '='(T#6) => Shift -> state 90
+    on '<>'(T#21) => Shift -> state 90
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> AndExpr(NT#15) (children=1)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> AndExpr(NT#15) (children=1)
+  [Nonterminal gotos]
+
+State #100
+  core_id: 68
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> AndExpr(NT#15) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> AndExpr(NT#15) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Reduce -> AndExpr(NT#15) (children=3)
+    on /\r\n/(T#36) => Reduce -> AndExpr(NT#15) (children=3)
+    on /\n/(T#37) => Reduce -> AndExpr(NT#15) (children=3)
+    on '='(T#6) => Shift -> state 90
+    on '<>'(T#21) => Shift -> state 90
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> AndExpr(NT#15) (children=3)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> AndExpr(NT#15) (children=3)
+  [Nonterminal gotos]
+
+State #101
+  core_id: 97
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Shift -> state 48
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Shift -> state 125
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto OptStep(NT#3) => state 131
+    goto CRStmtCRs(NT#8) => state 141
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 141
+
+State #102
+  core_id: 51
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 53
+    on '-'(T#27) => Shift -> state 145
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 20
+    on /\"[^\"]*\"/(T#34) => Shift -> state 29
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 29
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto MultiplicativeExpr(NT#19) => state 40
+    goto UnaryExpr(NT#20) => state 34
+    goto Primary(NT#21) => state 32
+
+State #103
+  core_id: 43
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> CR(NT#23) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> CR(NT#23) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> CR(NT#23) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> CR(NT#23) (children=1)
+    on /[Ee][Nn][Dd][Ss][Uu][Bb]/(T#10) => Reduce -> CR(NT#23) (children=1)
+    on If(T#32) => Reduce -> CR(NT#23) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> CR(NT#23) (children=1)
+    on Comment(T#38) => ShiftExtra
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Reduce -> CR(NT#23) (children=1)
+  [Nonterminal gotos]
+
+State #104
+  core_id: 51
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto MultiplicativeExpr(NT#19) => state 13
+    goto UnaryExpr(NT#20) => state 12
+    goto Primary(NT#21) => state 8
+
+State #105
+  core_id: 84
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> TheRest(NT#9) (children=2)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> TheRest(NT#9) (children=2)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> TheRest(NT#9) (children=2)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> TheRest(NT#9) (children=2)
+    on /[Ee][Nn][Dd][Ss][Uu][Bb]/(T#10) => Reduce -> TheRest(NT#9) (children=2)
+    on If(T#32) => Reduce -> TheRest(NT#9) (children=2)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> TheRest(NT#9) (children=2)
+    on Comment(T#38) => ShiftExtra
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Reduce -> TheRest(NT#9) (children=2)
+  [Nonterminal gotos]
+
+State #106
+  core_id: 97
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Shift -> state 48
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Shift -> state 161
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto OptStep(NT#3) => state 139
+    goto CRStmtCRs(NT#8) => state 138
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 138
+
+State #107
+  core_id: 90
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> ExprStatement(NT#7) (children=5)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> ExprStatement(NT#7) (children=5)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> ExprStatement(NT#7) (children=5)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> ExprStatement(NT#7) (children=5)
+    on If(T#32) => Reduce -> ExprStatement(NT#7) (children=5)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> ExprStatement(NT#7) (children=5)
+    on END => Reduce -> ExprStatement(NT#7) (children=5)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #108
+  core_id: 77
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> MoreThanZeroElseIf(NT#5) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> MoreThanZeroElseIf(NT#5) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> MoreThanZeroElseIf(NT#5) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> MoreThanZeroElseIf(NT#5) (children=1)
+    on If(T#32) => Reduce -> MoreThanZeroElseIf(NT#5) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> MoreThanZeroElseIf(NT#5) (children=1)
+    on END => Reduce -> MoreThanZeroElseIf(NT#5) (children=1)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #109
+  core_id: 107
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> MoreThanZeroElseIf(NT#5) (children=4)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> MoreThanZeroElseIf(NT#5) (children=4)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> MoreThanZeroElseIf(NT#5) (children=4)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> MoreThanZeroElseIf(NT#5) (children=4)
+    on If(T#32) => Reduce -> MoreThanZeroElseIf(NT#5) (children=4)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> MoreThanZeroElseIf(NT#5) (children=4)
+    on END => Reduce -> MoreThanZeroElseIf(NT#5) (children=4)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #110
+  core_id: 111
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Stmt(NT#4) (children=8)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Stmt(NT#4) (children=8)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Stmt(NT#4) (children=8)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Stmt(NT#4) (children=8)
+    on If(T#32) => Reduce -> Stmt(NT#4) (children=8)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Stmt(NT#4) (children=8)
+    on END => Reduce -> Stmt(NT#4) (children=8)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #111
+  core_id: 113
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> MoreThanZeroElseIf(NT#5) (children=5)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> MoreThanZeroElseIf(NT#5) (children=5)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> MoreThanZeroElseIf(NT#5) (children=5)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> MoreThanZeroElseIf(NT#5) (children=5)
+    on If(T#32) => Reduce -> MoreThanZeroElseIf(NT#5) (children=5)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> MoreThanZeroElseIf(NT#5) (children=5)
+    on END => Reduce -> MoreThanZeroElseIf(NT#5) (children=5)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #112
+  core_id: 114
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Stmt(NT#4) (children=9)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Stmt(NT#4) (children=9)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Stmt(NT#4) (children=9)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Stmt(NT#4) (children=9)
+    on If(T#32) => Reduce -> Stmt(NT#4) (children=9)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Stmt(NT#4) (children=9)
+    on END => Reduce -> Stmt(NT#4) (children=9)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #113
+  core_id: 52
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on '-'(T#27) => Shift -> state 144
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto UnaryExpr(NT#20) => state 14
+    goto Primary(NT#21) => state 8
+
+State #114
+  core_id: 56
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> ExprStatement(NT#7) (children=3)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> ExprStatement(NT#7) (children=3)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> ExprStatement(NT#7) (children=3)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> ExprStatement(NT#7) (children=3)
+    on If(T#32) => Reduce -> ExprStatement(NT#7) (children=3)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> ExprStatement(NT#7) (children=3)
+    on END => Reduce -> ExprStatement(NT#7) (children=3)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #115
+  core_id: 42
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Stmt(NT#4) (children=3)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Stmt(NT#4) (children=3)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Stmt(NT#4) (children=3)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Stmt(NT#4) (children=3)
+    on If(T#32) => Reduce -> Stmt(NT#4) (children=3)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Stmt(NT#4) (children=3)
+    on END => Reduce -> Stmt(NT#4) (children=3)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #116
+  core_id: 21
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> OrExpr(NT#14) (children=1)
+    on /[Oo][Rr]/(T#19) => Reduce -> OrExpr(NT#14) (children=1)
+    on /\r\n/(T#36) => Reduce -> OrExpr(NT#14) (children=1)
+    on /\n/(T#37) => Reduce -> OrExpr(NT#14) (children=1)
+    on /[Aa][Nn][Dd]/(T#20) => Shift -> state 84
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> OrExpr(NT#14) (children=1)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> OrExpr(NT#14) (children=1)
+  [Nonterminal gotos]
+
+State #117
+  core_id: 10
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Prog(NT#1) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Prog(NT#1) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Prog(NT#1) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Prog(NT#1) (children=1)
+    on If(T#32) => Reduce -> Prog(NT#1) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Prog(NT#1) (children=1)
+    on END => Reduce -> Prog(NT#1) (children=1)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #118
+  core_id: 65
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Stmt(NT#4) (children=4)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Stmt(NT#4) (children=4)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Stmt(NT#4) (children=4)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Stmt(NT#4) (children=4)
+    on If(T#32) => Reduce -> Stmt(NT#4) (children=4)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Stmt(NT#4) (children=4)
+    on END => Reduce -> Stmt(NT#4) (children=4)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #119
+  core_id: 89
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Stmt(NT#4) (children=5)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Stmt(NT#4) (children=5)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Stmt(NT#4) (children=5)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Stmt(NT#4) (children=5)
+    on If(T#32) => Reduce -> Stmt(NT#4) (children=5)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Stmt(NT#4) (children=5)
+    on END => Reduce -> Stmt(NT#4) (children=5)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #120
+  core_id: 67
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> OrExpr(NT#14) (children=3)
+    on /[Oo][Rr]/(T#19) => Reduce -> OrExpr(NT#14) (children=3)
+    on /\r\n/(T#36) => Reduce -> OrExpr(NT#14) (children=3)
+    on /\n/(T#37) => Reduce -> OrExpr(NT#14) (children=3)
+    on /[Aa][Nn][Dd]/(T#20) => Shift -> state 84
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> OrExpr(NT#14) (children=3)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> OrExpr(NT#14) (children=3)
+  [Nonterminal gotos]
+
+State #121
+  core_id: 99
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> OptionalElse(NT#6) (children=3)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> OptionalElse(NT#6) (children=3)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> OptionalElse(NT#6) (children=3)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> OptionalElse(NT#6) (children=3)
+    on If(T#32) => Reduce -> OptionalElse(NT#6) (children=3)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> OptionalElse(NT#6) (children=3)
+    on END => Reduce -> OptionalElse(NT#6) (children=3)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #122
+  core_id: 11
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> MoreThanOneStmt(NT#2) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> MoreThanOneStmt(NT#2) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> MoreThanOneStmt(NT#2) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> MoreThanOneStmt(NT#2) (children=1)
+    on If(T#32) => Reduce -> MoreThanOneStmt(NT#2) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> MoreThanOneStmt(NT#2) (children=1)
+    on END => Reduce -> MoreThanOneStmt(NT#2) (children=1)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #123
+  core_id: 100
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> ExprStatement(NT#7) (children=6)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> ExprStatement(NT#7) (children=6)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> ExprStatement(NT#7) (children=6)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> ExprStatement(NT#7) (children=6)
+    on If(T#32) => Reduce -> ExprStatement(NT#7) (children=6)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> ExprStatement(NT#7) (children=6)
+    on END => Reduce -> ExprStatement(NT#7) (children=6)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #124
+  core_id: 12
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Stmt(NT#4) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Stmt(NT#4) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Stmt(NT#4) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Stmt(NT#4) (children=1)
+    on If(T#32) => Reduce -> Stmt(NT#4) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Stmt(NT#4) (children=1)
+    on END => Reduce -> Stmt(NT#4) (children=1)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #125
+  core_id: 104
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Stmt(NT#4) (children=7)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Stmt(NT#4) (children=7)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Stmt(NT#4) (children=7)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Stmt(NT#4) (children=7)
+    on If(T#32) => Reduce -> Stmt(NT#4) (children=7)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Stmt(NT#4) (children=7)
+    on END => Reduce -> Stmt(NT#4) (children=7)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #126
+  core_id: 28
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> Stmt(NT#4) (children=2)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> Stmt(NT#4) (children=2)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> Stmt(NT#4) (children=2)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> Stmt(NT#4) (children=2)
+    on If(T#32) => Reduce -> Stmt(NT#4) (children=2)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> Stmt(NT#4) (children=2)
+    on END => Reduce -> Stmt(NT#4) (children=2)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #127
+  core_id: 52
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 53
+    on '-'(T#27) => Shift -> state 145
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 20
+    on /\"[^\"]*\"/(T#34) => Shift -> state 29
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 29
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto UnaryExpr(NT#20) => state 42
+    goto Primary(NT#21) => state 32
+
+State #128
+  core_id: 82
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> ExprStatement(NT#7) (children=4)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> ExprStatement(NT#7) (children=4)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> ExprStatement(NT#7) (children=4)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> ExprStatement(NT#7) (children=4)
+    on If(T#32) => Reduce -> ExprStatement(NT#7) (children=4)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> ExprStatement(NT#7) (children=4)
+    on END => Reduce -> ExprStatement(NT#7) (children=4)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #129
+  core_id: 75
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ww][Hh][Ii][Ll][Ee]/(T#1) => Reduce -> OptionalElse(NT#6) (children=1)
+    on /[Gg][Oo][Tt][Oo]/(T#4) => Reduce -> OptionalElse(NT#6) (children=1)
+    on /[Ff][Oo][Rr]/(T#5) => Reduce -> OptionalElse(NT#6) (children=1)
+    on /[Ss][Uu][Bb]/(T#9) => Reduce -> OptionalElse(NT#6) (children=1)
+    on If(T#32) => Reduce -> OptionalElse(NT#6) (children=1)
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Reduce -> OptionalElse(NT#6) (children=1)
+    on END => Reduce -> OptionalElse(NT#6) (children=1)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #130
+  core_id: 112
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Shift -> state 169
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CRStmtCRs(NT#8) => state 91
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 91
+
+State #131
+  core_id: 105
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Shift -> state 110
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CRStmtCRs(NT#8) => state 140
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 140
+
+State #132
+  core_id: 18
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Shift -> state 115
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CRStmtCRs(NT#8) => state 135
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 135
+
+State #133
+  core_id: 7
+  lex_state_id: 6, external_lex_state_id: 0
+  [Terminal actions]
+    on ':'(T#3) => Shift -> state 126
+    on '='(T#6) => Shift -> state 58
+    on '.'(T#15) => Shift -> state 174
+    on '('(T#16) => Shift -> state 200
+    on '['(T#30) => Shift -> state 59
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Idxs(NT#22) => state 206
+
+State #134
+  core_id: 7
+  lex_state_id: 6, external_lex_state_id: 0
+  [Terminal actions]
+    on ':'(T#3) => Shift -> state 171
+    on '='(T#6) => Shift -> state 49
+    on '.'(T#15) => Shift -> state 198
+    on '('(T#16) => Shift -> state 175
+    on '['(T#30) => Shift -> state 59
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Idxs(NT#22) => state 176
+
+State #135
+  core_id: 46
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Shift -> state 118
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CRStmtCRs(NT#8) => state 91
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 91
+
+State #136
+  core_id: 18
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Shift -> state 155
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CRStmtCRs(NT#8) => state 137
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 137
+
+State #137
+  core_id: 46
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Shift -> state 168
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CRStmtCRs(NT#8) => state 91
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 91
+
+State #138
+  core_id: 106
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Shift -> state 163
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CRStmtCRs(NT#8) => state 91
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 91
+
+State #139
+  core_id: 105
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Shift -> state 163
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CRStmtCRs(NT#8) => state 130
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 130
+
+State #140
+  core_id: 112
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Shift -> state 112
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CRStmtCRs(NT#8) => state 91
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 91
+
+State #141
+  core_id: 106
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Shift -> state 110
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CRStmtCRs(NT#8) => state 91
+    goto CR(NT#23) => state 38
+    goto Stmt_repeat1(NT#25) => state 91
+
+State #142
+  core_id: 20
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> CondExpr(NT#13) (children=1)
+    on /\r\n/(T#36) => Reduce -> CondExpr(NT#13) (children=1)
+    on /\n/(T#37) => Reduce -> CondExpr(NT#13) (children=1)
+    on /[Oo][Rr]/(T#19) => Shift -> state 79
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> CondExpr(NT#13) (children=1)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> CondExpr(NT#13) (children=1)
+  [Nonterminal gotos]
+
+State #143
+  core_id: 19
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2) => Reduce -> Expr(NT#12) (children=1)
+    on /\r\n/(T#36) => Reduce -> Expr(NT#12) (children=1)
+    on /\n/(T#37) => Reduce -> Expr(NT#12) (children=1)
+    on Comment(T#38) => ShiftExtra
+    on /[Ss][Tt][Ee][Pp]/(T#0) => Reduce -> Expr(NT#12) (children=1)
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> Expr(NT#12) (children=1)
+  [Nonterminal gotos]
+
+State #144
+  core_id: 15
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 57
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 2
+    on /\"[^\"]*\"/(T#34) => Shift -> state 6
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 6
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Primary(NT#21) => state 9
+
+State #145
+  core_id: 15
+  lex_state_id: 3, external_lex_state_id: 0
+  [Terminal actions]
+    on '('(T#16) => Shift -> state 53
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 20
+    on /\"[^\"]*\"/(T#34) => Shift -> state 29
+    on /([0-9]*[.])?[0-9]+/(T#35) => Shift -> state 29
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto Primary(NT#21) => state 37
+
+State #146
+  core_id: 30
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Shift -> state 103
+    on /\n/(T#37) => Shift -> state 103
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CRStmtCRs(NT#8) => state 196
+    goto CR(NT#23) => state 80
+
+State #147
+  core_id: 76
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Shift -> state 103
+    on /\n/(T#37) => Shift -> state 103
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CRStmtCRs(NT#8) => state 189
+    goto CR(NT#23) => state 80
+
+State #148
+  core_id: 76
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Shift -> state 103
+    on /\n/(T#37) => Shift -> state 103
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CRStmtCRs(NT#8) => state 187
+    goto CR(NT#23) => state 80
+
+State #149
+  core_id: 30
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Shift -> state 103
+    on /\n/(T#37) => Shift -> state 103
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CRStmtCRs(NT#8) => state 180
+    goto CR(NT#23) => state 80
+
+State #150
+  core_id: 62
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Shift -> state 103
+    on /\n/(T#37) => Shift -> state 103
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CR(NT#23) => state 105
+
+State #151
+  core_id: 62
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Shift -> state 71
+    on /\n/(T#37) => Shift -> state 71
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+    goto CR(NT#23) => state 72
+
+State #152
+  core_id: 110
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8) => Reduce -> OptStep(NT#3) (children=2)
+    on /\r\n/(T#36) => Reduce -> OptStep(NT#3) (children=2)
+    on /\n/(T#37) => Reduce -> OptStep(NT#3) (children=2)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #153
+  core_id: 77
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> MoreThanZeroElseIf(NT#5) (children=1)
+    on /\n/(T#37) => Reduce -> MoreThanZeroElseIf(NT#5) (children=1)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #154
+  core_id: 82
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> ExprStatement(NT#7) (children=4)
+    on /\n/(T#37) => Reduce -> ExprStatement(NT#7) (children=4)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #155
+  core_id: 42
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> Stmt(NT#4) (children=3)
+    on /\n/(T#37) => Reduce -> Stmt(NT#4) (children=3)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #156
+  core_id: 89
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> Stmt(NT#4) (children=5)
+    on /\n/(T#37) => Reduce -> Stmt(NT#4) (children=5)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #157
+  core_id: 90
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> ExprStatement(NT#7) (children=5)
+    on /\n/(T#37) => Reduce -> ExprStatement(NT#7) (children=5)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #158
+  core_id: 12
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> Stmt(NT#4) (children=1)
+    on /\n/(T#37) => Reduce -> Stmt(NT#4) (children=1)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #159
+  core_id: 99
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> OptionalElse(NT#6) (children=3)
+    on /\n/(T#37) => Reduce -> OptionalElse(NT#6) (children=3)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #160
+  core_id: 100
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> ExprStatement(NT#7) (children=6)
+    on /\n/(T#37) => Reduce -> ExprStatement(NT#7) (children=6)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #161
+  core_id: 104
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> Stmt(NT#4) (children=7)
+    on /\n/(T#37) => Reduce -> Stmt(NT#4) (children=7)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #162
+  core_id: 107
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> MoreThanZeroElseIf(NT#5) (children=4)
+    on /\n/(T#37) => Reduce -> MoreThanZeroElseIf(NT#5) (children=4)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #163
+  core_id: 111
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> Stmt(NT#4) (children=8)
+    on /\n/(T#37) => Reduce -> Stmt(NT#4) (children=8)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #164
+  core_id: 113
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> MoreThanZeroElseIf(NT#5) (children=5)
+    on /\n/(T#37) => Reduce -> MoreThanZeroElseIf(NT#5) (children=5)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #165
+  core_id: 56
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> ExprStatement(NT#7) (children=3)
+    on /\n/(T#37) => Reduce -> ExprStatement(NT#7) (children=3)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #166
+  core_id: 93
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on ')'(T#17) => Reduce -> MoreThanOneExpr(NT#11) (children=1)
+    on ','(T#18) => Shift -> state 44
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #167
+  core_id: 57
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Shift -> state 56
+    on '('(T#16) => Shift -> state 27
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #168
+  core_id: 65
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> Stmt(NT#4) (children=4)
+    on /\n/(T#37) => Reduce -> Stmt(NT#4) (children=4)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #169
+  core_id: 114
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> Stmt(NT#4) (children=9)
+    on /\n/(T#37) => Reduce -> Stmt(NT#4) (children=9)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #170
+  core_id: 57
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Shift -> state 61
+    on '('(T#16) => Shift -> state 25
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #171
+  core_id: 28
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> Stmt(NT#4) (children=2)
+    on /\n/(T#37) => Reduce -> Stmt(NT#4) (children=2)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #172
+  core_id: 75
+  lex_state_id: 1, external_lex_state_id: 0
+  [Terminal actions]
+    on /\r\n/(T#36) => Reduce -> OptionalElse(NT#6) (children=1)
+    on /\n/(T#37) => Reduce -> OptionalElse(NT#6) (children=1)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #173
+  core_id: 40
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 4
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #174
+  core_id: 33
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 170
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #175
+  core_id: 34
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on ')'(T#17) => Shift -> state 165
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #176
+  core_id: 36
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Shift -> state 50
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #177
+  core_id: 38
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on ')'(T#17) => Shift -> state 11
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #178
+  core_id: 5
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 146
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #179
+  core_id: 38
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on ')'(T#17) => Shift -> state 35
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #180
+  core_id: 54
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ss][Uu][Bb]/(T#10) => Shift -> state 168
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #181
+  core_id: 3
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 126
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #182
+  core_id: 92
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on ')'(T#17) => Reduce -> Exprs(NT#10) (children=1)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #183
+  core_id: 58
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on ']'(T#31) => Shift -> state 22
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #184
+  core_id: 4
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 195
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #185
+  core_id: 58
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on ']'(T#31) => Shift -> state 3
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #186
+  core_id: 87
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Shift -> state 93
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #187
+  core_id: 88
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Shift -> state 159
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #188
+  core_id: 91
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on ')'(T#17) => Shift -> state 160
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #189
+  core_id: 88
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ii][Ff]/(T#13) => Shift -> state 121
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #190
+  core_id: 31
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Shift -> state 88
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #191
+  core_id: 96
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on ')'(T#17) => Shift -> state 33
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #192
+  core_id: 40
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 23
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #193
+  core_id: 109
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on ')'(T#17) => Reduce -> MoreThanOneExpr(NT#11) (children=3)
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #194
+  core_id: 73
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Tt][Oo]/(T#7) => Shift -> state 47
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #195
+  core_id: 29
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Shift -> state 52
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #196
+  core_id: 54
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Ee][Nn][Dd][Ss][Uu][Bb]/(T#10) => Shift -> state 118
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #197
+  core_id: 31
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Shift -> state 96
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #198
+  core_id: 33
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 167
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #199
+  core_id: 8
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on END => Accept
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #200
+  core_id: 34
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on ')'(T#17) => Shift -> state 114
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #201
+  core_id: 87
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Tt][Hh][Ee][Nn]/(T#11) => Shift -> state 89
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #202
+  core_id: 3
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 171
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #203
+  core_id: 5
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 149
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #204
+  core_id: 91
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on ')'(T#17) => Shift -> state 123
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #205
+  core_id: 73
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[Tt][Oo]/(T#7) => Shift -> state 65
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #206
+  core_id: 36
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Shift -> state 54
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #207
+  core_id: 29
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on '='(T#6) => Shift -> state 68
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #208
+  core_id: 4
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) => Shift -> state 207
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+
+State #209
+  core_id: 96
+  lex_state_id: 0, external_lex_state_id: 0
+  [Terminal actions]
+    on ')'(T#17) => Shift -> state 16
+    on Comment(T#38) => ShiftExtra
+  [Nonterminal gotos]
+

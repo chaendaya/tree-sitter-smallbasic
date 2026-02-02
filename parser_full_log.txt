@@ -1,0 +1,521 @@
+[tree_sitter_generate::build_tables] error recovery - token OptStep_token1 has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token Stmt_token1 has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token Stmt_token2 has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token : has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token Stmt_token3 has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token Stmt_token4 has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token = has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token Stmt_token5 has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token Stmt_token6 has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token Stmt_token7 has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token Stmt_token8 has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token Stmt_token9 has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token Stmt_token10 has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token MoreThanZeroElseIf_token1 has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token OptionalElse_token1 has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token OptionalElse_token2 has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token . has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token ( has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token ) has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token , has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token OrExpr_token1 has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token AndExpr_token1 has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token <> has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token < has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token <= has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token > has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token >= has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token + has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token - has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token * has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token / has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token [ has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token ] has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token STR has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token NUM has no conflicts
+[tree_sitter_generate::build_tables] error recovery - token Comment has no conflicts
+[tree_sitter_generate::build_tables] error recovery - include token OptStep_token1
+[tree_sitter_generate::build_tables] error recovery - include token Stmt_token1
+[tree_sitter_generate::build_tables] error recovery - include token Stmt_token2
+[tree_sitter_generate::build_tables] error recovery - include token :
+[tree_sitter_generate::build_tables] error recovery - include token Stmt_token3
+[tree_sitter_generate::build_tables] error recovery - include token Stmt_token4
+[tree_sitter_generate::build_tables] error recovery - include token =
+[tree_sitter_generate::build_tables] error recovery - include token Stmt_token5
+[tree_sitter_generate::build_tables] error recovery - include token Stmt_token6
+[tree_sitter_generate::build_tables] error recovery - include token Stmt_token7
+[tree_sitter_generate::build_tables] error recovery - include token Stmt_token8
+[tree_sitter_generate::build_tables] error recovery - include token Stmt_token9
+[tree_sitter_generate::build_tables] error recovery - include token Stmt_token10
+[tree_sitter_generate::build_tables] error recovery - include token MoreThanZeroElseIf_token1
+[tree_sitter_generate::build_tables] error recovery - include token OptionalElse_token1
+[tree_sitter_generate::build_tables] error recovery - include token OptionalElse_token2
+[tree_sitter_generate::build_tables] error recovery - include token .
+[tree_sitter_generate::build_tables] error recovery - include token (
+[tree_sitter_generate::build_tables] error recovery - include token )
+[tree_sitter_generate::build_tables] error recovery - include token ,
+[tree_sitter_generate::build_tables] error recovery - include token OrExpr_token1
+[tree_sitter_generate::build_tables] error recovery - include token AndExpr_token1
+[tree_sitter_generate::build_tables] error recovery - include token <>
+[tree_sitter_generate::build_tables] error recovery - include token <
+[tree_sitter_generate::build_tables] error recovery - include token <=
+[tree_sitter_generate::build_tables] error recovery - include token >
+[tree_sitter_generate::build_tables] error recovery - include token >=
+[tree_sitter_generate::build_tables] error recovery - include token +
+[tree_sitter_generate::build_tables] error recovery - include token -
+[tree_sitter_generate::build_tables] error recovery - include token *
+[tree_sitter_generate::build_tables] error recovery - include token /
+[tree_sitter_generate::build_tables] error recovery - include token [
+[tree_sitter_generate::build_tables] error recovery - include token ]
+[tree_sitter_generate::build_tables] error recovery - exclude token ID because of conflict with OptStep_token1
+[tree_sitter_generate::build_tables] error recovery - include token STR
+[tree_sitter_generate::build_tables] error recovery - include token NUM
+[tree_sitter_generate::build_tables] error recovery - exclude token CR_token1 because of conflict with :
+[tree_sitter_generate::build_tables] error recovery - exclude token CR_token2 because of conflict with :
+[tree_sitter_generate::build_tables] error recovery - include token Comment
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 12 147 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 16 33 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 16 53 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 16 98 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 16 113 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 16 160 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 16 277 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 17 34 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 17 54 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 17 99 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 17 114 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 17 161 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 17 278 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 19 36 - token CR_token1 conflicts with Stmt_token10
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 19 56 - token CR_token1 conflicts with )
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 19 101 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 19 116 - token CR_token1 conflicts with ]
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 19 163 - token CR_token1 conflicts with Stmt_token5
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 19 282 - token CR_token1 conflicts with )
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 20 37 - token CR_token1 conflicts with Stmt_token10
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 20 57 - token CR_token1 conflicts with )
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 20 102 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 20 117 - token CR_token1 conflicts with ]
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 20 164 - token CR_token1 conflicts with Stmt_token5
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 20 283 - token CR_token1 conflicts with )
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 21 38 - token CR_token1 conflicts with Stmt_token10
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 21 58 - token CR_token1 conflicts with )
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 21 103 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 21 118 - token CR_token1 conflicts with OrExpr_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 21 165 - token CR_token1 conflicts with Stmt_token5
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 21 284 - token CR_token1 conflicts with )
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 22 39 - token CR_token1 conflicts with Stmt_token10
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 22 59 - token CR_token1 conflicts with )
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 22 104 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 22 119 - token CR_token1 conflicts with OrExpr_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 22 166 - token CR_token1 conflicts with Stmt_token5
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 22 285 - token CR_token1 conflicts with )
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 23 40 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 23 60 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 23 105 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 23 120 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 23 167 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 23 286 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 24 41 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 24 61 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 24 106 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 24 121 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 24 168 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 24 287 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 25 42 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 25 62 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 25 107 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 25 122 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 25 169 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 25 288 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 26 43 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 26 63 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 26 108 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 26 123 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 26 170 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 26 289 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 27 44 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 27 64 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 27 109 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 27 124 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 27 171 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 27 290 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 28 230 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 45 234 - successors for ID are split: 98 313
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 65 85 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 65 127 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 65 193 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 65 206 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 65 241 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 65 363 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 68 88 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 68 130 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 68 196 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 68 209 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 68 244 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 68 366 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 69 306 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 70 81 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 70 181 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 70 257 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 70 411 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 72 83 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 72 184 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 72 259 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 72 414 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 74 90 - successors for ID are split: 16 33
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 74 132 - successors for ID are split: 16 53
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 74 197 - successors for ID are split: 16 98
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 74 211 - successors for ID are split: 16 113
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 74 246 - successors for ID are split: 16 160
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 74 369 - successors for ID are split: 16 277
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 75 91 - successors for ID are split: 16 33
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 75 133 - successors for ID are split: 16 53
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 75 198 - successors for ID are split: 16 98
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 75 212 - successors for ID are split: 16 113
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 75 247 - successors for ID are split: 16 160
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 75 370 - successors for ID are split: 16 277
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 76 92 - successors for ID are split: 16 33
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 76 134 - successors for ID are split: 16 53
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 76 199 - successors for ID are split: 16 98
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 76 213 - successors for ID are split: 16 113
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 76 248 - successors for ID are split: 16 160
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 76 371 - successors for ID are split: 16 277
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 77 93 - successors for ID are split: 16 33
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 77 135 - successors for ID are split: 16 53
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 77 200 - successors for ID are split: 16 98
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 77 214 - successors for ID are split: 16 113
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 77 249 - successors for ID are split: 16 160
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 77 372 - successors for ID are split: 16 277
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 78 94 - successors for ID are split: 16 33
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 78 136 - successors for ID are split: 16 53
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 78 201 - successors for ID are split: 16 98
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 78 215 - successors for ID are split: 16 113
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 78 250 - successors for ID are split: 16 160
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 78 373 - successors for ID are split: 16 277
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 79 95 - successors for ID are split: 16 33
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 79 137 - successors for ID are split: 16 53
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 79 202 - successors for ID are split: 16 98
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 79 216 - successors for ID are split: 16 113
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 79 251 - successors for ID are split: 16 160
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 79 374 - successors for ID are split: 16 277
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 100 315 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 125 326 - successors for ID are split: 98 313
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 131 175 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 131 218 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 131 265 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 131 291 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 131 327 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 131 430 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 138 176 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 138 219 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 138 266 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 138 292 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 138 328 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 138 431 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 146 172 - successors for CR_token1 are split: 70 81
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 146 260 - successors for CR_token1 are split: 70 181
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 146 355 - successors for CR_token1 are split: 70 257
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 146 481 - successors for CR_token1 are split: 70 411
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 148 173 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 148 261 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 148 356 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 148 482 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 149 174 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 149 262 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 149 357 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 149 483 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 150 381 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 151 264 - successors for CR_token1 are split: 70 181
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 151 484 - successors for CR_token1 are split: 70 411
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 152 186 - token CR_token1 conflicts with Stmt_token10
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 152 221 - token CR_token1 conflicts with )
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 152 268 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 152 295 - token CR_token1 conflicts with OrExpr_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 152 344 - token CR_token1 conflicts with Stmt_token5
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 152 434 - token CR_token1 conflicts with )
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 153 187 - token CR_token1 conflicts with Stmt_token10
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 153 222 - token CR_token1 conflicts with )
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 153 269 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 153 296 - token CR_token1 conflicts with OrExpr_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 153 345 - token CR_token1 conflicts with Stmt_token5
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 153 435 - token CR_token1 conflicts with )
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 154 188 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 154 223 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 154 270 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 154 297 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 154 346 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 154 436 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 155 189 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 155 224 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 155 271 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 155 298 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 155 347 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 155 437 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 156 190 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 156 225 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 156 272 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 156 299 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 156 348 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 156 438 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 157 191 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 157 226 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 157 273 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 157 300 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 157 349 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 157 439 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 179 384 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 182 386 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 185 387 - successors for OptionalElse_token1 are split: 179 384
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 203 399 - successors for ID are split: 98 313
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 210 228 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 210 500 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 210 504 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 210 549 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 255 361 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 217 401 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 238 252 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 238 358 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 238 425 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 238 517 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 239 253 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 239 359 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 239 426 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 239 518 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 263 447 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 274 457 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 294 305 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 294 529 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 294 532 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 294 553 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 352 429 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 303 350 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 303 377 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 303 427 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 303 440 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 303 459 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 303 519 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 353 497 - successors for OptionalElse_token1 are split: 179 384
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 354 498 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 367 501 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 380 422 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 380 443 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 380 492 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 380 495 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 380 502 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 380 542 - token CR_token1 conflicts with =
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 410 522 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 423 525 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 424 526 - successors for OptionalElse_token1 are split: 179 384
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 479 543 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 491 545 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 516 550 - token CR_token1 conflicts with Stmt_token1
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 33 98 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 34 99 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 36 101 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 37 102 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 38 103 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 39 104 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 40 105 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 41 106 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 42 107 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 43 108 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 44 109 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 85 193 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 88 196 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 81 181 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 81 257 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 81 411 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 83 184 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 83 259 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 83 414 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 90 197 - successors for ID are split: 33 98
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 91 198 - successors for ID are split: 33 98
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 92 199 - successors for ID are split: 33 98
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 93 200 - successors for ID are split: 33 98
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 94 201 - successors for ID are split: 33 98
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 95 202 - successors for ID are split: 33 98
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 175 265 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 176 266 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 172 260 - successors for CR_token1 are split: 81 181
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 172 355 - successors for CR_token1 are split: 81 257
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 172 481 - successors for CR_token1 are split: 81 411
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 173 261 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 173 356 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 173 482 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 174 262 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 174 357 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 174 483 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 186 268 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 187 269 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 188 270 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 189 271 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 190 272 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 191 273 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 228 361 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 252 358 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 252 425 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 252 517 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 253 359 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 253 426 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 253 518 - token Stmt_token8 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 305 429 - token Stmt_token2 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 350 427 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 422 492 - token Stmt_token10 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 181 257 - token MoreThanZeroElseIf_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 181 411 - token MoreThanZeroElseIf_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 184 259 - token MoreThanZeroElseIf_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 184 414 - token MoreThanZeroElseIf_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 260 355 - successors for CR_token1 are split: 181 257
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 260 481 - successors for CR_token1 are split: 181 411
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 261 356 - token MoreThanZeroElseIf_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 261 482 - token MoreThanZeroElseIf_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 262 357 - token MoreThanZeroElseIf_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 262 483 - token MoreThanZeroElseIf_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 358 425 - token MoreThanZeroElseIf_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 358 517 - token MoreThanZeroElseIf_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 359 426 - token MoreThanZeroElseIf_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 359 518 - token MoreThanZeroElseIf_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 257 411 - token OptionalElse_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 259 414 - token OptionalElse_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 355 481 - successors for CR_token1 are split: 257 411
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 356 482 - token OptionalElse_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 357 483 - token OptionalElse_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 425 517 - token OptionalElse_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 426 518 - token OptionalElse_token1 conflicts with ID
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 3 141 - successors for ID are split: 28 230
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 7 145 - successors for : are split: 28 230
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 15 32 - successors for ID are split: 16 33
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 15 52 - successors for ID are split: 16 53
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 15 97 - successors for ID are split: 16 98
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 15 112 - successors for ID are split: 16 113
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 15 159 - successors for ID are split: 16 160
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 15 276 - successors for ID are split: 16 277
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 18 229 - successors for Stmt_token2 are split: 69 306
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 47 236 - successors for ) are split: 100 315
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 49 237 - successors for = are split: 125 326
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 55 84 - successors for ) are split: 131 175
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 55 126 - successors for ) are split: 131 218
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 55 192 - successors for ) are split: 131 265
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 55 205 - successors for ) are split: 131 291
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 55 240 - successors for ) are split: 131 327
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 55 362 - successors for ) are split: 131 430
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 66 86 - successors for ID are split: 138 176
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 66 128 - successors for ID are split: 138 219
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 66 194 - successors for ID are split: 138 266
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 66 207 - successors for ID are split: 138 292
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 66 242 - successors for ID are split: 138 328
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 66 364 - successors for ID are split: 138 431
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 73 307 - successors for Stmt_token2 are split: 150 381
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 82 309 - successors for Stmt_token8 are split: 150 381
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 89 310 - successors for OptionalElse_token1 are split: 179 384
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 110 325 - successors for = are split: 203 399
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 115 139 - successors for ] are split: 210 228
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 115 267 - successors for ] are split: 210 361
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 115 450 - successors for ] are split: 210 500
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 115 464 - successors for ] are split: 210 504
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 115 535 - successors for ] are split: 210 549
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 204 400 - successors for ) are split: 274 457
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 227 254 - successors for ) are split: 303 350
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 227 301 - successors for ) are split: 303 377
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 227 360 - successors for ) are split: 303 427
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 227 375 - successors for ) are split: 303 440
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 227 402 - successors for ) are split: 303 459
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 227 493 - successors for ) are split: 303 519
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 256 445 - successors for Stmt_token10 are split: 353 497
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 258 446 - successors for OptionalElse_token1 are split: 354 498
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 279 458 - successors for ) are split: 367 501
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 304 351 - successors for ) are split: 380 422
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 304 378 - successors for ) are split: 380 443
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 304 428 - successors for ) are split: 380 492
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 304 441 - successors for ) are split: 380 495
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 304 460 - successors for ) are split: 380 502
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 304 520 - successors for ) are split: 380 542
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 334 496 - successors for Stmt_token6 are split: 410 522
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 412 523 - successors for Stmt_token6 are split: 479 543
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 415 524 - successors for Stmt_token6 are split: 479 543
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 480 544 - successors for Stmt_token6 are split: 516 550
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 264 484 - successors for CR_token1 are split: 181 411
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 32 97 - successors for ID are split: 33 98
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 84 192 - successors for ) are split: 175 265
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 86 194 - successors for ID are split: 176 266
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 139 267 - successors for ] are split: 228 361
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 254 360 - successors for ) are split: 350 427
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 351 428 - successors for ) are split: 422 492
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 2 140 - successors for Expr are split: 18 229
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 14 31 - successors for Expr are split: 55 84
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 14 51 - successors for Expr are split: 55 126
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 14 96 - successors for Expr are split: 55 192
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 14 111 - successors for Expr are split: 55 205
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 14 158 - successors for Expr are split: 55 240
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 14 275 - successors for Expr are split: 55 362
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 30 232 - successors for CRStmtCRs are split: 82 309
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 35 233 - successors for Stmt_token10 are split: 89 310
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 46 235 - successors for ID are split: 110 325
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 48 67 - successors for Expr are split: 115 139
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 48 195 - successors for Expr are split: 115 267
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 48 391 - successors for Expr are split: 115 450
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 48 407 - successors for Expr are split: 115 464
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 48 508 - successors for Expr are split: 115 535
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 178 383 - successors for Expr are split: 256 445
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 180 385 - successors for CRStmtCRs are split: 258 446
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 245 444 - successors for Expr are split: 334 496
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 31 96 - successors for Expr are split: 84 192
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 67 195 - successors for Expr are split: 139 267
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 5 143 - successors for ID are split: 30 232
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 6 144 - successors for Expr are split: 35 233
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 162 382 - successors for Stmt_token5 are split: 245 444
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 80 308 - successors for Expr are split: 162 382
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 29 231 - successors for = are split: 80 308
+[tree_sitter_generate::build_tables::minimize_parse_table] split states 4 142 - successors for ID are split: 29 231
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["OptStep_token1", "Stmt_token1", "Stmt_token2", ":", "Stmt_token3", "Stmt_token4", "=", "Stmt_token5", "Stmt_token6", "Stmt_token7", "Stmt_token8", "Stmt_token9", "Stmt_token10", "MoreThanZeroElseIf_token1", "OptionalElse_token1", "OptionalElse_token2", ".", "(", ")", ",", "OrExpr_token1", "AndExpr_token1", "<>", "<", "<=", ">", ">=", "+", "-", "*", "/", "[", "]", "STR", "NUM", "Comment", "OptStep_token1"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 76, tokens: ["Stmt_token1", ":", "Stmt_token3", "Stmt_token4", "=", "Stmt_token7", "Stmt_token9", ".", "(", "[", "ID", "Comment", "OptStep_token1"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 96, tokens: ["Stmt_token1", "Stmt_token3", "Stmt_token4", "=", "Stmt_token7", "Stmt_token9", ".", "(", "OrExpr_token1", "AndExpr_token1", "<>", "<", "<=", ">", ">=", "+", "-", "*", "/", "[", "ID", "Comment", "OptStep_token1"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 102, tokens: ["=", "Stmt_token5", "Stmt_token10", ".", ")", ",", "OrExpr_token1", "AndExpr_token1", "<>", "<", "<=", ">", ">=", "+", "-", "*", "/", "[", "]", "Comment"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 103, tokens: ["OptStep_token1", "Stmt_token2", "=", "Stmt_token6", "MoreThanZeroElseIf_token1", "OptionalElse_token1", "OptionalElse_token2", ".", "(", "OrExpr_token1", "AndExpr_token1", "<>", "<", "<=", ">", ">=", "+", "-", "*", "/", "[", "CR_token1", "CR_token2", "Comment"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 111, tokens: ["(", ")", "-", "ID", "STR", "NUM", "Comment"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 112, tokens: ["Stmt_token1", "Stmt_token3", "Stmt_token4", "Stmt_token7", "Stmt_token9", "MoreThanZeroElseIf_token1", "OptionalElse_token1", "OptionalElse_token2", "ID", "CR_token1", "CR_token2", "Comment"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 126, tokens: ["Stmt_token1", "Stmt_token3", "Stmt_token4", "Stmt_token6", "Stmt_token7", "Stmt_token9", "ID", "CR_token1", "CR_token2", "Comment"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 136, tokens: ["Stmt_token1", "Stmt_token2", "Stmt_token3", "Stmt_token4", "Stmt_token7", "Stmt_token9", "ID", "CR_token1", "CR_token2", "Comment"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 148, tokens: ["Stmt_token1", "Stmt_token3", "Stmt_token4", "Stmt_token7", "Stmt_token9", "OptionalElse_token1", "ID", "Comment"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 150, tokens: ["Stmt_token1", "Stmt_token3", "Stmt_token4", "Stmt_token7", "Stmt_token8", "Stmt_token9", "ID", "Comment"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 157, tokens: ["Stmt_token1", "Stmt_token3", "Stmt_token4", "Stmt_token7", "Stmt_token9", "OrExpr_token1", "ID", "Comment", "OptStep_token1"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["OptStep_token1"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["Stmt_token1"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["Stmt_token2"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: [":"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["Stmt_token3"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["Stmt_token4"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["="]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["Stmt_token5"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["Stmt_token6"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["Stmt_token7"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["Stmt_token8"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["Stmt_token9"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["Stmt_token10"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["MoreThanZeroElseIf_token1"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["OptionalElse_token1"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["OptionalElse_token2"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["."]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["("]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: [")"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: [","]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["OrExpr_token1"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["AndExpr_token1"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["<>"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["<"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["<="]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: [">"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: [">="]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["+"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["-"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["*"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["/"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["["]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["]"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["ID"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["STR"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["NUM"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["CR_token1"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["CR_token2"]
+[tree_sitter_generate::build_tables::build_lex_table] entry point state: 0, tokens: ["Comment"]

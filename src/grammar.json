@@ -1,5 +1,7 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "smallbasic",
+  "word": "ID",
   "rules": {
     "Start": {
       "type": "REPEAT",
@@ -163,8 +165,8 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "PATTERN",
-              "value": "[Ii][Ff]"
+              "type": "SYMBOL",
+              "name": "If"
             },
             {
               "type": "SYMBOL",
@@ -865,6 +867,17 @@
         }
       ]
     },
+    "If": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "PATTERN",
+          "value": "[Ii][Ff]"
+        }
+      }
+    },
     "ID": {
       "type": "PATTERN",
       "value": "[_a-zA-Z][_a-zA-Z0-9]*"
@@ -921,6 +934,6 @@
   "precedences": [],
   "externals": [],
   "inline": [],
-  "supertypes": []
+  "supertypes": [],
+  "reserved": {}
 }
-
