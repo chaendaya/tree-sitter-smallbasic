@@ -4,6 +4,7 @@
 module.exports = grammar({
     name: "smallbasic",
 
+    // debugging
     // 키워드(For, While 등)와 ID가 겹칠 때 자동으로 키워드가 우선순위
     word: $ => $.ID,
 
