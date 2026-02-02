@@ -410,10 +410,6 @@
           "named": true
         },
         {
-          "type": "If",
-          "named": true
-        },
-        {
           "type": "MoreThanZeroElseIf",
           "named": true
         },
@@ -525,10 +521,6 @@
   },
   {
     "type": "ID",
-    "named": true
-  },
-  {
-    "type": "If",
     "named": true
   },
   {
