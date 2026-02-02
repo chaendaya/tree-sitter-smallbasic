@@ -1,0 +1,184 @@
+1 ID . ID ( Exprs ) 
+  1,1: TextWindow
+  1,11: .
+  1,12: Write
+  1,17: (
+  1,18: "Enter temperature in Fahrenheit: "
+  1,53: )
+
+188 . ID ( Exprs ) 
+  1,11: .
+  1,12: Write
+  1,17: (
+  1,18: "Enter temperature in Fahrenheit: "
+  1,53: )
+
+259 ID ( Exprs ) 
+  1,12: Write
+  1,17: (
+  1,18: "Enter temperature in Fahrenheit: "
+  1,53: )
+
+214 ( Exprs ) 
+  1,17: (
+  1,18: "Enter temperature in Fahrenheit: "
+  1,53: )
+
+25 STR 
+  1,18: "Enter temperature in Fahrenheit: "
+
+240 ) 
+  1,53: )
+
+97 ID = Expr 
+  2,1: fahr
+  2,6: =
+  2,8: TextWindow
+  2,18: .
+  2,19: ReadNumber
+  2,29: (
+  2,30: )
+
+188 = Expr 
+  2,6: =
+  2,8: TextWindow
+  2,18: .
+  2,19: ReadNumber
+  2,29: (
+  2,30: )
+
+73 ID . ID ( ) 
+  2,8: TextWindow
+  2,18: .
+  2,19: ReadNumber
+  2,29: (
+  2,30: )
+
+2 . ID ( ) 
+  2,18: .
+  2,19: ReadNumber
+  2,29: (
+  2,30: )
+
+247 ID ( ) 
+  2,19: ReadNumber
+  2,29: (
+  2,30: )
+
+6 ( ) 
+  2,29: (
+  2,30: )
+
+21 ) 
+  2,30: )
+
+97 ID = Expr 
+  3,1: celsius
+  3,9: =
+  3,11: 5
+  3,13: *
+  3,15: (
+  3,16: fahr
+  3,21: -
+  3,23: 32
+  3,25: )
+  3,27: /
+  3,29: 9
+
+188 = Expr 
+  3,9: =
+  3,11: 5
+  3,13: *
+  3,15: (
+  3,16: fahr
+  3,21: -
+  3,23: 32
+  3,25: )
+  3,27: /
+  3,29: 9
+
+73 NUM 
+  3,11: 5
+
+10 * UnaryExpr 
+  3,13: *
+  3,15: (
+  3,16: fahr
+  3,21: -
+  3,23: 32
+  3,25: )
+
+155 ( Expr ) 
+  3,15: (
+  3,16: fahr
+  3,21: -
+  3,23: 32
+  3,25: )
+
+84 ID 
+  3,16: fahr
+
+65 - MultiplicativeExpr 
+  3,21: -
+  3,23: 32
+
+141 NUM 
+  3,23: 32
+
+246 ) 
+  3,25: )
+
+10 / UnaryExpr 
+  3,27: /
+  3,29: 9
+
+155 NUM 
+  3,29: 9
+
+97 ID . ID ( Exprs ) 
+  4,1: TextWindow
+  4,11: .
+  4,12: WriteLine
+  4,21: (
+  4,22: "Temperature in Celsius is "
+  4,51: +
+  4,53: celsius
+  4,60: )
+
+188 . ID ( Exprs ) 
+  4,11: .
+  4,12: WriteLine
+  4,21: (
+  4,22: "Temperature in Celsius is "
+  4,51: +
+  4,53: celsius
+  4,60: )
+
+259 ID ( Exprs ) 
+  4,12: WriteLine
+  4,21: (
+  4,22: "Temperature in Celsius is "
+  4,51: +
+  4,53: celsius
+  4,60: )
+
+214 ( Exprs ) 
+  4,21: (
+  4,22: "Temperature in Celsius is "
+  4,51: +
+  4,53: celsius
+  4,60: )
+
+25 STR 
+  4,22: "Temperature in Celsius is "
+
+65 + MultiplicativeExpr 
+  4,51: +
+  4,53: celsius
+
+141 ID 
+  4,53: celsius
+
+240 ) 
+  4,60: )
+

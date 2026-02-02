@@ -1,0 +1,220 @@
+1 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf 
+  1,1: If
+  1,4: (
+  1,5: Clock
+  1,10: .
+  1,11: Hour
+  1,16: <
+  1,18: 12
+  1,20: )
+  1,22: Then
+  1,29: 
+
+  2,2: TextWindow
+  2,12: .
+  2,13: WriteLine
+  2,22: (
+  2,23: "Good Morning World"
+  2,43: )
+  2,45: 
+
+  3,1: EndIf
+
+66 ( Expr ) 
+  1,4: (
+  1,5: Clock
+  1,10: .
+  1,11: Hour
+  1,16: <
+  1,18: 12
+  1,20: )
+
+80 ID . ID 
+  1,5: Clock
+  1,10: .
+  1,11: Hour
+
+4 . ID 
+  1,10: .
+  1,11: Hour
+
+248 ID 
+  1,11: Hour
+
+91 < AdditiveExpr 
+  1,16: <
+  1,18: 12
+
+131 NUM 
+  1,18: 12
+
+265 ) 
+  1,20: )
+
+243 Stmt_token10 CRStmtCRs MoreThanZeroElseIf 
+  1,22: Then
+  1,29: 
+
+  2,2: TextWindow
+  2,12: .
+  2,13: WriteLine
+  2,22: (
+  2,23: "Good Morning World"
+  2,43: )
+  2,45: 
+
+  3,1: EndIf
+
+121 CR_token2 
+  1,29: 
+
+
+67 ID . ID ( Exprs ) 
+  2,2: TextWindow
+  2,12: .
+  2,13: WriteLine
+  2,22: (
+  2,23: "Good Morning World"
+  2,43: )
+
+184 . ID ( Exprs ) 
+  2,12: .
+  2,13: WriteLine
+  2,22: (
+  2,23: "Good Morning World"
+  2,43: )
+
+255 ID ( Exprs ) 
+  2,13: WriteLine
+  2,22: (
+  2,23: "Good Morning World"
+  2,43: )
+
+221 ( Exprs ) 
+  2,22: (
+  2,23: "Good Morning World"
+  2,43: )
+
+27 STR 
+  2,23: "Good Morning World"
+
+238 ) 
+  2,43: )
+
+207 CR_token2 
+  2,45: 
+
+
+119 OptionalElse_token1 
+  3,1: EndIf
+
+97 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf 
+  4,1: If
+  4,4: (
+  4,5: Clock
+  4,10: .
+  4,11: Hour
+  4,16: >=
+  4,19: 12
+  4,21: )
+  4,23: Then
+  4,30: 
+
+  5,2: TextWindow
+  5,12: .
+  5,13: WriteLine
+  5,22: (
+  5,23: "Good Evening World"
+  5,43: )
+  5,45: 
+
+  6,1: EndIf
+
+66 ( Expr ) 
+  4,4: (
+  4,5: Clock
+  4,10: .
+  4,11: Hour
+  4,16: >=
+  4,19: 12
+  4,21: )
+
+80 ID . ID 
+  4,5: Clock
+  4,10: .
+  4,11: Hour
+
+4 . ID 
+  4,10: .
+  4,11: Hour
+
+248 ID 
+  4,11: Hour
+
+91 >= AdditiveExpr 
+  4,16: >=
+  4,19: 12
+
+131 NUM 
+  4,19: 12
+
+265 ) 
+  4,21: )
+
+243 Stmt_token10 CRStmtCRs MoreThanZeroElseIf 
+  4,23: Then
+  4,30: 
+
+  5,2: TextWindow
+  5,12: .
+  5,13: WriteLine
+  5,22: (
+  5,23: "Good Evening World"
+  5,43: )
+  5,45: 
+
+  6,1: EndIf
+
+121 CR_token2 
+  4,30: 
+
+
+67 ID . ID ( Exprs ) 
+  5,2: TextWindow
+  5,12: .
+  5,13: WriteLine
+  5,22: (
+  5,23: "Good Evening World"
+  5,43: )
+
+184 . ID ( Exprs ) 
+  5,12: .
+  5,13: WriteLine
+  5,22: (
+  5,23: "Good Evening World"
+  5,43: )
+
+255 ID ( Exprs ) 
+  5,13: WriteLine
+  5,22: (
+  5,23: "Good Evening World"
+  5,43: )
+
+221 ( Exprs ) 
+  5,22: (
+  5,23: "Good Evening World"
+  5,43: )
+
+27 STR 
+  5,23: "Good Evening World"
+
+238 ) 
+  5,43: )
+
+207 CR_token2 
+  5,45: 
+
+
+119 OptionalElse_token1 
+  6,1: EndIf
+

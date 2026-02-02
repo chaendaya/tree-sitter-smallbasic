@@ -4,6 +4,9 @@
 module.exports = grammar({
     name: "smallbasic",
 
+    // 키워드(For, While 등)와 ID가 겹칠 때 자동으로 키워드가 우선순위
+    word: $ => $.ID,
+
     // Processing blank characters or annotation-related symbols
     // \s : Processing blank characters(Space/Tab/CR/NewLine/VerticalTab)
     // \p{Zs} : Unicode blank character processing
@@ -13,11 +16,15 @@ module.exports = grammar({
     // \u2060 : Word Joiner
     extras: $ => [
       $.Comment,
+      // logged_actions 검증 중
+      // /[ \t\p{Zs}\uFEFF\u2028\u2029\u2060\u200B]/
       /[\s\t\p{Zs}\uFEFF\u2028\u2029\u2060\u200B]/
     ],
   
     rules: {
       // Non-Terminal Symbols
+      // logged_actions 검증 중
+      // Start: $ => repeat(choice($.Prog, $.CR)),
       Start: $ => repeat($.Prog),
 
       Prog: $ => $.MoreThanOneStmt, // Considerations : Directly Prog -> Stmt
@@ -35,7 +42,8 @@ module.exports = grammar({
         seq(/[Gg][Oo][Tt][Oo]/, $.ID),
         seq(/[Ff][Oo][Rr]/, $.ID, "=", $.Expr, /[Tt][Oo]/, $.Expr, optional($.OptStep), repeat($.CRStmtCRs), /[Ee][Nn][Dd][Ff][Oo][Rr]/),
         seq(/[Ss][Uu][Bb]/, $.ID, $.CRStmtCRs, /[Ee][Nn][Dd][Ss][Uu][Bb]/),
-        seq(/[Ii][Ff]/, $.Expr, /[Tt][Hh][Ee][Nn]/, repeat($.CRStmtCRs), $.MoreThanZeroElseIf)
+        seq($.If, $.Expr, /[Tt][Hh][Ee][Nn]/, repeat($.CRStmtCRs), $.MoreThanZeroElseIf)
+        //seq(/[Ii][Ff]/, $.Expr, /[Tt][Hh][Ee][Nn]/, repeat($.CRStmtCRs), $.MoreThanZeroElseIf)
       ),
       
       MoreThanZeroElseIf: $ => choice(
@@ -132,9 +140,11 @@ module.exports = grammar({
         seq("[", $.Expr, "]"),
         seq("[", $.Expr, "]", $.Idxs)
       ),
-
+    
       // Terminal Symbols
       // Identifier & String & Number & CarriageReturn & Comment
+      If: _ => token(prec(1, /[Ii][Ff]/)),
+
       ID: _ => /[_a-zA-Z][_a-zA-Z0-9]*/,
 
       STR: _ => /\"[^\"]*\"/,
@@ -143,6 +153,7 @@ module.exports = grammar({
 
       CR: _ => choice(/\r\n/, /\n/),
 
-      Comment: _ => token(seq(/\'/, /.*/))
+      Comment: _ => token(seq(/\'/, /.*/)),
+
     }
   });

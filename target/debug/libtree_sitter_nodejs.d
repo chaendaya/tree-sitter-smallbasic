@@ -1,0 +1,1 @@
+C:\PL\tree-sitter-smallbasic\target\debug\libtree_sitter_nodejs.rlib: C:\PL\tree-sitter-smallbasic\bindings\rust\build.rs C:\PL\tree-sitter-smallbasic\bindings\rust\lib.rs C:\PL\tree-sitter-smallbasic\src\node-types.json C:\PL\tree-sitter-smallbasic\src\parser.c

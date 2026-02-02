@@ -1,0 +1,148 @@
+0: Start -> Start_repeat1(NT#24)
+
+1: Start -> /* empty */
+
+2: Prog -> MoreThanOneStmt(NT#2)
+
+3: MoreThanOneStmt -> Stmt(NT#4)
+
+4: OptStep -> /[Ss][Tt][Ee][Pp]/(T#0) Expr(NT#12)
+
+5: Stmt -> ExprStatement(NT#7)
+
+6: Stmt -> /[Ww][Hh][Ii][Ll][Ee]/(T#1) Expr(NT#12) Stmt_repeat1(NT#25) /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2)
+
+7: Stmt -> /[Ww][Hh][Ii][Ll][Ee]/(T#1) Expr(NT#12) /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2)
+
+8: Stmt -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) ':'(T#3)
+
+9: Stmt -> /[Gg][Oo][Tt][Oo]/(T#4) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33)
+
+10: Stmt -> /[Ff][Oo][Rr]/(T#5) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '='(T#6) Expr(NT#12) /[Tt][Oo]/(T#7) Expr(NT#12) OptStep(NT#3) Stmt_repeat1(NT#25) /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8)
+
+11: Stmt -> /[Ff][Oo][Rr]/(T#5) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '='(T#6) Expr(NT#12) /[Tt][Oo]/(T#7) Expr(NT#12) OptStep(NT#3) /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8)
+
+12: Stmt -> /[Ff][Oo][Rr]/(T#5) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '='(T#6) Expr(NT#12) /[Tt][Oo]/(T#7) Expr(NT#12) Stmt_repeat1(NT#25) /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8)
+
+13: Stmt -> /[Ff][Oo][Rr]/(T#5) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '='(T#6) Expr(NT#12) /[Tt][Oo]/(T#7) Expr(NT#12) /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8)
+
+14: Stmt -> /[Ss][Uu][Bb]/(T#9) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) CRStmtCRs(NT#8) /[Ee][Nn][Dd][Ss][Uu][Bb]/(T#10)
+
+15: Stmt -> If(T#32) Expr(NT#12) /[Tt][Hh][Ee][Nn]/(T#11) Stmt_repeat1(NT#25) MoreThanZeroElseIf(NT#5)
+
+16: Stmt -> If(T#32) Expr(NT#12) /[Tt][Hh][Ee][Nn]/(T#11) MoreThanZeroElseIf(NT#5)
+
+17: MoreThanZeroElseIf -> OptionalElse(NT#6)
+
+18: MoreThanZeroElseIf -> /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) Expr(NT#12) /[Tt][Hh][Ee][Nn]/(T#11) Stmt_repeat1(NT#25) MoreThanZeroElseIf(NT#5)
+
+19: MoreThanZeroElseIf -> /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#12) Expr(NT#12) /[Tt][Hh][Ee][Nn]/(T#11) MoreThanZeroElseIf(NT#5)
+
+20: OptionalElse -> /[Ee][Nn][Dd][Ii][Ff]/(T#13)
+
+21: OptionalElse -> /[Ee][Ll][Ss][Ee]/(T#14) CRStmtCRs(NT#8) /[Ee][Nn][Dd][Ii][Ff]/(T#13)
+
+22: ExprStatement -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '='(T#6) Expr(NT#12)
+
+23: ExprStatement -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '.'(T#15) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '='(T#6) Expr(NT#12)
+
+24: ExprStatement -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '.'(T#15) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '('(T#16) Exprs(NT#10) ')'(T#17)
+
+25: ExprStatement -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '.'(T#15) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '('(T#16) ')'(T#17)
+
+26: ExprStatement -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '('(T#16) ')'(T#17)
+
+27: ExprStatement -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) Idxs(NT#22) '='(T#6) Expr(NT#12)
+
+28: CRStmtCRs -> CR(NT#23) CRStmtCRs_repeat1(NT#26)
+
+29: CRStmtCRs -> CR(NT#23)
+
+30: TheRest -> Stmt(NT#4) CR(NT#23)
+
+31: Exprs -> MoreThanOneExpr(NT#11)
+
+32: MoreThanOneExpr -> Expr(NT#12)
+
+33: MoreThanOneExpr -> Expr(NT#12) ','(T#18) MoreThanOneExpr(NT#11)
+
+34: Expr -> CondExpr(NT#13)
+
+35: CondExpr -> OrExpr(NT#14)
+
+36: OrExpr -> OrExpr(NT#14) /[Oo][Rr]/(T#19) AndExpr(NT#15)
+
+37: OrExpr -> AndExpr(NT#15)
+
+38: AndExpr -> AndExpr(NT#15) /[Aa][Nn][Dd]/(T#20) EqNeqExpr(NT#16)
+
+39: AndExpr -> EqNeqExpr(NT#16)
+
+40: EqNeqExpr -> EqNeqExpr(NT#16) '='(T#6) CompExpr(NT#17)
+
+41: EqNeqExpr -> EqNeqExpr(NT#16) '<>'(T#21) CompExpr(NT#17)
+
+42: EqNeqExpr -> CompExpr(NT#17)
+
+43: CompExpr -> CompExpr(NT#17) '<'(T#22) AdditiveExpr(NT#18)
+
+44: CompExpr -> CompExpr(NT#17) '<='(T#23) AdditiveExpr(NT#18)
+
+45: CompExpr -> CompExpr(NT#17) '>'(T#24) AdditiveExpr(NT#18)
+
+46: CompExpr -> CompExpr(NT#17) '>='(T#25) AdditiveExpr(NT#18)
+
+47: CompExpr -> AdditiveExpr(NT#18)
+
+48: AdditiveExpr -> AdditiveExpr(NT#18) '+'(T#26) MultiplicativeExpr(NT#19)
+
+49: AdditiveExpr -> AdditiveExpr(NT#18) '-'(T#27) MultiplicativeExpr(NT#19)
+
+50: AdditiveExpr -> MultiplicativeExpr(NT#19)
+
+51: MultiplicativeExpr -> MultiplicativeExpr(NT#19) '*'(T#28) UnaryExpr(NT#20)
+
+52: MultiplicativeExpr -> MultiplicativeExpr(NT#19) '/'(T#29) UnaryExpr(NT#20)
+
+53: MultiplicativeExpr -> UnaryExpr(NT#20)
+
+54: UnaryExpr -> '-'(T#27) Primary(NT#21)
+
+55: UnaryExpr -> Primary(NT#21)
+
+56: Primary -> /([0-9]*[.])?[0-9]+/(T#35)
+
+57: Primary -> /\"[^\"]*\"/(T#34)
+
+58: Primary -> '('(T#16) Expr(NT#12) ')'(T#17)
+
+59: Primary -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33)
+
+60: Primary -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '.'(T#15) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33)
+
+61: Primary -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '.'(T#15) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '('(T#16) Exprs(NT#10) ')'(T#17)
+
+62: Primary -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '.'(T#15) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '('(T#16) ')'(T#17)
+
+63: Primary -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) Idxs(NT#22)
+
+64: Idxs -> '['(T#30) Expr(NT#12) ']'(T#31)
+
+65: Idxs -> '['(T#30) Expr(NT#12) ']'(T#31) Idxs(NT#22)
+
+66: CR -> /\r\n/(T#36)
+
+67: CR -> /\n/(T#37)
+
+68: Start_repeat1 -> Start_repeat1(NT#24) Start_repeat1(NT#24)
+
+69: Start_repeat1 -> Prog(NT#1)
+
+70: Stmt_repeat1 -> Stmt_repeat1(NT#25) Stmt_repeat1(NT#25)
+
+71: Stmt_repeat1 -> CRStmtCRs(NT#8)
+
+72: CRStmtCRs_repeat1 -> CRStmtCRs_repeat1(NT#26) CRStmtCRs_repeat1(NT#26)
+
+73: CRStmtCRs_repeat1 -> TheRest(NT#9)
+

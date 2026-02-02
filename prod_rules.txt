@@ -1,0 +1,150 @@
+Production rules (for debugging):
+================================
+0: Start -> Start_repeat1(NT#24)
+    ;; [nt_idx=0, nt_name=Start, local_prod_idx=0]
+1: Start -> /* empty */
+    ;; [nt_idx=0, nt_name=Start, local_prod_idx=1]
+2: Prog -> MoreThanOneStmt(NT#2)
+    ;; [nt_idx=1, nt_name=Prog, local_prod_idx=0]
+3: MoreThanOneStmt -> Stmt(NT#4)
+    ;; [nt_idx=2, nt_name=MoreThanOneStmt, local_prod_idx=0]
+4: OptStep -> /[Ss][Tt][Ee][Pp]/(T#0) Expr(NT#12)
+    ;; [nt_idx=3, nt_name=OptStep, local_prod_idx=0]
+5: Stmt -> ExprStatement(NT#7)
+    ;; [nt_idx=4, nt_name=Stmt, local_prod_idx=0]
+6: Stmt -> /[Ww][Hh][Ii][Ll][Ee]/(T#1) Expr(NT#12) Stmt_repeat1(NT#25) /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2)
+    ;; [nt_idx=4, nt_name=Stmt, local_prod_idx=1]
+7: Stmt -> /[Ww][Hh][Ii][Ll][Ee]/(T#1) Expr(NT#12) /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/(T#2)
+    ;; [nt_idx=4, nt_name=Stmt, local_prod_idx=2]
+8: Stmt -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) ':'(T#3)
+    ;; [nt_idx=4, nt_name=Stmt, local_prod_idx=3]
+9: Stmt -> /[Gg][Oo][Tt][Oo]/(T#4) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33)
+    ;; [nt_idx=4, nt_name=Stmt, local_prod_idx=4]
+10: Stmt -> /[Ff][Oo][Rr]/(T#5) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '='(T#6) Expr(NT#12) /[Tt][Oo]/(T#7) Expr(NT#12) OptStep(NT#3) Stmt_repeat1(NT#25) /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8)
+    ;; [nt_idx=4, nt_name=Stmt, local_prod_idx=5]
+11: Stmt -> /[Ff][Oo][Rr]/(T#5) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '='(T#6) Expr(NT#12) /[Tt][Oo]/(T#7) Expr(NT#12) OptStep(NT#3) /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8)
+    ;; [nt_idx=4, nt_name=Stmt, local_prod_idx=6]
+12: Stmt -> /[Ff][Oo][Rr]/(T#5) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '='(T#6) Expr(NT#12) /[Tt][Oo]/(T#7) Expr(NT#12) Stmt_repeat1(NT#25) /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8)
+    ;; [nt_idx=4, nt_name=Stmt, local_prod_idx=7]
+13: Stmt -> /[Ff][Oo][Rr]/(T#5) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '='(T#6) Expr(NT#12) /[Tt][Oo]/(T#7) Expr(NT#12) /[Ee][Nn][Dd][Ff][Oo][Rr]/(T#8)
+    ;; [nt_idx=4, nt_name=Stmt, local_prod_idx=8]
+14: Stmt -> /[Ss][Uu][Bb]/(T#9) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) CRStmtCRs(NT#8) /[Ee][Nn][Dd][Ss][Uu][Bb]/(T#10)
+    ;; [nt_idx=4, nt_name=Stmt, local_prod_idx=9]
+15: Stmt -> /[Ii][Ff]/(T#11) Expr(NT#12) /[Tt][Hh][Ee][Nn]/(T#12) Stmt_repeat1(NT#25) MoreThanZeroElseIf(NT#5)
+    ;; [nt_idx=4, nt_name=Stmt, local_prod_idx=10]
+16: Stmt -> /[Ii][Ff]/(T#11) Expr(NT#12) /[Tt][Hh][Ee][Nn]/(T#12) MoreThanZeroElseIf(NT#5)
+    ;; [nt_idx=4, nt_name=Stmt, local_prod_idx=11]
+17: MoreThanZeroElseIf -> OptionalElse(NT#6)
+    ;; [nt_idx=5, nt_name=MoreThanZeroElseIf, local_prod_idx=0]
+18: MoreThanZeroElseIf -> /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#13) Expr(NT#12) /[Tt][Hh][Ee][Nn]/(T#12) Stmt_repeat1(NT#25) MoreThanZeroElseIf(NT#5)
+    ;; [nt_idx=5, nt_name=MoreThanZeroElseIf, local_prod_idx=1]
+19: MoreThanZeroElseIf -> /[Ee][Ll][Ss][Ee][Ii][Ff]/(T#13) Expr(NT#12) /[Tt][Hh][Ee][Nn]/(T#12) MoreThanZeroElseIf(NT#5)
+    ;; [nt_idx=5, nt_name=MoreThanZeroElseIf, local_prod_idx=2]
+20: OptionalElse -> /[Ee][Nn][Dd][Ii][Ff]/(T#14)
+    ;; [nt_idx=6, nt_name=OptionalElse, local_prod_idx=0]
+21: OptionalElse -> /[Ee][Ll][Ss][Ee]/(T#15) CRStmtCRs(NT#8) /[Ee][Nn][Dd][Ii][Ff]/(T#14)
+    ;; [nt_idx=6, nt_name=OptionalElse, local_prod_idx=1]
+22: ExprStatement -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '='(T#6) Expr(NT#12)
+    ;; [nt_idx=7, nt_name=ExprStatement, local_prod_idx=0]
+23: ExprStatement -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '.'(T#16) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '='(T#6) Expr(NT#12)
+    ;; [nt_idx=7, nt_name=ExprStatement, local_prod_idx=1]
+24: ExprStatement -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '.'(T#16) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '('(T#17) Exprs(NT#10) ')'(T#18)
+    ;; [nt_idx=7, nt_name=ExprStatement, local_prod_idx=2]
+25: ExprStatement -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '.'(T#16) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '('(T#17) ')'(T#18)
+    ;; [nt_idx=7, nt_name=ExprStatement, local_prod_idx=3]
+26: ExprStatement -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '('(T#17) ')'(T#18)
+    ;; [nt_idx=7, nt_name=ExprStatement, local_prod_idx=4]
+27: ExprStatement -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) Idxs(NT#22) '='(T#6) Expr(NT#12)
+    ;; [nt_idx=7, nt_name=ExprStatement, local_prod_idx=5]
+28: CRStmtCRs -> CR(NT#23) CRStmtCRs_repeat1(NT#26)
+    ;; [nt_idx=8, nt_name=CRStmtCRs, local_prod_idx=0]
+29: CRStmtCRs -> CR(NT#23)
+    ;; [nt_idx=8, nt_name=CRStmtCRs, local_prod_idx=1]
+30: TheRest -> Stmt(NT#4) CR(NT#23)
+    ;; [nt_idx=9, nt_name=TheRest, local_prod_idx=0]
+31: Exprs -> MoreThanOneExpr(NT#11)
+    ;; [nt_idx=10, nt_name=Exprs, local_prod_idx=0]
+32: MoreThanOneExpr -> Expr(NT#12)
+    ;; [nt_idx=11, nt_name=MoreThanOneExpr, local_prod_idx=0]
+33: MoreThanOneExpr -> Expr(NT#12) ','(T#19) MoreThanOneExpr(NT#11)
+    ;; [nt_idx=11, nt_name=MoreThanOneExpr, local_prod_idx=1]
+34: Expr -> CondExpr(NT#13)
+    ;; [nt_idx=12, nt_name=Expr, local_prod_idx=0]
+35: CondExpr -> OrExpr(NT#14)
+    ;; [nt_idx=13, nt_name=CondExpr, local_prod_idx=0]
+36: OrExpr -> OrExpr(NT#14) /[Oo][Rr]/(T#20) AndExpr(NT#15)
+    ;; [nt_idx=14, nt_name=OrExpr, local_prod_idx=0]
+37: OrExpr -> AndExpr(NT#15)
+    ;; [nt_idx=14, nt_name=OrExpr, local_prod_idx=1]
+38: AndExpr -> AndExpr(NT#15) /[Aa][Nn][Dd]/(T#21) EqNeqExpr(NT#16)
+    ;; [nt_idx=15, nt_name=AndExpr, local_prod_idx=0]
+39: AndExpr -> EqNeqExpr(NT#16)
+    ;; [nt_idx=15, nt_name=AndExpr, local_prod_idx=1]
+40: EqNeqExpr -> EqNeqExpr(NT#16) '='(T#6) CompExpr(NT#17)
+    ;; [nt_idx=16, nt_name=EqNeqExpr, local_prod_idx=0]
+41: EqNeqExpr -> EqNeqExpr(NT#16) '<>'(T#22) CompExpr(NT#17)
+    ;; [nt_idx=16, nt_name=EqNeqExpr, local_prod_idx=1]
+42: EqNeqExpr -> CompExpr(NT#17)
+    ;; [nt_idx=16, nt_name=EqNeqExpr, local_prod_idx=2]
+43: CompExpr -> CompExpr(NT#17) '<'(T#23) AdditiveExpr(NT#18)
+    ;; [nt_idx=17, nt_name=CompExpr, local_prod_idx=0]
+44: CompExpr -> CompExpr(NT#17) '<='(T#24) AdditiveExpr(NT#18)
+    ;; [nt_idx=17, nt_name=CompExpr, local_prod_idx=1]
+45: CompExpr -> CompExpr(NT#17) '>'(T#25) AdditiveExpr(NT#18)
+    ;; [nt_idx=17, nt_name=CompExpr, local_prod_idx=2]
+46: CompExpr -> CompExpr(NT#17) '>='(T#26) AdditiveExpr(NT#18)
+    ;; [nt_idx=17, nt_name=CompExpr, local_prod_idx=3]
+47: CompExpr -> AdditiveExpr(NT#18)
+    ;; [nt_idx=17, nt_name=CompExpr, local_prod_idx=4]
+48: AdditiveExpr -> AdditiveExpr(NT#18) '+'(T#27) MultiplicativeExpr(NT#19)
+    ;; [nt_idx=18, nt_name=AdditiveExpr, local_prod_idx=0]
+49: AdditiveExpr -> AdditiveExpr(NT#18) '-'(T#28) MultiplicativeExpr(NT#19)
+    ;; [nt_idx=18, nt_name=AdditiveExpr, local_prod_idx=1]
+50: AdditiveExpr -> MultiplicativeExpr(NT#19)
+    ;; [nt_idx=18, nt_name=AdditiveExpr, local_prod_idx=2]
+51: MultiplicativeExpr -> MultiplicativeExpr(NT#19) '*'(T#29) UnaryExpr(NT#20)
+    ;; [nt_idx=19, nt_name=MultiplicativeExpr, local_prod_idx=0]
+52: MultiplicativeExpr -> MultiplicativeExpr(NT#19) '/'(T#30) UnaryExpr(NT#20)
+    ;; [nt_idx=19, nt_name=MultiplicativeExpr, local_prod_idx=1]
+53: MultiplicativeExpr -> UnaryExpr(NT#20)
+    ;; [nt_idx=19, nt_name=MultiplicativeExpr, local_prod_idx=2]
+54: UnaryExpr -> '-'(T#28) Primary(NT#21)
+    ;; [nt_idx=20, nt_name=UnaryExpr, local_prod_idx=0]
+55: UnaryExpr -> Primary(NT#21)
+    ;; [nt_idx=20, nt_name=UnaryExpr, local_prod_idx=1]
+56: Primary -> /([0-9]*[.])?[0-9]+/(T#35)
+    ;; [nt_idx=21, nt_name=Primary, local_prod_idx=0]
+57: Primary -> /\"[^\"]*\"/(T#34)
+    ;; [nt_idx=21, nt_name=Primary, local_prod_idx=1]
+58: Primary -> '('(T#17) Expr(NT#12) ')'(T#18)
+    ;; [nt_idx=21, nt_name=Primary, local_prod_idx=2]
+59: Primary -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33)
+    ;; [nt_idx=21, nt_name=Primary, local_prod_idx=3]
+60: Primary -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '.'(T#16) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33)
+    ;; [nt_idx=21, nt_name=Primary, local_prod_idx=4]
+61: Primary -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '.'(T#16) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '('(T#17) Exprs(NT#10) ')'(T#18)
+    ;; [nt_idx=21, nt_name=Primary, local_prod_idx=5]
+62: Primary -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '.'(T#16) /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) '('(T#17) ')'(T#18)
+    ;; [nt_idx=21, nt_name=Primary, local_prod_idx=6]
+63: Primary -> /[_a-zA-Z][_a-zA-Z0-9]*/(T#33) Idxs(NT#22)
+    ;; [nt_idx=21, nt_name=Primary, local_prod_idx=7]
+64: Idxs -> '['(T#31) Expr(NT#12) ']'(T#32)
+    ;; [nt_idx=22, nt_name=Idxs, local_prod_idx=0]
+65: Idxs -> '['(T#31) Expr(NT#12) ']'(T#32) Idxs(NT#22)
+    ;; [nt_idx=22, nt_name=Idxs, local_prod_idx=1]
+66: CR -> /\r\n/(T#36)
+    ;; [nt_idx=23, nt_name=CR, local_prod_idx=0]
+67: CR -> /\n/(T#37)
+    ;; [nt_idx=23, nt_name=CR, local_prod_idx=1]
+68: Start_repeat1 -> Start_repeat1(NT#24) Start_repeat1(NT#24)
+    ;; [nt_idx=24, nt_name=Start_repeat1, local_prod_idx=0]
+69: Start_repeat1 -> Prog(NT#1)
+    ;; [nt_idx=24, nt_name=Start_repeat1, local_prod_idx=1]
+70: Stmt_repeat1 -> Stmt_repeat1(NT#25) Stmt_repeat1(NT#25)
+    ;; [nt_idx=25, nt_name=Stmt_repeat1, local_prod_idx=0]
+71: Stmt_repeat1 -> CRStmtCRs(NT#8)
+    ;; [nt_idx=25, nt_name=Stmt_repeat1, local_prod_idx=1]
+72: CRStmtCRs_repeat1 -> CRStmtCRs_repeat1(NT#26) CRStmtCRs_repeat1(NT#26)
+    ;; [nt_idx=26, nt_name=CRStmtCRs_repeat1, local_prod_idx=0]
+73: CRStmtCRs_repeat1 -> TheRest(NT#9)
+    ;; [nt_idx=26, nt_name=CRStmtCRs_repeat1, local_prod_idx=1]

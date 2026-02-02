@@ -1,0 +1,331 @@
+1 ID : 
+  1,1: begin
+  1,6: :
+
+188 : 
+  1,6: :
+
+97 ID . ID ( Exprs ) 
+  2,1: TextWindow
+  2,11: .
+  2,12: Write
+  2,17: (
+  2,18: "Enter a number: "
+  2,36: )
+
+188 . ID ( Exprs ) 
+  2,11: .
+  2,12: Write
+  2,17: (
+  2,18: "Enter a number: "
+  2,36: )
+
+259 ID ( Exprs ) 
+  2,12: Write
+  2,17: (
+  2,18: "Enter a number: "
+  2,36: )
+
+214 ( Exprs ) 
+  2,17: (
+  2,18: "Enter a number: "
+  2,36: )
+
+25 STR 
+  2,18: "Enter a number: "
+
+240 ) 
+  2,36: )
+
+97 ID = Expr 
+  3,1: num
+  3,5: =
+  3,7: TextWindow
+  3,17: .
+  3,18: ReadNumber
+  3,28: (
+  3,29: )
+
+188 = Expr 
+  3,5: =
+  3,7: TextWindow
+  3,17: .
+  3,18: ReadNumber
+  3,28: (
+  3,29: )
+
+73 ID . ID ( ) 
+  3,7: TextWindow
+  3,17: .
+  3,18: ReadNumber
+  3,28: (
+  3,29: )
+
+2 . ID ( ) 
+  3,17: .
+  3,18: ReadNumber
+  3,28: (
+  3,29: )
+
+247 ID ( ) 
+  3,18: ReadNumber
+  3,28: (
+  3,29: )
+
+6 ( ) 
+  3,28: (
+  3,29: )
+
+21 ) 
+  3,29: )
+
+97 ID = Expr 
+  4,1: remainder
+  4,11: =
+  4,13: Math
+  4,17: .
+  4,18: Remainder
+  4,27: (
+  4,28: num
+  4,31: ,
+  4,33: 2
+  4,34: )
+
+188 = Expr 
+  4,11: =
+  4,13: Math
+  4,17: .
+  4,18: Remainder
+  4,27: (
+  4,28: num
+  4,31: ,
+  4,33: 2
+  4,34: )
+
+73 ID . ID ( Exprs ) 
+  4,13: Math
+  4,17: .
+  4,18: Remainder
+  4,27: (
+  4,28: num
+  4,31: ,
+  4,33: 2
+  4,34: )
+
+2 . ID ( Exprs ) 
+  4,17: .
+  4,18: Remainder
+  4,27: (
+  4,28: num
+  4,31: ,
+  4,33: 2
+  4,34: )
+
+247 ID ( Exprs ) 
+  4,18: Remainder
+  4,27: (
+  4,28: num
+  4,31: ,
+  4,33: 2
+  4,34: )
+
+6 ( Exprs ) 
+  4,27: (
+  4,28: num
+  4,31: ,
+  4,33: 2
+  4,34: )
+
+21 ID 
+  4,28: num
+
+217 , MoreThanOneExpr 
+  4,31: ,
+  4,33: 2
+
+54 NUM 
+  4,33: 2
+
+250 ) 
+  4,34: )
+
+97 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf 
+  5,1: If
+  5,4: (
+  5,5: remainder
+  5,15: =
+  5,17: 0
+  5,18: )
+  5,20: Then
+  5,27: 
+
+  6,2: TextWindow
+  6,12: .
+  6,13: WriteLine
+  6,22: (
+  6,23: "The number is Even"
+  6,43: )
+  6,45: 
+
+  7,1: Else
+  7,8: 
+
+  8,2: TextWindow
+  8,12: .
+  8,13: WriteLine
+  8,22: (
+  8,23: "The number is Odd"
+  8,42: )
+  8,44: 
+
+  9,1: EndIf
+
+66 ( Expr ) 
+  5,4: (
+  5,5: remainder
+  5,15: =
+  5,17: 0
+  5,18: )
+
+80 ID 
+  5,5: remainder
+
+128 = CompExpr 
+  5,15: =
+  5,17: 0
+
+117 NUM 
+  5,17: 0
+
+265 ) 
+  5,18: )
+
+243 Stmt_token10 CRStmtCRs MoreThanZeroElseIf 
+  5,20: Then
+  5,27: 
+
+  6,2: TextWindow
+  6,12: .
+  6,13: WriteLine
+  6,22: (
+  6,23: "The number is Even"
+  6,43: )
+  6,45: 
+
+  7,1: Else
+  7,8: 
+
+  8,2: TextWindow
+  8,12: .
+  8,13: WriteLine
+  8,22: (
+  8,23: "The number is Odd"
+  8,42: )
+  8,44: 
+
+  9,1: EndIf
+
+121 CR_token2 
+  5,27: 
+
+
+67 ID . ID ( Exprs ) 
+  6,2: TextWindow
+  6,12: .
+  6,13: WriteLine
+  6,22: (
+  6,23: "The number is Even"
+  6,43: )
+
+184 . ID ( Exprs ) 
+  6,12: .
+  6,13: WriteLine
+  6,22: (
+  6,23: "The number is Even"
+  6,43: )
+
+255 ID ( Exprs ) 
+  6,13: WriteLine
+  6,22: (
+  6,23: "The number is Even"
+  6,43: )
+
+221 ( Exprs ) 
+  6,22: (
+  6,23: "The number is Even"
+  6,43: )
+
+27 STR 
+  6,23: "The number is Even"
+
+238 ) 
+  6,43: )
+
+207 CR_token2 
+  6,45: 
+
+
+119 OptionalElse_token2 CRStmtCRs OptionalElse_token1 
+  7,1: Else
+  7,8: 
+
+  8,2: TextWindow
+  8,12: .
+  8,13: WriteLine
+  8,22: (
+  8,23: "The number is Odd"
+  8,42: )
+  8,44: 
+
+  9,1: EndIf
+
+198 CR_token2 
+  7,8: 
+
+
+113 ID . ID ( Exprs ) 
+  8,2: TextWindow
+  8,12: .
+  8,13: WriteLine
+  8,22: (
+  8,23: "The number is Odd"
+  8,42: )
+
+184 . ID ( Exprs ) 
+  8,12: .
+  8,13: WriteLine
+  8,22: (
+  8,23: "The number is Odd"
+  8,42: )
+
+255 ID ( Exprs ) 
+  8,13: WriteLine
+  8,22: (
+  8,23: "The number is Odd"
+  8,42: )
+
+221 ( Exprs ) 
+  8,22: (
+  8,23: "The number is Odd"
+  8,42: )
+
+27 STR 
+  8,23: "The number is Odd"
+
+238 ) 
+  8,42: )
+
+202 CR_token2 
+  8,44: 
+
+
+231 OptionalElse_token1 
+  9,1: EndIf
+
+97 Stmt_token3 ID 
+  10,1: Goto
+  10,6: begin
+
+228 ID 
+  10,6: begin
+

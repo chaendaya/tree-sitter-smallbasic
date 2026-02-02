@@ -1,0 +1,82 @@
+new_parse
+process version:0, version_count:1, state:1, row:0, col:0
+lex_internal state:55, row:0, column:0
+consume character:'T'
+consume character:'e'
+consume character:'x'
+consume character:'t'
+consume character:'W'
+consume character:'i'
+consume character:'n'
+consume character:'d'
+consume character:'o'
+consume character:'w'
+lexed_lookahead sym:ID, size:10
+shift state:188
+process version:0, version_count:1, state:188, row:0, col:10
+lex_internal state:55, row:0, column:10
+consume character:'.'
+lexed_lookahead sym:., size:1
+shift state:259
+process version:0, version_count:1, state:259, row:0, col:11
+lex_internal state:9, row:0, column:11
+consume character:'W'
+consume character:'r'
+consume character:'i'
+consume character:'t'
+consume character:'e'
+consume character:'L'
+consume character:'i'
+consume character:'n'
+consume character:'e'
+lexed_lookahead sym:ID, size:9
+shift state:214
+process version:0, version_count:1, state:214, row:0, col:20
+lex_internal state:0, row:0, column:20
+consume character:'('
+lexed_lookahead sym:(, size:1
+shift state:25
+process version:0, version_count:1, state:25, row:0, col:21
+lex_internal state:9, row:0, column:21
+consume character:'"'
+consume character:'H'
+consume character:'e'
+consume character:'l'
+consume character:'l'
+consume character:'o'
+consume character:' '
+consume character:'W'
+consume character:'o'
+consume character:'r'
+consume character:'l'
+consume character:'d'
+consume character:'"'
+lexed_lookahead sym:STR, size:13
+shift state:51
+process version:0, version_count:1, state:51, row:0, col:34
+lex_internal state:0, row:0, column:34
+consume character:')'
+lexed_lookahead sym:), size:1
+reduce sym:Primary, child_count:1, goto:29
+reduce sym:UnaryExpr, child_count:1, goto:38
+reduce sym:MultiplicativeExpr, child_count:1, goto:50
+reduce sym:AdditiveExpr, child_count:1, goto:65
+reduce sym:CompExpr, child_count:1, goto:91
+reduce sym:EqNeqExpr, child_count:1, goto:128
+reduce sym:AndExpr, child_count:1, goto:167
+reduce sym:OrExpr, child_count:1, goto:183
+reduce sym:CondExpr, child_count:1, goto:195
+reduce sym:Expr, child_count:1, goto:217
+reduce sym:MoreThanOneExpr, child_count:1, goto:242
+reduce sym:Exprs, child_count:1, goto:240
+shift state:175
+process version:0, version_count:1, state:175, row:0, col:35
+lex_internal state:55, row:0, column:35
+lexed_lookahead sym:end, size:0
+reduce sym:ExprStatement, child_count:6, goto:147
+reduce sym:Stmt, child_count:1, goto:164
+reduce sym:MoreThanOneStmt, child_count:1, goto:159
+reduce sym:Prog, child_count:1, goto:97
+reduce sym:Start, child_count:1, goto:241
+accept
+done
