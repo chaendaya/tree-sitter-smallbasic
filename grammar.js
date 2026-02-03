@@ -5,7 +5,7 @@ module.exports = grammar({
     name: "smallbasic",
 
     // debugging
-    // 키워드(For, While 등)와 ID가 겹칠 때 자동으로 키워드가 우선순위
+    // 식별자로 먼저 뭉치고, 그 결과물이 키워드인지 나중에 검사
     // word: $ => $.ID,
 
     // Processing blank characters or annotation-related symbols
@@ -36,6 +36,9 @@ module.exports = grammar({
       // STEP == step
       OptStep: $ => seq(/[Ss][Tt][Ee][Pp]/, $.Expr),
 
+      // $ : 이 문법 안에 있는 모든 규칙들의 집합
+      // Stmt 노드 이름 생성
+      //    $.ExprStatement 지어진 이름을 재사용
       Stmt: $ => choice(
         $.ExprStatement,
         seq(/[Ww][Hh][Ii][Ll][Ee]/, $.Expr, repeat($.CRStmtCRs), /[Ee][Nn][Dd][Ww][Hh][Ii][Ll][Ee]/),
@@ -43,7 +46,7 @@ module.exports = grammar({
         seq(/[Gg][Oo][Tt][Oo]/, $.ID),
         seq(/[Ff][Oo][Rr]/, $.ID, "=", $.Expr, /[Tt][Oo]/, $.Expr, optional($.OptStep), repeat($.CRStmtCRs), /[Ee][Nn][Dd][Ff][Oo][Rr]/),
         seq(/[Ss][Uu][Bb]/, $.ID, $.CRStmtCRs, /[Ee][Nn][Dd][Ss][Uu][Bb]/),
-        // seq($.If, $.Expr, /[Tt][Hh][Ee][Nn]/, repeat($.CRStmtCRs), $.MoreThanZeroElseIf)
+        // seq($.If, $.Expr, $.Then, repeat($.CRStmtCRs), $.MoreThanZeroElseIf)
         seq(/[Ii][Ff]/, $.Expr, /[Tt][Hh][Ee][Nn]/, repeat($.CRStmtCRs), $.MoreThanZeroElseIf)
       ),
       
@@ -144,7 +147,8 @@ module.exports = grammar({
     
       // Terminal Symbols
       // Identifier & String & Number & CarriageReturn & Comment
-      // If: _ => token(prec(1, /[Ii][Ff]/)),
+      // If: _ => /[Ii][Ff]/,
+      // Then: _ => /[Tt][Hh][Ee][Nn]/,
 
       ID: _ => /[_a-zA-Z][_a-zA-Z0-9]*/,
 
