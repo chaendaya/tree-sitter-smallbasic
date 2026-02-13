@@ -1,0 +1,8588 @@
+1 Comment Comment Comment Comment Comment Comment Comment Start_repeat1 end
+  1,1: 'BrickWall
+  2,1: 'A development of the paddle game sample.
+  3,1: 'Revove all the bricks to complete the game.
+  4,1: ' Game over if you miss the ball.
+  5,1: 'You are penalised -1 each time no bricks are hit.
+  6,1: 'The movement of the ball is influenced by where it hits the paddle.
+  7,1: 'Do not let the bricks reach the bottom of the screen.
+  9,1: GameStart:
+
+'paddle = GraphicsWindow.AddRectangle(120, 12) 'v0.2
+paddle = Shapes.AddRectangle(120, 12) 'v0.3.1
+'ball = GraphicsWindow.AddEllipse(16, 16) 'v0.2
+ball = Shapes.AddEllipse(16,16) 'v0.3.1
+bricksLeft = 48
+brickStartY = 35
+hitCount = 0
+GraphicsWindow.FontSize = 14
+GraphicsWindow.MouseMove = OnMouseMove
+GraphicsWindow.Title = "Brick Wall"
+
+For idx = 0 To 15
+  Array.SetValue("GreenBricks", idx, 1)
+  Array.SetValue("YellowBricks", idx, 1)
+  Array.SetValue("RedBricks", idx, 1)
+Endfor
+DrawBricks()
+score = 0
+PrintScore()
+
+gw = GraphicsWindow.Width
+gh = GraphicsWindow.Height
+y = gh - 28
+'GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+Shapes.Move(ball,x,y) 'v0.3.1
+deltaX = 1
+deltaY = -2
+Sound.PlayBellRingAndWait()
+
+RunLoop:
+  x = x + deltaX
+  y = y + deltaY
+
+  gw = GraphicsWindow.Width
+  gh = GraphicsWindow.Height
+  If (x >= gw - 16 Or x <= 0) Then
+    deltaX = -deltaX
+  EndIf
+  If (y <= 0) Then
+    deltaY = -deltaY
+  EndIf
+
+ 'padX = GraphicsWindow.GetLeftOfShape(paddle) 'v0.2
+ padX = Shapes.GetLeft(paddle) 'v0.3.1
+  If ((y >= gh - 28 + 2) And x >= padX And x <= padX + 120) Then
+    y = gh - 28 + 2
+    'Sound.PlayClick()
+    hitCount = hitCount + 1
+    If Math.Remainder(hitCount, 3) = 0 Then 'Move bricks downwards
+      For idx = 0 To 15
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+      Endfor
+      brickStartY = brickStartY + 20
+      DrawBricks()
+    EndIf
+    TestRed:
+    For idx = 0 To 15
+      If Array.GetValue("RedBricks", idx) = 1 Then
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestYellow:
+    For idx = 0 To 15
+      If Array.GetValue("YellowBricks", idx) = 1 Then
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestGreen:
+    For idx = 0 To 15
+      If Array.GetValue("GreenBricks", idx) = 1 Then
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    EndTest:
+
+    deltaX = deltaX - 2 + (x - padX) / 30  ' Add some skill
+
+    If score = oldScore Then  'No bricks hit
+      score = score - 1
+    EndIf
+    oldScore = score
+    PrintScore()
+    deltaY = -deltaY  'Change the ball direction
+  EndIf
+  ' GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+  Shapes.Move(ball,x,y) 'v0.3.1
+  Program.Delay(5)
+
+  ' Green Bricks
+  If y > brickStartY - 16 And y < brickStartY + 20 Then  ' y position of brick - diameter of ball
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      Array.SetValue("GreenBricks", idx, 0)
+      RemoveGreenBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 15
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Yellow Bricks
+  If y > brickStartY + 44 And y < brickStartY + 80 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      Array.SetValue("YellowBricks", idx, 0)
+      RemoveYellowBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 10
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Red Bricks
+  If y > brickStartY + 104 And y < brickStartY + 140 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      Array.SetValue("RedBricks", idx, 0)
+      RemoveRedBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 5
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+
+  If (y < gh) Then  'Ball not reached bottom of window
+    Goto RunLoop
+  EndIf
+
+EndGame:
+  GraphicsWindow.ShowMessage("Your score is: " + score, "BrickWall")
+  Program.End()
+
+Sub OnMouseMove
+  paddleX = GraphicsWindow.MouseX
+  ' GraphicsWindow.MoveShape(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.2
+  Shapes.Move(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.3.1
+EndSub
+
+Sub PrintScore
+  ' Clear the score first and then draw the real score text
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(10, 10, 200, 20)
+  GraphicsWindow.BrushColor = "Black"
+  GraphicsWindow.DrawText(10, 10, "Score: " + score)
+EndSub
+
+Sub DrawBricks
+  For idx = 0 To 15 ' Draw bricks
+    'Program.Delay(100)
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+    GraphicsWindow.BrushColor = "Yellow"
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+    GraphicsWindow.BrushColor = "Red"
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+  endfor
+EndSub
+
+Sub RemoveGreenBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+EndSub
+
+Sub RemoveYellowBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+EndSub
+
+Sub RemoveRedBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+EndSub
+
+Sub CheckEnd
+ If bricksLeft = 0 Then
+   GraphicsWindow.ShowMessage("Well Done. Wall destroyed. Your score is: " + score, "BrickWall")
+   'Goto GameStart
+   Program.End()
+   'Goto EndGame
+ EndIf
+EndSub
+
+1 Comment Comment Comment Comment Comment Comment Start_repeat1 end
+  2,1: 'A development of the paddle game sample.
+  3,1: 'Revove all the bricks to complete the game.
+  4,1: ' Game over if you miss the ball.
+  5,1: 'You are penalised -1 each time no bricks are hit.
+  6,1: 'The movement of the ball is influenced by where it hits the paddle.
+  7,1: 'Do not let the bricks reach the bottom of the screen.
+  9,1: GameStart:
+
+'paddle = GraphicsWindow.AddRectangle(120, 12) 'v0.2
+paddle = Shapes.AddRectangle(120, 12) 'v0.3.1
+'ball = GraphicsWindow.AddEllipse(16, 16) 'v0.2
+ball = Shapes.AddEllipse(16,16) 'v0.3.1
+bricksLeft = 48
+brickStartY = 35
+hitCount = 0
+GraphicsWindow.FontSize = 14
+GraphicsWindow.MouseMove = OnMouseMove
+GraphicsWindow.Title = "Brick Wall"
+
+For idx = 0 To 15
+  Array.SetValue("GreenBricks", idx, 1)
+  Array.SetValue("YellowBricks", idx, 1)
+  Array.SetValue("RedBricks", idx, 1)
+Endfor
+DrawBricks()
+score = 0
+PrintScore()
+
+gw = GraphicsWindow.Width
+gh = GraphicsWindow.Height
+y = gh - 28
+'GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+Shapes.Move(ball,x,y) 'v0.3.1
+deltaX = 1
+deltaY = -2
+Sound.PlayBellRingAndWait()
+
+RunLoop:
+  x = x + deltaX
+  y = y + deltaY
+
+  gw = GraphicsWindow.Width
+  gh = GraphicsWindow.Height
+  If (x >= gw - 16 Or x <= 0) Then
+    deltaX = -deltaX
+  EndIf
+  If (y <= 0) Then
+    deltaY = -deltaY
+  EndIf
+
+ 'padX = GraphicsWindow.GetLeftOfShape(paddle) 'v0.2
+ padX = Shapes.GetLeft(paddle) 'v0.3.1
+  If ((y >= gh - 28 + 2) And x >= padX And x <= padX + 120) Then
+    y = gh - 28 + 2
+    'Sound.PlayClick()
+    hitCount = hitCount + 1
+    If Math.Remainder(hitCount, 3) = 0 Then 'Move bricks downwards
+      For idx = 0 To 15
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+      Endfor
+      brickStartY = brickStartY + 20
+      DrawBricks()
+    EndIf
+    TestRed:
+    For idx = 0 To 15
+      If Array.GetValue("RedBricks", idx) = 1 Then
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestYellow:
+    For idx = 0 To 15
+      If Array.GetValue("YellowBricks", idx) = 1 Then
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestGreen:
+    For idx = 0 To 15
+      If Array.GetValue("GreenBricks", idx) = 1 Then
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    EndTest:
+
+    deltaX = deltaX - 2 + (x - padX) / 30  ' Add some skill
+
+    If score = oldScore Then  'No bricks hit
+      score = score - 1
+    EndIf
+    oldScore = score
+    PrintScore()
+    deltaY = -deltaY  'Change the ball direction
+  EndIf
+  ' GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+  Shapes.Move(ball,x,y) 'v0.3.1
+  Program.Delay(5)
+
+  ' Green Bricks
+  If y > brickStartY - 16 And y < brickStartY + 20 Then  ' y position of brick - diameter of ball
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      Array.SetValue("GreenBricks", idx, 0)
+      RemoveGreenBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 15
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Yellow Bricks
+  If y > brickStartY + 44 And y < brickStartY + 80 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      Array.SetValue("YellowBricks", idx, 0)
+      RemoveYellowBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 10
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Red Bricks
+  If y > brickStartY + 104 And y < brickStartY + 140 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      Array.SetValue("RedBricks", idx, 0)
+      RemoveRedBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 5
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+
+  If (y < gh) Then  'Ball not reached bottom of window
+    Goto RunLoop
+  EndIf
+
+EndGame:
+  GraphicsWindow.ShowMessage("Your score is: " + score, "BrickWall")
+  Program.End()
+
+Sub OnMouseMove
+  paddleX = GraphicsWindow.MouseX
+  ' GraphicsWindow.MoveShape(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.2
+  Shapes.Move(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.3.1
+EndSub
+
+Sub PrintScore
+  ' Clear the score first and then draw the real score text
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(10, 10, 200, 20)
+  GraphicsWindow.BrushColor = "Black"
+  GraphicsWindow.DrawText(10, 10, "Score: " + score)
+EndSub
+
+Sub DrawBricks
+  For idx = 0 To 15 ' Draw bricks
+    'Program.Delay(100)
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+    GraphicsWindow.BrushColor = "Yellow"
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+    GraphicsWindow.BrushColor = "Red"
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+  endfor
+EndSub
+
+Sub RemoveGreenBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+EndSub
+
+Sub RemoveYellowBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+EndSub
+
+Sub RemoveRedBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+EndSub
+
+Sub CheckEnd
+ If bricksLeft = 0 Then
+   GraphicsWindow.ShowMessage("Well Done. Wall destroyed. Your score is: " + score, "BrickWall")
+   'Goto GameStart
+   Program.End()
+   'Goto EndGame
+ EndIf
+EndSub
+
+1 Comment Comment Comment Comment Comment Start_repeat1 end
+  3,1: 'Revove all the bricks to complete the game.
+  4,1: ' Game over if you miss the ball.
+  5,1: 'You are penalised -1 each time no bricks are hit.
+  6,1: 'The movement of the ball is influenced by where it hits the paddle.
+  7,1: 'Do not let the bricks reach the bottom of the screen.
+  9,1: GameStart:
+
+'paddle = GraphicsWindow.AddRectangle(120, 12) 'v0.2
+paddle = Shapes.AddRectangle(120, 12) 'v0.3.1
+'ball = GraphicsWindow.AddEllipse(16, 16) 'v0.2
+ball = Shapes.AddEllipse(16,16) 'v0.3.1
+bricksLeft = 48
+brickStartY = 35
+hitCount = 0
+GraphicsWindow.FontSize = 14
+GraphicsWindow.MouseMove = OnMouseMove
+GraphicsWindow.Title = "Brick Wall"
+
+For idx = 0 To 15
+  Array.SetValue("GreenBricks", idx, 1)
+  Array.SetValue("YellowBricks", idx, 1)
+  Array.SetValue("RedBricks", idx, 1)
+Endfor
+DrawBricks()
+score = 0
+PrintScore()
+
+gw = GraphicsWindow.Width
+gh = GraphicsWindow.Height
+y = gh - 28
+'GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+Shapes.Move(ball,x,y) 'v0.3.1
+deltaX = 1
+deltaY = -2
+Sound.PlayBellRingAndWait()
+
+RunLoop:
+  x = x + deltaX
+  y = y + deltaY
+
+  gw = GraphicsWindow.Width
+  gh = GraphicsWindow.Height
+  If (x >= gw - 16 Or x <= 0) Then
+    deltaX = -deltaX
+  EndIf
+  If (y <= 0) Then
+    deltaY = -deltaY
+  EndIf
+
+ 'padX = GraphicsWindow.GetLeftOfShape(paddle) 'v0.2
+ padX = Shapes.GetLeft(paddle) 'v0.3.1
+  If ((y >= gh - 28 + 2) And x >= padX And x <= padX + 120) Then
+    y = gh - 28 + 2
+    'Sound.PlayClick()
+    hitCount = hitCount + 1
+    If Math.Remainder(hitCount, 3) = 0 Then 'Move bricks downwards
+      For idx = 0 To 15
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+      Endfor
+      brickStartY = brickStartY + 20
+      DrawBricks()
+    EndIf
+    TestRed:
+    For idx = 0 To 15
+      If Array.GetValue("RedBricks", idx) = 1 Then
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestYellow:
+    For idx = 0 To 15
+      If Array.GetValue("YellowBricks", idx) = 1 Then
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestGreen:
+    For idx = 0 To 15
+      If Array.GetValue("GreenBricks", idx) = 1 Then
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    EndTest:
+
+    deltaX = deltaX - 2 + (x - padX) / 30  ' Add some skill
+
+    If score = oldScore Then  'No bricks hit
+      score = score - 1
+    EndIf
+    oldScore = score
+    PrintScore()
+    deltaY = -deltaY  'Change the ball direction
+  EndIf
+  ' GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+  Shapes.Move(ball,x,y) 'v0.3.1
+  Program.Delay(5)
+
+  ' Green Bricks
+  If y > brickStartY - 16 And y < brickStartY + 20 Then  ' y position of brick - diameter of ball
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      Array.SetValue("GreenBricks", idx, 0)
+      RemoveGreenBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 15
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Yellow Bricks
+  If y > brickStartY + 44 And y < brickStartY + 80 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      Array.SetValue("YellowBricks", idx, 0)
+      RemoveYellowBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 10
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Red Bricks
+  If y > brickStartY + 104 And y < brickStartY + 140 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      Array.SetValue("RedBricks", idx, 0)
+      RemoveRedBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 5
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+
+  If (y < gh) Then  'Ball not reached bottom of window
+    Goto RunLoop
+  EndIf
+
+EndGame:
+  GraphicsWindow.ShowMessage("Your score is: " + score, "BrickWall")
+  Program.End()
+
+Sub OnMouseMove
+  paddleX = GraphicsWindow.MouseX
+  ' GraphicsWindow.MoveShape(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.2
+  Shapes.Move(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.3.1
+EndSub
+
+Sub PrintScore
+  ' Clear the score first and then draw the real score text
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(10, 10, 200, 20)
+  GraphicsWindow.BrushColor = "Black"
+  GraphicsWindow.DrawText(10, 10, "Score: " + score)
+EndSub
+
+Sub DrawBricks
+  For idx = 0 To 15 ' Draw bricks
+    'Program.Delay(100)
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+    GraphicsWindow.BrushColor = "Yellow"
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+    GraphicsWindow.BrushColor = "Red"
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+  endfor
+EndSub
+
+Sub RemoveGreenBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+EndSub
+
+Sub RemoveYellowBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+EndSub
+
+Sub RemoveRedBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+EndSub
+
+Sub CheckEnd
+ If bricksLeft = 0 Then
+   GraphicsWindow.ShowMessage("Well Done. Wall destroyed. Your score is: " + score, "BrickWall")
+   'Goto GameStart
+   Program.End()
+   'Goto EndGame
+ EndIf
+EndSub
+
+1 Comment Comment Comment Comment Start_repeat1 end
+  4,1: ' Game over if you miss the ball.
+  5,1: 'You are penalised -1 each time no bricks are hit.
+  6,1: 'The movement of the ball is influenced by where it hits the paddle.
+  7,1: 'Do not let the bricks reach the bottom of the screen.
+  9,1: GameStart:
+
+'paddle = GraphicsWindow.AddRectangle(120, 12) 'v0.2
+paddle = Shapes.AddRectangle(120, 12) 'v0.3.1
+'ball = GraphicsWindow.AddEllipse(16, 16) 'v0.2
+ball = Shapes.AddEllipse(16,16) 'v0.3.1
+bricksLeft = 48
+brickStartY = 35
+hitCount = 0
+GraphicsWindow.FontSize = 14
+GraphicsWindow.MouseMove = OnMouseMove
+GraphicsWindow.Title = "Brick Wall"
+
+For idx = 0 To 15
+  Array.SetValue("GreenBricks", idx, 1)
+  Array.SetValue("YellowBricks", idx, 1)
+  Array.SetValue("RedBricks", idx, 1)
+Endfor
+DrawBricks()
+score = 0
+PrintScore()
+
+gw = GraphicsWindow.Width
+gh = GraphicsWindow.Height
+y = gh - 28
+'GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+Shapes.Move(ball,x,y) 'v0.3.1
+deltaX = 1
+deltaY = -2
+Sound.PlayBellRingAndWait()
+
+RunLoop:
+  x = x + deltaX
+  y = y + deltaY
+
+  gw = GraphicsWindow.Width
+  gh = GraphicsWindow.Height
+  If (x >= gw - 16 Or x <= 0) Then
+    deltaX = -deltaX
+  EndIf
+  If (y <= 0) Then
+    deltaY = -deltaY
+  EndIf
+
+ 'padX = GraphicsWindow.GetLeftOfShape(paddle) 'v0.2
+ padX = Shapes.GetLeft(paddle) 'v0.3.1
+  If ((y >= gh - 28 + 2) And x >= padX And x <= padX + 120) Then
+    y = gh - 28 + 2
+    'Sound.PlayClick()
+    hitCount = hitCount + 1
+    If Math.Remainder(hitCount, 3) = 0 Then 'Move bricks downwards
+      For idx = 0 To 15
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+      Endfor
+      brickStartY = brickStartY + 20
+      DrawBricks()
+    EndIf
+    TestRed:
+    For idx = 0 To 15
+      If Array.GetValue("RedBricks", idx) = 1 Then
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestYellow:
+    For idx = 0 To 15
+      If Array.GetValue("YellowBricks", idx) = 1 Then
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestGreen:
+    For idx = 0 To 15
+      If Array.GetValue("GreenBricks", idx) = 1 Then
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    EndTest:
+
+    deltaX = deltaX - 2 + (x - padX) / 30  ' Add some skill
+
+    If score = oldScore Then  'No bricks hit
+      score = score - 1
+    EndIf
+    oldScore = score
+    PrintScore()
+    deltaY = -deltaY  'Change the ball direction
+  EndIf
+  ' GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+  Shapes.Move(ball,x,y) 'v0.3.1
+  Program.Delay(5)
+
+  ' Green Bricks
+  If y > brickStartY - 16 And y < brickStartY + 20 Then  ' y position of brick - diameter of ball
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      Array.SetValue("GreenBricks", idx, 0)
+      RemoveGreenBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 15
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Yellow Bricks
+  If y > brickStartY + 44 And y < brickStartY + 80 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      Array.SetValue("YellowBricks", idx, 0)
+      RemoveYellowBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 10
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Red Bricks
+  If y > brickStartY + 104 And y < brickStartY + 140 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      Array.SetValue("RedBricks", idx, 0)
+      RemoveRedBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 5
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+
+  If (y < gh) Then  'Ball not reached bottom of window
+    Goto RunLoop
+  EndIf
+
+EndGame:
+  GraphicsWindow.ShowMessage("Your score is: " + score, "BrickWall")
+  Program.End()
+
+Sub OnMouseMove
+  paddleX = GraphicsWindow.MouseX
+  ' GraphicsWindow.MoveShape(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.2
+  Shapes.Move(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.3.1
+EndSub
+
+Sub PrintScore
+  ' Clear the score first and then draw the real score text
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(10, 10, 200, 20)
+  GraphicsWindow.BrushColor = "Black"
+  GraphicsWindow.DrawText(10, 10, "Score: " + score)
+EndSub
+
+Sub DrawBricks
+  For idx = 0 To 15 ' Draw bricks
+    'Program.Delay(100)
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+    GraphicsWindow.BrushColor = "Yellow"
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+    GraphicsWindow.BrushColor = "Red"
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+  endfor
+EndSub
+
+Sub RemoveGreenBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+EndSub
+
+Sub RemoveYellowBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+EndSub
+
+Sub RemoveRedBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+EndSub
+
+Sub CheckEnd
+ If bricksLeft = 0 Then
+   GraphicsWindow.ShowMessage("Well Done. Wall destroyed. Your score is: " + score, "BrickWall")
+   'Goto GameStart
+   Program.End()
+   'Goto EndGame
+ EndIf
+EndSub
+
+1 Comment Comment Comment Start_repeat1 end
+  5,1: 'You are penalised -1 each time no bricks are hit.
+  6,1: 'The movement of the ball is influenced by where it hits the paddle.
+  7,1: 'Do not let the bricks reach the bottom of the screen.
+  9,1: GameStart:
+
+'paddle = GraphicsWindow.AddRectangle(120, 12) 'v0.2
+paddle = Shapes.AddRectangle(120, 12) 'v0.3.1
+'ball = GraphicsWindow.AddEllipse(16, 16) 'v0.2
+ball = Shapes.AddEllipse(16,16) 'v0.3.1
+bricksLeft = 48
+brickStartY = 35
+hitCount = 0
+GraphicsWindow.FontSize = 14
+GraphicsWindow.MouseMove = OnMouseMove
+GraphicsWindow.Title = "Brick Wall"
+
+For idx = 0 To 15
+  Array.SetValue("GreenBricks", idx, 1)
+  Array.SetValue("YellowBricks", idx, 1)
+  Array.SetValue("RedBricks", idx, 1)
+Endfor
+DrawBricks()
+score = 0
+PrintScore()
+
+gw = GraphicsWindow.Width
+gh = GraphicsWindow.Height
+y = gh - 28
+'GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+Shapes.Move(ball,x,y) 'v0.3.1
+deltaX = 1
+deltaY = -2
+Sound.PlayBellRingAndWait()
+
+RunLoop:
+  x = x + deltaX
+  y = y + deltaY
+
+  gw = GraphicsWindow.Width
+  gh = GraphicsWindow.Height
+  If (x >= gw - 16 Or x <= 0) Then
+    deltaX = -deltaX
+  EndIf
+  If (y <= 0) Then
+    deltaY = -deltaY
+  EndIf
+
+ 'padX = GraphicsWindow.GetLeftOfShape(paddle) 'v0.2
+ padX = Shapes.GetLeft(paddle) 'v0.3.1
+  If ((y >= gh - 28 + 2) And x >= padX And x <= padX + 120) Then
+    y = gh - 28 + 2
+    'Sound.PlayClick()
+    hitCount = hitCount + 1
+    If Math.Remainder(hitCount, 3) = 0 Then 'Move bricks downwards
+      For idx = 0 To 15
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+      Endfor
+      brickStartY = brickStartY + 20
+      DrawBricks()
+    EndIf
+    TestRed:
+    For idx = 0 To 15
+      If Array.GetValue("RedBricks", idx) = 1 Then
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestYellow:
+    For idx = 0 To 15
+      If Array.GetValue("YellowBricks", idx) = 1 Then
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestGreen:
+    For idx = 0 To 15
+      If Array.GetValue("GreenBricks", idx) = 1 Then
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    EndTest:
+
+    deltaX = deltaX - 2 + (x - padX) / 30  ' Add some skill
+
+    If score = oldScore Then  'No bricks hit
+      score = score - 1
+    EndIf
+    oldScore = score
+    PrintScore()
+    deltaY = -deltaY  'Change the ball direction
+  EndIf
+  ' GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+  Shapes.Move(ball,x,y) 'v0.3.1
+  Program.Delay(5)
+
+  ' Green Bricks
+  If y > brickStartY - 16 And y < brickStartY + 20 Then  ' y position of brick - diameter of ball
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      Array.SetValue("GreenBricks", idx, 0)
+      RemoveGreenBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 15
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Yellow Bricks
+  If y > brickStartY + 44 And y < brickStartY + 80 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      Array.SetValue("YellowBricks", idx, 0)
+      RemoveYellowBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 10
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Red Bricks
+  If y > brickStartY + 104 And y < brickStartY + 140 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      Array.SetValue("RedBricks", idx, 0)
+      RemoveRedBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 5
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+
+  If (y < gh) Then  'Ball not reached bottom of window
+    Goto RunLoop
+  EndIf
+
+EndGame:
+  GraphicsWindow.ShowMessage("Your score is: " + score, "BrickWall")
+  Program.End()
+
+Sub OnMouseMove
+  paddleX = GraphicsWindow.MouseX
+  ' GraphicsWindow.MoveShape(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.2
+  Shapes.Move(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.3.1
+EndSub
+
+Sub PrintScore
+  ' Clear the score first and then draw the real score text
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(10, 10, 200, 20)
+  GraphicsWindow.BrushColor = "Black"
+  GraphicsWindow.DrawText(10, 10, "Score: " + score)
+EndSub
+
+Sub DrawBricks
+  For idx = 0 To 15 ' Draw bricks
+    'Program.Delay(100)
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+    GraphicsWindow.BrushColor = "Yellow"
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+    GraphicsWindow.BrushColor = "Red"
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+  endfor
+EndSub
+
+Sub RemoveGreenBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+EndSub
+
+Sub RemoveYellowBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+EndSub
+
+Sub RemoveRedBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+EndSub
+
+Sub CheckEnd
+ If bricksLeft = 0 Then
+   GraphicsWindow.ShowMessage("Well Done. Wall destroyed. Your score is: " + score, "BrickWall")
+   'Goto GameStart
+   Program.End()
+   'Goto EndGame
+ EndIf
+EndSub
+
+1 Comment Comment Start_repeat1 end
+  6,1: 'The movement of the ball is influenced by where it hits the paddle.
+  7,1: 'Do not let the bricks reach the bottom of the screen.
+  9,1: GameStart:
+
+'paddle = GraphicsWindow.AddRectangle(120, 12) 'v0.2
+paddle = Shapes.AddRectangle(120, 12) 'v0.3.1
+'ball = GraphicsWindow.AddEllipse(16, 16) 'v0.2
+ball = Shapes.AddEllipse(16,16) 'v0.3.1
+bricksLeft = 48
+brickStartY = 35
+hitCount = 0
+GraphicsWindow.FontSize = 14
+GraphicsWindow.MouseMove = OnMouseMove
+GraphicsWindow.Title = "Brick Wall"
+
+For idx = 0 To 15
+  Array.SetValue("GreenBricks", idx, 1)
+  Array.SetValue("YellowBricks", idx, 1)
+  Array.SetValue("RedBricks", idx, 1)
+Endfor
+DrawBricks()
+score = 0
+PrintScore()
+
+gw = GraphicsWindow.Width
+gh = GraphicsWindow.Height
+y = gh - 28
+'GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+Shapes.Move(ball,x,y) 'v0.3.1
+deltaX = 1
+deltaY = -2
+Sound.PlayBellRingAndWait()
+
+RunLoop:
+  x = x + deltaX
+  y = y + deltaY
+
+  gw = GraphicsWindow.Width
+  gh = GraphicsWindow.Height
+  If (x >= gw - 16 Or x <= 0) Then
+    deltaX = -deltaX
+  EndIf
+  If (y <= 0) Then
+    deltaY = -deltaY
+  EndIf
+
+ 'padX = GraphicsWindow.GetLeftOfShape(paddle) 'v0.2
+ padX = Shapes.GetLeft(paddle) 'v0.3.1
+  If ((y >= gh - 28 + 2) And x >= padX And x <= padX + 120) Then
+    y = gh - 28 + 2
+    'Sound.PlayClick()
+    hitCount = hitCount + 1
+    If Math.Remainder(hitCount, 3) = 0 Then 'Move bricks downwards
+      For idx = 0 To 15
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+      Endfor
+      brickStartY = brickStartY + 20
+      DrawBricks()
+    EndIf
+    TestRed:
+    For idx = 0 To 15
+      If Array.GetValue("RedBricks", idx) = 1 Then
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestYellow:
+    For idx = 0 To 15
+      If Array.GetValue("YellowBricks", idx) = 1 Then
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestGreen:
+    For idx = 0 To 15
+      If Array.GetValue("GreenBricks", idx) = 1 Then
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    EndTest:
+
+    deltaX = deltaX - 2 + (x - padX) / 30  ' Add some skill
+
+    If score = oldScore Then  'No bricks hit
+      score = score - 1
+    EndIf
+    oldScore = score
+    PrintScore()
+    deltaY = -deltaY  'Change the ball direction
+  EndIf
+  ' GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+  Shapes.Move(ball,x,y) 'v0.3.1
+  Program.Delay(5)
+
+  ' Green Bricks
+  If y > brickStartY - 16 And y < brickStartY + 20 Then  ' y position of brick - diameter of ball
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      Array.SetValue("GreenBricks", idx, 0)
+      RemoveGreenBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 15
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Yellow Bricks
+  If y > brickStartY + 44 And y < brickStartY + 80 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      Array.SetValue("YellowBricks", idx, 0)
+      RemoveYellowBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 10
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Red Bricks
+  If y > brickStartY + 104 And y < brickStartY + 140 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      Array.SetValue("RedBricks", idx, 0)
+      RemoveRedBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 5
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+
+  If (y < gh) Then  'Ball not reached bottom of window
+    Goto RunLoop
+  EndIf
+
+EndGame:
+  GraphicsWindow.ShowMessage("Your score is: " + score, "BrickWall")
+  Program.End()
+
+Sub OnMouseMove
+  paddleX = GraphicsWindow.MouseX
+  ' GraphicsWindow.MoveShape(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.2
+  Shapes.Move(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.3.1
+EndSub
+
+Sub PrintScore
+  ' Clear the score first and then draw the real score text
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(10, 10, 200, 20)
+  GraphicsWindow.BrushColor = "Black"
+  GraphicsWindow.DrawText(10, 10, "Score: " + score)
+EndSub
+
+Sub DrawBricks
+  For idx = 0 To 15 ' Draw bricks
+    'Program.Delay(100)
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+    GraphicsWindow.BrushColor = "Yellow"
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+    GraphicsWindow.BrushColor = "Red"
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+  endfor
+EndSub
+
+Sub RemoveGreenBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+EndSub
+
+Sub RemoveYellowBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+EndSub
+
+Sub RemoveRedBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+EndSub
+
+Sub CheckEnd
+ If bricksLeft = 0 Then
+   GraphicsWindow.ShowMessage("Well Done. Wall destroyed. Your score is: " + score, "BrickWall")
+   'Goto GameStart
+   Program.End()
+   'Goto EndGame
+ EndIf
+EndSub
+
+1 Comment Start_repeat1 end
+  7,1: 'Do not let the bricks reach the bottom of the screen.
+  9,1: GameStart:
+
+'paddle = GraphicsWindow.AddRectangle(120, 12) 'v0.2
+paddle = Shapes.AddRectangle(120, 12) 'v0.3.1
+'ball = GraphicsWindow.AddEllipse(16, 16) 'v0.2
+ball = Shapes.AddEllipse(16,16) 'v0.3.1
+bricksLeft = 48
+brickStartY = 35
+hitCount = 0
+GraphicsWindow.FontSize = 14
+GraphicsWindow.MouseMove = OnMouseMove
+GraphicsWindow.Title = "Brick Wall"
+
+For idx = 0 To 15
+  Array.SetValue("GreenBricks", idx, 1)
+  Array.SetValue("YellowBricks", idx, 1)
+  Array.SetValue("RedBricks", idx, 1)
+Endfor
+DrawBricks()
+score = 0
+PrintScore()
+
+gw = GraphicsWindow.Width
+gh = GraphicsWindow.Height
+y = gh - 28
+'GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+Shapes.Move(ball,x,y) 'v0.3.1
+deltaX = 1
+deltaY = -2
+Sound.PlayBellRingAndWait()
+
+RunLoop:
+  x = x + deltaX
+  y = y + deltaY
+
+  gw = GraphicsWindow.Width
+  gh = GraphicsWindow.Height
+  If (x >= gw - 16 Or x <= 0) Then
+    deltaX = -deltaX
+  EndIf
+  If (y <= 0) Then
+    deltaY = -deltaY
+  EndIf
+
+ 'padX = GraphicsWindow.GetLeftOfShape(paddle) 'v0.2
+ padX = Shapes.GetLeft(paddle) 'v0.3.1
+  If ((y >= gh - 28 + 2) And x >= padX And x <= padX + 120) Then
+    y = gh - 28 + 2
+    'Sound.PlayClick()
+    hitCount = hitCount + 1
+    If Math.Remainder(hitCount, 3) = 0 Then 'Move bricks downwards
+      For idx = 0 To 15
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+      Endfor
+      brickStartY = brickStartY + 20
+      DrawBricks()
+    EndIf
+    TestRed:
+    For idx = 0 To 15
+      If Array.GetValue("RedBricks", idx) = 1 Then
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestYellow:
+    For idx = 0 To 15
+      If Array.GetValue("YellowBricks", idx) = 1 Then
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestGreen:
+    For idx = 0 To 15
+      If Array.GetValue("GreenBricks", idx) = 1 Then
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    EndTest:
+
+    deltaX = deltaX - 2 + (x - padX) / 30  ' Add some skill
+
+    If score = oldScore Then  'No bricks hit
+      score = score - 1
+    EndIf
+    oldScore = score
+    PrintScore()
+    deltaY = -deltaY  'Change the ball direction
+  EndIf
+  ' GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+  Shapes.Move(ball,x,y) 'v0.3.1
+  Program.Delay(5)
+
+  ' Green Bricks
+  If y > brickStartY - 16 And y < brickStartY + 20 Then  ' y position of brick - diameter of ball
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      Array.SetValue("GreenBricks", idx, 0)
+      RemoveGreenBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 15
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Yellow Bricks
+  If y > brickStartY + 44 And y < brickStartY + 80 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      Array.SetValue("YellowBricks", idx, 0)
+      RemoveYellowBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 10
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Red Bricks
+  If y > brickStartY + 104 And y < brickStartY + 140 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      Array.SetValue("RedBricks", idx, 0)
+      RemoveRedBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 5
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+
+  If (y < gh) Then  'Ball not reached bottom of window
+    Goto RunLoop
+  EndIf
+
+EndGame:
+  GraphicsWindow.ShowMessage("Your score is: " + score, "BrickWall")
+  Program.End()
+
+Sub OnMouseMove
+  paddleX = GraphicsWindow.MouseX
+  ' GraphicsWindow.MoveShape(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.2
+  Shapes.Move(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.3.1
+EndSub
+
+Sub PrintScore
+  ' Clear the score first and then draw the real score text
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(10, 10, 200, 20)
+  GraphicsWindow.BrushColor = "Black"
+  GraphicsWindow.DrawText(10, 10, "Score: " + score)
+EndSub
+
+Sub DrawBricks
+  For idx = 0 To 15 ' Draw bricks
+    'Program.Delay(100)
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+    GraphicsWindow.BrushColor = "Yellow"
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+    GraphicsWindow.BrushColor = "Red"
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+  endfor
+EndSub
+
+Sub RemoveGreenBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+EndSub
+
+Sub RemoveYellowBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+EndSub
+
+Sub RemoveRedBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+EndSub
+
+Sub CheckEnd
+ If bricksLeft = 0 Then
+   GraphicsWindow.ShowMessage("Well Done. Wall destroyed. Your score is: " + score, "BrickWall")
+   'Goto GameStart
+   Program.End()
+   'Goto EndGame
+ EndIf
+EndSub
+
+1 ID :
+  9,1: GameStart
+  9,10: :
+
+188 :
+  9,10: :
+
+97 Comment Prog
+  11,1: 'paddle = GraphicsWindow.AddRectangle(120, 12) 'v0.2
+  12,1: paddle = Shapes.AddRectangle(120, 12)
+
+171 ID = Expr
+  12,1: paddle
+  12,8: =
+  12,10: Shapes.AddRectangle(120, 12)
+
+188 = Expr
+  12,8: =
+  12,10: Shapes.AddRectangle(120, 12)
+
+73 ID . ID ( Exprs )
+  12,10: Shapes
+  12,16: .
+  12,17: AddRectangle
+  12,29: (
+  12,30: 120, 12
+  12,37: )
+
+2 . ID ( Exprs )
+  12,16: .
+  12,17: AddRectangle
+  12,29: (
+  12,30: 120, 12
+  12,37: )
+
+247 ID ( Exprs )
+  12,17: AddRectangle
+  12,29: (
+  12,30: 120, 12
+  12,37: )
+
+6 ( Exprs )
+  12,29: (
+  12,30: 120, 12
+  12,37: )
+
+21 NUM
+  12,30: 120
+
+217 , MoreThanOneExpr
+  12,33: ,
+  12,35: 12
+
+54 NUM
+  12,35: 12
+
+250 )
+  12,37: )
+
+20 Comment Comment Start_repeat1
+  12,39: 'v0.3.1
+  13,1: 'ball = GraphicsWindow.AddEllipse(16, 16) 'v0.2
+  14,1: ball = Shapes.AddEllipse(16,16) 'v0.3.1
+bricksLeft = 48
+
+20 Comment Start_repeat1
+  13,1: 'ball = GraphicsWindow.AddEllipse(16, 16) 'v0.2
+  14,1: ball = Shapes.AddEllipse(16,16) 'v0.3.1
+bricksLeft = 48
+
+20 ID = Expr
+  14,1: ball
+  14,6: =
+  14,8: Shapes.AddEllipse(16,16)
+
+188 = Expr
+  14,6: =
+  14,8: Shapes.AddEllipse(16,16)
+
+73 ID . ID ( Exprs )
+  14,8: Shapes
+  14,14: .
+  14,15: AddEllipse
+  14,25: (
+  14,26: 16,16
+  14,31: )
+
+2 . ID ( Exprs )
+  14,14: .
+  14,15: AddEllipse
+  14,25: (
+  14,26: 16,16
+  14,31: )
+
+247 ID ( Exprs )
+  14,15: AddEllipse
+  14,25: (
+  14,26: 16,16
+  14,31: )
+
+6 ( Exprs )
+  14,25: (
+  14,26: 16,16
+  14,31: )
+
+21 NUM
+  14,26: 16
+
+217 , MoreThanOneExpr
+  14,28: ,
+  14,29: 16
+
+54 NUM
+  14,29: 16
+
+250 )
+  14,31: )
+
+101 Comment Prog
+  14,33: 'v0.3.1
+  15,1: bricksLeft = 48
+
+20 ID = Expr
+  15,1: bricksLeft
+  15,12: =
+  15,14: 48
+
+188 = Expr
+  15,12: =
+  15,14: 48
+
+73 NUM
+  15,14: 48
+
+9 ID = Expr
+  16,1: brickStartY
+  16,13: =
+  16,15: 35
+
+188 = Expr
+  16,13: =
+  16,15: 35
+
+73 NUM
+  16,15: 35
+
+9 ID = Expr
+  17,1: hitCount
+  17,10: =
+  17,12: 0
+
+188 = Expr
+  17,10: =
+  17,12: 0
+
+73 NUM
+  17,12: 0
+
+9 ID . ID = Expr
+  18,1: GraphicsWindow
+  18,15: .
+  18,16: FontSize
+  18,25: =
+  18,27: 14
+
+188 . ID = Expr
+  18,15: .
+  18,16: FontSize
+  18,25: =
+  18,27: 14
+
+259 ID = Expr
+  18,16: FontSize
+  18,25: =
+  18,27: 14
+
+214 = Expr
+  18,25: =
+  18,27: 14
+
+75 NUM
+  18,27: 14
+
+9 ID . ID = Expr
+  19,1: GraphicsWindow
+  19,15: .
+  19,16: MouseMove
+  19,26: =
+  19,28: OnMouseMove
+
+188 . ID = Expr
+  19,15: .
+  19,16: MouseMove
+  19,26: =
+  19,28: OnMouseMove
+
+259 ID = Expr
+  19,16: MouseMove
+  19,26: =
+  19,28: OnMouseMove
+
+214 = Expr
+  19,26: =
+  19,28: OnMouseMove
+
+75 ID
+  19,28: OnMouseMove
+
+2 ID . ID = Expr
+  20,1: GraphicsWindow
+  20,15: .
+  20,16: Title
+  20,22: =
+  20,24: "Brick Wall"
+
+188 . ID = Expr
+  20,15: .
+  20,16: Title
+  20,22: =
+  20,24: "Brick Wall"
+
+259 ID = Expr
+  20,16: Title
+  20,22: =
+  20,24: "Brick Wall"
+
+214 = Expr
+  20,22: =
+  20,24: "Brick Wall"
+
+75 STR
+  20,24: "Brick Wall"
+
+9 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  22,1: For
+  22,5: idx
+  22,9: =
+  22,11: 0
+  22,13: To
+  22,16: 15
+  22,18: 
+  Array.SetValue("GreenBricks", idx, 1)
+  Array.SetValue("YellowBricks", idx, 1)
+  Array.SetValue("RedBricks", idx, 1)
+
+  26,1: Endfor
+
+234 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  22,5: idx
+  22,9: =
+  22,11: 0
+  22,13: To
+  22,16: 15
+  22,18: 
+  Array.SetValue("GreenBricks", idx, 1)
+  Array.SetValue("YellowBricks", idx, 1)
+  Array.SetValue("RedBricks", idx, 1)
+
+  26,1: Endfor
+
+232 = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  22,9: =
+  22,11: 0
+  22,13: To
+  22,16: 15
+  22,18: 
+  Array.SetValue("GreenBricks", idx, 1)
+  Array.SetValue("YellowBricks", idx, 1)
+  Array.SetValue("RedBricks", idx, 1)
+
+  26,1: Endfor
+
+60 NUM
+  22,11: 0
+
+258 Stmt_token5 Expr CRStmtCRs Stmt_token6
+  22,13: To
+  22,16: 15
+  22,18: 
+  Array.SetValue("GreenBricks", idx, 1)
+  Array.SetValue("YellowBricks", idx, 1)
+  Array.SetValue("RedBricks", idx, 1)
+
+  26,1: Endfor
+
+58 NUM
+  22,16: 15
+
+43 CR_token2
+  22,18: 
+
+
+137 ID . ID ( Exprs )
+  23,3: Array
+  23,8: .
+  23,9: SetValue
+  23,17: (
+  23,18: "GreenBricks", idx, 1
+  23,39: )
+
+184 . ID ( Exprs )
+  23,8: .
+  23,9: SetValue
+  23,17: (
+  23,18: "GreenBricks", idx, 1
+  23,39: )
+
+255 ID ( Exprs )
+  23,9: SetValue
+  23,17: (
+  23,18: "GreenBricks", idx, 1
+  23,39: )
+
+221 ( Exprs )
+  23,17: (
+  23,18: "GreenBricks", idx, 1
+  23,39: )
+
+27 STR
+  23,18: "GreenBricks"
+
+217 , MoreThanOneExpr
+  23,31: ,
+  23,33: idx, 1
+
+54 ID
+  23,33: idx
+
+217 , MoreThanOneExpr
+  23,36: ,
+  23,38: 1
+
+54 NUM
+  23,38: 1
+
+238 )
+  23,39: )
+
+210 CR_token2
+  23,40: 
+
+
+137 ID . ID ( Exprs )
+  24,3: Array
+  24,8: .
+  24,9: SetValue
+  24,17: (
+  24,18: "YellowBricks", idx, 1
+  24,40: )
+
+184 . ID ( Exprs )
+  24,8: .
+  24,9: SetValue
+  24,17: (
+  24,18: "YellowBricks", idx, 1
+  24,40: )
+
+255 ID ( Exprs )
+  24,9: SetValue
+  24,17: (
+  24,18: "YellowBricks", idx, 1
+  24,40: )
+
+221 ( Exprs )
+  24,17: (
+  24,18: "YellowBricks", idx, 1
+  24,40: )
+
+27 STR
+  24,18: "YellowBricks"
+
+217 , MoreThanOneExpr
+  24,32: ,
+  24,34: idx, 1
+
+54 ID
+  24,34: idx
+
+217 , MoreThanOneExpr
+  24,37: ,
+  24,39: 1
+
+54 NUM
+  24,39: 1
+
+238 )
+  24,40: )
+
+210 CR_token2
+  24,41: 
+
+
+137 ID . ID ( Exprs )
+  25,3: Array
+  25,8: .
+  25,9: SetValue
+  25,17: (
+  25,18: "RedBricks", idx, 1
+  25,37: )
+
+184 . ID ( Exprs )
+  25,8: .
+  25,9: SetValue
+  25,17: (
+  25,18: "RedBricks", idx, 1
+  25,37: )
+
+255 ID ( Exprs )
+  25,9: SetValue
+  25,17: (
+  25,18: "RedBricks", idx, 1
+  25,37: )
+
+221 ( Exprs )
+  25,17: (
+  25,18: "RedBricks", idx, 1
+  25,37: )
+
+27 STR
+  25,18: "RedBricks"
+
+217 , MoreThanOneExpr
+  25,29: ,
+  25,31: idx, 1
+
+54 ID
+  25,31: idx
+
+217 , MoreThanOneExpr
+  25,34: ,
+  25,36: 1
+
+54 NUM
+  25,36: 1
+
+238 )
+  25,37: )
+
+210 CR_token2
+  25,38: 
+
+
+189 Stmt_token6
+  26,1: Endfor
+
+151 ID ( )
+  27,1: DrawBricks
+  27,11: (
+  27,12: )
+
+188 ( )
+  27,11: (
+  27,12: )
+
+256 )
+  27,12: )
+
+150 ID = Expr
+  28,1: score
+  28,7: =
+  28,9: 0
+
+188 = Expr
+  28,7: =
+  28,9: 0
+
+73 NUM
+  28,9: 0
+
+9 ID ( )
+  29,1: PrintScore
+  29,11: (
+  29,12: )
+
+188 ( )
+  29,11: (
+  29,12: )
+
+256 )
+  29,12: )
+
+150 ID = Expr
+  31,1: gw
+  31,4: =
+  31,6: GraphicsWindow.Width
+
+188 = Expr
+  31,4: =
+  31,6: GraphicsWindow.Width
+
+73 ID . ID
+  31,6: GraphicsWindow
+  31,20: .
+  31,21: Width
+
+2 . ID
+  31,20: .
+  31,21: Width
+
+247 ID
+  31,21: Width
+
+6 ID = Expr
+  32,1: gh
+  32,4: =
+  32,6: GraphicsWindow.Height
+
+188 = Expr
+  32,4: =
+  32,6: GraphicsWindow.Height
+
+73 ID . ID
+  32,6: GraphicsWindow
+  32,20: .
+  32,21: Height
+
+2 . ID
+  32,20: .
+  32,21: Height
+
+247 ID
+  32,21: Height
+
+6 ID = Expr
+  33,1: y
+  33,3: =
+  33,5: gh - 28
+
+188 = Expr
+  33,3: =
+  33,5: gh - 28
+
+73 ID
+  33,5: gh
+
+28 - MultiplicativeExpr
+  33,8: -
+  33,10: 28
+
+143 NUM
+  33,10: 28
+
+9 Comment Start_repeat1
+  34,1: 'GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+  35,1: Shapes.Move(ball,x,y) 'v0.3.1
+deltaX = 1
+deltaY = -2
+Sound.PlayBellRingAndWait()
+
+9 ID . ID ( Exprs )
+  35,1: Shapes
+  35,7: .
+  35,8: Move
+  35,12: (
+  35,13: ball,x,y
+  35,21: )
+
+188 . ID ( Exprs )
+  35,7: .
+  35,8: Move
+  35,12: (
+  35,13: ball,x,y
+  35,21: )
+
+259 ID ( Exprs )
+  35,8: Move
+  35,12: (
+  35,13: ball,x,y
+  35,21: )
+
+214 ( Exprs )
+  35,12: (
+  35,13: ball,x,y
+  35,21: )
+
+25 ID
+  35,13: ball
+
+217 , MoreThanOneExpr
+  35,17: ,
+  35,18: x,y
+
+54 ID
+  35,18: x
+
+217 , MoreThanOneExpr
+  35,19: ,
+  35,20: y
+
+54 ID
+  35,20: y
+
+240 )
+  35,21: )
+
+101 Comment Prog
+  35,23: 'v0.3.1
+  36,1: deltaX = 1
+
+175 ID = Expr
+  36,1: deltaX
+  36,8: =
+  36,10: 1
+
+188 = Expr
+  36,8: =
+  36,10: 1
+
+73 NUM
+  36,10: 1
+
+9 ID = Expr
+  37,1: deltaY
+  37,8: =
+  37,10: -2
+
+188 = Expr
+  37,8: =
+  37,10: -2
+
+73 - Primary
+  37,10: -
+  37,11: 2
+
+196 NUM
+  37,11: 2
+
+9 ID . ID ( )
+  38,1: Sound
+  38,6: .
+  38,7: PlayBellRingAndWait
+  38,26: (
+  38,27: )
+
+188 . ID ( )
+  38,6: .
+  38,7: PlayBellRingAndWait
+  38,26: (
+  38,27: )
+
+259 ID ( )
+  38,7: PlayBellRingAndWait
+  38,26: (
+  38,27: )
+
+214 ( )
+  38,26: (
+  38,27: )
+
+25 )
+  38,27: )
+
+162 ID :
+  40,1: RunLoop
+  40,8: :
+
+188 :
+  40,8: :
+
+171 ID = Expr
+  41,3: x
+  41,5: =
+  41,7: x + deltaX
+
+188 = Expr
+  41,5: =
+  41,7: x + deltaX
+
+73 ID
+  41,7: x
+
+28 + MultiplicativeExpr
+  41,9: +
+  41,11: deltaX
+
+143 ID
+  41,11: deltaX
+
+2 ID = Expr
+  42,3: y
+  42,5: =
+  42,7: y + deltaY
+
+188 = Expr
+  42,5: =
+  42,7: y + deltaY
+
+73 ID
+  42,7: y
+
+28 + MultiplicativeExpr
+  42,9: +
+  42,11: deltaY
+
+143 ID
+  42,11: deltaY
+
+2 ID = Expr
+  44,3: gw
+  44,6: =
+  44,8: GraphicsWindow.Width
+
+188 = Expr
+  44,6: =
+  44,8: GraphicsWindow.Width
+
+73 ID . ID
+  44,8: GraphicsWindow
+  44,22: .
+  44,23: Width
+
+2 . ID
+  44,22: .
+  44,23: Width
+
+247 ID
+  44,23: Width
+
+6 ID = Expr
+  45,3: gh
+  45,6: =
+  45,8: GraphicsWindow.Height
+
+188 = Expr
+  45,6: =
+  45,8: GraphicsWindow.Height
+
+73 ID . ID
+  45,8: GraphicsWindow
+  45,22: .
+  45,23: Height
+
+2 . ID
+  45,22: .
+  45,23: Height
+
+247 ID
+  45,23: Height
+
+6 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  46,3: If
+  46,6: (x >= gw - 16 Or x <= 0)
+  46,31: Then
+  46,35: 
+    deltaX = -deltaX
+
+  48,3: EndIf
+
+66 ( Expr )
+  46,6: (
+  46,7: x >= gw - 16 Or x <= 0
+  46,29: )
+
+80 ID
+  46,7: x
+
+91 >= AdditiveExpr
+  46,9: >=
+  46,12: gw - 16
+
+131 ID
+  46,12: gw
+
+78 - MultiplicativeExpr
+  46,15: -
+  46,17: 16
+
+141 NUM
+  46,17: 16
+
+183 OrExpr_token1 AndExpr
+  46,20: Or
+  46,23: x <= 0
+
+100 ID
+  46,23: x
+
+91 <= AdditiveExpr
+  46,25: <=
+  46,28: 0
+
+131 NUM
+  46,28: 0
+
+265 )
+  46,29: )
+
+243 Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  46,31: Then
+  46,35: 
+    deltaX = -deltaX
+
+  48,3: EndIf
+
+121 CR_token2
+  46,35: 
+
+
+109 ID = Expr
+  47,5: deltaX
+  47,12: =
+  47,14: -deltaX
+
+184 = Expr
+  47,12: =
+  47,14: -deltaX
+
+70 - Primary
+  47,14: -
+  47,15: deltaX
+
+193 ID
+  47,15: deltaX
+
+5 CR_token2
+  47,21: 
+
+
+109 OptionalElse_token1
+  48,3: EndIf
+
+172 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  49,3: If
+  49,6: (y <= 0)
+  49,15: Then
+  49,19: 
+    deltaY = -deltaY
+
+  51,3: EndIf
+
+66 ( Expr )
+  49,6: (
+  49,7: y <= 0
+  49,13: )
+
+80 ID
+  49,7: y
+
+91 <= AdditiveExpr
+  49,9: <=
+  49,12: 0
+
+131 NUM
+  49,12: 0
+
+265 )
+  49,13: )
+
+243 Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  49,15: Then
+  49,19: 
+    deltaY = -deltaY
+
+  51,3: EndIf
+
+121 CR_token2
+  49,19: 
+
+
+109 ID = Expr
+  50,5: deltaY
+  50,12: =
+  50,14: -deltaY
+
+184 = Expr
+  50,12: =
+  50,14: -deltaY
+
+70 - Primary
+  50,14: -
+  50,15: deltaY
+
+193 ID
+  50,15: deltaY
+
+5 CR_token2
+  50,21: 
+
+
+109 OptionalElse_token1
+  51,3: EndIf
+
+101 Comment Prog
+  53,2: 'padX = GraphicsWindow.GetLeftOfShape(paddle) 'v0.2
+  54,2: padX = Shapes.GetLeft(paddle)
+
+172 ID = Expr
+  54,2: padX
+  54,7: =
+  54,9: Shapes.GetLeft(paddle)
+
+188 = Expr
+  54,7: =
+  54,9: Shapes.GetLeft(paddle)
+
+73 ID . ID ( Exprs )
+  54,9: Shapes
+  54,15: .
+  54,16: GetLeft
+  54,23: (
+  54,24: paddle
+  54,30: )
+
+2 . ID ( Exprs )
+  54,15: .
+  54,16: GetLeft
+  54,23: (
+  54,24: paddle
+  54,30: )
+
+247 ID ( Exprs )
+  54,16: GetLeft
+  54,23: (
+  54,24: paddle
+  54,30: )
+
+6 ( Exprs )
+  54,23: (
+  54,24: paddle
+  54,30: )
+
+21 ID
+  54,24: paddle
+
+250 )
+  54,30: )
+
+20 Comment Start_repeat1
+  54,32: 'v0.3.1
+  55,3: If ((y >= gh - 28 + 2) And x >= padX And x <= padX + 120) Then
+    y = gh - 28 + 2
+    'Sound.PlayClick()
+    hitCount = hitCount + 1
+    If Math.Remainder(hitCount, 3) = 0 Then 'Move bricks downwards
+      For idx = 0 To 15
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+      Endfor
+      brickStartY = brickStartY + 20
+      DrawBricks()
+    EndIf
+    TestRed:
+    For idx = 0 To 15
+      If Array.GetValue("RedBricks", idx) = 1 Then
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestYellow:
+    For idx = 0 To 15
+      If Array.GetValue("YellowBricks", idx) = 1 Then
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestGreen:
+    For idx = 0 To 15
+      If Array.GetValue("GreenBricks", idx) = 1 Then
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    EndTest:
+
+    deltaX = deltaX - 2 + (x - padX) / 30  ' Add some skill
+
+    If score = oldScore Then  'No bricks hit
+      score = score - 1
+    EndIf
+    oldScore = score
+    PrintScore()
+    deltaY = -deltaY  'Change the ball direction
+  EndIf
+  ' GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+  Shapes.Move(ball,x,y) 'v0.3.1
+  Program.Delay(5)
+
+  ' Green Bricks
+  If y > brickStartY - 16 And y < brickStartY + 20 Then  ' y position of brick - diameter of ball
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      Array.SetValue("GreenBricks", idx, 0)
+      RemoveGreenBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 15
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Yellow Bricks
+  If y > brickStartY + 44 And y < brickStartY + 80 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      Array.SetValue("YellowBricks", idx, 0)
+      RemoveYellowBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 10
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Red Bricks
+  If y > brickStartY + 104 And y < brickStartY + 140 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      Array.SetValue("RedBricks", idx, 0)
+      RemoveRedBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 5
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+
+  If (y < gh) Then  'Ball not reached bottom of window
+    Goto RunLoop
+  EndIf
+
+EndGame:
+  GraphicsWindow.ShowMessage("Your score is: " + score, "BrickWall")
+  Program.End()
+
+Sub OnMouseMove
+  paddleX = GraphicsWindow.MouseX
+  ' GraphicsWindow.MoveShape(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.2
+  Shapes.Move(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.3.1
+EndSub
+
+Sub PrintScore
+  ' Clear the score first and then draw the real score text
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(10, 10, 200, 20)
+  GraphicsWindow.BrushColor = "Black"
+  GraphicsWindow.DrawText(10, 10, "Score: " + score)
+EndSub
+
+Sub DrawBricks
+  For idx = 0 To 15 ' Draw bricks
+    'Program.Delay(100)
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+    GraphicsWindow.BrushColor = "Yellow"
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+    GraphicsWindow.BrushColor = "Red"
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+  endfor
+EndSub
+
+Sub RemoveGreenBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+EndSub
+
+Sub RemoveYellowBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+EndSub
+
+Sub RemoveRedBrick
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+EndSub
+
+20 Stmt_token9 Expr Stmt_token10 Stmt_repeat1 MoreThanZeroElseIf
+  55,3: If
+  55,6: ((y >= gh - 28 + 2) And x >= padX And x <= padX + 120)
+  55,61: Then
+  55,65: 
+    y = gh - 28 + 2
+    'Sound.PlayClick()
+    hitCount = hitCount + 1
+    If Math.Remainder(hitCount, 3) = 0 Then 'Move bricks downwards
+      For idx = 0 To 15
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+      Endfor
+      brickStartY = brickStartY + 20
+      DrawBricks()
+    EndIf
+    TestRed:
+    For idx = 0 To 15
+      If Array.GetValue("RedBricks", idx) = 1 Then
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestYellow:
+    For idx = 0 To 15
+      If Array.GetValue("YellowBricks", idx) = 1 Then
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestGreen:
+    For idx = 0 To 15
+      If Array.GetValue("GreenBricks", idx) = 1 Then
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    EndTest:
+
+    deltaX = deltaX - 2 + (x - padX) / 30  ' Add some skill
+
+    If score = oldScore Then  'No bricks hit
+      score = score - 1
+    EndIf
+    oldScore = score
+    PrintScore()
+    deltaY = -deltaY  'Change the ball direction
+
+  102,3: EndIf
+
+66 ( Expr )
+  55,6: (
+  55,7: (y >= gh - 28 + 2) And x >= padX And x <= padX + 120
+  55,59: )
+
+80 ( Expr )
+  55,7: (
+  55,8: y >= gh - 28 + 2
+  55,24: )
+
+80 ID
+  55,8: y
+
+91 >= AdditiveExpr
+  55,10: >=
+  55,13: gh - 28 + 2
+
+131 ID
+  55,13: gh
+
+78 - MultiplicativeExpr
+  55,16: -
+  55,18: 28
+
+141 NUM
+  55,18: 28
+
+78 + MultiplicativeExpr
+  55,21: +
+  55,23: 2
+
+141 NUM
+  55,23: 2
+
+265 )
+  55,24: )
+
+167 AndExpr_token1 EqNeqExpr
+  55,26: And
+  55,30: x >= padX
+
+102 ID
+  55,30: x
+
+91 >= AdditiveExpr
+  55,32: >=
+  55,35: padX
+
+131 ID
+  55,35: padX
+
+167 AndExpr_token1 EqNeqExpr
+  55,40: And
+  55,44: x <= padX + 120
+
+102 ID
+  55,44: x
+
+91 <= AdditiveExpr
+  55,46: <=
+  55,49: padX + 120
+
+131 ID
+  55,49: padX
+
+78 + MultiplicativeExpr
+  55,54: +
+  55,56: 120
+
+141 NUM
+  55,56: 120
+
+265 )
+  55,59: )
+
+243 Stmt_token10 Stmt_repeat1 MoreThanZeroElseIf
+  55,61: Then
+  55,65: 
+    y = gh - 28 + 2
+    'Sound.PlayClick()
+    hitCount = hitCount + 1
+    If Math.Remainder(hitCount, 3) = 0 Then 'Move bricks downwards
+      For idx = 0 To 15
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+      Endfor
+      brickStartY = brickStartY + 20
+      DrawBricks()
+    EndIf
+    TestRed:
+    For idx = 0 To 15
+      If Array.GetValue("RedBricks", idx) = 1 Then
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestYellow:
+    For idx = 0 To 15
+      If Array.GetValue("YellowBricks", idx) = 1 Then
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestGreen:
+    For idx = 0 To 15
+      If Array.GetValue("GreenBricks", idx) = 1 Then
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    EndTest:
+
+    deltaX = deltaX - 2 + (x - padX) / 30  ' Add some skill
+
+    If score = oldScore Then  'No bricks hit
+      score = score - 1
+    EndIf
+    oldScore = score
+    PrintScore()
+    deltaY = -deltaY  'Change the ball direction
+
+  102,3: EndIf
+
+121 CR_token2
+  55,65: 
+
+
+109 ID = Expr
+  56,5: y
+  56,7: =
+  56,9: gh - 28 + 2
+
+184 = Expr
+  56,7: =
+  56,9: gh - 28 + 2
+
+70 ID
+  56,9: gh
+
+59 - MultiplicativeExpr
+  56,12: -
+  56,14: 28
+
+144 NUM
+  56,14: 28
+
+59 + MultiplicativeExpr
+  56,17: +
+  56,19: 2
+
+144 NUM
+  56,19: 2
+
+43 CR_token2
+  56,20: 
+
+
+119 Comment CRStmtCRs
+  57,5: 'Sound.PlayClick()
+  57,23: 
+    hitCount = hitCount + 1
+    If Math.Remainder(hitCount, 3) = 0 Then 'Move bricks downwards
+      For idx = 0 To 15
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+      Endfor
+      brickStartY = brickStartY + 20
+      DrawBricks()
+    EndIf
+    TestRed:
+    For idx = 0 To 15
+      If Array.GetValue("RedBricks", idx) = 1 Then
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestYellow:
+    For idx = 0 To 15
+      If Array.GetValue("YellowBricks", idx) = 1 Then
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    TestGreen:
+    For idx = 0 To 15
+      If Array.GetValue("GreenBricks", idx) = 1 Then
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+      EndIf
+    EndFor
+    EndTest:
+
+    deltaX = deltaX - 2 + (x - padX) / 30  ' Add some skill
+
+    If score = oldScore Then  'No bricks hit
+      score = score - 1
+    EndIf
+    oldScore = score
+    PrintScore()
+    deltaY = -deltaY  'Change the ball direction
+
+
+109 CR_token2
+  57,23: 
+
+
+109 ID = Expr
+  58,5: hitCount
+  58,14: =
+  58,16: hitCount + 1
+
+184 = Expr
+  58,14: =
+  58,16: hitCount + 1
+
+70 ID
+  58,16: hitCount
+
+59 + MultiplicativeExpr
+  58,25: +
+  58,27: 1
+
+144 NUM
+  58,27: 1
+
+43 CR_token2
+  58,28: 
+
+
+109 Stmt_token9 Expr Stmt_token10 Comment CRStmtCRs MoreThanZeroElseIf
+  59,5: If
+  59,8: Math.Remainder(hitCount, 3) = 0
+  59,40: Then
+  59,45: 'Move bricks downwards
+  59,67: 
+      For idx = 0 To 15
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+      Endfor
+      brickStartY = brickStartY + 20
+      DrawBricks()
+
+  67,5: EndIf
+
+86 ID . ID ( Exprs )
+  59,8: Math
+  59,12: .
+  59,13: Remainder
+  59,22: (
+  59,23: hitCount, 3
+  59,34: )
+
+4 . ID ( Exprs )
+  59,12: .
+  59,13: Remainder
+  59,22: (
+  59,23: hitCount, 3
+  59,34: )
+
+248 ID ( Exprs )
+  59,13: Remainder
+  59,22: (
+  59,23: hitCount, 3
+  59,34: )
+
+23 ( Exprs )
+  59,22: (
+  59,23: hitCount, 3
+  59,34: )
+
+22 ID
+  59,23: hitCount
+
+217 , MoreThanOneExpr
+  59,31: ,
+  59,33: 3
+
+54 NUM
+  59,33: 3
+
+239 )
+  59,34: )
+
+128 = CompExpr
+  59,36: =
+  59,38: 0
+
+117 NUM
+  59,38: 0
+
+254 Stmt_token10 Comment CRStmtCRs MoreThanZeroElseIf
+  59,40: Then
+  59,45: 'Move bricks downwards
+  59,67: 
+      For idx = 0 To 15
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+      Endfor
+      brickStartY = brickStartY + 20
+      DrawBricks()
+
+  67,5: EndIf
+
+124 Comment CRStmtCRs MoreThanZeroElseIf
+  59,45: 'Move bricks downwards
+  59,67: 
+      For idx = 0 To 15
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+      Endfor
+      brickStartY = brickStartY + 20
+      DrawBricks()
+
+  67,5: EndIf
+
+124 CR_token2
+  59,67: 
+
+
+109 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  60,7: For
+  60,11: idx
+  60,15: =
+  60,17: 0
+  60,19: To
+  60,22: 15
+  60,24: 
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+
+  64,7: Endfor
+
+267 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  60,11: idx
+  60,15: =
+  60,17: 0
+  60,19: To
+  60,22: 15
+  60,24: 
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+
+  64,7: Endfor
+
+266 = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  60,15: =
+  60,17: 0
+  60,19: To
+  60,22: 15
+  60,24: 
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+
+  64,7: Endfor
+
+56 NUM
+  60,17: 0
+
+264 Stmt_token5 Expr CRStmtCRs Stmt_token6
+  60,19: To
+  60,22: 15
+  60,24: 
+        RemoveGreenBrick()
+        RemoveYellowBrick()
+        RemoveRedBrick()
+
+  64,7: Endfor
+
+83 NUM
+  60,22: 15
+
+43 CR_token2
+  60,24: 
+
+
+137 ID ( )
+  61,9: RemoveGreenBrick
+  61,25: (
+  61,26: )
+
+184 ( )
+  61,25: (
+  61,26: )
+
+261 )
+  61,26: )
+
+215 CR_token2
+  61,27: 
+
+
+137 ID ( )
+  62,9: RemoveYellowBrick
+  62,26: (
+  62,27: )
+
+184 ( )
+  62,26: (
+  62,27: )
+
+261 )
+  62,27: )
+
+215 CR_token2
+  62,28: 
+
+
+137 ID ( )
+  63,9: RemoveRedBrick
+  63,23: (
+  63,24: )
+
+184 ( )
+  63,23: (
+  63,24: )
+
+261 )
+  63,24: )
+
+215 CR_token2
+  63,25: 
+
+
+177 Stmt_token6
+  64,7: Endfor
+
+216 CR_token2
+  64,13: 
+
+
+109 ID = Expr
+  65,7: brickStartY
+  65,19: =
+  65,21: brickStartY + 20
+
+184 = Expr
+  65,19: =
+  65,21: brickStartY + 20
+
+70 ID
+  65,21: brickStartY
+
+59 + MultiplicativeExpr
+  65,33: +
+  65,35: 20
+
+144 NUM
+  65,35: 20
+
+43 CR_token2
+  65,37: 
+
+
+109 ID ( )
+  66,7: DrawBricks
+  66,17: (
+  66,18: )
+
+184 ( )
+  66,17: (
+  66,18: )
+
+261 )
+  66,18: )
+
+215 CR_token2
+  66,19: 
+
+
+109 OptionalElse_token1
+  67,5: EndIf
+
+218 CR_token2
+  67,10: 
+
+
+109 ID :
+  68,5: TestRed
+  68,12: :
+
+184 :
+  68,12: :
+
+227 CR_token2
+  68,13: 
+
+
+109 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  69,5: For
+  69,9: idx
+  69,13: =
+  69,15: 0
+  69,17: To
+  69,20: 15
+  69,22: 
+      If Array.GetValue("RedBricks", idx) = 1 Then
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+      EndIf
+
+  75,5: EndFor
+
+267 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  69,9: idx
+  69,13: =
+  69,15: 0
+  69,17: To
+  69,20: 15
+  69,22: 
+      If Array.GetValue("RedBricks", idx) = 1 Then
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+      EndIf
+
+  75,5: EndFor
+
+266 = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  69,13: =
+  69,15: 0
+  69,17: To
+  69,20: 15
+  69,22: 
+      If Array.GetValue("RedBricks", idx) = 1 Then
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+      EndIf
+
+  75,5: EndFor
+
+56 NUM
+  69,15: 0
+
+264 Stmt_token5 Expr CRStmtCRs Stmt_token6
+  69,17: To
+  69,20: 15
+  69,22: 
+      If Array.GetValue("RedBricks", idx) = 1 Then
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+      EndIf
+
+  75,5: EndFor
+
+83 NUM
+  69,20: 15
+
+43 CR_token2
+  69,22: 
+
+
+137 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  70,7: If
+  70,10: Array.GetValue("RedBricks", idx) = 1
+  70,47: Then
+  70,51: 
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+
+  74,7: EndIf
+
+86 ID . ID ( Exprs )
+  70,10: Array
+  70,15: .
+  70,16: GetValue
+  70,24: (
+  70,25: "RedBricks", idx
+  70,41: )
+
+4 . ID ( Exprs )
+  70,15: .
+  70,16: GetValue
+  70,24: (
+  70,25: "RedBricks", idx
+  70,41: )
+
+248 ID ( Exprs )
+  70,16: GetValue
+  70,24: (
+  70,25: "RedBricks", idx
+  70,41: )
+
+23 ( Exprs )
+  70,24: (
+  70,25: "RedBricks", idx
+  70,41: )
+
+22 STR
+  70,25: "RedBricks"
+
+217 , MoreThanOneExpr
+  70,36: ,
+  70,38: idx
+
+54 ID
+  70,38: idx
+
+239 )
+  70,41: )
+
+128 = CompExpr
+  70,43: =
+  70,45: 1
+
+117 NUM
+  70,45: 1
+
+254 Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  70,47: Then
+  70,51: 
+        If brickStartY > gh - 160 Then
+          Goto EndGame
+        EndIf
+
+  74,7: EndIf
+
+124 CR_token2
+  70,51: 
+
+
+109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  71,9: If
+  71,12: brickStartY > gh - 160
+  71,35: Then
+  71,39: 
+          Goto EndGame
+
+  73,9: EndIf
+
+86 ID
+  71,12: brickStartY
+
+91 > AdditiveExpr
+  71,24: >
+  71,26: gh - 160
+
+131 ID
+  71,26: gh
+
+78 - MultiplicativeExpr
+  71,29: -
+  71,31: 160
+
+141 NUM
+  71,31: 160
+
+254 Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  71,35: Then
+  71,39: 
+          Goto EndGame
+
+  73,9: EndIf
+
+124 CR_token2
+  71,39: 
+
+
+109 Stmt_token3 ID
+  72,11: Goto
+  72,16: EndGame
+
+253 ID
+  72,16: EndGame
+
+227 CR_token2
+  72,23: 
+
+
+109 OptionalElse_token1
+  73,9: EndIf
+
+218 CR_token2
+  73,14: 
+
+
+109 OptionalElse_token1
+  74,7: EndIf
+
+218 CR_token2
+  74,12: 
+
+
+177 Stmt_token6
+  75,5: EndFor
+
+216 CR_token2
+  75,11: 
+
+
+109 ID :
+  76,5: TestYellow
+  76,15: :
+
+184 :
+  76,15: :
+
+227 CR_token2
+  76,16: 
+
+
+109 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  77,5: For
+  77,9: idx
+  77,13: =
+  77,15: 0
+  77,17: To
+  77,20: 15
+  77,22: 
+      If Array.GetValue("YellowBricks", idx) = 1 Then
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+      EndIf
+
+  83,5: EndFor
+
+267 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  77,9: idx
+  77,13: =
+  77,15: 0
+  77,17: To
+  77,20: 15
+  77,22: 
+      If Array.GetValue("YellowBricks", idx) = 1 Then
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+      EndIf
+
+  83,5: EndFor
+
+266 = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  77,13: =
+  77,15: 0
+  77,17: To
+  77,20: 15
+  77,22: 
+      If Array.GetValue("YellowBricks", idx) = 1 Then
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+      EndIf
+
+  83,5: EndFor
+
+56 NUM
+  77,15: 0
+
+264 Stmt_token5 Expr CRStmtCRs Stmt_token6
+  77,17: To
+  77,20: 15
+  77,22: 
+      If Array.GetValue("YellowBricks", idx) = 1 Then
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+      EndIf
+
+  83,5: EndFor
+
+83 NUM
+  77,20: 15
+
+43 CR_token2
+  77,22: 
+
+
+137 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  78,7: If
+  78,10: Array.GetValue("YellowBricks", idx) = 1
+  78,50: Then
+  78,54: 
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+
+  82,7: EndIf
+
+86 ID . ID ( Exprs )
+  78,10: Array
+  78,15: .
+  78,16: GetValue
+  78,24: (
+  78,25: "YellowBricks", idx
+  78,44: )
+
+4 . ID ( Exprs )
+  78,15: .
+  78,16: GetValue
+  78,24: (
+  78,25: "YellowBricks", idx
+  78,44: )
+
+248 ID ( Exprs )
+  78,16: GetValue
+  78,24: (
+  78,25: "YellowBricks", idx
+  78,44: )
+
+23 ( Exprs )
+  78,24: (
+  78,25: "YellowBricks", idx
+  78,44: )
+
+22 STR
+  78,25: "YellowBricks"
+
+217 , MoreThanOneExpr
+  78,39: ,
+  78,41: idx
+
+54 ID
+  78,41: idx
+
+239 )
+  78,44: )
+
+128 = CompExpr
+  78,46: =
+  78,48: 1
+
+117 NUM
+  78,48: 1
+
+254 Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  78,50: Then
+  78,54: 
+        If brickStartY > gh - 100 Then
+          Goto EndGame
+        EndIf
+
+  82,7: EndIf
+
+124 CR_token2
+  78,54: 
+
+
+109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  79,9: If
+  79,12: brickStartY > gh - 100
+  79,35: Then
+  79,39: 
+          Goto EndGame
+
+  81,9: EndIf
+
+86 ID
+  79,12: brickStartY
+
+91 > AdditiveExpr
+  79,24: >
+  79,26: gh - 100
+
+131 ID
+  79,26: gh
+
+78 - MultiplicativeExpr
+  79,29: -
+  79,31: 100
+
+141 NUM
+  79,31: 100
+
+254 Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  79,35: Then
+  79,39: 
+          Goto EndGame
+
+  81,9: EndIf
+
+124 CR_token2
+  79,39: 
+
+
+109 Stmt_token3 ID
+  80,11: Goto
+  80,16: EndGame
+
+253 ID
+  80,16: EndGame
+
+227 CR_token2
+  80,23: 
+
+
+109 OptionalElse_token1
+  81,9: EndIf
+
+218 CR_token2
+  81,14: 
+
+
+109 OptionalElse_token1
+  82,7: EndIf
+
+218 CR_token2
+  82,12: 
+
+
+177 Stmt_token6
+  83,5: EndFor
+
+216 CR_token2
+  83,11: 
+
+
+109 ID :
+  84,5: TestGreen
+  84,14: :
+
+184 :
+  84,14: :
+
+227 CR_token2
+  84,15: 
+
+
+109 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  85,5: For
+  85,9: idx
+  85,13: =
+  85,15: 0
+  85,17: To
+  85,20: 15
+  85,22: 
+      If Array.GetValue("GreenBricks", idx) = 1 Then
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+      EndIf
+
+  91,5: EndFor
+
+267 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  85,9: idx
+  85,13: =
+  85,15: 0
+  85,17: To
+  85,20: 15
+  85,22: 
+      If Array.GetValue("GreenBricks", idx) = 1 Then
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+      EndIf
+
+  91,5: EndFor
+
+266 = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  85,13: =
+  85,15: 0
+  85,17: To
+  85,20: 15
+  85,22: 
+      If Array.GetValue("GreenBricks", idx) = 1 Then
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+      EndIf
+
+  91,5: EndFor
+
+56 NUM
+  85,15: 0
+
+264 Stmt_token5 Expr CRStmtCRs Stmt_token6
+  85,17: To
+  85,20: 15
+  85,22: 
+      If Array.GetValue("GreenBricks", idx) = 1 Then
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+      EndIf
+
+  91,5: EndFor
+
+83 NUM
+  85,20: 15
+
+43 CR_token2
+  85,22: 
+
+
+137 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  86,7: If
+  86,10: Array.GetValue("GreenBricks", idx) = 1
+  86,49: Then
+  86,53: 
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+
+  90,7: EndIf
+
+86 ID . ID ( Exprs )
+  86,10: Array
+  86,15: .
+  86,16: GetValue
+  86,24: (
+  86,25: "GreenBricks", idx
+  86,43: )
+
+4 . ID ( Exprs )
+  86,15: .
+  86,16: GetValue
+  86,24: (
+  86,25: "GreenBricks", idx
+  86,43: )
+
+248 ID ( Exprs )
+  86,16: GetValue
+  86,24: (
+  86,25: "GreenBricks", idx
+  86,43: )
+
+23 ( Exprs )
+  86,24: (
+  86,25: "GreenBricks", idx
+  86,43: )
+
+22 STR
+  86,25: "GreenBricks"
+
+217 , MoreThanOneExpr
+  86,38: ,
+  86,40: idx
+
+54 ID
+  86,40: idx
+
+239 )
+  86,43: )
+
+128 = CompExpr
+  86,45: =
+  86,47: 1
+
+117 NUM
+  86,47: 1
+
+254 Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  86,49: Then
+  86,53: 
+        If brickStartY > gh - 40 Then
+          Goto EndGame
+        EndIf
+
+  90,7: EndIf
+
+124 CR_token2
+  86,53: 
+
+
+109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  87,9: If
+  87,12: brickStartY > gh - 40
+  87,34: Then
+  87,38: 
+          Goto EndGame
+
+  89,9: EndIf
+
+86 ID
+  87,12: brickStartY
+
+91 > AdditiveExpr
+  87,24: >
+  87,26: gh - 40
+
+131 ID
+  87,26: gh
+
+78 - MultiplicativeExpr
+  87,29: -
+  87,31: 40
+
+141 NUM
+  87,31: 40
+
+254 Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  87,34: Then
+  87,38: 
+          Goto EndGame
+
+  89,9: EndIf
+
+124 CR_token2
+  87,38: 
+
+
+109 Stmt_token3 ID
+  88,11: Goto
+  88,16: EndGame
+
+253 ID
+  88,16: EndGame
+
+227 CR_token2
+  88,23: 
+
+
+109 OptionalElse_token1
+  89,9: EndIf
+
+218 CR_token2
+  89,14: 
+
+
+109 OptionalElse_token1
+  90,7: EndIf
+
+218 CR_token2
+  90,12: 
+
+
+177 Stmt_token6
+  91,5: EndFor
+
+216 CR_token2
+  91,11: 
+
+
+109 ID :
+  92,5: EndTest
+  92,12: :
+
+184 :
+  92,12: :
+
+227 CR_token2
+  92,13: 
+
+
+
+109 ID = Expr
+  94,5: deltaX
+  94,12: =
+  94,14: deltaX - 2 + (x - padX) / 30
+
+184 = Expr
+  94,12: =
+  94,14: deltaX - 2 + (x - padX) / 30
+
+70 ID
+  94,14: deltaX
+
+59 - MultiplicativeExpr
+  94,21: -
+  94,23: 2
+
+144 NUM
+  94,23: 2
+
+59 + MultiplicativeExpr
+  94,25: +
+  94,27: (x - padX) / 30
+
+144 ( Expr )
+  94,27: (
+  94,28: x - padX
+  94,36: )
+
+64 ID
+  94,28: x
+
+65 - MultiplicativeExpr
+  94,30: -
+  94,32: padX
+
+141 ID
+  94,32: padX
+
+235 )
+  94,36: )
+
+40 / UnaryExpr
+  94,38: /
+  94,40: 30
+
+157 NUM
+  94,40: 30
+
+207 Comment CR
+  94,44: ' Add some skill
+  94,60: 
+
+
+
+43 CR_token2
+  94,60: 
+
+
+
+109 Stmt_token9 Expr Stmt_token10 Comment CRStmtCRs MoreThanZeroElseIf
+  96,5: If
+  96,8: score = oldScore
+  96,25: Then
+  96,31: 'No bricks hit
+  96,45: 
+      score = score - 1
+
+  98,5: EndIf
+
+86 ID
+  96,8: score
+
+128 = CompExpr
+  96,14: =
+  96,16: oldScore
+
+117 ID
+  96,16: oldScore
+
+254 Stmt_token10 Comment CRStmtCRs MoreThanZeroElseIf
+  96,25: Then
+  96,31: 'No bricks hit
+  96,45: 
+      score = score - 1
+
+  98,5: EndIf
+
+124 Comment CRStmtCRs MoreThanZeroElseIf
+  96,31: 'No bricks hit
+  96,45: 
+      score = score - 1
+
+  98,5: EndIf
+
+124 CR_token2
+  96,45: 
+
+
+109 ID = Expr
+  97,7: score
+  97,13: =
+  97,15: score - 1
+
+184 = Expr
+  97,13: =
+  97,15: score - 1
+
+70 ID
+  97,15: score
+
+59 - MultiplicativeExpr
+  97,21: -
+  97,23: 1
+
+144 NUM
+  97,23: 1
+
+43 CR_token2
+  97,24: 
+
+
+109 OptionalElse_token1
+  98,5: EndIf
+
+218 CR_token2
+  98,10: 
+
+
+109 ID = Expr
+  99,5: oldScore
+  99,14: =
+  99,16: score
+
+184 = Expr
+  99,14: =
+  99,16: score
+
+70 ID
+  99,16: score
+
+5 CR_token2
+  99,21: 
+
+
+109 ID ( )
+  100,5: PrintScore
+  100,15: (
+  100,16: )
+
+184 ( )
+  100,15: (
+  100,16: )
+
+261 )
+  100,16: )
+
+215 CR_token2
+  100,17: 
+
+
+109 ID = Expr
+  101,5: deltaY
+  101,12: =
+  101,14: -deltaY
+
+184 = Expr
+  101,12: =
+  101,14: -deltaY
+
+70 - Primary
+  101,14: -
+  101,15: deltaY
+
+193 ID
+  101,15: deltaY
+
+207 Comment CR
+  101,23: 'Change the ball direction
+  101,49: 
+
+
+5 CR_token2
+  101,49: 
+
+
+109 OptionalElse_token1
+  102,3: EndIf
+
+101 Comment Prog
+  103,3: ' GraphicsWindow.MoveShape(ball, x, y) 'v0.2
+  104,3: Shapes.Move(ball,x,y)
+
+172 ID . ID ( Exprs )
+  104,3: Shapes
+  104,9: .
+  104,10: Move
+  104,14: (
+  104,15: ball,x,y
+  104,23: )
+
+188 . ID ( Exprs )
+  104,9: .
+  104,10: Move
+  104,14: (
+  104,15: ball,x,y
+  104,23: )
+
+259 ID ( Exprs )
+  104,10: Move
+  104,14: (
+  104,15: ball,x,y
+  104,23: )
+
+214 ( Exprs )
+  104,14: (
+  104,15: ball,x,y
+  104,23: )
+
+25 ID
+  104,15: ball
+
+217 , MoreThanOneExpr
+  104,19: ,
+  104,20: x,y
+
+54 ID
+  104,20: x
+
+217 , MoreThanOneExpr
+  104,21: ,
+  104,22: y
+
+54 ID
+  104,22: y
+
+240 )
+  104,23: )
+
+175 Comment Start_repeat1
+  104,25: 'v0.3.1
+  105,3: Program.Delay(5)
+
+  ' Green Bricks
+  If y > brickStartY - 16 And y < brickStartY + 20 Then  ' y position of brick - diameter of ball
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      Array.SetValue("GreenBricks", idx, 0)
+      RemoveGreenBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 15
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+175 ID . ID ( Exprs )
+  105,3: Program
+  105,10: .
+  105,11: Delay
+  105,16: (
+  105,17: 5
+  105,18: )
+
+188 . ID ( Exprs )
+  105,10: .
+  105,11: Delay
+  105,16: (
+  105,17: 5
+  105,18: )
+
+259 ID ( Exprs )
+  105,11: Delay
+  105,16: (
+  105,17: 5
+  105,18: )
+
+214 ( Exprs )
+  105,16: (
+  105,17: 5
+  105,18: )
+
+25 NUM
+  105,17: 5
+
+240 )
+  105,18: )
+
+101 Comment Prog
+  107,3: ' Green Bricks
+  108,3: If y > brickStartY - 16 And y < brickStartY + 20 Then  ' y position of brick - diameter of ball
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      Array.SetValue("GreenBricks", idx, 0)
+      RemoveGreenBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 15
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+175 Stmt_token9 Expr Stmt_token10 Comment CRStmtCRs MoreThanZeroElseIf
+  108,3: If
+  108,6: y > brickStartY - 16 And y < brickStartY + 20
+  108,52: Then
+  108,58: ' y position of brick - diameter of ball
+  108,98: 
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      Array.SetValue("GreenBricks", idx, 0)
+      RemoveGreenBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 15
+      PrintScore()
+      CheckEnd()
+    EndIf
+
+  121,3: EndIf
+
+66 ID
+  108,6: y
+
+91 > AdditiveExpr
+  108,8: >
+  108,10: brickStartY - 16
+
+131 ID
+  108,10: brickStartY
+
+78 - MultiplicativeExpr
+  108,22: -
+  108,24: 16
+
+141 NUM
+  108,24: 16
+
+167 AndExpr_token1 EqNeqExpr
+  108,27: And
+  108,31: y < brickStartY + 20
+
+102 ID
+  108,31: y
+
+91 < AdditiveExpr
+  108,33: <
+  108,35: brickStartY + 20
+
+131 ID
+  108,35: brickStartY
+
+78 + MultiplicativeExpr
+  108,47: +
+  108,49: 20
+
+141 NUM
+  108,49: 20
+
+243 Stmt_token10 Comment CRStmtCRs MoreThanZeroElseIf
+  108,52: Then
+  108,58: ' y position of brick - diameter of ball
+  108,98: 
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      Array.SetValue("GreenBricks", idx, 0)
+      RemoveGreenBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 15
+      PrintScore()
+      CheckEnd()
+    EndIf
+
+  121,3: EndIf
+
+121 Comment CRStmtCRs MoreThanZeroElseIf
+  108,58: ' y position of brick - diameter of ball
+  108,98: 
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      Array.SetValue("GreenBricks", idx, 0)
+      RemoveGreenBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 15
+      PrintScore()
+      CheckEnd()
+    EndIf
+
+  121,3: EndIf
+
+121 CR_token2
+  108,98: 
+
+
+109 ID = Expr
+  109,5: idx
+  109,9: =
+  109,11: (x+8) / 40
+
+184 = Expr
+  109,9: =
+  109,11: (x+8) / 40
+
+70 ( Expr )
+  109,11: (
+  109,12: x+8
+  109,15: )
+
+64 ID
+  109,12: x
+
+65 + MultiplicativeExpr
+  109,13: +
+  109,14: 8
+
+141 NUM
+  109,14: 8
+
+235 )
+  109,15: )
+
+48 / UnaryExpr
+  109,17: /
+  109,19: 40
+
+157 NUM
+  109,19: 40
+
+207 Comment CR
+  109,23: ' Radius of ball / length of brick
+  109,57: 
+
+
+43 CR_token2
+  109,57: 
+
+
+109 ID = Expr
+  110,5: idx
+  110,9: =
+  110,11: Math.Floor(idx)
+
+184 = Expr
+  110,9: =
+  110,11: Math.Floor(idx)
+
+70 ID . ID ( Exprs )
+  110,11: Math
+  110,15: .
+  110,16: Floor
+  110,21: (
+  110,22: idx
+  110,25: )
+
+5 . ID ( Exprs )
+  110,15: .
+  110,16: Floor
+  110,21: (
+  110,22: idx
+  110,25: )
+
+260 ID ( Exprs )
+  110,16: Floor
+  110,21: (
+  110,22: idx
+  110,25: )
+
+24 ( Exprs )
+  110,21: (
+  110,22: idx
+  110,25: )
+
+26 ID
+  110,22: idx
+
+249 )
+  110,25: )
+
+207 Comment CR
+  110,27: ' take integer part
+  110,46: 
+
+
+49 CR_token2
+  110,46: 
+
+
+109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  111,5: If
+  111,8: Array.GetValue("GreenBricks", idx) = 1
+  111,47: Then
+  111,51: 
+      Array.SetValue("GreenBricks", idx, 0)
+      RemoveGreenBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 15
+      PrintScore()
+      CheckEnd()
+
+  120,5: EndIf
+
+86 ID . ID ( Exprs )
+  111,8: Array
+  111,13: .
+  111,14: GetValue
+  111,22: (
+  111,23: "GreenBricks", idx
+  111,41: )
+
+4 . ID ( Exprs )
+  111,13: .
+  111,14: GetValue
+  111,22: (
+  111,23: "GreenBricks", idx
+  111,41: )
+
+248 ID ( Exprs )
+  111,14: GetValue
+  111,22: (
+  111,23: "GreenBricks", idx
+  111,41: )
+
+23 ( Exprs )
+  111,22: (
+  111,23: "GreenBricks", idx
+  111,41: )
+
+22 STR
+  111,23: "GreenBricks"
+
+217 , MoreThanOneExpr
+  111,36: ,
+  111,38: idx
+
+54 ID
+  111,38: idx
+
+239 )
+  111,41: )
+
+128 = CompExpr
+  111,43: =
+  111,45: 1
+
+117 NUM
+  111,45: 1
+
+254 Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  111,47: Then
+  111,51: 
+      Array.SetValue("GreenBricks", idx, 0)
+      RemoveGreenBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 15
+      PrintScore()
+      CheckEnd()
+
+  120,5: EndIf
+
+124 CR_token2
+  111,51: 
+
+
+109 ID . ID ( Exprs )
+  112,7: Array
+  112,12: .
+  112,13: SetValue
+  112,21: (
+  112,22: "GreenBricks", idx, 0
+  112,43: )
+
+184 . ID ( Exprs )
+  112,12: .
+  112,13: SetValue
+  112,21: (
+  112,22: "GreenBricks", idx, 0
+  112,43: )
+
+255 ID ( Exprs )
+  112,13: SetValue
+  112,21: (
+  112,22: "GreenBricks", idx, 0
+  112,43: )
+
+221 ( Exprs )
+  112,21: (
+  112,22: "GreenBricks", idx, 0
+  112,43: )
+
+27 STR
+  112,22: "GreenBricks"
+
+217 , MoreThanOneExpr
+  112,35: ,
+  112,37: idx, 0
+
+54 ID
+  112,37: idx
+
+217 , MoreThanOneExpr
+  112,40: ,
+  112,42: 0
+
+54 NUM
+  112,42: 0
+
+238 )
+  112,43: )
+
+210 CR_token2
+  112,44: 
+
+
+109 ID ( )
+  113,7: RemoveGreenBrick
+  113,23: (
+  113,24: )
+
+184 ( )
+  113,23: (
+  113,24: )
+
+261 )
+  113,24: )
+
+215 CR_token2
+  113,25: 
+
+
+109 ID . ID ( )
+  114,7: Sound
+  114,12: .
+  114,13: PlayChime
+  114,22: (
+  114,23: )
+
+184 . ID ( )
+  114,12: .
+  114,13: PlayChime
+  114,22: (
+  114,23: )
+
+255 ID ( )
+  114,13: PlayChime
+  114,22: (
+  114,23: )
+
+221 ( )
+  114,22: (
+  114,23: )
+
+27 )
+  114,23: )
+
+208 CR_token2
+  114,24: 
+
+
+109 ID = Expr
+  115,7: bricksLeft
+  115,18: =
+  115,20: bricksLeft - 1
+
+184 = Expr
+  115,18: =
+  115,20: bricksLeft - 1
+
+70 ID
+  115,20: bricksLeft
+
+59 - MultiplicativeExpr
+  115,31: -
+  115,33: 1
+
+144 NUM
+  115,33: 1
+
+43 CR_token2
+  115,34: 
+
+
+109 ID = Expr
+  116,7: deltaY
+  116,14: =
+  116,16: -deltaY
+
+184 = Expr
+  116,14: =
+  116,16: -deltaY
+
+70 - Primary
+  116,16: -
+  116,17: deltaY
+
+193 ID
+  116,17: deltaY
+
+207 Comment CR
+  116,25: 'Change ball direction
+  116,47: 
+
+
+5 CR_token2
+  116,47: 
+
+
+109 ID = Expr
+  117,7: score
+  117,13: =
+  117,15: score + 15
+
+184 = Expr
+  117,13: =
+  117,15: score + 15
+
+70 ID
+  117,15: score
+
+59 + MultiplicativeExpr
+  117,21: +
+  117,23: 15
+
+144 NUM
+  117,23: 15
+
+43 CR_token2
+  117,25: 
+
+
+109 ID ( )
+  118,7: PrintScore
+  118,17: (
+  118,18: )
+
+184 ( )
+  118,17: (
+  118,18: )
+
+261 )
+  118,18: )
+
+215 CR_token2
+  118,19: 
+
+
+109 ID ( )
+  119,7: CheckEnd
+  119,15: (
+  119,16: )
+
+184 ( )
+  119,15: (
+  119,16: )
+
+261 )
+  119,16: )
+
+215 CR_token2
+  119,17: 
+
+
+109 OptionalElse_token1
+  120,5: EndIf
+
+218 CR_token2
+  120,10: 
+
+
+109 OptionalElse_token1
+  121,3: EndIf
+
+172 Comment Start_repeat1
+  123,3: ' Yellow Bricks
+  124,3: If y > brickStartY + 44 And y < brickStartY + 80 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      Array.SetValue("YellowBricks", idx, 0)
+      RemoveYellowBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 10
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+  ' Red Bricks
+  If y > brickStartY + 104 And y < brickStartY + 140 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      Array.SetValue("RedBricks", idx, 0)
+      RemoveRedBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 5
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+
+  If (y < gh) Then  'Ball not reached bottom of window
+    Goto RunLoop
+  EndIf
+
+EndGame:
+
+172 Stmt_token9 Expr Stmt_token10 Comment CRStmtCRs MoreThanZeroElseIf
+  124,3: If
+  124,6: y > brickStartY + 44 And y < brickStartY + 80
+  124,52: Then
+  124,58: ' y position of brick - diameter of ball = 19
+  124,103: 
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      Array.SetValue("YellowBricks", idx, 0)
+      RemoveYellowBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 10
+      PrintScore()
+      CheckEnd()
+    EndIf
+
+  137,3: EndIf
+
+66 ID
+  124,6: y
+
+91 > AdditiveExpr
+  124,8: >
+  124,10: brickStartY + 44
+
+131 ID
+  124,10: brickStartY
+
+78 + MultiplicativeExpr
+  124,22: +
+  124,24: 44
+
+141 NUM
+  124,24: 44
+
+167 AndExpr_token1 EqNeqExpr
+  124,27: And
+  124,31: y < brickStartY + 80
+
+102 ID
+  124,31: y
+
+91 < AdditiveExpr
+  124,33: <
+  124,35: brickStartY + 80
+
+131 ID
+  124,35: brickStartY
+
+78 + MultiplicativeExpr
+  124,47: +
+  124,49: 80
+
+141 NUM
+  124,49: 80
+
+243 Stmt_token10 Comment CRStmtCRs MoreThanZeroElseIf
+  124,52: Then
+  124,58: ' y position of brick - diameter of ball = 19
+  124,103: 
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      Array.SetValue("YellowBricks", idx, 0)
+      RemoveYellowBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 10
+      PrintScore()
+      CheckEnd()
+    EndIf
+
+  137,3: EndIf
+
+121 Comment CRStmtCRs MoreThanZeroElseIf
+  124,58: ' y position of brick - diameter of ball = 19
+  124,103: 
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      Array.SetValue("YellowBricks", idx, 0)
+      RemoveYellowBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 10
+      PrintScore()
+      CheckEnd()
+    EndIf
+
+  137,3: EndIf
+
+121 CR_token2
+  124,103: 
+
+
+109 ID = Expr
+  125,5: idx
+  125,9: =
+  125,11: (x+8) / 40
+
+184 = Expr
+  125,9: =
+  125,11: (x+8) / 40
+
+70 ( Expr )
+  125,11: (
+  125,12: x+8
+  125,15: )
+
+64 ID
+  125,12: x
+
+65 + MultiplicativeExpr
+  125,13: +
+  125,14: 8
+
+141 NUM
+  125,14: 8
+
+235 )
+  125,15: )
+
+48 / UnaryExpr
+  125,17: /
+  125,19: 40
+
+157 NUM
+  125,19: 40
+
+207 Comment CR
+  125,23: ' Radius of ball / length of brick
+  125,57: 
+
+
+43 CR_token2
+  125,57: 
+
+
+109 ID = Expr
+  126,5: idx
+  126,9: =
+  126,11: Math.Floor(idx)
+
+184 = Expr
+  126,9: =
+  126,11: Math.Floor(idx)
+
+70 ID . ID ( Exprs )
+  126,11: Math
+  126,15: .
+  126,16: Floor
+  126,21: (
+  126,22: idx
+  126,25: )
+
+5 . ID ( Exprs )
+  126,15: .
+  126,16: Floor
+  126,21: (
+  126,22: idx
+  126,25: )
+
+260 ID ( Exprs )
+  126,16: Floor
+  126,21: (
+  126,22: idx
+  126,25: )
+
+24 ( Exprs )
+  126,21: (
+  126,22: idx
+  126,25: )
+
+26 ID
+  126,22: idx
+
+249 )
+  126,25: )
+
+207 Comment CR
+  126,27: ' take integer part
+  126,46: 
+
+
+49 CR_token2
+  126,46: 
+
+
+109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  127,5: If
+  127,8: Array.GetValue("YellowBricks", idx) = 1
+  127,48: Then
+  127,52: 
+      Array.SetValue("YellowBricks", idx, 0)
+      RemoveYellowBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 10
+      PrintScore()
+      CheckEnd()
+
+  136,5: EndIf
+
+86 ID . ID ( Exprs )
+  127,8: Array
+  127,13: .
+  127,14: GetValue
+  127,22: (
+  127,23: "YellowBricks", idx
+  127,42: )
+
+4 . ID ( Exprs )
+  127,13: .
+  127,14: GetValue
+  127,22: (
+  127,23: "YellowBricks", idx
+  127,42: )
+
+248 ID ( Exprs )
+  127,14: GetValue
+  127,22: (
+  127,23: "YellowBricks", idx
+  127,42: )
+
+23 ( Exprs )
+  127,22: (
+  127,23: "YellowBricks", idx
+  127,42: )
+
+22 STR
+  127,23: "YellowBricks"
+
+217 , MoreThanOneExpr
+  127,37: ,
+  127,39: idx
+
+54 ID
+  127,39: idx
+
+239 )
+  127,42: )
+
+128 = CompExpr
+  127,44: =
+  127,46: 1
+
+117 NUM
+  127,46: 1
+
+254 Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  127,48: Then
+  127,52: 
+      Array.SetValue("YellowBricks", idx, 0)
+      RemoveYellowBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 10
+      PrintScore()
+      CheckEnd()
+
+  136,5: EndIf
+
+124 CR_token2
+  127,52: 
+
+
+109 ID . ID ( Exprs )
+  128,7: Array
+  128,12: .
+  128,13: SetValue
+  128,21: (
+  128,22: "YellowBricks", idx, 0
+  128,44: )
+
+184 . ID ( Exprs )
+  128,12: .
+  128,13: SetValue
+  128,21: (
+  128,22: "YellowBricks", idx, 0
+  128,44: )
+
+255 ID ( Exprs )
+  128,13: SetValue
+  128,21: (
+  128,22: "YellowBricks", idx, 0
+  128,44: )
+
+221 ( Exprs )
+  128,21: (
+  128,22: "YellowBricks", idx, 0
+  128,44: )
+
+27 STR
+  128,22: "YellowBricks"
+
+217 , MoreThanOneExpr
+  128,36: ,
+  128,38: idx, 0
+
+54 ID
+  128,38: idx
+
+217 , MoreThanOneExpr
+  128,41: ,
+  128,43: 0
+
+54 NUM
+  128,43: 0
+
+238 )
+  128,44: )
+
+210 CR_token2
+  128,45: 
+
+
+109 ID ( )
+  129,7: RemoveYellowBrick
+  129,24: (
+  129,25: )
+
+184 ( )
+  129,24: (
+  129,25: )
+
+261 )
+  129,25: )
+
+215 CR_token2
+  129,26: 
+
+
+109 ID . ID ( )
+  130,7: Sound
+  130,12: .
+  130,13: PlayChime
+  130,22: (
+  130,23: )
+
+184 . ID ( )
+  130,12: .
+  130,13: PlayChime
+  130,22: (
+  130,23: )
+
+255 ID ( )
+  130,13: PlayChime
+  130,22: (
+  130,23: )
+
+221 ( )
+  130,22: (
+  130,23: )
+
+27 )
+  130,23: )
+
+208 CR_token2
+  130,24: 
+
+
+109 ID = Expr
+  131,7: bricksLeft
+  131,18: =
+  131,20: bricksLeft - 1
+
+184 = Expr
+  131,18: =
+  131,20: bricksLeft - 1
+
+70 ID
+  131,20: bricksLeft
+
+59 - MultiplicativeExpr
+  131,31: -
+  131,33: 1
+
+144 NUM
+  131,33: 1
+
+43 CR_token2
+  131,34: 
+
+
+109 ID = Expr
+  132,7: deltaY
+  132,14: =
+  132,16: -deltaY
+
+184 = Expr
+  132,14: =
+  132,16: -deltaY
+
+70 - Primary
+  132,16: -
+  132,17: deltaY
+
+193 ID
+  132,17: deltaY
+
+207 Comment CR
+  132,25: 'Change ball direction
+  132,47: 
+
+
+5 CR_token2
+  132,47: 
+
+
+109 ID = Expr
+  133,7: score
+  133,13: =
+  133,15: score + 10
+
+184 = Expr
+  133,13: =
+  133,15: score + 10
+
+70 ID
+  133,15: score
+
+59 + MultiplicativeExpr
+  133,21: +
+  133,23: 10
+
+144 NUM
+  133,23: 10
+
+43 CR_token2
+  133,25: 
+
+
+109 ID ( )
+  134,7: PrintScore
+  134,17: (
+  134,18: )
+
+184 ( )
+  134,17: (
+  134,18: )
+
+261 )
+  134,18: )
+
+215 CR_token2
+  134,19: 
+
+
+109 ID ( )
+  135,7: CheckEnd
+  135,15: (
+  135,16: )
+
+184 ( )
+  135,15: (
+  135,16: )
+
+261 )
+  135,16: )
+
+215 CR_token2
+  135,17: 
+
+
+109 OptionalElse_token1
+  136,5: EndIf
+
+218 CR_token2
+  136,10: 
+
+
+109 OptionalElse_token1
+  137,3: EndIf
+
+101 Comment Prog
+  139,3: ' Red Bricks
+  140,3: If y > brickStartY + 104 And y < brickStartY + 140 Then  ' y position of brick - diameter of ball = 19
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      Array.SetValue("RedBricks", idx, 0)
+      RemoveRedBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 5
+      PrintScore()
+      CheckEnd()
+    EndIf
+  EndIf
+
+172 Stmt_token9 Expr Stmt_token10 Comment CRStmtCRs MoreThanZeroElseIf
+  140,3: If
+  140,6: y > brickStartY + 104 And y < brickStartY + 140
+  140,54: Then
+  140,60: ' y position of brick - diameter of ball = 19
+  140,105: 
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      Array.SetValue("RedBricks", idx, 0)
+      RemoveRedBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 5
+      PrintScore()
+      CheckEnd()
+    EndIf
+
+  153,3: EndIf
+
+66 ID
+  140,6: y
+
+91 > AdditiveExpr
+  140,8: >
+  140,10: brickStartY + 104
+
+131 ID
+  140,10: brickStartY
+
+78 + MultiplicativeExpr
+  140,22: +
+  140,24: 104
+
+141 NUM
+  140,24: 104
+
+167 AndExpr_token1 EqNeqExpr
+  140,28: And
+  140,32: y < brickStartY + 140
+
+102 ID
+  140,32: y
+
+91 < AdditiveExpr
+  140,34: <
+  140,36: brickStartY + 140
+
+131 ID
+  140,36: brickStartY
+
+78 + MultiplicativeExpr
+  140,48: +
+  140,50: 140
+
+141 NUM
+  140,50: 140
+
+243 Stmt_token10 Comment CRStmtCRs MoreThanZeroElseIf
+  140,54: Then
+  140,60: ' y position of brick - diameter of ball = 19
+  140,105: 
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      Array.SetValue("RedBricks", idx, 0)
+      RemoveRedBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 5
+      PrintScore()
+      CheckEnd()
+    EndIf
+
+  153,3: EndIf
+
+121 Comment CRStmtCRs MoreThanZeroElseIf
+  140,60: ' y position of brick - diameter of ball = 19
+  140,105: 
+    idx = (x+8) / 40  ' Radius of ball / length of brick
+    idx = Math.Floor(idx) ' take integer part
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      Array.SetValue("RedBricks", idx, 0)
+      RemoveRedBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 5
+      PrintScore()
+      CheckEnd()
+    EndIf
+
+  153,3: EndIf
+
+121 CR_token2
+  140,105: 
+
+
+109 ID = Expr
+  141,5: idx
+  141,9: =
+  141,11: (x+8) / 40
+
+184 = Expr
+  141,9: =
+  141,11: (x+8) / 40
+
+70 ( Expr )
+  141,11: (
+  141,12: x+8
+  141,15: )
+
+64 ID
+  141,12: x
+
+65 + MultiplicativeExpr
+  141,13: +
+  141,14: 8
+
+141 NUM
+  141,14: 8
+
+235 )
+  141,15: )
+
+48 / UnaryExpr
+  141,17: /
+  141,19: 40
+
+157 NUM
+  141,19: 40
+
+207 Comment CR
+  141,23: ' Radius of ball / length of brick
+  141,57: 
+
+
+43 CR_token2
+  141,57: 
+
+
+109 ID = Expr
+  142,5: idx
+  142,9: =
+  142,11: Math.Floor(idx)
+
+184 = Expr
+  142,9: =
+  142,11: Math.Floor(idx)
+
+70 ID . ID ( Exprs )
+  142,11: Math
+  142,15: .
+  142,16: Floor
+  142,21: (
+  142,22: idx
+  142,25: )
+
+5 . ID ( Exprs )
+  142,15: .
+  142,16: Floor
+  142,21: (
+  142,22: idx
+  142,25: )
+
+260 ID ( Exprs )
+  142,16: Floor
+  142,21: (
+  142,22: idx
+  142,25: )
+
+24 ( Exprs )
+  142,21: (
+  142,22: idx
+  142,25: )
+
+26 ID
+  142,22: idx
+
+249 )
+  142,25: )
+
+207 Comment CR
+  142,27: ' take integer part
+  142,46: 
+
+
+49 CR_token2
+  142,46: 
+
+
+109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  143,5: If
+  143,8: Array.GetValue("RedBricks", idx) = 1
+  143,45: Then
+  143,49: 
+      Array.SetValue("RedBricks", idx, 0)
+      RemoveRedBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 5
+      PrintScore()
+      CheckEnd()
+
+  152,5: EndIf
+
+86 ID . ID ( Exprs )
+  143,8: Array
+  143,13: .
+  143,14: GetValue
+  143,22: (
+  143,23: "RedBricks", idx
+  143,39: )
+
+4 . ID ( Exprs )
+  143,13: .
+  143,14: GetValue
+  143,22: (
+  143,23: "RedBricks", idx
+  143,39: )
+
+248 ID ( Exprs )
+  143,14: GetValue
+  143,22: (
+  143,23: "RedBricks", idx
+  143,39: )
+
+23 ( Exprs )
+  143,22: (
+  143,23: "RedBricks", idx
+  143,39: )
+
+22 STR
+  143,23: "RedBricks"
+
+217 , MoreThanOneExpr
+  143,34: ,
+  143,36: idx
+
+54 ID
+  143,36: idx
+
+239 )
+  143,39: )
+
+128 = CompExpr
+  143,41: =
+  143,43: 1
+
+117 NUM
+  143,43: 1
+
+254 Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  143,45: Then
+  143,49: 
+      Array.SetValue("RedBricks", idx, 0)
+      RemoveRedBrick()
+      Sound.PlayChime()
+      bricksLeft = bricksLeft - 1
+      deltaY = -deltaY  'Change ball direction
+      score = score + 5
+      PrintScore()
+      CheckEnd()
+
+  152,5: EndIf
+
+124 CR_token2
+  143,49: 
+
+
+109 ID . ID ( Exprs )
+  144,7: Array
+  144,12: .
+  144,13: SetValue
+  144,21: (
+  144,22: "RedBricks", idx, 0
+  144,41: )
+
+184 . ID ( Exprs )
+  144,12: .
+  144,13: SetValue
+  144,21: (
+  144,22: "RedBricks", idx, 0
+  144,41: )
+
+255 ID ( Exprs )
+  144,13: SetValue
+  144,21: (
+  144,22: "RedBricks", idx, 0
+  144,41: )
+
+221 ( Exprs )
+  144,21: (
+  144,22: "RedBricks", idx, 0
+  144,41: )
+
+27 STR
+  144,22: "RedBricks"
+
+217 , MoreThanOneExpr
+  144,33: ,
+  144,35: idx, 0
+
+54 ID
+  144,35: idx
+
+217 , MoreThanOneExpr
+  144,38: ,
+  144,40: 0
+
+54 NUM
+  144,40: 0
+
+238 )
+  144,41: )
+
+210 CR_token2
+  144,42: 
+
+
+109 ID ( )
+  145,7: RemoveRedBrick
+  145,21: (
+  145,22: )
+
+184 ( )
+  145,21: (
+  145,22: )
+
+261 )
+  145,22: )
+
+215 CR_token2
+  145,23: 
+
+
+109 ID . ID ( )
+  146,7: Sound
+  146,12: .
+  146,13: PlayChime
+  146,22: (
+  146,23: )
+
+184 . ID ( )
+  146,12: .
+  146,13: PlayChime
+  146,22: (
+  146,23: )
+
+255 ID ( )
+  146,13: PlayChime
+  146,22: (
+  146,23: )
+
+221 ( )
+  146,22: (
+  146,23: )
+
+27 )
+  146,23: )
+
+208 CR_token2
+  146,24: 
+
+
+109 ID = Expr
+  147,7: bricksLeft
+  147,18: =
+  147,20: bricksLeft - 1
+
+184 = Expr
+  147,18: =
+  147,20: bricksLeft - 1
+
+70 ID
+  147,20: bricksLeft
+
+59 - MultiplicativeExpr
+  147,31: -
+  147,33: 1
+
+144 NUM
+  147,33: 1
+
+43 CR_token2
+  147,34: 
+
+
+109 ID = Expr
+  148,7: deltaY
+  148,14: =
+  148,16: -deltaY
+
+184 = Expr
+  148,14: =
+  148,16: -deltaY
+
+70 - Primary
+  148,16: -
+  148,17: deltaY
+
+193 ID
+  148,17: deltaY
+
+207 Comment CR
+  148,25: 'Change ball direction
+  148,47: 
+
+
+5 CR_token2
+  148,47: 
+
+
+109 ID = Expr
+  149,7: score
+  149,13: =
+  149,15: score + 5
+
+184 = Expr
+  149,13: =
+  149,15: score + 5
+
+70 ID
+  149,15: score
+
+59 + MultiplicativeExpr
+  149,21: +
+  149,23: 5
+
+144 NUM
+  149,23: 5
+
+43 CR_token2
+  149,24: 
+
+
+109 ID ( )
+  150,7: PrintScore
+  150,17: (
+  150,18: )
+
+184 ( )
+  150,17: (
+  150,18: )
+
+261 )
+  150,18: )
+
+215 CR_token2
+  150,19: 
+
+
+109 ID ( )
+  151,7: CheckEnd
+  151,15: (
+  151,16: )
+
+184 ( )
+  151,15: (
+  151,16: )
+
+261 )
+  151,16: )
+
+215 CR_token2
+  151,17: 
+
+
+109 OptionalElse_token1
+  152,5: EndIf
+
+218 CR_token2
+  152,10: 
+
+
+109 OptionalElse_token1
+  153,3: EndIf
+
+172 Stmt_token9 Expr Stmt_token10 Comment CRStmtCRs MoreThanZeroElseIf
+  156,3: If
+  156,6: (y < gh)
+  156,15: Then
+  156,21: 'Ball not reached bottom of window
+  156,55: 
+    Goto RunLoop
+
+  158,3: EndIf
+
+66 ( Expr )
+  156,6: (
+  156,7: y < gh
+  156,13: )
+
+80 ID
+  156,7: y
+
+91 < AdditiveExpr
+  156,9: <
+  156,11: gh
+
+131 ID
+  156,11: gh
+
+265 )
+  156,13: )
+
+243 Stmt_token10 Comment CRStmtCRs MoreThanZeroElseIf
+  156,15: Then
+  156,21: 'Ball not reached bottom of window
+  156,55: 
+    Goto RunLoop
+
+  158,3: EndIf
+
+121 Comment CRStmtCRs MoreThanZeroElseIf
+  156,21: 'Ball not reached bottom of window
+  156,55: 
+    Goto RunLoop
+
+  158,3: EndIf
+
+121 CR_token2
+  156,55: 
+
+
+109 Stmt_token3 ID
+  157,5: Goto
+  157,10: RunLoop
+
+253 ID
+  157,10: RunLoop
+
+227 CR_token2
+  157,17: 
+
+
+109 OptionalElse_token1
+  158,3: EndIf
+
+172 ID :
+  160,1: EndGame
+  160,8: :
+
+188 :
+  160,8: :
+
+171 ID . ID ( Exprs )
+  161,3: GraphicsWindow
+  161,17: .
+  161,18: ShowMessage
+  161,29: (
+  161,30: "Your score is: " + score, "BrickWall"
+  161,68: )
+
+188 . ID ( Exprs )
+  161,17: .
+  161,18: ShowMessage
+  161,29: (
+  161,30: "Your score is: " + score, "BrickWall"
+  161,68: )
+
+259 ID ( Exprs )
+  161,18: ShowMessage
+  161,29: (
+  161,30: "Your score is: " + score, "BrickWall"
+  161,68: )
+
+214 ( Exprs )
+  161,29: (
+  161,30: "Your score is: " + score, "BrickWall"
+  161,68: )
+
+25 STR
+  161,30: "Your score is: "
+
+65 + MultiplicativeExpr
+  161,48: +
+  161,50: score
+
+141 ID
+  161,50: score
+
+217 , MoreThanOneExpr
+  161,55: ,
+  161,57: "BrickWall"
+
+54 STR
+  161,57: "BrickWall"
+
+240 )
+  161,68: )
+
+175 ID . ID ( )
+  162,3: Program
+  162,10: .
+  162,11: End
+  162,14: (
+  162,15: )
+
+188 . ID ( )
+  162,10: .
+  162,11: End
+  162,14: (
+  162,15: )
+
+259 ID ( )
+  162,11: End
+  162,14: (
+  162,15: )
+
+214 ( )
+  162,14: (
+  162,15: )
+
+25 )
+  162,15: )
+
+162 Stmt_token7 ID CRStmtCRs Stmt_token8
+  164,1: Sub
+  164,5: OnMouseMove
+  164,16: 
+  paddleX = GraphicsWindow.MouseX
+  ' GraphicsWindow.MoveShape(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.2
+  Shapes.Move(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.3.1
+
+  168,1: EndSub
+
+244 ID CRStmtCRs Stmt_token8
+  164,5: OnMouseMove
+  164,16: 
+  paddleX = GraphicsWindow.MouseX
+  ' GraphicsWindow.MoveShape(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.2
+  Shapes.Move(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.3.1
+
+  168,1: EndSub
+
+199 CR_token2
+  164,16: 
+
+
+160 ID = Expr
+  165,3: paddleX
+  165,11: =
+  165,13: GraphicsWindow.MouseX
+
+184 = Expr
+  165,11: =
+  165,13: GraphicsWindow.MouseX
+
+70 ID . ID
+  165,13: GraphicsWindow
+  165,27: .
+  165,28: MouseX
+
+5 . ID
+  165,27: .
+  165,28: MouseX
+
+260 ID
+  165,28: MouseX
+
+24 CR_token2
+  165,34: 
+
+
+106 Comment TheRest
+  166,3: ' GraphicsWindow.MoveShape(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.2
+  167,3: Shapes.Move(paddle, paddleX - 60, GraphicsWindow.Height - 12) 'v0.3.1
+
+
+160 ID . ID ( Exprs )
+  167,3: Shapes
+  167,9: .
+  167,10: Move
+  167,14: (
+  167,15: paddle, paddleX - 60, GraphicsWindow.Height - 12
+  167,63: )
+
+184 . ID ( Exprs )
+  167,9: .
+  167,10: Move
+  167,14: (
+  167,15: paddle, paddleX - 60, GraphicsWindow.Height - 12
+  167,63: )
+
+255 ID ( Exprs )
+  167,10: Move
+  167,14: (
+  167,15: paddle, paddleX - 60, GraphicsWindow.Height - 12
+  167,63: )
+
+221 ( Exprs )
+  167,14: (
+  167,15: paddle, paddleX - 60, GraphicsWindow.Height - 12
+  167,63: )
+
+27 ID
+  167,15: paddle
+
+217 , MoreThanOneExpr
+  167,21: ,
+  167,23: paddleX - 60, GraphicsWindow.Height - 12
+
+54 ID
+  167,23: paddleX
+
+65 - MultiplicativeExpr
+  167,31: -
+  167,33: 60
+
+141 NUM
+  167,33: 60
+
+217 , MoreThanOneExpr
+  167,35: ,
+  167,37: GraphicsWindow.Height - 12
+
+54 ID . ID
+  167,37: GraphicsWindow
+  167,51: .
+  167,52: Height
+
+4 . ID
+  167,51: .
+  167,52: Height
+
+248 ID
+  167,52: Height
+
+65 - MultiplicativeExpr
+  167,59: -
+  167,61: 12
+
+141 NUM
+  167,61: 12
+
+238 )
+  167,63: )
+
+206 Comment CR
+  167,65: 'v0.3.1
+  167,72: 
+
+
+210 CR_token2
+  167,72: 
+
+
+257 Stmt_token8
+  168,1: EndSub
+
+146 Stmt_token7 ID CRStmtCRs Stmt_token8
+  170,1: Sub
+  170,5: PrintScore
+  170,15: 
+  ' Clear the score first and then draw the real score text
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(10, 10, 200, 20)
+  GraphicsWindow.BrushColor = "Black"
+  GraphicsWindow.DrawText(10, 10, "Score: " + score)
+
+  176,1: EndSub
+
+244 ID CRStmtCRs Stmt_token8
+  170,5: PrintScore
+  170,15: 
+  ' Clear the score first and then draw the real score text
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(10, 10, 200, 20)
+  GraphicsWindow.BrushColor = "Black"
+  GraphicsWindow.DrawText(10, 10, "Score: " + score)
+
+  176,1: EndSub
+
+199 CR_token2
+  170,15: 
+
+
+105 Comment CRStmtCRs_repeat1
+  171,3: ' Clear the score first and then draw the real score text
+  172,3: GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(10, 10, 200, 20)
+  GraphicsWindow.BrushColor = "Black"
+  GraphicsWindow.DrawText(10, 10, "Score: " + score)
+
+
+160 ID . ID = Expr
+  172,3: GraphicsWindow
+  172,17: .
+  172,18: BrushColor
+  172,29: =
+  172,31: "White"
+
+184 . ID = Expr
+  172,17: .
+  172,18: BrushColor
+  172,29: =
+  172,31: "White"
+
+255 ID = Expr
+  172,18: BrushColor
+  172,29: =
+  172,31: "White"
+
+221 = Expr
+  172,29: =
+  172,31: "White"
+
+57 STR
+  172,31: "White"
+
+43 CR_token2
+  172,38: 
+
+
+160 ID . ID ( Exprs )
+  173,3: GraphicsWindow
+  173,17: .
+  173,18: FillRectangle
+  173,31: (
+  173,32: 10, 10, 200, 20
+  173,47: )
+
+184 . ID ( Exprs )
+  173,17: .
+  173,18: FillRectangle
+  173,31: (
+  173,32: 10, 10, 200, 20
+  173,47: )
+
+255 ID ( Exprs )
+  173,18: FillRectangle
+  173,31: (
+  173,32: 10, 10, 200, 20
+  173,47: )
+
+221 ( Exprs )
+  173,31: (
+  173,32: 10, 10, 200, 20
+  173,47: )
+
+27 NUM
+  173,32: 10
+
+217 , MoreThanOneExpr
+  173,34: ,
+  173,36: 10, 200, 20
+
+54 NUM
+  173,36: 10
+
+217 , MoreThanOneExpr
+  173,38: ,
+  173,40: 200, 20
+
+54 NUM
+  173,40: 200
+
+217 , MoreThanOneExpr
+  173,43: ,
+  173,45: 20
+
+54 NUM
+  173,45: 20
+
+238 )
+  173,47: )
+
+210 CR_token2
+  173,48: 
+
+
+160 ID . ID = Expr
+  174,3: GraphicsWindow
+  174,17: .
+  174,18: BrushColor
+  174,29: =
+  174,31: "Black"
+
+184 . ID = Expr
+  174,17: .
+  174,18: BrushColor
+  174,29: =
+  174,31: "Black"
+
+255 ID = Expr
+  174,18: BrushColor
+  174,29: =
+  174,31: "Black"
+
+221 = Expr
+  174,29: =
+  174,31: "Black"
+
+57 STR
+  174,31: "Black"
+
+43 CR_token2
+  174,38: 
+
+
+160 ID . ID ( Exprs )
+  175,3: GraphicsWindow
+  175,17: .
+  175,18: DrawText
+  175,26: (
+  175,27: 10, 10, "Score: " + score
+  175,52: )
+
+184 . ID ( Exprs )
+  175,17: .
+  175,18: DrawText
+  175,26: (
+  175,27: 10, 10, "Score: " + score
+  175,52: )
+
+255 ID ( Exprs )
+  175,18: DrawText
+  175,26: (
+  175,27: 10, 10, "Score: " + score
+  175,52: )
+
+221 ( Exprs )
+  175,26: (
+  175,27: 10, 10, "Score: " + score
+  175,52: )
+
+27 NUM
+  175,27: 10
+
+217 , MoreThanOneExpr
+  175,29: ,
+  175,31: 10, "Score: " + score
+
+54 NUM
+  175,31: 10
+
+217 , MoreThanOneExpr
+  175,33: ,
+  175,35: "Score: " + score
+
+54 STR
+  175,35: "Score: "
+
+65 + MultiplicativeExpr
+  175,45: +
+  175,47: score
+
+141 ID
+  175,47: score
+
+238 )
+  175,52: )
+
+210 CR_token2
+  175,53: 
+
+
+257 Stmt_token8
+  176,1: EndSub
+
+146 Stmt_token7 ID CRStmtCRs Stmt_token8
+  178,1: Sub
+  178,5: DrawBricks
+  178,15: 
+  For idx = 0 To 15 ' Draw bricks
+    'Program.Delay(100)
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+    GraphicsWindow.BrushColor = "Yellow"
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+    GraphicsWindow.BrushColor = "Red"
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+  endfor
+
+  213,1: EndSub
+
+244 ID CRStmtCRs Stmt_token8
+  178,5: DrawBricks
+  178,15: 
+  For idx = 0 To 15 ' Draw bricks
+    'Program.Delay(100)
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+    GraphicsWindow.BrushColor = "Yellow"
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+    GraphicsWindow.BrushColor = "Red"
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+  endfor
+
+  213,1: EndSub
+
+199 CR_token2
+  178,15: 
+
+
+160 Stmt_token4 ID = Expr Stmt_token5 Expr Comment Stmt_repeat1 Stmt_token6
+  179,3: For
+  179,7: idx
+  179,11: =
+  179,13: 0
+  179,15: To
+  179,18: 15
+  179,21: ' Draw bricks
+  179,34: 
+    'Program.Delay(100)
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+    GraphicsWindow.BrushColor = "Yellow"
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+    GraphicsWindow.BrushColor = "Red"
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+
+  212,3: endfor
+
+267 ID = Expr Stmt_token5 Expr Comment Stmt_repeat1 Stmt_token6
+  179,7: idx
+  179,11: =
+  179,13: 0
+  179,15: To
+  179,18: 15
+  179,21: ' Draw bricks
+  179,34: 
+    'Program.Delay(100)
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+    GraphicsWindow.BrushColor = "Yellow"
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+    GraphicsWindow.BrushColor = "Red"
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+
+  212,3: endfor
+
+266 = Expr Stmt_token5 Expr Comment Stmt_repeat1 Stmt_token6
+  179,11: =
+  179,13: 0
+  179,15: To
+  179,18: 15
+  179,21: ' Draw bricks
+  179,34: 
+    'Program.Delay(100)
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+    GraphicsWindow.BrushColor = "Yellow"
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+    GraphicsWindow.BrushColor = "Red"
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+
+  212,3: endfor
+
+56 NUM
+  179,13: 0
+
+264 Stmt_token5 Expr Comment Stmt_repeat1 Stmt_token6
+  179,15: To
+  179,18: 15
+  179,21: ' Draw bricks
+  179,34: 
+    'Program.Delay(100)
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+    GraphicsWindow.BrushColor = "Yellow"
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+    GraphicsWindow.BrushColor = "Red"
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+
+  212,3: endfor
+
+83 NUM
+  179,18: 15
+
+145 Comment Stmt_repeat1 Stmt_token6
+  179,21: ' Draw bricks
+  179,34: 
+    'Program.Delay(100)
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+    GraphicsWindow.BrushColor = "Yellow"
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+    GraphicsWindow.BrushColor = "Red"
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+
+  212,3: endfor
+
+43 CR_token2
+  179,34: 
+
+
+177 Comment CRStmtCRs
+  180,5: 'Program.Delay(100)
+  180,24: 
+    If Array.GetValue("GreenBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+    GraphicsWindow.BrushColor = "Yellow"
+    If Array.GetValue("YellowBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+    GraphicsWindow.BrushColor = "Red"
+    If Array.GetValue("RedBricks", idx) = 1 Then
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+    Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+    GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+    GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+
+
+137 CR_token2
+  180,24: 
+
+
+137 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  181,5: If
+  181,8: Array.GetValue("GreenBricks", idx) = 1
+  181,47: Then
+  181,51: 
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+
+  184,5: Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+
+86 ID . ID ( Exprs )
+  181,8: Array
+  181,13: .
+  181,14: GetValue
+  181,22: (
+  181,23: "GreenBricks", idx
+  181,41: )
+
+4 . ID ( Exprs )
+  181,13: .
+  181,14: GetValue
+  181,22: (
+  181,23: "GreenBricks", idx
+  181,41: )
+
+248 ID ( Exprs )
+  181,14: GetValue
+  181,22: (
+  181,23: "GreenBricks", idx
+  181,41: )
+
+23 ( Exprs )
+  181,22: (
+  181,23: "GreenBricks", idx
+  181,41: )
+
+22 STR
+  181,23: "GreenBricks"
+
+217 , MoreThanOneExpr
+  181,36: ,
+  181,38: idx
+
+54 ID
+  181,38: idx
+
+239 )
+  181,41: )
+
+128 = CompExpr
+  181,43: =
+  181,45: 1
+
+117 NUM
+  181,45: 1
+
+254 Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  181,47: Then
+  181,51: 
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Green"
+
+  184,5: Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+
+124 CR_token2
+  181,51: 
+
+
+109 ID . ID = Expr
+  182,7: GraphicsWindow
+  182,21: .
+  182,22: PenColor
+  182,31: =
+  182,33: "Black"
+
+184 . ID = Expr
+  182,21: .
+  182,22: PenColor
+  182,31: =
+  182,33: "Black"
+
+255 ID = Expr
+  182,22: PenColor
+  182,31: =
+  182,33: "Black"
+
+221 = Expr
+  182,31: =
+  182,33: "Black"
+
+57 STR
+  182,33: "Black"
+
+43 CR_token2
+  182,40: 
+
+
+109 ID . ID = Expr
+  183,7: GraphicsWindow
+  183,21: .
+  183,22: BrushColor
+  183,33: =
+  183,35: "Green"
+
+184 . ID = Expr
+  183,21: .
+  183,22: BrushColor
+  183,33: =
+  183,35: "Green"
+
+255 ID = Expr
+  183,22: BrushColor
+  183,33: =
+  183,35: "Green"
+
+221 = Expr
+  183,33: =
+  183,35: "Green"
+
+57 STR
+  183,35: "Green"
+
+43 CR_token2
+  183,42: 
+
+
+109 OptionalElse_token2 CRStmtCRs OptionalElse_token1
+  184,5: Else
+  184,9: 
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+
+  187,5: EndIf
+
+201 CR_token2
+  184,9: 
+
+
+163 ID . ID = Expr
+  185,7: GraphicsWindow
+  185,21: .
+  185,22: PenColor
+  185,31: =
+  185,33: "White"
+
+184 . ID = Expr
+  185,21: .
+  185,22: PenColor
+  185,31: =
+  185,33: "White"
+
+255 ID = Expr
+  185,22: PenColor
+  185,31: =
+  185,33: "White"
+
+221 = Expr
+  185,31: =
+  185,33: "White"
+
+57 STR
+  185,33: "White"
+
+43 CR_token2
+  185,40: 
+
+
+163 ID . ID = Expr
+  186,7: GraphicsWindow
+  186,21: .
+  186,22: BrushColor
+  186,33: =
+  186,35: "White"
+
+184 . ID = Expr
+  186,21: .
+  186,22: BrushColor
+  186,33: =
+  186,35: "White"
+
+255 ID = Expr
+  186,22: BrushColor
+  186,33: =
+  186,35: "White"
+
+221 = Expr
+  186,33: =
+  186,35: "White"
+
+57 STR
+  186,35: "White"
+
+43 CR_token2
+  186,42: 
+
+
+237 OptionalElse_token1
+  187,5: EndIf
+
+209 CR_token2
+  187,10: 
+
+
+137 ID . ID ( Exprs )
+  188,5: GraphicsWindow
+  188,19: .
+  188,20: FillRectangle
+  188,33: (
+  188,34: idx * 40, brickStartY, 40, 20
+  188,63: )
+
+184 . ID ( Exprs )
+  188,19: .
+  188,20: FillRectangle
+  188,33: (
+  188,34: idx * 40, brickStartY, 40, 20
+  188,63: )
+
+255 ID ( Exprs )
+  188,20: FillRectangle
+  188,33: (
+  188,34: idx * 40, brickStartY, 40, 20
+  188,63: )
+
+221 ( Exprs )
+  188,33: (
+  188,34: idx * 40, brickStartY, 40, 20
+  188,63: )
+
+27 ID
+  188,34: idx
+
+50 * UnaryExpr
+  188,38: *
+  188,40: 40
+
+156 NUM
+  188,40: 40
+
+217 , MoreThanOneExpr
+  188,42: ,
+  188,44: brickStartY, 40, 20
+
+54 ID
+  188,44: brickStartY
+
+217 , MoreThanOneExpr
+  188,55: ,
+  188,57: 40, 20
+
+54 NUM
+  188,57: 40
+
+217 , MoreThanOneExpr
+  188,59: ,
+  188,61: 20
+
+54 NUM
+  188,61: 20
+
+238 )
+  188,63: )
+
+210 CR_token2
+  188,64: 
+
+
+137 ID . ID ( Exprs )
+  189,5: GraphicsWindow
+  189,19: .
+  189,20: DrawRectangle
+  189,33: (
+  189,34: idx * 40, brickStartY, 40, 20
+  189,63: )
+
+184 . ID ( Exprs )
+  189,19: .
+  189,20: DrawRectangle
+  189,33: (
+  189,34: idx * 40, brickStartY, 40, 20
+  189,63: )
+
+255 ID ( Exprs )
+  189,20: DrawRectangle
+  189,33: (
+  189,34: idx * 40, brickStartY, 40, 20
+  189,63: )
+
+221 ( Exprs )
+  189,33: (
+  189,34: idx * 40, brickStartY, 40, 20
+  189,63: )
+
+27 ID
+  189,34: idx
+
+50 * UnaryExpr
+  189,38: *
+  189,40: 40
+
+156 NUM
+  189,40: 40
+
+217 , MoreThanOneExpr
+  189,42: ,
+  189,44: brickStartY, 40, 20
+
+54 ID
+  189,44: brickStartY
+
+217 , MoreThanOneExpr
+  189,55: ,
+  189,57: 40, 20
+
+54 NUM
+  189,57: 40
+
+217 , MoreThanOneExpr
+  189,59: ,
+  189,61: 20
+
+54 NUM
+  189,61: 20
+
+238 )
+  189,63: )
+
+210 CR_token2
+  189,64: 
+
+
+
+137 ID . ID = Expr
+  191,5: GraphicsWindow
+  191,19: .
+  191,20: BrushColor
+  191,31: =
+  191,33: "Yellow"
+
+184 . ID = Expr
+  191,19: .
+  191,20: BrushColor
+  191,31: =
+  191,33: "Yellow"
+
+255 ID = Expr
+  191,20: BrushColor
+  191,31: =
+  191,33: "Yellow"
+
+221 = Expr
+  191,31: =
+  191,33: "Yellow"
+
+57 STR
+  191,33: "Yellow"
+
+43 CR_token2
+  191,41: 
+
+
+137 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  192,5: If
+  192,8: Array.GetValue("YellowBricks", idx) = 1
+  192,48: Then
+  192,52: 
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+
+  195,5: Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+
+86 ID . ID ( Exprs )
+  192,8: Array
+  192,13: .
+  192,14: GetValue
+  192,22: (
+  192,23: "YellowBricks", idx
+  192,42: )
+
+4 . ID ( Exprs )
+  192,13: .
+  192,14: GetValue
+  192,22: (
+  192,23: "YellowBricks", idx
+  192,42: )
+
+248 ID ( Exprs )
+  192,14: GetValue
+  192,22: (
+  192,23: "YellowBricks", idx
+  192,42: )
+
+23 ( Exprs )
+  192,22: (
+  192,23: "YellowBricks", idx
+  192,42: )
+
+22 STR
+  192,23: "YellowBricks"
+
+217 , MoreThanOneExpr
+  192,37: ,
+  192,39: idx
+
+54 ID
+  192,39: idx
+
+239 )
+  192,42: )
+
+128 = CompExpr
+  192,44: =
+  192,46: 1
+
+117 NUM
+  192,46: 1
+
+254 Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  192,48: Then
+  192,52: 
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Yellow"
+
+  195,5: Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+
+124 CR_token2
+  192,52: 
+
+
+109 ID . ID = Expr
+  193,7: GraphicsWindow
+  193,21: .
+  193,22: PenColor
+  193,31: =
+  193,33: "Black"
+
+184 . ID = Expr
+  193,21: .
+  193,22: PenColor
+  193,31: =
+  193,33: "Black"
+
+255 ID = Expr
+  193,22: PenColor
+  193,31: =
+  193,33: "Black"
+
+221 = Expr
+  193,31: =
+  193,33: "Black"
+
+57 STR
+  193,33: "Black"
+
+43 CR_token2
+  193,40: 
+
+
+109 ID . ID = Expr
+  194,7: GraphicsWindow
+  194,21: .
+  194,22: BrushColor
+  194,33: =
+  194,35: "Yellow"
+
+184 . ID = Expr
+  194,21: .
+  194,22: BrushColor
+  194,33: =
+  194,35: "Yellow"
+
+255 ID = Expr
+  194,22: BrushColor
+  194,33: =
+  194,35: "Yellow"
+
+221 = Expr
+  194,33: =
+  194,35: "Yellow"
+
+57 STR
+  194,35: "Yellow"
+
+43 CR_token2
+  194,43: 
+
+
+109 OptionalElse_token2 CRStmtCRs OptionalElse_token1
+  195,5: Else
+  195,9: 
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+
+  198,5: EndIf
+
+201 CR_token2
+  195,9: 
+
+
+163 ID . ID = Expr
+  196,7: GraphicsWindow
+  196,21: .
+  196,22: PenColor
+  196,31: =
+  196,33: "White"
+
+184 . ID = Expr
+  196,21: .
+  196,22: PenColor
+  196,31: =
+  196,33: "White"
+
+255 ID = Expr
+  196,22: PenColor
+  196,31: =
+  196,33: "White"
+
+221 = Expr
+  196,31: =
+  196,33: "White"
+
+57 STR
+  196,33: "White"
+
+43 CR_token2
+  196,40: 
+
+
+163 ID . ID = Expr
+  197,7: GraphicsWindow
+  197,21: .
+  197,22: BrushColor
+  197,33: =
+  197,35: "White"
+
+184 . ID = Expr
+  197,21: .
+  197,22: BrushColor
+  197,33: =
+  197,35: "White"
+
+255 ID = Expr
+  197,22: BrushColor
+  197,33: =
+  197,35: "White"
+
+221 = Expr
+  197,33: =
+  197,35: "White"
+
+57 STR
+  197,35: "White"
+
+43 CR_token2
+  197,42: 
+
+
+237 OptionalElse_token1
+  198,5: EndIf
+
+209 CR_token2
+  198,10: 
+
+
+137 ID . ID ( Exprs )
+  199,5: GraphicsWindow
+  199,19: .
+  199,20: FillRectangle
+  199,33: (
+  199,34: idx * 40, brickStartY + 60, 40, 20
+  199,68: )
+
+184 . ID ( Exprs )
+  199,19: .
+  199,20: FillRectangle
+  199,33: (
+  199,34: idx * 40, brickStartY + 60, 40, 20
+  199,68: )
+
+255 ID ( Exprs )
+  199,20: FillRectangle
+  199,33: (
+  199,34: idx * 40, brickStartY + 60, 40, 20
+  199,68: )
+
+221 ( Exprs )
+  199,33: (
+  199,34: idx * 40, brickStartY + 60, 40, 20
+  199,68: )
+
+27 ID
+  199,34: idx
+
+50 * UnaryExpr
+  199,38: *
+  199,40: 40
+
+156 NUM
+  199,40: 40
+
+217 , MoreThanOneExpr
+  199,42: ,
+  199,44: brickStartY + 60, 40, 20
+
+54 ID
+  199,44: brickStartY
+
+65 + MultiplicativeExpr
+  199,56: +
+  199,58: 60
+
+141 NUM
+  199,58: 60
+
+217 , MoreThanOneExpr
+  199,60: ,
+  199,62: 40, 20
+
+54 NUM
+  199,62: 40
+
+217 , MoreThanOneExpr
+  199,64: ,
+  199,66: 20
+
+54 NUM
+  199,66: 20
+
+238 )
+  199,68: )
+
+210 CR_token2
+  199,69: 
+
+
+137 ID . ID ( Exprs )
+  200,5: GraphicsWindow
+  200,19: .
+  200,20: DrawRectangle
+  200,33: (
+  200,34: idx * 40, brickStartY + 60, 40, 20
+  200,68: )
+
+184 . ID ( Exprs )
+  200,19: .
+  200,20: DrawRectangle
+  200,33: (
+  200,34: idx * 40, brickStartY + 60, 40, 20
+  200,68: )
+
+255 ID ( Exprs )
+  200,20: DrawRectangle
+  200,33: (
+  200,34: idx * 40, brickStartY + 60, 40, 20
+  200,68: )
+
+221 ( Exprs )
+  200,33: (
+  200,34: idx * 40, brickStartY + 60, 40, 20
+  200,68: )
+
+27 ID
+  200,34: idx
+
+50 * UnaryExpr
+  200,38: *
+  200,40: 40
+
+156 NUM
+  200,40: 40
+
+217 , MoreThanOneExpr
+  200,42: ,
+  200,44: brickStartY + 60, 40, 20
+
+54 ID
+  200,44: brickStartY
+
+65 + MultiplicativeExpr
+  200,56: +
+  200,58: 60
+
+141 NUM
+  200,58: 60
+
+217 , MoreThanOneExpr
+  200,60: ,
+  200,62: 40, 20
+
+54 NUM
+  200,62: 40
+
+217 , MoreThanOneExpr
+  200,64: ,
+  200,66: 20
+
+54 NUM
+  200,66: 20
+
+238 )
+  200,68: )
+
+210 CR_token2
+  200,69: 
+
+
+
+137 ID . ID = Expr
+  202,5: GraphicsWindow
+  202,19: .
+  202,20: BrushColor
+  202,31: =
+  202,33: "Red"
+
+184 . ID = Expr
+  202,19: .
+  202,20: BrushColor
+  202,31: =
+  202,33: "Red"
+
+255 ID = Expr
+  202,20: BrushColor
+  202,31: =
+  202,33: "Red"
+
+221 = Expr
+  202,31: =
+  202,33: "Red"
+
+57 STR
+  202,33: "Red"
+
+43 CR_token2
+  202,38: 
+
+
+137 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  203,5: If
+  203,8: Array.GetValue("RedBricks", idx) = 1
+  203,45: Then
+  203,49: 
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+
+  206,5: Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+
+86 ID . ID ( Exprs )
+  203,8: Array
+  203,13: .
+  203,14: GetValue
+  203,22: (
+  203,23: "RedBricks", idx
+  203,39: )
+
+4 . ID ( Exprs )
+  203,13: .
+  203,14: GetValue
+  203,22: (
+  203,23: "RedBricks", idx
+  203,39: )
+
+248 ID ( Exprs )
+  203,14: GetValue
+  203,22: (
+  203,23: "RedBricks", idx
+  203,39: )
+
+23 ( Exprs )
+  203,22: (
+  203,23: "RedBricks", idx
+  203,39: )
+
+22 STR
+  203,23: "RedBricks"
+
+217 , MoreThanOneExpr
+  203,34: ,
+  203,36: idx
+
+54 ID
+  203,36: idx
+
+239 )
+  203,39: )
+
+128 = CompExpr
+  203,41: =
+  203,43: 1
+
+117 NUM
+  203,43: 1
+
+254 Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+  203,45: Then
+  203,49: 
+      GraphicsWindow.PenColor = "Black"
+      GraphicsWindow.BrushColor = "Red"
+
+  206,5: Else
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+    EndIf
+
+124 CR_token2
+  203,49: 
+
+
+109 ID . ID = Expr
+  204,7: GraphicsWindow
+  204,21: .
+  204,22: PenColor
+  204,31: =
+  204,33: "Black"
+
+184 . ID = Expr
+  204,21: .
+  204,22: PenColor
+  204,31: =
+  204,33: "Black"
+
+255 ID = Expr
+  204,22: PenColor
+  204,31: =
+  204,33: "Black"
+
+221 = Expr
+  204,31: =
+  204,33: "Black"
+
+57 STR
+  204,33: "Black"
+
+43 CR_token2
+  204,40: 
+
+
+109 ID . ID = Expr
+  205,7: GraphicsWindow
+  205,21: .
+  205,22: BrushColor
+  205,33: =
+  205,35: "Red"
+
+184 . ID = Expr
+  205,21: .
+  205,22: BrushColor
+  205,33: =
+  205,35: "Red"
+
+255 ID = Expr
+  205,22: BrushColor
+  205,33: =
+  205,35: "Red"
+
+221 = Expr
+  205,33: =
+  205,35: "Red"
+
+57 STR
+  205,35: "Red"
+
+43 CR_token2
+  205,40: 
+
+
+109 OptionalElse_token2 CRStmtCRs OptionalElse_token1
+  206,5: Else
+  206,9: 
+      GraphicsWindow.PenColor = "White"
+      GraphicsWindow.BrushColor = "White"
+
+  209,5: EndIf
+
+201 CR_token2
+  206,9: 
+
+
+163 ID . ID = Expr
+  207,7: GraphicsWindow
+  207,21: .
+  207,22: PenColor
+  207,31: =
+  207,33: "White"
+
+184 . ID = Expr
+  207,21: .
+  207,22: PenColor
+  207,31: =
+  207,33: "White"
+
+255 ID = Expr
+  207,22: PenColor
+  207,31: =
+  207,33: "White"
+
+221 = Expr
+  207,31: =
+  207,33: "White"
+
+57 STR
+  207,33: "White"
+
+43 CR_token2
+  207,40: 
+
+
+163 ID . ID = Expr
+  208,7: GraphicsWindow
+  208,21: .
+  208,22: BrushColor
+  208,33: =
+  208,35: "White"
+
+184 . ID = Expr
+  208,21: .
+  208,22: BrushColor
+  208,33: =
+  208,35: "White"
+
+255 ID = Expr
+  208,22: BrushColor
+  208,33: =
+  208,35: "White"
+
+221 = Expr
+  208,33: =
+  208,35: "White"
+
+57 STR
+  208,35: "White"
+
+43 CR_token2
+  208,42: 
+
+
+237 OptionalElse_token1
+  209,5: EndIf
+
+209 CR_token2
+  209,10: 
+
+
+137 ID . ID ( Exprs )
+  210,5: GraphicsWindow
+  210,19: .
+  210,20: FillRectangle
+  210,33: (
+  210,34: idx * 40, brickStartY + 120, 40, 20
+  210,69: )
+
+184 . ID ( Exprs )
+  210,19: .
+  210,20: FillRectangle
+  210,33: (
+  210,34: idx * 40, brickStartY + 120, 40, 20
+  210,69: )
+
+255 ID ( Exprs )
+  210,20: FillRectangle
+  210,33: (
+  210,34: idx * 40, brickStartY + 120, 40, 20
+  210,69: )
+
+221 ( Exprs )
+  210,33: (
+  210,34: idx * 40, brickStartY + 120, 40, 20
+  210,69: )
+
+27 ID
+  210,34: idx
+
+50 * UnaryExpr
+  210,38: *
+  210,40: 40
+
+156 NUM
+  210,40: 40
+
+217 , MoreThanOneExpr
+  210,42: ,
+  210,44: brickStartY + 120, 40, 20
+
+54 ID
+  210,44: brickStartY
+
+65 + MultiplicativeExpr
+  210,56: +
+  210,58: 120
+
+141 NUM
+  210,58: 120
+
+217 , MoreThanOneExpr
+  210,61: ,
+  210,63: 40, 20
+
+54 NUM
+  210,63: 40
+
+217 , MoreThanOneExpr
+  210,65: ,
+  210,67: 20
+
+54 NUM
+  210,67: 20
+
+238 )
+  210,69: )
+
+210 CR_token2
+  210,70: 
+
+
+137 ID . ID ( Exprs )
+  211,5: GraphicsWindow
+  211,19: .
+  211,20: DrawRectangle
+  211,33: (
+  211,34: idx * 40, brickStartY + 120, 40, 20
+  211,69: )
+
+184 . ID ( Exprs )
+  211,19: .
+  211,20: DrawRectangle
+  211,33: (
+  211,34: idx * 40, brickStartY + 120, 40, 20
+  211,69: )
+
+255 ID ( Exprs )
+  211,20: DrawRectangle
+  211,33: (
+  211,34: idx * 40, brickStartY + 120, 40, 20
+  211,69: )
+
+221 ( Exprs )
+  211,33: (
+  211,34: idx * 40, brickStartY + 120, 40, 20
+  211,69: )
+
+27 ID
+  211,34: idx
+
+50 * UnaryExpr
+  211,38: *
+  211,40: 40
+
+156 NUM
+  211,40: 40
+
+217 , MoreThanOneExpr
+  211,42: ,
+  211,44: brickStartY + 120, 40, 20
+
+54 ID
+  211,44: brickStartY
+
+65 + MultiplicativeExpr
+  211,56: +
+  211,58: 120
+
+141 NUM
+  211,58: 120
+
+217 , MoreThanOneExpr
+  211,61: ,
+  211,63: 40, 20
+
+54 NUM
+  211,63: 40
+
+217 , MoreThanOneExpr
+  211,65: ,
+  211,67: 20
+
+54 NUM
+  211,67: 20
+
+238 )
+  211,69: )
+
+210 CR_token2
+  211,70: 
+
+
+177 Stmt_token6
+  212,3: endfor
+
+216 CR_token2
+  212,9: 
+
+
+257 Stmt_token8
+  213,1: EndSub
+
+146 Stmt_token7 ID CRStmtCRs Stmt_token8
+  215,1: Sub
+  215,5: RemoveGreenBrick
+  215,21: 
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+  220,1: EndSub
+
+244 ID CRStmtCRs Stmt_token8
+  215,5: RemoveGreenBrick
+  215,21: 
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY, 40, 20)
+
+  220,1: EndSub
+
+199 CR_token2
+  215,21: 
+
+
+160 ID . ID = Expr
+  216,3: GraphicsWindow
+  216,17: .
+  216,18: PenColor
+  216,27: =
+  216,29: "White"
+
+184 . ID = Expr
+  216,17: .
+  216,18: PenColor
+  216,27: =
+  216,29: "White"
+
+255 ID = Expr
+  216,18: PenColor
+  216,27: =
+  216,29: "White"
+
+221 = Expr
+  216,27: =
+  216,29: "White"
+
+57 STR
+  216,29: "White"
+
+43 CR_token2
+  216,36: 
+
+
+160 ID . ID = Expr
+  217,3: GraphicsWindow
+  217,17: .
+  217,18: BrushColor
+  217,29: =
+  217,31: "White"
+
+184 . ID = Expr
+  217,17: .
+  217,18: BrushColor
+  217,29: =
+  217,31: "White"
+
+255 ID = Expr
+  217,18: BrushColor
+  217,29: =
+  217,31: "White"
+
+221 = Expr
+  217,29: =
+  217,31: "White"
+
+57 STR
+  217,31: "White"
+
+43 CR_token2
+  217,38: 
+
+
+160 ID . ID ( Exprs )
+  218,3: GraphicsWindow
+  218,17: .
+  218,18: FillRectangle
+  218,31: (
+  218,32: idx * 40, brickStartY, 40, 20
+  218,61: )
+
+184 . ID ( Exprs )
+  218,17: .
+  218,18: FillRectangle
+  218,31: (
+  218,32: idx * 40, brickStartY, 40, 20
+  218,61: )
+
+255 ID ( Exprs )
+  218,18: FillRectangle
+  218,31: (
+  218,32: idx * 40, brickStartY, 40, 20
+  218,61: )
+
+221 ( Exprs )
+  218,31: (
+  218,32: idx * 40, brickStartY, 40, 20
+  218,61: )
+
+27 ID
+  218,32: idx
+
+50 * UnaryExpr
+  218,36: *
+  218,38: 40
+
+156 NUM
+  218,38: 40
+
+217 , MoreThanOneExpr
+  218,40: ,
+  218,42: brickStartY, 40, 20
+
+54 ID
+  218,42: brickStartY
+
+217 , MoreThanOneExpr
+  218,53: ,
+  218,55: 40, 20
+
+54 NUM
+  218,55: 40
+
+217 , MoreThanOneExpr
+  218,57: ,
+  218,59: 20
+
+54 NUM
+  218,59: 20
+
+238 )
+  218,61: )
+
+210 CR_token2
+  218,62: 
+
+
+160 ID . ID ( Exprs )
+  219,3: GraphicsWindow
+  219,17: .
+  219,18: DrawRectangle
+  219,31: (
+  219,32: idx * 40, brickStartY, 40, 20
+  219,61: )
+
+184 . ID ( Exprs )
+  219,17: .
+  219,18: DrawRectangle
+  219,31: (
+  219,32: idx * 40, brickStartY, 40, 20
+  219,61: )
+
+255 ID ( Exprs )
+  219,18: DrawRectangle
+  219,31: (
+  219,32: idx * 40, brickStartY, 40, 20
+  219,61: )
+
+221 ( Exprs )
+  219,31: (
+  219,32: idx * 40, brickStartY, 40, 20
+  219,61: )
+
+27 ID
+  219,32: idx
+
+50 * UnaryExpr
+  219,36: *
+  219,38: 40
+
+156 NUM
+  219,38: 40
+
+217 , MoreThanOneExpr
+  219,40: ,
+  219,42: brickStartY, 40, 20
+
+54 ID
+  219,42: brickStartY
+
+217 , MoreThanOneExpr
+  219,53: ,
+  219,55: 40, 20
+
+54 NUM
+  219,55: 40
+
+217 , MoreThanOneExpr
+  219,57: ,
+  219,59: 20
+
+54 NUM
+  219,59: 20
+
+238 )
+  219,61: )
+
+210 CR_token2
+  219,62: 
+
+
+257 Stmt_token8
+  220,1: EndSub
+
+146 Stmt_token7 ID CRStmtCRs Stmt_token8
+  222,1: Sub
+  222,5: RemoveYellowBrick
+  222,22: 
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+  227,1: EndSub
+
+244 ID CRStmtCRs Stmt_token8
+  222,5: RemoveYellowBrick
+  222,22: 
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 60, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 60, 40, 20)
+
+  227,1: EndSub
+
+199 CR_token2
+  222,22: 
+
+
+160 ID . ID = Expr
+  223,3: GraphicsWindow
+  223,17: .
+  223,18: PenColor
+  223,27: =
+  223,29: "White"
+
+184 . ID = Expr
+  223,17: .
+  223,18: PenColor
+  223,27: =
+  223,29: "White"
+
+255 ID = Expr
+  223,18: PenColor
+  223,27: =
+  223,29: "White"
+
+221 = Expr
+  223,27: =
+  223,29: "White"
+
+57 STR
+  223,29: "White"
+
+43 CR_token2
+  223,36: 
+
+
+160 ID . ID = Expr
+  224,3: GraphicsWindow
+  224,17: .
+  224,18: BrushColor
+  224,29: =
+  224,31: "White"
+
+184 . ID = Expr
+  224,17: .
+  224,18: BrushColor
+  224,29: =
+  224,31: "White"
+
+255 ID = Expr
+  224,18: BrushColor
+  224,29: =
+  224,31: "White"
+
+221 = Expr
+  224,29: =
+  224,31: "White"
+
+57 STR
+  224,31: "White"
+
+43 CR_token2
+  224,38: 
+
+
+160 ID . ID ( Exprs )
+  225,3: GraphicsWindow
+  225,17: .
+  225,18: FillRectangle
+  225,31: (
+  225,32: idx * 40, brickStartY + 60, 40, 20
+  225,66: )
+
+184 . ID ( Exprs )
+  225,17: .
+  225,18: FillRectangle
+  225,31: (
+  225,32: idx * 40, brickStartY + 60, 40, 20
+  225,66: )
+
+255 ID ( Exprs )
+  225,18: FillRectangle
+  225,31: (
+  225,32: idx * 40, brickStartY + 60, 40, 20
+  225,66: )
+
+221 ( Exprs )
+  225,31: (
+  225,32: idx * 40, brickStartY + 60, 40, 20
+  225,66: )
+
+27 ID
+  225,32: idx
+
+50 * UnaryExpr
+  225,36: *
+  225,38: 40
+
+156 NUM
+  225,38: 40
+
+217 , MoreThanOneExpr
+  225,40: ,
+  225,42: brickStartY + 60, 40, 20
+
+54 ID
+  225,42: brickStartY
+
+65 + MultiplicativeExpr
+  225,54: +
+  225,56: 60
+
+141 NUM
+  225,56: 60
+
+217 , MoreThanOneExpr
+  225,58: ,
+  225,60: 40, 20
+
+54 NUM
+  225,60: 40
+
+217 , MoreThanOneExpr
+  225,62: ,
+  225,64: 20
+
+54 NUM
+  225,64: 20
+
+238 )
+  225,66: )
+
+210 CR_token2
+  225,67: 
+
+
+160 ID . ID ( Exprs )
+  226,3: GraphicsWindow
+  226,17: .
+  226,18: DrawRectangle
+  226,31: (
+  226,32: idx * 40, brickStartY + 60, 40, 20
+  226,66: )
+
+184 . ID ( Exprs )
+  226,17: .
+  226,18: DrawRectangle
+  226,31: (
+  226,32: idx * 40, brickStartY + 60, 40, 20
+  226,66: )
+
+255 ID ( Exprs )
+  226,18: DrawRectangle
+  226,31: (
+  226,32: idx * 40, brickStartY + 60, 40, 20
+  226,66: )
+
+221 ( Exprs )
+  226,31: (
+  226,32: idx * 40, brickStartY + 60, 40, 20
+  226,66: )
+
+27 ID
+  226,32: idx
+
+50 * UnaryExpr
+  226,36: *
+  226,38: 40
+
+156 NUM
+  226,38: 40
+
+217 , MoreThanOneExpr
+  226,40: ,
+  226,42: brickStartY + 60, 40, 20
+
+54 ID
+  226,42: brickStartY
+
+65 + MultiplicativeExpr
+  226,54: +
+  226,56: 60
+
+141 NUM
+  226,56: 60
+
+217 , MoreThanOneExpr
+  226,58: ,
+  226,60: 40, 20
+
+54 NUM
+  226,60: 40
+
+217 , MoreThanOneExpr
+  226,62: ,
+  226,64: 20
+
+54 NUM
+  226,64: 20
+
+238 )
+  226,66: )
+
+210 CR_token2
+  226,67: 
+
+
+257 Stmt_token8
+  227,1: EndSub
+
+146 Stmt_token7 ID CRStmtCRs Stmt_token8
+  229,1: Sub
+  229,5: RemoveRedBrick
+  229,19: 
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+
+  234,1: EndSub
+
+244 ID CRStmtCRs Stmt_token8
+  229,5: RemoveRedBrick
+  229,19: 
+  GraphicsWindow.PenColor = "White"
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(idx * 40, brickStartY + 120, 40, 20)
+  GraphicsWindow.DrawRectangle(idx * 40, brickStartY + 120, 40, 20)
+
+  234,1: EndSub
+
+199 CR_token2
+  229,19: 
+
+
+160 ID . ID = Expr
+  230,3: GraphicsWindow
+  230,17: .
+  230,18: PenColor
+  230,27: =
+  230,29: "White"
+
+184 . ID = Expr
+  230,17: .
+  230,18: PenColor
+  230,27: =
+  230,29: "White"
+
+255 ID = Expr
+  230,18: PenColor
+  230,27: =
+  230,29: "White"
+
+221 = Expr
+  230,27: =
+  230,29: "White"
+
+57 STR
+  230,29: "White"
+
+43 CR_token2
+  230,36: 
+
+
+160 ID . ID = Expr
+  231,3: GraphicsWindow
+  231,17: .
+  231,18: BrushColor
+  231,29: =
+  231,31: "White"
+
+184 . ID = Expr
+  231,17: .
+  231,18: BrushColor
+  231,29: =
+  231,31: "White"
+
+255 ID = Expr
+  231,18: BrushColor
+  231,29: =
+  231,31: "White"
+
+221 = Expr
+  231,29: =
+  231,31: "White"
+
+57 STR
+  231,31: "White"
+
+43 CR_token2
+  231,38: 
+
+
+160 ID . ID ( Exprs )
+  232,3: GraphicsWindow
+  232,17: .
+  232,18: FillRectangle
+  232,31: (
+  232,32: idx * 40, brickStartY + 120, 40, 20
+  232,67: )
+
+184 . ID ( Exprs )
+  232,17: .
+  232,18: FillRectangle
+  232,31: (
+  232,32: idx * 40, brickStartY + 120, 40, 20
+  232,67: )
+
+255 ID ( Exprs )
+  232,18: FillRectangle
+  232,31: (
+  232,32: idx * 40, brickStartY + 120, 40, 20
+  232,67: )
+
+221 ( Exprs )
+  232,31: (
+  232,32: idx * 40, brickStartY + 120, 40, 20
+  232,67: )
+
+27 ID
+  232,32: idx
+
+50 * UnaryExpr
+  232,36: *
+  232,38: 40
+
+156 NUM
+  232,38: 40
+
+217 , MoreThanOneExpr
+  232,40: ,
+  232,42: brickStartY + 120, 40, 20
+
+54 ID
+  232,42: brickStartY
+
+65 + MultiplicativeExpr
+  232,54: +
+  232,56: 120
+
+141 NUM
+  232,56: 120
+
+217 , MoreThanOneExpr
+  232,59: ,
+  232,61: 40, 20
+
+54 NUM
+  232,61: 40
+
+217 , MoreThanOneExpr
+  232,63: ,
+  232,65: 20
+
+54 NUM
+  232,65: 20
+
+238 )
+  232,67: )
+
+210 CR_token2
+  232,68: 
+
+
+160 ID . ID ( Exprs )
+  233,3: GraphicsWindow
+  233,17: .
+  233,18: DrawRectangle
+  233,31: (
+  233,32: idx * 40, brickStartY + 120, 40, 20
+  233,67: )
+
+184 . ID ( Exprs )
+  233,17: .
+  233,18: DrawRectangle
+  233,31: (
+  233,32: idx * 40, brickStartY + 120, 40, 20
+  233,67: )
+
+255 ID ( Exprs )
+  233,18: DrawRectangle
+  233,31: (
+  233,32: idx * 40, brickStartY + 120, 40, 20
+  233,67: )
+
+221 ( Exprs )
+  233,31: (
+  233,32: idx * 40, brickStartY + 120, 40, 20
+  233,67: )
+
+27 ID
+  233,32: idx
+
+50 * UnaryExpr
+  233,36: *
+  233,38: 40
+
+156 NUM
+  233,38: 40
+
+217 , MoreThanOneExpr
+  233,40: ,
+  233,42: brickStartY + 120, 40, 20
+
+54 ID
+  233,42: brickStartY
+
+65 + MultiplicativeExpr
+  233,54: +
+  233,56: 120
+
+141 NUM
+  233,56: 120
+
+217 , MoreThanOneExpr
+  233,59: ,
+  233,61: 40, 20
+
+54 NUM
+  233,61: 40
+
+217 , MoreThanOneExpr
+  233,63: ,
+  233,65: 20
+
+54 NUM
+  233,65: 20
+
+238 )
+  233,67: )
+
+210 CR_token2
+  233,68: 
+
+
+257 Stmt_token8
+  234,1: EndSub
+
+146 Stmt_token7 ID CRStmtCRs Stmt_token8
+  236,1: Sub
+  236,5: CheckEnd
+  236,13: 
+ If bricksLeft = 0 Then
+   GraphicsWindow.ShowMessage("Well Done. Wall destroyed. Your score is: " + score, "BrickWall")
+   'Goto GameStart
+   Program.End()
+   'Goto EndGame
+ EndIf
+
+  243,1: EndSub
+
+244 ID CRStmtCRs Stmt_token8
+  236,5: CheckEnd
+  236,13: 
+ If bricksLeft = 0 Then
+   GraphicsWindow.ShowMessage("Well Done. Wall destroyed. Your score is: " + score, "BrickWall")
+   'Goto GameStart
+   Program.End()
+   'Goto EndGame
+ EndIf
+
+  243,1: EndSub
+
+199 CR_token2
+  236,13: 
+
+
+160 Stmt_token9 Expr Stmt_token10 Stmt_repeat1 MoreThanZeroElseIf
+  237,2: If
+  237,5: bricksLeft = 0
+  237,20: Then
+  237,24: 
+   GraphicsWindow.ShowMessage("Well Done. Wall destroyed. Your score is: " + score, "BrickWall")
+   'Goto GameStart
+   Program.End()
+   'Goto EndGame
+
+  242,2: EndIf
+
+86 ID
+  237,5: bricksLeft
+
+128 = CompExpr
+  237,16: =
+  237,18: 0
+
+117 NUM
+  237,18: 0
+
+254 Stmt_token10 Stmt_repeat1 MoreThanZeroElseIf
+  237,20: Then
+  237,24: 
+   GraphicsWindow.ShowMessage("Well Done. Wall destroyed. Your score is: " + score, "BrickWall")
+   'Goto GameStart
+   Program.End()
+   'Goto EndGame
+
+  242,2: EndIf
+
+124 CR_token2
+  237,24: 
+
+
+109 ID . ID ( Exprs )
+  238,4: GraphicsWindow
+  238,18: .
+  238,19: ShowMessage
+  238,30: (
+  238,31: "Well Done. Wall destroyed. Your score is: " + score, "BrickWall"
+  238,96: )
+
+184 . ID ( Exprs )
+  238,18: .
+  238,19: ShowMessage
+  238,30: (
+  238,31: "Well Done. Wall destroyed. Your score is: " + score, "BrickWall"
+  238,96: )
+
+255 ID ( Exprs )
+  238,19: ShowMessage
+  238,30: (
+  238,31: "Well Done. Wall destroyed. Your score is: " + score, "BrickWall"
+  238,96: )
+
+221 ( Exprs )
+  238,30: (
+  238,31: "Well Done. Wall destroyed. Your score is: " + score, "BrickWall"
+  238,96: )
+
+27 STR
+  238,31: "Well Done. Wall destroyed. Your score is: "
+
+65 + MultiplicativeExpr
+  238,76: +
+  238,78: score
+
+141 ID
+  238,78: score
+
+217 , MoreThanOneExpr
+  238,83: ,
+  238,85: "BrickWall"
+
+54 STR
+  238,85: "BrickWall"
+
+238 )
+  238,96: )
+
+210 CR_token2
+  238,97: 
+
+
+122 Comment CRStmtCRs
+  239,4: 'Goto GameStart
+  239,19: 
+   Program.End()
+
+
+109 CR_token2
+  239,19: 
+
+
+109 ID . ID ( )
+  240,4: Program
+  240,11: .
+  240,12: End
+  240,15: (
+  240,16: )
+
+184 . ID ( )
+  240,11: .
+  240,12: End
+  240,15: (
+  240,16: )
+
+255 ID ( )
+  240,12: End
+  240,15: (
+  240,16: )
+
+221 ( )
+  240,15: (
+  240,16: )
+
+27 )
+  240,16: )
+
+208 CR_token2
+  240,17: 
+
+
+109 Comment CRStmtCRs
+  241,4: 'Goto EndGame
+  241,17: 
+
+
+109 CR_token2
+  241,17: 
+
+
+109 OptionalElse_token1
+  242,2: EndIf
+
+218 CR_token2
+  242,7: 
+
+
+257 Stmt_token8
+  243,1: EndSub
+

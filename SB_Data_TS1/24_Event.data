@@ -1,0 +1,197 @@
+1 ID . ID = Expr
+  1,1: GraphicsWindow
+  1,15: .
+  1,16: BrushColor
+  1,27: =
+  1,29: "Blue"
+
+188 . ID = Expr
+  1,15: .
+  1,16: BrushColor
+  1,27: =
+  1,29: "Blue"
+
+259 ID = Expr
+  1,16: BrushColor
+  1,27: =
+  1,29: "Blue"
+
+214 = Expr
+  1,27: =
+  1,29: "Blue"
+
+75 STR
+  1,29: "Blue"
+
+9 ID . ID = Expr
+  2,1: GraphicsWindow
+  2,15: .
+  2,16: MouseDown
+  2,26: =
+  2,28: OnMouseDown
+
+188 . ID = Expr
+  2,15: .
+  2,16: MouseDown
+  2,26: =
+  2,28: OnMouseDown
+
+259 ID = Expr
+  2,16: MouseDown
+  2,26: =
+  2,28: OnMouseDown
+
+214 = Expr
+  2,26: =
+  2,28: OnMouseDown
+
+75 ID
+  2,28: OnMouseDown
+
+2 Stmt_token7 ID CRStmtCRs Stmt_token8
+  3,1: Sub
+  3,5: OnMouseDown
+  3,16: 
+	x = GraphicsWindow.MouseX - 10   
+	y = GraphicsWindow.MouseY - 10   
+	GraphicsWindow.FillEllipse(x, y, 20, 20) 
+
+  7,1: EndSub
+
+244 ID CRStmtCRs Stmt_token8
+  3,5: OnMouseDown
+  3,16: 
+	x = GraphicsWindow.MouseX - 10   
+	y = GraphicsWindow.MouseY - 10   
+	GraphicsWindow.FillEllipse(x, y, 20, 20) 
+
+  7,1: EndSub
+
+199 CR_token2
+  3,16: 
+
+
+160 ID = Expr
+  4,2: x
+  4,4: =
+  4,6: GraphicsWindow.MouseX - 10
+
+184 = Expr
+  4,4: =
+  4,6: GraphicsWindow.MouseX - 10
+
+70 ID . ID
+  4,6: GraphicsWindow
+  4,20: .
+  4,21: MouseX
+
+5 . ID
+  4,20: .
+  4,21: MouseX
+
+260 ID
+  4,21: MouseX
+
+59 - MultiplicativeExpr
+  4,28: -
+  4,30: 10
+
+144 NUM
+  4,30: 10
+
+43 CR_token2
+  4,35: 
+
+
+160 ID = Expr
+  5,2: y
+  5,4: =
+  5,6: GraphicsWindow.MouseY - 10
+
+184 = Expr
+  5,4: =
+  5,6: GraphicsWindow.MouseY - 10
+
+70 ID . ID
+  5,6: GraphicsWindow
+  5,20: .
+  5,21: MouseY
+
+5 . ID
+  5,20: .
+  5,21: MouseY
+
+260 ID
+  5,21: MouseY
+
+59 - MultiplicativeExpr
+  5,28: -
+  5,30: 10
+
+144 NUM
+  5,30: 10
+
+43 CR_token2
+  5,35: 
+
+
+160 ID . ID ( Exprs )
+  6,2: GraphicsWindow
+  6,16: .
+  6,17: FillEllipse
+  6,28: (
+  6,29: x, y, 20, 20
+  6,41: )
+
+184 . ID ( Exprs )
+  6,16: .
+  6,17: FillEllipse
+  6,28: (
+  6,29: x, y, 20, 20
+  6,41: )
+
+255 ID ( Exprs )
+  6,17: FillEllipse
+  6,28: (
+  6,29: x, y, 20, 20
+  6,41: )
+
+221 ( Exprs )
+  6,28: (
+  6,29: x, y, 20, 20
+  6,41: )
+
+27 ID
+  6,29: x
+
+217 , MoreThanOneExpr
+  6,30: ,
+  6,32: y, 20, 20
+
+54 ID
+  6,32: y
+
+217 , MoreThanOneExpr
+  6,33: ,
+  6,35: 20, 20
+
+54 NUM
+  6,35: 20
+
+217 , MoreThanOneExpr
+  6,37: ,
+  6,39: 20
+
+54 NUM
+  6,39: 20
+
+238 )
+  6,41: )
+
+210 CR_token2
+  6,43: 
+
+
+257 Stmt_token8
+  7,1: EndSub
+

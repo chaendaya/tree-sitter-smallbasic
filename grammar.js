@@ -4,10 +4,6 @@
 module.exports = grammar({
     name: "smallbasic",
 
-    // debugging
-    // 식별자로 먼저 뭉치고, 그 결과물이 키워드인지 나중에 검사
-    // word: $ => $.ID,
-
     // Processing blank characters or annotation-related symbols
     // \s : Processing blank characters(Space/Tab/CR/NewLine/VerticalTab)
     // \p{Zs} : Unicode blank character processing
@@ -17,15 +13,11 @@ module.exports = grammar({
     // \u2060 : Word Joiner
     extras: $ => [
       $.Comment,
-      // logged_actions 검증 중
-      // /[ \t\p{Zs}\uFEFF\u2028\u2029\u2060\u200B]/
       /[\s\t\p{Zs}\uFEFF\u2028\u2029\u2060\u200B]/
     ],
   
     rules: {
       // Non-Terminal Symbols
-      // logged_actions 검증 중
-      // Start: $ => repeat(choice($.Prog, $.CR)),
       Start: $ => repeat($.Prog),
 
       Prog: $ => $.MoreThanOneStmt, // Considerations : Directly Prog -> Stmt
@@ -46,8 +38,8 @@ module.exports = grammar({
         seq(/[Gg][Oo][Tt][Oo]/, $.ID),
         seq(/[Ff][Oo][Rr]/, $.ID, "=", $.Expr, /[Tt][Oo]/, $.Expr, optional($.OptStep), repeat($.CRStmtCRs), /[Ee][Nn][Dd][Ff][Oo][Rr]/),
         seq(/[Ss][Uu][Bb]/, $.ID, $.CRStmtCRs, /[Ee][Nn][Dd][Ss][Uu][Bb]/),
-        // seq($.If, $.Expr, $.Then, repeat($.CRStmtCRs), $.MoreThanZeroElseIf)
         seq(/[Ii][Ff]/, $.Expr, /[Tt][Hh][Ee][Nn]/, repeat($.CRStmtCRs), $.MoreThanZeroElseIf)
+        // seq($.If, $.Expr, $.Then, repeat($.CRStmtCRs), $.MoreThanZeroElseIf)
       ),
       
       MoreThanZeroElseIf: $ => choice(
