@@ -1,0 +1,57 @@
+1 ID . ID = Expr
+  1,1: TextWindow
+  1,11: .
+  1,12: ForegroundColor
+  1,28: =
+  1,30: "Yellow"
+
+188 . ID = Expr
+  1,11: .
+  1,12: ForegroundColor
+  1,28: =
+  1,30: "Yellow"
+
+259 ID = Expr
+  1,12: ForegroundColor
+  1,28: =
+  1,30: "Yellow"
+
+214 = Expr
+  1,28: =
+  1,30: "Yellow"
+
+75 STR
+  1,30: "Yellow"
+
+9 ID . ID ( Exprs )
+  2,1: TextWindow
+  2,11: .
+  2,12: WriteLine
+  2,21: (
+  2,22: "Hello World"
+  2,35: )
+
+188 . ID ( Exprs )
+  2,11: .
+  2,12: WriteLine
+  2,21: (
+  2,22: "Hello World"
+  2,35: )
+
+259 ID ( Exprs )
+  2,12: WriteLine
+  2,21: (
+  2,22: "Hello World"
+  2,35: )
+
+214 ( Exprs )
+  2,21: (
+  2,22: "Hello World"
+  2,35: )
+
+25 STR
+  2,22: "Hello World"
+
+240 )
+  2,35: )
+

@@ -1,0 +1,295 @@
+1 ID . ID = Expr
+  1,1: GraphicsWindow
+  1,15: .
+  1,16: BrushColor
+  1,27: =
+  1,29: "Blue"
+
+188 . ID = Expr
+  1,15: .
+  1,16: BrushColor
+  1,27: =
+  1,29: "Blue"
+
+259 ID = Expr
+  1,16: BrushColor
+  1,27: =
+  1,29: "Blue"
+
+214 = Expr
+  1,27: =
+  1,29: "Blue"
+
+75 STR
+  1,29: "Blue"
+
+9 ID . ID = Expr
+  2,1: GraphicsWindow
+  2,15: .
+  2,16: MouseDown
+  2,26: =
+  2,28: OnMouseDown
+
+188 . ID = Expr
+  2,15: .
+  2,16: MouseDown
+  2,26: =
+  2,28: OnMouseDown
+
+259 ID = Expr
+  2,16: MouseDown
+  2,26: =
+  2,28: OnMouseDown
+
+214 = Expr
+  2,26: =
+  2,28: OnMouseDown
+
+75 ID
+  2,28: OnMouseDown
+
+2 ID . ID = Expr
+  3,1: GraphicsWindow
+  3,15: .
+  3,16: KeyDown
+  3,24: =
+  3,26: OnKeyDown
+
+188 . ID = Expr
+  3,15: .
+  3,16: KeyDown
+  3,24: =
+  3,26: OnKeyDown
+
+259 ID = Expr
+  3,16: KeyDown
+  3,24: =
+  3,26: OnKeyDown
+
+214 = Expr
+  3,24: =
+  3,26: OnKeyDown
+
+75 ID
+  3,26: OnKeyDown
+
+2 Stmt_token7 ID CRStmtCRs Stmt_token8
+  5,1: Sub
+  5,5: OnKeyDown
+  5,17: 
+	GraphicsWindow.BrushColor = GraphicsWindow.GetRandomColor() 
+
+  7,1: EndSub
+
+244 ID CRStmtCRs Stmt_token8
+  5,5: OnKeyDown
+  5,17: 
+	GraphicsWindow.BrushColor = GraphicsWindow.GetRandomColor() 
+
+  7,1: EndSub
+
+199 CR_token2
+  5,17: 
+
+
+160 ID . ID = Expr
+  6,2: GraphicsWindow
+  6,16: .
+  6,17: BrushColor
+  6,28: =
+  6,30: GraphicsWindow.GetRandomColor()
+
+184 . ID = Expr
+  6,16: .
+  6,17: BrushColor
+  6,28: =
+  6,30: GraphicsWindow.GetRandomColor()
+
+255 ID = Expr
+  6,17: BrushColor
+  6,28: =
+  6,30: GraphicsWindow.GetRandomColor()
+
+221 = Expr
+  6,28: =
+  6,30: GraphicsWindow.GetRandomColor()
+
+57 ID . ID ( )
+  6,30: GraphicsWindow
+  6,44: .
+  6,45: GetRandomColor
+  6,59: (
+  6,60: )
+
+5 . ID ( )
+  6,44: .
+  6,45: GetRandomColor
+  6,59: (
+  6,60: )
+
+260 ID ( )
+  6,45: GetRandomColor
+  6,59: (
+  6,60: )
+
+24 ( )
+  6,59: (
+  6,60: )
+
+26 )
+  6,60: )
+
+47 CR_token2
+  6,62: 
+
+
+257 Stmt_token8
+  7,1: EndSub
+
+146 Stmt_token7 ID CRStmtCRs Stmt_token8
+  9,1: Sub
+  9,5: OnMouseDown
+  9,19: 
+	x = GraphicsWindow.MouseX - 10   
+	y = GraphicsWindow.MouseY - 10   
+	GraphicsWindow.FillEllipse(x, y, 20, 20) 
+
+  13,1: EndSub
+
+244 ID CRStmtCRs Stmt_token8
+  9,5: OnMouseDown
+  9,19: 
+	x = GraphicsWindow.MouseX - 10   
+	y = GraphicsWindow.MouseY - 10   
+	GraphicsWindow.FillEllipse(x, y, 20, 20) 
+
+  13,1: EndSub
+
+199 CR_token2
+  9,19: 
+
+
+160 ID = Expr
+  10,2: x
+  10,4: =
+  10,6: GraphicsWindow.MouseX - 10
+
+184 = Expr
+  10,4: =
+  10,6: GraphicsWindow.MouseX - 10
+
+70 ID . ID
+  10,6: GraphicsWindow
+  10,20: .
+  10,21: MouseX
+
+5 . ID
+  10,20: .
+  10,21: MouseX
+
+260 ID
+  10,21: MouseX
+
+59 - MultiplicativeExpr
+  10,28: -
+  10,30: 10
+
+144 NUM
+  10,30: 10
+
+43 CR_token2
+  10,35: 
+
+
+160 ID = Expr
+  11,2: y
+  11,4: =
+  11,6: GraphicsWindow.MouseY - 10
+
+184 = Expr
+  11,4: =
+  11,6: GraphicsWindow.MouseY - 10
+
+70 ID . ID
+  11,6: GraphicsWindow
+  11,20: .
+  11,21: MouseY
+
+5 . ID
+  11,20: .
+  11,21: MouseY
+
+260 ID
+  11,21: MouseY
+
+59 - MultiplicativeExpr
+  11,28: -
+  11,30: 10
+
+144 NUM
+  11,30: 10
+
+43 CR_token2
+  11,35: 
+
+
+160 ID . ID ( Exprs )
+  12,2: GraphicsWindow
+  12,16: .
+  12,17: FillEllipse
+  12,28: (
+  12,29: x, y, 20, 20
+  12,41: )
+
+184 . ID ( Exprs )
+  12,16: .
+  12,17: FillEllipse
+  12,28: (
+  12,29: x, y, 20, 20
+  12,41: )
+
+255 ID ( Exprs )
+  12,17: FillEllipse
+  12,28: (
+  12,29: x, y, 20, 20
+  12,41: )
+
+221 ( Exprs )
+  12,28: (
+  12,29: x, y, 20, 20
+  12,41: )
+
+27 ID
+  12,29: x
+
+217 , MoreThanOneExpr
+  12,30: ,
+  12,32: y, 20, 20
+
+54 ID
+  12,32: y
+
+217 , MoreThanOneExpr
+  12,33: ,
+  12,35: 20, 20
+
+54 NUM
+  12,35: 20
+
+217 , MoreThanOneExpr
+  12,37: ,
+  12,39: 20
+
+54 NUM
+  12,39: 20
+
+238 )
+  12,41: )
+
+210 CR_token2
+  12,43: 
+
+
+257 Stmt_token8
+  13,1: EndSub
+

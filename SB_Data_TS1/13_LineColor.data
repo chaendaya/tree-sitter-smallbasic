@@ -1,0 +1,206 @@
+1 ID . ID = Expr
+  1,1: GraphicsWindow
+  1,15: .
+  1,16: Width
+  1,22: =
+  1,24: 200
+
+188 . ID = Expr
+  1,15: .
+  1,16: Width
+  1,22: =
+  1,24: 200
+
+259 ID = Expr
+  1,16: Width
+  1,22: =
+  1,24: 200
+
+214 = Expr
+  1,22: =
+  1,24: 200
+
+75 NUM
+  1,24: 200
+
+9 ID . ID = Expr
+  2,1: GraphicsWindow
+  2,15: .
+  2,16: Height
+  2,23: =
+  2,25: 200
+
+188 . ID = Expr
+  2,15: .
+  2,16: Height
+  2,23: =
+  2,25: 200
+
+259 ID = Expr
+  2,16: Height
+  2,23: =
+  2,25: 200
+
+214 = Expr
+  2,23: =
+  2,25: 200
+
+75 NUM
+  2,25: 200
+
+9 ID . ID = Expr
+  3,1: GraphicsWindow
+  3,15: .
+  3,16: PenColor
+  3,25: =
+  3,27: "Green"
+
+188 . ID = Expr
+  3,15: .
+  3,16: PenColor
+  3,25: =
+  3,27: "Green"
+
+259 ID = Expr
+  3,16: PenColor
+  3,25: =
+  3,27: "Green"
+
+214 = Expr
+  3,25: =
+  3,27: "Green"
+
+75 STR
+  3,27: "Green"
+
+9 ID . ID ( Exprs )
+  4,1: GraphicsWindow
+  4,15: .
+  4,16: DrawLine
+  4,24: (
+  4,25: 10, 10, 100, 100
+  4,41: )
+
+188 . ID ( Exprs )
+  4,15: .
+  4,16: DrawLine
+  4,24: (
+  4,25: 10, 10, 100, 100
+  4,41: )
+
+259 ID ( Exprs )
+  4,16: DrawLine
+  4,24: (
+  4,25: 10, 10, 100, 100
+  4,41: )
+
+214 ( Exprs )
+  4,24: (
+  4,25: 10, 10, 100, 100
+  4,41: )
+
+25 NUM
+  4,25: 10
+
+217 , MoreThanOneExpr
+  4,27: ,
+  4,29: 10, 100, 100
+
+54 NUM
+  4,29: 10
+
+217 , MoreThanOneExpr
+  4,31: ,
+  4,33: 100, 100
+
+54 NUM
+  4,33: 100
+
+217 , MoreThanOneExpr
+  4,36: ,
+  4,38: 100
+
+54 NUM
+  4,38: 100
+
+240 )
+  4,41: )
+
+175 ID . ID = Expr
+  5,1: GraphicsWindow
+  5,15: .
+  5,16: PenColor
+  5,25: =
+  5,27: "Gold"
+
+188 . ID = Expr
+  5,15: .
+  5,16: PenColor
+  5,25: =
+  5,27: "Gold"
+
+259 ID = Expr
+  5,16: PenColor
+  5,25: =
+  5,27: "Gold"
+
+214 = Expr
+  5,25: =
+  5,27: "Gold"
+
+75 STR
+  5,27: "Gold"
+
+9 ID . ID ( Exprs )
+  6,1: GraphicsWindow
+  6,15: .
+  6,16: DrawLine
+  6,24: (
+  6,25: 10, 100, 100, 10
+  6,41: )
+
+188 . ID ( Exprs )
+  6,15: .
+  6,16: DrawLine
+  6,24: (
+  6,25: 10, 100, 100, 10
+  6,41: )
+
+259 ID ( Exprs )
+  6,16: DrawLine
+  6,24: (
+  6,25: 10, 100, 100, 10
+  6,41: )
+
+214 ( Exprs )
+  6,24: (
+  6,25: 10, 100, 100, 10
+  6,41: )
+
+25 NUM
+  6,25: 10
+
+217 , MoreThanOneExpr
+  6,27: ,
+  6,29: 100, 100, 10
+
+54 NUM
+  6,29: 100
+
+217 , MoreThanOneExpr
+  6,32: ,
+  6,34: 100, 10
+
+54 NUM
+  6,34: 100
+
+217 , MoreThanOneExpr
+  6,37: ,
+  6,39: 10
+
+54 NUM
+  6,39: 10
+
+240 )
+  6,41: )
+

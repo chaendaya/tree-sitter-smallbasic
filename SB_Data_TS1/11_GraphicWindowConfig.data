@@ -1,0 +1,125 @@
+1 ID . ID = Expr
+  1,1: GraphicsWindow
+  1,15: .
+  1,16: BackgroundColor
+  1,32: =
+  1,34: "SteelBlue"
+
+188 . ID = Expr
+  1,15: .
+  1,16: BackgroundColor
+  1,32: =
+  1,34: "SteelBlue"
+
+259 ID = Expr
+  1,16: BackgroundColor
+  1,32: =
+  1,34: "SteelBlue"
+
+214 = Expr
+  1,32: =
+  1,34: "SteelBlue"
+
+75 STR
+  1,34: "SteelBlue"
+
+9 ID . ID = Expr
+  2,1: GraphicsWindow
+  2,15: .
+  2,16: Title
+  2,22: =
+  2,24: "My Graphics Window"
+
+188 . ID = Expr
+  2,15: .
+  2,16: Title
+  2,22: =
+  2,24: "My Graphics Window"
+
+259 ID = Expr
+  2,16: Title
+  2,22: =
+  2,24: "My Graphics Window"
+
+214 = Expr
+  2,22: =
+  2,24: "My Graphics Window"
+
+75 STR
+  2,24: "My Graphics Window"
+
+9 ID . ID = Expr
+  3,1: GraphicsWindow
+  3,15: .
+  3,16: Width
+  3,22: =
+  3,24: 320
+
+188 . ID = Expr
+  3,15: .
+  3,16: Width
+  3,22: =
+  3,24: 320
+
+259 ID = Expr
+  3,16: Width
+  3,22: =
+  3,24: 320
+
+214 = Expr
+  3,22: =
+  3,24: 320
+
+75 NUM
+  3,24: 320
+
+9 ID . ID = Expr
+  4,1: GraphicsWindow
+  4,15: .
+  4,16: Height
+  4,23: =
+  4,25: 200
+
+188 . ID = Expr
+  4,15: .
+  4,16: Height
+  4,23: =
+  4,25: 200
+
+259 ID = Expr
+  4,16: Height
+  4,23: =
+  4,25: 200
+
+214 = Expr
+  4,23: =
+  4,25: 200
+
+75 NUM
+  4,25: 200
+
+9 ID . ID ( )
+  5,1: GraphicsWindow
+  5,15: .
+  5,16: Show
+  5,20: (
+  5,21: )
+
+188 . ID ( )
+  5,15: .
+  5,16: Show
+  5,20: (
+  5,21: )
+
+259 ID ( )
+  5,16: Show
+  5,20: (
+  5,21: )
+
+214 ( )
+  5,20: (
+  5,21: )
+
+25 )
+  5,21: )
+

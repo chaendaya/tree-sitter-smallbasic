@@ -1,0 +1,389 @@
+1 ID = Expr
+  1,1: rows
+  1,6: =
+  1,8: 8
+
+188 = Expr
+  1,6: =
+  1,8: 8
+
+73 NUM
+  1,8: 8
+
+9 ID = Expr
+  2,1: columns
+  2,9: =
+  2,11: 8
+
+188 = Expr
+  2,9: =
+  2,11: 8
+
+73 NUM
+  2,11: 8
+
+9 ID = Expr
+  3,1: size
+  3,6: =
+  3,8: 40
+
+188 = Expr
+  3,6: =
+  3,8: 40
+
+73 NUM
+  3,8: 40
+
+9 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  5,1: For
+  5,5: r
+  5,7: =
+  5,9: 1
+  5,11: To
+  5,14: rows
+  5,18: 
+  For c = 1 To columns
+    GraphicsWindow.BrushColor = GraphicsWindow.GetRandomColor()
+    boxes[r][c] = Shapes.AddRectangle(size, size)
+    Shapes.Move(boxes[r][c], c * size, r * size)
+  EndFor
+
+  11,1: EndFor
+
+234 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  5,5: r
+  5,7: =
+  5,9: 1
+  5,11: To
+  5,14: rows
+  5,18: 
+  For c = 1 To columns
+    GraphicsWindow.BrushColor = GraphicsWindow.GetRandomColor()
+    boxes[r][c] = Shapes.AddRectangle(size, size)
+    Shapes.Move(boxes[r][c], c * size, r * size)
+  EndFor
+
+  11,1: EndFor
+
+232 = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  5,7: =
+  5,9: 1
+  5,11: To
+  5,14: rows
+  5,18: 
+  For c = 1 To columns
+    GraphicsWindow.BrushColor = GraphicsWindow.GetRandomColor()
+    boxes[r][c] = Shapes.AddRectangle(size, size)
+    Shapes.Move(boxes[r][c], c * size, r * size)
+  EndFor
+
+  11,1: EndFor
+
+60 NUM
+  5,9: 1
+
+258 Stmt_token5 Expr CRStmtCRs Stmt_token6
+  5,11: To
+  5,14: rows
+  5,18: 
+  For c = 1 To columns
+    GraphicsWindow.BrushColor = GraphicsWindow.GetRandomColor()
+    boxes[r][c] = Shapes.AddRectangle(size, size)
+    Shapes.Move(boxes[r][c], c * size, r * size)
+  EndFor
+
+  11,1: EndFor
+
+58 ID
+  5,14: rows
+
+5 CR_token2
+  5,18: 
+
+
+137 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  6,3: For
+  6,7: c
+  6,9: =
+  6,11: 1
+  6,13: To
+  6,16: columns
+  6,23: 
+    GraphicsWindow.BrushColor = GraphicsWindow.GetRandomColor()
+    boxes[r][c] = Shapes.AddRectangle(size, size)
+    Shapes.Move(boxes[r][c], c * size, r * size)
+
+  10,3: EndFor
+
+267 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  6,7: c
+  6,9: =
+  6,11: 1
+  6,13: To
+  6,16: columns
+  6,23: 
+    GraphicsWindow.BrushColor = GraphicsWindow.GetRandomColor()
+    boxes[r][c] = Shapes.AddRectangle(size, size)
+    Shapes.Move(boxes[r][c], c * size, r * size)
+
+  10,3: EndFor
+
+266 = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+  6,9: =
+  6,11: 1
+  6,13: To
+  6,16: columns
+  6,23: 
+    GraphicsWindow.BrushColor = GraphicsWindow.GetRandomColor()
+    boxes[r][c] = Shapes.AddRectangle(size, size)
+    Shapes.Move(boxes[r][c], c * size, r * size)
+
+  10,3: EndFor
+
+56 NUM
+  6,11: 1
+
+264 Stmt_token5 Expr CRStmtCRs Stmt_token6
+  6,13: To
+  6,16: columns
+  6,23: 
+    GraphicsWindow.BrushColor = GraphicsWindow.GetRandomColor()
+    boxes[r][c] = Shapes.AddRectangle(size, size)
+    Shapes.Move(boxes[r][c], c * size, r * size)
+
+  10,3: EndFor
+
+83 ID
+  6,16: columns
+
+5 CR_token2
+  6,23: 
+
+
+137 ID . ID = Expr
+  7,5: GraphicsWindow
+  7,19: .
+  7,20: BrushColor
+  7,31: =
+  7,33: GraphicsWindow.GetRandomColor()
+
+184 . ID = Expr
+  7,19: .
+  7,20: BrushColor
+  7,31: =
+  7,33: GraphicsWindow.GetRandomColor()
+
+255 ID = Expr
+  7,20: BrushColor
+  7,31: =
+  7,33: GraphicsWindow.GetRandomColor()
+
+221 = Expr
+  7,31: =
+  7,33: GraphicsWindow.GetRandomColor()
+
+57 ID . ID ( )
+  7,33: GraphicsWindow
+  7,47: .
+  7,48: GetRandomColor
+  7,62: (
+  7,63: )
+
+5 . ID ( )
+  7,47: .
+  7,48: GetRandomColor
+  7,62: (
+  7,63: )
+
+260 ID ( )
+  7,48: GetRandomColor
+  7,62: (
+  7,63: )
+
+24 ( )
+  7,62: (
+  7,63: )
+
+26 )
+  7,63: )
+
+47 CR_token2
+  7,64: 
+
+
+137 ID Idxs = Expr
+  8,5: boxes
+  8,10: [r][c]
+  8,17: =
+  8,19: Shapes.AddRectangle(size, size)
+
+184 [ Expr ] Idxs
+  8,10: [
+  8,11: r
+  8,12: ]
+  8,13: [c]
+
+76 ID
+  8,11: r
+
+245 ] Idxs
+  8,12: ]
+  8,13: [c]
+
+7 [ Expr ]
+  8,13: [
+  8,14: c
+  8,15: ]
+
+76 ID
+  8,14: c
+
+245 ]
+  8,15: ]
+
+263 = Expr
+  8,17: =
+  8,19: Shapes.AddRectangle(size, size)
+
+55 ID . ID ( Exprs )
+  8,19: Shapes
+  8,25: .
+  8,26: AddRectangle
+  8,38: (
+  8,39: size, size
+  8,49: )
+
+5 . ID ( Exprs )
+  8,25: .
+  8,26: AddRectangle
+  8,38: (
+  8,39: size, size
+  8,49: )
+
+260 ID ( Exprs )
+  8,26: AddRectangle
+  8,38: (
+  8,39: size, size
+  8,49: )
+
+24 ( Exprs )
+  8,38: (
+  8,39: size, size
+  8,49: )
+
+26 ID
+  8,39: size
+
+217 , MoreThanOneExpr
+  8,43: ,
+  8,45: size
+
+54 ID
+  8,45: size
+
+249 )
+  8,49: )
+
+49 CR_token2
+  8,50: 
+
+
+137 ID . ID ( Exprs )
+  9,5: Shapes
+  9,11: .
+  9,12: Move
+  9,16: (
+  9,17: boxes[r][c], c * size, r * size
+  9,48: )
+
+184 . ID ( Exprs )
+  9,11: .
+  9,12: Move
+  9,16: (
+  9,17: boxes[r][c], c * size, r * size
+  9,48: )
+
+255 ID ( Exprs )
+  9,12: Move
+  9,16: (
+  9,17: boxes[r][c], c * size, r * size
+  9,48: )
+
+221 ( Exprs )
+  9,16: (
+  9,17: boxes[r][c], c * size, r * size
+  9,48: )
+
+27 ID Idxs
+  9,17: boxes
+  9,22: [r][c]
+
+4 [ Expr ] Idxs
+  9,22: [
+  9,23: r
+  9,24: ]
+  9,25: [c]
+
+76 ID
+  9,23: r
+
+245 ] Idxs
+  9,24: ]
+  9,25: [c]
+
+7 [ Expr ]
+  9,25: [
+  9,26: c
+  9,27: ]
+
+76 ID
+  9,26: c
+
+245 ]
+  9,27: ]
+
+217 , MoreThanOneExpr
+  9,28: ,
+  9,30: c * size, r * size
+
+54 ID
+  9,30: c
+
+50 * UnaryExpr
+  9,32: *
+  9,34: size
+
+156 ID
+  9,34: size
+
+217 , MoreThanOneExpr
+  9,38: ,
+  9,40: r * size
+
+54 ID
+  9,40: r
+
+50 * UnaryExpr
+  9,42: *
+  9,44: size
+
+156 ID
+  9,44: size
+
+238 )
+  9,48: )
+
+210 CR_token2
+  9,49: 
+
+
+177 Stmt_token6
+  10,3: EndFor
+
+216 CR_token2
+  10,9: 
+
+
+189 Stmt_token6
+  11,1: EndFor
+
