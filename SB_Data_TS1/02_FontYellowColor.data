@@ -23,7 +23,7 @@
 75 STR
   1,30: "Yellow"
 
-9 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   2,1: TextWindow
   2,11: .
   2,12: WriteLine

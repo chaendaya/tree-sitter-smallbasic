@@ -10,7 +10,7 @@
 73 NUM
   1,10: 100
 
-9 Stmt_token1 Expr CRStmtCRs Stmt_token2
+97 Stmt_token1 Expr CRStmtCRs Stmt_token2
   2,1: While
   2,7: (number > 1)
   2,22: 
@@ -37,11 +37,11 @@
 235 )
   2,18: )
 
-37 CR_token2
+192 CR_token2
   2,22: 
 
 
-126 ID . ID ( Exprs )
+93 ID . ID ( Exprs )
   3,2: TextWindow
   3,12: .
   3,13: WriteLine
@@ -73,11 +73,11 @@
 238 )
   3,29: )
 
-210 CR_token2
+205 CR_token2
   3,31: 
 
 
-126 ID = Expr
+95 ID = Expr
   4,4: number
   4,11: =
   4,13: number / 2
@@ -96,7 +96,7 @@
 157 NUM
   4,22: 2
 
-43 CR_token2
+205 CR_token2
   4,24: 
 
 

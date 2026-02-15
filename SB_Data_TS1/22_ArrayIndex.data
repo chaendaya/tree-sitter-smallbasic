@@ -30,7 +30,7 @@
 240 )
   1,32: )
 
-175 ID Idxs = Expr
+97 ID Idxs = Expr
   2,1: user
   2,5: ["name"]
   2,14: =
@@ -76,7 +76,7 @@
 21 )
   2,32: )
 
-19 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   3,1: TextWindow
   3,11: .
   3,12: Write
@@ -108,7 +108,7 @@
 240 )
   3,31: )
 
-175 ID Idxs = Expr
+97 ID Idxs = Expr
   4,1: user
   4,5: ["age"]
   4,13: =
@@ -154,7 +154,7 @@
 21 )
   4,31: )
 
-19 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   5,1: TextWindow
   5,11: .
   5,12: Write
@@ -186,7 +186,7 @@
 240 )
   5,32: )
 
-175 ID Idxs = Expr
+97 ID Idxs = Expr
   6,1: user
   6,5: ["city"]
   6,14: =
@@ -232,7 +232,7 @@
 21 )
   6,32: )
 
-19 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   7,1: TextWindow
   7,11: .
   7,12: Write
@@ -264,7 +264,7 @@
 240 )
   7,31: )
 
-175 ID Idxs = Expr
+97 ID Idxs = Expr
   8,1: user
   8,5: ["zip"]
   8,13: =
@@ -310,7 +310,7 @@
 21 )
   8,31: )
 
-19 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   9,1: TextWindow
   9,11: .
   9,12: Write
@@ -342,7 +342,7 @@
 240 )
   9,43: )
 
-175 ID = Expr
+97 ID = Expr
   10,1: index
   10,7: =
   10,9: TextWindow.Read()
@@ -376,7 +376,7 @@
 21 )
   10,25: )
 
-19 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   11,1: TextWindow
   11,11: .
   11,12: WriteLine

@@ -5,7 +5,7 @@
 188 :
   1,6: :
 
-171 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   2,1: TextWindow
   2,11: .
   2,12: Write
@@ -37,7 +37,7 @@
 240 )
   2,36: )
 
-175 ID = Expr
+97 ID = Expr
   3,1: num
   3,5: =
   3,7: TextWindow.ReadNumber()
@@ -71,7 +71,7 @@
 21 )
   3,29: )
 
-19 ID = Expr
+97 ID = Expr
   4,1: remainder
   4,11: =
   4,13: Math.Remainder(num, 2)
@@ -119,7 +119,7 @@
 250 )
   4,34: )
 
-20 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+97 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   5,1: If
   5,4: (remainder = 0)
   5,20: Then
@@ -161,7 +161,7 @@ EndIf
   5,27: 
 
 
-109 ID . ID ( Exprs )
+67 ID . ID ( Exprs )
   6,2: TextWindow
   6,12: .
   6,13: WriteLine
@@ -193,11 +193,11 @@ EndIf
 238 )
   6,43: )
 
-210 CR_token2
+207 CR_token2
   6,45: 
 
 
-109 OptionalElse_token2 CRStmtCRs OptionalElse_token1
+119 OptionalElse_token2 CRStmtCRs OptionalElse_token1
   7,1: Else
   7,8: 
 	TextWindow.WriteLine("The number is Odd") 
@@ -208,7 +208,7 @@ EndIf
   7,8: 
 
 
-163 ID . ID ( Exprs )
+113 ID . ID ( Exprs )
   8,2: TextWindow
   8,12: .
   8,13: WriteLine
@@ -240,14 +240,14 @@ EndIf
 238 )
   8,42: )
 
-210 CR_token2
+202 CR_token2
   8,44: 
 
 
 231 OptionalElse_token1
   9,1: EndIf
 
-174 Stmt_token3 ID
+97 Stmt_token3 ID
   10,1: Goto
   10,6: begin
 

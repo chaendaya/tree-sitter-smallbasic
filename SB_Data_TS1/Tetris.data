@@ -23,7 +23,7 @@
 75 ID
   1,26: HandleKey
 
-2 ID . ID = Expr
+97 ID . ID = Expr
   2,1: GraphicsWindow
   2,15: .
   2,16: BackgroundColor
@@ -91,7 +91,7 @@
 250 )
   2,80: )
 
-20 Stmt_token1 Expr CRStmtCRs Stmt_token2
+97 Stmt_token1 Expr CRStmtCRs Stmt_token2
   4,1: While
   4,7: "True"
   4,13: 
@@ -123,11 +123,11 @@
 77 STR
   4,7: "True"
 
-43 CR_token2
+192 CR_token2
   4,13: 
 
 
-126 ID = Expr
+93 ID = Expr
   5,3: BOXES
   5,9: =
   5,11: 4
@@ -139,16 +139,14 @@
 70 NUM
   5,11: 4
 
-205 Comment CR
-  5,18: ' number of boxes per piece
+205 CR
+  5,12:  
+
+205 CR_token2
   5,45: 
 
 
-43 CR_token2
-  5,45: 
-
-
-126 ID = Expr
+95 ID = Expr
   6,3: BWIDTH
   6,10: =
   6,12: 25
@@ -160,16 +158,14 @@
 70 NUM
   6,12: 25
 
-205 Comment CR
-  6,18: ' box width in pixels
+205 CR
+  6,14:  
+
+205 CR_token2
   6,39: 
 
 
-43 CR_token2
-  6,39: 
-
-
-126 ID = Expr
+95 ID = Expr
   7,3: XOFFSET
   7,11: =
   7,13: 40
@@ -181,16 +177,14 @@
 70 NUM
   7,13: 40
 
-205 Comment CR
-  7,18: ' Screen X offset in pixels of where the board starts
+205 CR
+  7,15:  
+
+205 CR_token2
   7,71: 
 
 
-43 CR_token2
-  7,71: 
-
-
-126 ID = Expr
+95 ID = Expr
   8,3: YOFFSET
   8,11: =
   8,13: 40
@@ -202,16 +196,14 @@
 70 NUM
   8,13: 40
 
-205 Comment CR
-  8,18: ' Screen Y offset in pixels of where the board starts
+205 CR
+  8,15:  
+
+205 CR_token2
   8,71: 
 
 
-43 CR_token2
-  8,71: 
-
-
-126 ID = Expr
+95 ID = Expr
   9,3: CWIDTH
   9,10: =
   9,12: 10
@@ -223,16 +215,14 @@
 70 NUM
   9,12: 10
 
-205 Comment CR
-  9,18: ' Canvas Width, in number of boxes
+205 CR
+  9,14:  
+
+205 CR_token2
   9,52: 
 
 
-43 CR_token2
-  9,52: 
-
-
-126 ID = Expr
+95 ID = Expr
   10,3: CHEIGHT
   10,11: =
   10,13: 20
@@ -244,16 +234,14 @@
 70 NUM
   10,13: 20
 
-205 Comment CR
-  10,18: ' Canvas Height, in number of boxes.
+205 CR
+  10,15:  
+
+205 CR_token2
   10,54: 
 
 
-43 CR_token2
-  10,54: 
-
-
-126 ID = Expr
+95 ID = Expr
   11,3: STARTDELAY
   11,14: =
   11,16: 800
@@ -265,11 +253,11 @@
 70 NUM
   11,16: 800
 
-43 CR_token2
+205 CR_token2
   11,19: 
 
 
-126 ID = Expr
+95 ID = Expr
   12,3: ENDDELAY
   12,12: =
   12,14: 175
@@ -281,11 +269,11 @@
 70 NUM
   12,14: 175
 
-43 CR_token2
+205 CR_token2
   12,17: 
 
 
-126 ID = Expr
+95 ID = Expr
   13,3: PREVIEW_xpos
   13,16: =
   13,18: 13
@@ -297,11 +285,11 @@
 70 NUM
   13,18: 13
 
-43 CR_token2
+205 CR_token2
   13,20: 
 
 
-126 ID = Expr
+95 ID = Expr
   14,3: PREVIEW_ypos
   14,16: =
   14,18: 2
@@ -313,12 +301,12 @@
 70 NUM
   14,18: 2
 
-43 CR_token2
+205 CR_token2
   14,19: 
 
 
 
-126 ID . ID ( )
+95 ID . ID ( )
   16,3: GraphicsWindow
   16,17: .
   16,18: Clear
@@ -343,11 +331,11 @@
 27 )
   16,24: )
 
-208 CR_token2
+205 CR_token2
   16,25: 
 
 
-126 ID . ID = Expr
+95 ID . ID = Expr
   17,3: GraphicsWindow
   17,17: .
   17,18: Title
@@ -372,11 +360,11 @@
 57 STR
   17,26: "Small Basic Tetris"
 
-43 CR_token2
+205 CR_token2
   17,46: 
 
 
-126 ID . ID = Expr
+95 ID . ID = Expr
   18,3: GraphicsWindow
   18,17: .
   18,18: Height
@@ -401,11 +389,11 @@
 57 NUM
   18,27: 580
 
-43 CR_token2
+205 CR_token2
   18,30: 
 
 
-126 ID . ID = Expr
+95 ID . ID = Expr
   19,3: GraphicsWindow
   19,17: .
   19,18: Width
@@ -430,11 +418,11 @@
 57 NUM
   19,26: 700
 
-43 CR_token2
+205 CR_token2
   19,29: 
 
 
-126 ID . ID ( )
+95 ID . ID ( )
   20,3: GraphicsWindow
   20,17: .
   20,18: Show
@@ -459,12 +447,12 @@
 27 )
   20,23: )
 
-208 CR_token2
+205 CR_token2
   20,24: 
 
 
 
-126 ID ( )
+95 ID ( )
   22,3: SetupTemplates
   22,17: (
   22,18: )
@@ -476,11 +464,11 @@
 261 )
   22,18: )
 
-215 CR_token2
+205 CR_token2
   22,19: 
 
 
-126 ID ( )
+95 ID ( )
   23,3: SetupCanvas
   23,14: (
   23,15: )
@@ -492,11 +480,11 @@
 261 )
   23,15: )
 
-215 CR_token2
+205 CR_token2
   23,16: 
 
 
-126 ID ( )
+95 ID ( )
   24,3: MainLoop
   24,11: (
   24,12: )
@@ -508,12 +496,12 @@
 261 )
   24,12: )
 
-215 CR_token2
+205 CR_token2
   24,13: 
 
 
 
-126 ID . ID ( Exprs )
+95 ID . ID ( Exprs )
   26,3: GraphicsWindow
   26,17: .
   26,18: ShowMessage
@@ -552,14 +540,14 @@
 238 )
   26,65: )
 
-210 CR_token2
+205 CR_token2
   26,66: 
 
 
 179 Stmt_token2
   27,1: EndWhile
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   29,1: Sub
   29,5: MainLoop
   29,13: 
@@ -682,7 +670,7 @@
   29,13: 
 
 
-160 ID = Expr
+105 ID = Expr
   30,3: template
   30,12: =
   30,14: Text.Append("template", Math.GetRandomNumber(7))
@@ -759,12 +747,12 @@
 249 )
   30,61: )
 
-49 CR_token2
+206 CR_token2
   30,62: 
 
 
 
-160 ID ( )
+106 ID ( )
   32,3: CreatePiece
   32,14: (
   32,15: )
@@ -776,16 +764,14 @@
 261 )
   32,15: )
 
-206 Comment CR
-  32,17: ' in: template ret: h
+206 CR
+  32,16:  
+
+206 CR_token2
   32,38: 
 
 
-215 CR_token2
-  32,38: 
-
-
-160 ID = Expr
+106 ID = Expr
   33,3: nextPiece
   33,13: =
   33,15: h
@@ -797,12 +783,12 @@
 70 ID
   33,15: h
 
-5 CR_token2
+206 CR_token2
   33,16: 
 
 
 
-160 ID = Expr
+106 ID = Expr
   35,3: end
   35,7: =
   35,9: 0
@@ -814,11 +800,11 @@
 70 NUM
   35,9: 0
 
-43 CR_token2
+206 CR_token2
   35,10: 
 
 
-160 ID = Expr
+106 ID = Expr
   36,3: sessionDelay
   36,16: =
   36,18: STARTDELAY
@@ -830,11 +816,11 @@
 70 ID
   36,18: STARTDELAY
 
-5 CR_token2
+206 CR_token2
   36,28: 
 
 
-160 Stmt_token1 Expr CRStmtCRs Stmt_token2
+106 Stmt_token1 Expr CRStmtCRs Stmt_token2
   37,3: While
   37,9: end = 0
   37,16: 
@@ -895,11 +881,11 @@
 123 NUM
   37,15: 0
 
-43 CR_token2
+186 CR_token2
   37,16: 
 
 
-126 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+93 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   38,5: If
   38,8: sessionDelay > ENDDELAY
   38,32: Then
@@ -929,7 +915,7 @@
   38,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   39,7: sessionDelay
   39,20: =
   39,22: sessionDelay - 1
@@ -948,19 +934,19 @@
 144 NUM
   39,37: 1
 
-43 CR_token2
+207 CR_token2
   39,38: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   40,5: EndIf
 
-218 CR_token2
+205 CR_token2
   40,10: 
 
 
 
-126 ID = Expr
+95 ID = Expr
   42,5: delay
   42,11: =
   42,13: sessionDelay
@@ -972,11 +958,11 @@
 70 ID
   42,13: sessionDelay
 
-5 CR_token2
+205 CR_token2
   42,25: 
 
 
-126 ID = Expr
+95 ID = Expr
   43,5: thisPiece
   43,15: =
   43,17: nextPiece
@@ -988,11 +974,11 @@
 70 ID
   43,17: nextPiece
 
-5 CR_token2
+205 CR_token2
   43,26: 
 
 
-126 ID = Expr
+95 ID = Expr
   44,5: template
   44,14: =
   44,16: Text.Append("template", Math.GetRandomNumber(7))
@@ -1069,12 +1055,12 @@
 249 )
   44,63: )
 
-49 CR_token2
+205 CR_token2
   44,64: 
 
 
 
-126 ID ( )
+95 ID ( )
   46,5: CreatePiece
   46,16: (
   46,17: )
@@ -1086,16 +1072,14 @@
 261 )
   46,17: )
 
-205 Comment CR
-  46,19: ' in: template ret: h
+205 CR
+  46,18:  
+
+205 CR_token2
   46,40: 
 
 
-215 CR_token2
-  46,40: 
-
-
-126 ID = Expr
+95 ID = Expr
   47,5: nextPiece
   47,15: =
   47,17: h
@@ -1107,11 +1091,11 @@
 70 ID
   47,17: h
 
-5 CR_token2
+205 CR_token2
   47,18: 
 
 
-126 ID ( )
+95 ID ( )
   48,5: DrawPreviewPiece
   48,21: (
   48,22: )
@@ -1123,12 +1107,12 @@
 261 )
   48,22: )
 
-215 CR_token2
+205 CR_token2
   48,23: 
 
 
 
-126 ID = Expr
+95 ID = Expr
   50,5: h
   50,7: =
   50,9: thisPiece
@@ -1140,12 +1124,12 @@
 70 ID
   50,9: thisPiece
 
-5 CR_token2
+205 CR_token2
   50,18: 
 
 
 
-126 ID = Expr
+95 ID = Expr
   52,5: ypos
   52,10: =
   52,12: 0
@@ -1157,11 +1141,11 @@
 70 NUM
   52,12: 0
 
-43 CR_token2
+205 CR_token2
   52,13: 
 
 
-126 ID = Expr
+95 ID = Expr
   53,5: done
   53,10: =
   53,12: 0
@@ -1173,11 +1157,11 @@
 70 NUM
   53,12: 0
 
-43 CR_token2
+205 CR_token2
   53,13: 
 
 
-126 ID = Expr
+95 ID = Expr
   54,5: xpos
   54,10: =
   54,12: 3
@@ -1189,16 +1173,14 @@
 70 NUM
   54,12: 3
 
-205 Comment CR
-  54,14: ' always drop from column 3
+205 CR
+  54,13:  
+
+205 CR_token2
   54,41: 
 
 
-43 CR_token2
-  54,41: 
-
-
-126 ID ( )
+95 ID ( )
   55,5: CheckStop
   55,14: (
   55,15: )
@@ -1210,16 +1192,14 @@
 261 )
   55,15: )
 
-205 Comment CR
-  55,17: ' in: ypos, xpos, h ret: done
+205 CR
+  55,16:  
+
+205 CR_token2
   55,46: 
 
 
-215 CR_token2
-  55,46: 
-
-
-126 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+95 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   56,5: If
   56,8: done = 1
   56,17: Then
@@ -1253,7 +1233,7 @@
   56,21: 
 
 
-109 ID = Expr
+67 ID = Expr
   57,7: ypos
   57,12: =
   57,14: ypos - 1
@@ -1272,11 +1252,11 @@
 144 NUM
   57,21: 1
 
-43 CR_token2
+207 CR_token2
   57,22: 
 
 
-109 ID ( )
+68 ID ( )
   58,7: MovePiece
   58,16: (
   58,17: )
@@ -1288,16 +1268,14 @@
 261 )
   58,17: )
 
-207 Comment CR
-  58,20: 'in: ypos, xpos, h
+207 CR
+  58,18:  
+
+207 CR_token2
   58,38: 
 
 
-215 CR_token2
-  58,38: 
-
-
-109 ID = Expr
+68 ID = Expr
   59,7: end
   59,11: =
   59,13: 1
@@ -1309,19 +1287,19 @@
 70 NUM
   59,13: 1
 
-43 CR_token2
+207 CR_token2
   59,14: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   60,5: EndIf
 
-218 CR_token2
+205 CR_token2
   60,10: 
 
 
 
-126 ID = Expr
+95 ID = Expr
   62,5: yposdelta
   62,15: =
   62,17: 0
@@ -1333,11 +1311,11 @@
 70 NUM
   62,17: 0
 
-43 CR_token2
+205 CR_token2
   62,18: 
 
 
-126 Stmt_token1 Expr Stmt_repeat1 Stmt_token2
+95 Stmt_token1 Expr Stmt_repeat1 Stmt_token2
   63,5: While
   63,11: done = 0 Or yposdelta > 0
   63,36: 
@@ -1385,11 +1363,11 @@
 129 NUM
   63,35: 0
 
-43 CR_token2
+186 CR_token2
   63,36: 
 
 
-126 ID ( )
+93 ID ( )
   64,7: MovePiece
   64,16: (
   64,17: )
@@ -1401,20 +1379,16 @@
 261 )
   64,17: )
 
-205 Comment CR
-  64,20: 'in: ypos, xpos, h
+205 CR
+  64,18:   
+
+205 CR_token2
   64,38: 
 
 
 
-215 CR_token2
-  64,38: 
-
-
-
-187 Comment CRStmtCRs
-  66,7: ' Delay, but break if the delay get set to 0 if the piece gets dropped
-  66,77: 
+187 CRStmtCRs
+  66,1:       ' Delay, but break if the delay get set to 0 if the piece gets dropped
       delayIndex = delay
       While delayIndex > 0 And delay > 0
         Program.Delay(10)
@@ -1424,16 +1398,13 @@
       If yposdelta > 0 Then
         yposdelta = yposdelta - 1  ' used to create freespin, when the piece is rotated
       Else
-        ypos = ypos + 1            ' otherwise, move the piece down.
-      EndIf
+      
 
-
-
-126 CR_token2
+187 CR_token2
   66,77: 
 
 
-126 ID = Expr
+93 ID = Expr
   67,7: delayIndex
   67,18: =
   67,20: delay
@@ -1445,11 +1416,11 @@
 70 ID
   67,20: delay
 
-5 CR_token2
+205 CR_token2
   67,25: 
 
 
-126 Stmt_token1 Expr CRStmtCRs Stmt_token2
+95 Stmt_token1 Expr CRStmtCRs Stmt_token2
   68,7: While
   68,13: delayIndex > 0 And delay > 0
   68,41: 
@@ -1482,11 +1453,11 @@
 129 NUM
   68,40: 0
 
-43 CR_token2
+186 CR_token2
   68,41: 
 
 
-126 ID . ID ( Exprs )
+93 ID . ID ( Exprs )
   69,9: Program
   69,16: .
   69,17: Delay
@@ -1518,11 +1489,11 @@
 238 )
   69,25: )
 
-210 CR_token2
+205 CR_token2
   69,26: 
 
 
-126 ID = Expr
+95 ID = Expr
   70,9: delayIndex
   70,20: =
   70,22: delayIndex - 10
@@ -1541,19 +1512,19 @@
 144 NUM
   70,35: 10
 
-43 CR_token2
+205 CR_token2
   70,37: 
 
 
 187 Stmt_token2
   71,7: EndWhile
 
-222 CR_token2
+205 CR_token2
   71,15: 
 
 
 
-126 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+95 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   73,7: If
   73,10: yposdelta > 0
   73,24: Then
@@ -1587,7 +1558,7 @@
   73,28: 
 
 
-109 ID = Expr
+67 ID = Expr
   74,9: yposdelta
   74,19: =
   74,21: yposdelta - 1
@@ -1606,16 +1577,14 @@
 144 NUM
   74,33: 1
 
-207 Comment CR
-  74,36: ' used to create freespin, when the piece is rotated
+207 CR
+  74,34:  
+
+207 CR_token2
   74,88: 
 
 
-43 CR_token2
-  74,88: 
-
-
-109 OptionalElse_token2 CRStmtCRs OptionalElse_token1
+122 OptionalElse_token2 CRStmtCRs OptionalElse_token1
   75,7: Else
   75,11: 
         ypos = ypos + 1            ' otherwise, move the piece down.
@@ -1626,7 +1595,7 @@
   75,11: 
 
 
-163 ID = Expr
+113 ID = Expr
   76,9: ypos
   76,14: =
   76,16: ypos + 1
@@ -1645,34 +1614,30 @@
 144 NUM
   76,23: 1
 
-202 Comment CR
-  76,36: ' otherwise, move the piece down.
-  76,69: 
+202 CR
+  76,24:  
 
-
-43 CR_token2
+202 CR_token2
   76,69: 
 
 
 237 OptionalElse_token1
   77,7: EndIf
 
-209 CR_token2
+205 CR_token2
   77,12: 
 
 
 
-126 Comment CRStmtCRs
-  79,7: ' Check if the piece should stop.
-  79,40: 
-      CheckStop() ' in: ypos, xpos, h ret: done 
+187 CRStmtCRs
+  79,1:       ' Check if the piece should stop.
+      Chec
 
-
-126 CR_token2
+187 CR_token2
   79,40: 
 
 
-126 ID ( )
+93 ID ( )
   80,7: CheckStop
   80,16: (
   80,17: )
@@ -1684,33 +1649,31 @@
 261 )
   80,17: )
 
-205 Comment CR
-  80,19: ' in: ypos, xpos, h ret: done 
-  80,49: 
+205 CR
+  80,18:  
 
-
-215 CR_token2
+205 CR_token2
   80,49: 
 
 
 187 Stmt_token2
   81,5: EndWhile
 
-222 CR_token2
+205 CR_token2
   81,13: 
 
 
 187 Stmt_token2
   82,3: EndWhile
 
-222 CR_token2
+206 CR_token2
   82,11: 
 
 
 257 Stmt_token8
   83,1: EndSub
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   85,1: Sub
   85,5: HandleKey
   85,14: 
@@ -1867,9 +1830,9 @@
   85,14: 
 
 
-105 Comment CRStmtCRs_repeat1
-  86,3: ' Stop game
-  87,3: If GraphicsWindow.LastKey = "Escape" Then
+105 CRStmtCRs_repeat1
+  87,3:  Stop game
+  If GraphicsWindow.LastKey = "Escape" Then
     Program.End()
   EndIf
 
@@ -1936,11 +1899,9 @@
       xpos = xposbk
       Array.SetValue(h, -1, basetemplate) ' Array.GetValue(h, -1) = the template name
       template = ""
-    EndIf
-  EndIf
+    E
 
-
-160 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+105 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   87,3: If
   87,6: GraphicsWindow.LastKey = "Escape"
   87,40: Then
@@ -1979,7 +1940,7 @@
   87,44: 
 
 
-109 ID . ID ( )
+67 ID . ID ( )
   88,5: Program
   88,12: .
   88,13: End
@@ -2004,32 +1965,29 @@
 27 )
   88,17: )
 
-208 CR_token2
+207 CR_token2
   88,18: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   89,3: EndIf
 
-218 CR_token2
+206 CR_token2
   89,8: 
 
 
 
-106 Comment TheRest
-  91,3: ' Move piece left
-  92,3: If GraphicsWindow.LastKey = "Left" Then
+106 TheRest
+  92,3:  Move piece left
+  If GraphicsWindow.LastKey = "Left" Then
     moveDirection = -1
     ValidateMove()  ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid, otherwise 0
     If invalidMove = 0 Then
       xpos = xpos + moveDirection
     EndIf
-    MovePiece()  'in: ypos, xpos, h
-  EndIf
+    MovePiece()  'in: ypos
 
-
-
-160 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+106 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   92,3: If
   92,6: GraphicsWindow.LastKey = "Left"
   92,38: Then
@@ -2078,7 +2036,7 @@
   92,42: 
 
 
-109 ID = Expr
+67 ID = Expr
   93,5: moveDirection
   93,19: =
   93,21: -1
@@ -2094,11 +2052,11 @@
 193 NUM
   93,22: 1
 
-43 CR_token2
+207 CR_token2
   93,23: 
 
 
-109 ID ( )
+68 ID ( )
   94,5: ValidateMove
   94,17: (
   94,18: )
@@ -2110,16 +2068,14 @@
 261 )
   94,18: )
 
-207 Comment CR
-  94,21: ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid, otherwise 0
+207 CR
+  94,19:  
+
+207 CR_token2
   94,119: 
 
 
-215 CR_token2
-  94,119: 
-
-
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   95,5: If
   95,8: invalidMove = 0
   95,24: Then
@@ -2149,7 +2105,7 @@
   95,28: 
 
 
-109 ID = Expr
+67 ID = Expr
   96,7: xpos
   96,12: =
   96,14: xpos + moveDirection
@@ -2168,18 +2124,18 @@
 144 ID
   96,21: moveDirection
 
-5 CR_token2
+207 CR_token2
   96,34: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   97,5: EndIf
 
-218 CR_token2
+207 CR_token2
   97,10: 
 
 
-109 ID ( )
+68 ID ( )
   98,5: MovePiece
   98,14: (
   98,15: )
@@ -2191,26 +2147,24 @@
 261 )
   98,15: )
 
-207 Comment CR
-  98,18: 'in: ypos, xpos, h
+207 CR
+  98,16:  
+
+207 CR_token2
   98,36: 
 
 
-215 CR_token2
-  98,36: 
-
-
-109 OptionalElse_token1
+122 OptionalElse_token1
   99,3: EndIf
 
-218 CR_token2
+206 CR_token2
   99,8: 
 
 
 
-160 Comment CRStmtCRs_repeat1
-  101,3: ' Move piece right
-  102,3: If GraphicsWindow.LastKey = "Right" Then
+106 CRStmtCRs_repeat1
+  102,3:  Move piece right
+  If GraphicsWindow.LastKey = "Right" Then
     moveDirection = 1
     ValidateMove()  ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid, otherwise 0
     If invalidMove = 0 Then
@@ -2221,12 +2175,9 @@
 
   ' Move piece down
   If GraphicsWindow.LastKey = "Down" or GraphicsWindow.LastKey = "Space" Then
-    delay = 0
-  EndIf
+   
 
-
-
-160 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+106 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   102,3: If
   102,6: GraphicsWindow.LastKey = "Right"
   102,39: Then
@@ -2275,7 +2226,7 @@
   102,43: 
 
 
-109 ID = Expr
+67 ID = Expr
   103,5: moveDirection
   103,19: =
   103,21: 1
@@ -2287,11 +2238,11 @@
 70 NUM
   103,21: 1
 
-43 CR_token2
+207 CR_token2
   103,22: 
 
 
-109 ID ( )
+68 ID ( )
   104,5: ValidateMove
   104,17: (
   104,18: )
@@ -2303,16 +2254,14 @@
 261 )
   104,18: )
 
-207 Comment CR
-  104,21: ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid, otherwise 0
+207 CR
+  104,19:  
+
+207 CR_token2
   104,119: 
 
 
-215 CR_token2
-  104,119: 
-
-
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   105,5: If
   105,8: invalidMove = 0
   105,24: Then
@@ -2342,7 +2291,7 @@
   105,28: 
 
 
-109 ID = Expr
+67 ID = Expr
   106,7: xpos
   106,12: =
   106,14: xpos + moveDirection
@@ -2361,18 +2310,18 @@
 144 ID
   106,21: moveDirection
 
-5 CR_token2
+207 CR_token2
   106,34: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   107,5: EndIf
 
-218 CR_token2
+207 CR_token2
   107,10: 
 
 
-109 ID ( )
+68 ID ( )
   108,5: MovePiece
   108,14: (
   108,15: )
@@ -2384,32 +2333,27 @@
 261 )
   108,15: )
 
-207 Comment CR
-  108,18: 'in: ypos, xpos, h
+207 CR
+  108,16:  
+
+207 CR_token2
   108,36: 
 
 
-215 CR_token2
-  108,36: 
-
-
-109 OptionalElse_token1
+122 OptionalElse_token1
   109,3: EndIf
 
-218 CR_token2
+206 CR_token2
   109,8: 
 
 
 
-107 Comment TheRest
-  111,3: ' Move piece down
-  112,3: If GraphicsWindow.LastKey = "Down" or GraphicsWindow.LastKey = "Space" Then
-    delay = 0
-  EndIf
+107 TheRest
+  112,3:  Move piece down
+  If GraphicsWindow.LastKey = "Down" or GraphicsWindow.LastKey = "Space" Then
+    
 
-
-
-160 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+106 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   112,3: If
   112,6: GraphicsWindow.LastKey = "Down" or GraphicsWindow.LastKey = "Space"
   112,74: Then
@@ -2471,7 +2415,7 @@
   112,78: 
 
 
-109 ID = Expr
+67 ID = Expr
   113,5: delay
   113,11: =
   113,13: 0
@@ -2483,21 +2427,21 @@
 70 NUM
   113,13: 0
 
-43 CR_token2
+207 CR_token2
   113,14: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   114,3: EndIf
 
-218 CR_token2
+206 CR_token2
   114,8: 
 
 
 
-160 Comment TheRest
-  116,3: ' Rotate piece
-  117,3: If GraphicsWindow.LastKey = "Up" Then
+106 TheRest
+  117,3:  Rotate piece
+  If GraphicsWindow.LastKey = "Up" Then
     basetemplate = Array.GetValue(h, -1)  ' Array.GetValue(h, -1) = the template name
     template = "temptemplate"
     rotation = "CW"
@@ -2534,11 +2478,9 @@
       xpos = xposbk
       Array.SetValue(h, -1, basetemplate) ' Array.GetValue(h, -1) = the template name
       template = ""
-    EndIf
-  EndIf
+  
 
-
-160 Stmt_token9 Expr Stmt_token10 Stmt_repeat1 MoreThanZeroElseIf
+106 Stmt_token9 Expr Stmt_token10 Stmt_repeat1 MoreThanZeroElseIf
   117,3: If
   117,6: GraphicsWindow.LastKey = "Up"
   117,36: Then
@@ -2649,7 +2591,7 @@
   117,40: 
 
 
-109 ID = Expr
+67 ID = Expr
   118,5: basetemplate
   118,18: =
   118,20: Array.GetValue(h, -1)
@@ -2701,16 +2643,14 @@
 249 )
   118,40: )
 
-207 Comment CR
-  118,43: ' Array.GetValue(h, -1) = the template name
+207 CR
+  118,41:  
+
+207 CR_token2
   118,86: 
 
 
-49 CR_token2
-  118,86: 
-
-
-109 ID = Expr
+68 ID = Expr
   119,5: template
   119,14: =
   119,16: "temptemplate"
@@ -2722,11 +2662,11 @@
 70 STR
   119,16: "temptemplate"
 
-43 CR_token2
+207 CR_token2
   119,30: 
 
 
-109 ID = Expr
+68 ID = Expr
   120,5: rotation
   120,14: =
   120,16: "CW"
@@ -2738,11 +2678,11 @@
 70 STR
   120,16: "CW"
 
-43 CR_token2
+207 CR_token2
   120,20: 
 
 
-109 ID ( )
+68 ID ( )
   121,5: CopyPiece
   121,14: (
   121,15: )
@@ -2754,18 +2694,15 @@
 261 )
   121,15: )
 
-207 Comment CR
-  121,18: 'in basetemplate, template, rotation
+207 CR
+  121,16:   
+
+207 CR_token2
   121,54: 
 
 
 
-215 CR_token2
-  121,54: 
-
-
-
-109 ID . ID ( Exprs )
+68 ID . ID ( Exprs )
   123,5: Array
   123,10: .
   123,11: SetValue
@@ -2815,16 +2752,14 @@
 238 )
   123,35: )
 
-207 Comment CR
-  123,37: ' Array.GetValue(h, -1) = the template name
+207 CR
+  123,36:  
+
+207 CR_token2
   123,80: 
 
 
-210 CR_token2
-  123,80: 
-
-
-109 ID = Expr
+68 ID = Expr
   124,5: moveDirection
   124,19: =
   124,21: 0
@@ -2836,11 +2771,11 @@
 70 NUM
   124,21: 0
 
-43 CR_token2
+207 CR_token2
   124,22: 
 
 
-109 ID ( )
+68 ID ( )
   125,5: ValidateMove
   125,17: (
   125,18: )
@@ -2852,20 +2787,16 @@
 261 )
   125,18: )
 
-207 Comment CR
-  125,21: ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid, otherwise 0
+207 CR
+  125,19:   
+
+207 CR_token2
   125,119: 
 
 
 
-215 CR_token2
-  125,119: 
-
-
-
-122 Comment CRStmtCRs
-  127,5: ' See if it can be moved so that it will rotate.
-  127,53: 
+122 CRStmtCRs
+  127,1:     ' See if it can be moved so that it will rotate.
     xposbk = xpos
     yposdelta = 0
     While yposdelta = 0 And Math.Abs(xposbk - xpos) < 3 ' move up to 3 times only
@@ -2890,16 +2821,13 @@
 
     If invalidMove <> 0 Then
       xpos = xposbk
-      Array.SetValue(h, -1, basetemplate) ' Array.GetValue(h, -1) = the template name
-      template = ""
-    EndIf
+      Array.SetValue(h, -1, basetemplate) ' Array.GetValue(h, -1
 
-
-109 CR_token2
+122 CR_token2
   127,53: 
 
 
-109 ID = Expr
+67 ID = Expr
   128,5: xposbk
   128,12: =
   128,14: xpos
@@ -2911,11 +2839,11 @@
 70 ID
   128,14: xpos
 
-5 CR_token2
+207 CR_token2
   128,18: 
 
 
-109 ID = Expr
+68 ID = Expr
   129,5: yposdelta
   129,15: =
   129,17: 0
@@ -2927,15 +2855,14 @@
 70 NUM
   129,17: 0
 
-43 CR_token2
+207 CR_token2
   129,18: 
 
 
-109 Stmt_token1 Expr Comment Stmt_repeat1 Stmt_token2
+68 Stmt_token1 Expr Stmt_repeat1 Stmt_token2
   130,5: While
   130,11: yposdelta = 0 And Math.Abs(xposbk - xpos) < 3
-  130,57: ' move up to 3 times only
-  130,82: 
+  130,56:  ' move up to 3 times only
       ' if the rotation move worked, copy the temp to "rotatedtemplate" and use that from now on
       If invalidMove = 0 Then
         basetemplate = template
@@ -2951,10 +2878,8 @@
       Else
         ' if the rotated piece can't be placed, move it left or right and try again.
         xpos = xpos - invalidMove
-        ValidateMove()  ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid, otherwise 0
-      EndIf
-
-  148,5: EndWhile
+        ValidateMove()  ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid
+  148,5: herwise 
 
 79 ID
   130,11: yposdelta
@@ -3016,9 +2941,8 @@
 129 NUM
   130,55: 3
 
-186 Comment Stmt_repeat1 Stmt_token2
-  130,57: ' move up to 3 times only
-  130,82: 
+186 Stmt_repeat1 Stmt_token2
+  130,56:  ' move up to 3 times only
       ' if the rotation move worked, copy the temp to "rotatedtemplate" and use that from now on
       If invalidMove = 0 Then
         basetemplate = template
@@ -3034,18 +2958,15 @@
       Else
         ' if the rotated piece can't be placed, move it left or right and try again.
         xpos = xpos - invalidMove
-        ValidateMove()  ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid, otherwise 0
-      EndIf
+        ValidateMove()  ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid
+  148,5: herwise 
 
-  148,5: EndWhile
-
-43 CR_token2
+186 CR_token2
   130,82: 
 
 
-187 Comment CRStmtCRs
-  131,7: ' if the rotation move worked, copy the temp to "rotatedtemplate" and use that from now on
-  131,97: 
+187 CRStmtCRs
+  131,1:       ' if the rotation move worked, copy the temp to "rotatedtemplate" and use that from now on
       If invalidMove = 0 Then
         basetemplate = template
         template = "rotatedtemplate"
@@ -3060,15 +2981,13 @@
       Else
         ' if the rotated piece can't be placed, move it left or right and try again.
         xpos = xpos - invalidMove
-        ValidateMove()  ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid, otherwise 0
-      EndIf
+        ValidateMove()  ' in: ypos, xpo
 
-
-126 CR_token2
+187 CR_token2
   131,97: 
 
 
-126 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+93 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   132,7: If
   132,10: invalidMove = 0
   132,26: Then
@@ -3124,7 +3043,7 @@
   132,30: 
 
 
-109 ID = Expr
+67 ID = Expr
   133,9: basetemplate
   133,22: =
   133,24: template
@@ -3136,11 +3055,11 @@
 70 ID
   133,24: template
 
-5 CR_token2
+207 CR_token2
   133,32: 
 
 
-109 ID = Expr
+68 ID = Expr
   134,9: template
   134,18: =
   134,20: "rotatedtemplate"
@@ -3152,11 +3071,11 @@
 70 STR
   134,20: "rotatedtemplate"
 
-43 CR_token2
+207 CR_token2
   134,37: 
 
 
-109 ID . ID ( Exprs )
+68 ID . ID ( Exprs )
   135,9: Array
   135,14: .
   135,15: SetValue
@@ -3206,16 +3125,14 @@
 238 )
   135,39: )
 
-207 Comment CR
-  135,41: ' Array.GetValue(h, -1) = the template name
+207 CR
+  135,40:  
+
+207 CR_token2
   135,84: 
 
 
-210 CR_token2
-  135,84: 
-
-
-109 ID = Expr
+68 ID = Expr
   136,9: rotation
   136,18: =
   136,20: "COPY"
@@ -3227,11 +3144,11 @@
 70 STR
   136,20: "COPY"
 
-43 CR_token2
+207 CR_token2
   136,26: 
 
 
-109 ID ( )
+68 ID ( )
   137,9: CopyPiece
   137,18: (
   137,19: )
@@ -3243,16 +3160,14 @@
 261 )
   137,19: )
 
-207 Comment CR
-  137,22: 'in basetemplate, template, rotation
+207 CR
+  137,20:  
+
+207 CR_token2
   137,58: 
 
 
-215 CR_token2
-  137,58: 
-
-
-109 ID = Expr
+68 ID = Expr
   138,9: yposdelta
   138,19: =
   138,21: 1
@@ -3264,16 +3179,14 @@
 70 NUM
   138,21: 1
 
-207 Comment CR
-  138,23: ' Don't move down if we rotate
+207 CR
+  138,22:  
+
+207 CR_token2
   138,53: 
 
 
-43 CR_token2
-  138,53: 
-
-
-109 ID ( )
+68 ID ( )
   139,9: MovePiece
   139,18: (
   139,19: )
@@ -3285,16 +3198,14 @@
 261 )
   139,19: )
 
-207 Comment CR
-  139,22: 'in: ypos, xpos, h
+207 CR
+  139,20:  
+
+207 CR_token2
   139,40: 
 
 
-215 CR_token2
-  139,40: 
-
-
-109 MoreThanZeroElseIf_token1 Expr Stmt_token10 Stmt_repeat1 MoreThanZeroElseIf
+122 MoreThanZeroElseIf_token1 Expr Stmt_token10 Stmt_repeat1 MoreThanZeroElseIf
   140,7: ElseIf
   140,14: invalidMove = 2
   140,30: Then
@@ -3334,17 +3245,14 @@
   140,34: 
 
 
-115 Comment CRStmtCRs
-  141,9: ' Don't support shifting piece when hitting another piece to the right or left.
-  141,88: 
-        xpos = 99 ' exit the loop
+115 CRStmtCRs
+  141,1:         ' Don't support shifting pi
 
-
-109 CR_token2
+115 CR_token2
   141,88: 
 
 
-109 ID = Expr
+67 ID = Expr
   142,9: xpos
   142,14: =
   142,16: 99
@@ -3356,16 +3264,14 @@
 70 NUM
   142,16: 99
 
-207 Comment CR
-  142,19: ' exit the loop
+207 CR
+  142,18:  
+
+207 CR_token2
   142,34: 
 
 
-43 CR_token2
-  142,34: 
-
-
-109 OptionalElse_token2 CRStmtCRs OptionalElse_token1
+115 OptionalElse_token2 CRStmtCRs OptionalElse_token1
   143,7: Else
   143,11: 
         ' if the rotated piece can't be placed, move it left or right and try again.
@@ -3378,13 +3284,12 @@
   143,11: 
 
 
-113 Comment CRStmtCRs_repeat1
-  144,9: ' if the rotated piece can't be placed, move it left or right and try again.
-  145,9: xpos = xpos - invalidMove
-        ValidateMove()  ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid, otherwise 0
+113 CRStmtCRs_repeat1
+  145,9:  if the rotated piece can't be placed, move it left or right and try again.
+        xpos = xpos - invalidMove
+        ValidateMove()  ' in: ypos, xpo
 
-
-163 ID = Expr
+113 ID = Expr
   145,9: xpos
   145,14: =
   145,16: xpos - invalidMove
@@ -3403,11 +3308,11 @@
 144 ID
   145,23: invalidMove
 
-5 CR_token2
+202 CR_token2
   145,34: 
 
 
-163 ID ( )
+114 ID ( )
   146,9: ValidateMove
   146,21: (
   146,22: )
@@ -3419,31 +3324,29 @@
 261 )
   146,22: )
 
-202 Comment CR
-  146,25: ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid, otherwise 0
-  146,123: 
+202 CR
+  146,23:  
 
-
-215 CR_token2
+202 CR_token2
   146,123: 
 
 
 237 OptionalElse_token1
   147,7: EndIf
 
-209 CR_token2
+205 CR_token2
   147,12: 
 
 
 187 Stmt_token2
   148,5: EndWhile
 
-222 CR_token2
+207 CR_token2
   148,13: 
 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   150,5: If
   150,8: invalidMove <> 0
   150,25: Then
@@ -3477,7 +3380,7 @@
   150,29: 
 
 
-109 ID = Expr
+67 ID = Expr
   151,7: xpos
   151,12: =
   151,14: xposbk
@@ -3489,11 +3392,11 @@
 70 ID
   151,14: xposbk
 
-5 CR_token2
+207 CR_token2
   151,20: 
 
 
-109 ID . ID ( Exprs )
+68 ID . ID ( Exprs )
   152,7: Array
   152,12: .
   152,13: SetValue
@@ -3543,16 +3446,14 @@
 238 )
   152,41: )
 
-207 Comment CR
-  152,43: ' Array.GetValue(h, -1) = the template name
+207 CR
+  152,42:  
+
+207 CR_token2
   152,86: 
 
 
-210 CR_token2
-  152,86: 
-
-
-109 ID = Expr
+68 ID = Expr
   153,7: template
   153,16: =
   153,18: ""
@@ -3564,28 +3465,28 @@
 70 STR
   153,18: ""
 
-43 CR_token2
+207 CR_token2
   153,20: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   154,5: EndIf
 
-218 CR_token2
+207 CR_token2
   154,10: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   155,3: EndIf
 
-218 CR_token2
+206 CR_token2
   155,8: 
 
 
 257 Stmt_token8
   156,1: EndSub
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   159,1: Sub
   159,5: DrawPreviewPiece
   159,21: 
@@ -3626,7 +3527,7 @@
   159,21: 
 
 
-160 ID = Expr
+105 ID = Expr
   160,3: xpos
   160,8: =
   160,10: PREVIEW_xpos
@@ -3638,11 +3539,11 @@
 70 ID
   160,10: PREVIEW_xpos
 
-5 CR_token2
+206 CR_token2
   160,22: 
 
 
-160 ID = Expr
+106 ID = Expr
   161,3: ypos
   161,8: =
   161,10: PREVIEW_ypos
@@ -3654,11 +3555,11 @@
 70 ID
   161,10: PREVIEW_ypos
 
-5 CR_token2
+206 CR_token2
   161,22: 
 
 
-160 ID = Expr
+106 ID = Expr
   162,3: h
   162,5: =
   162,7: nextPiece
@@ -3670,12 +3571,12 @@
 70 ID
   162,7: nextPiece
 
-5 CR_token2
+206 CR_token2
   162,16: 
 
 
 
-160 ID = Expr
+106 ID = Expr
   164,3: XOFFSETBK
   164,13: =
   164,15: XOFFSET
@@ -3687,11 +3588,11 @@
 70 ID
   164,15: XOFFSET
 
-5 CR_token2
+206 CR_token2
   164,22: 
 
 
-160 ID = Expr
+106 ID = Expr
   165,3: YOFFSETBK
   165,13: =
   165,15: YOFFSET
@@ -3703,11 +3604,11 @@
 70 ID
   165,15: YOFFSET
 
-5 CR_token2
+206 CR_token2
   165,22: 
 
 
-160 ID = Expr
+106 ID = Expr
   166,3: XOFFSET
   166,11: =
   166,13: XOFFSET + Array.GetValue(Array.GetValue(h, -1), "pviewx")
@@ -3802,16 +3703,14 @@
 249 )
   166,69: )
 
-206 Comment CR
-  166,71: ' Array.GetValue(h, -1) = the template name
+206 CR
+  166,70:  
+
+206 CR_token2
   166,114: 
 
 
-49 CR_token2
-  166,114: 
-
-
-160 ID = Expr
+106 ID = Expr
   167,3: YOFFSET
   167,11: =
   167,13: YOFFSET + Array.GetValue(Array.GetValue(h, -1), "pviewy")
@@ -3906,16 +3805,14 @@
 249 )
   167,69: )
 
-206 Comment CR
-  167,71: ' Array.GetValue(h, -1) = the template name
+206 CR
+  167,70:  
+
+206 CR_token2
   167,114: 
 
 
-49 CR_token2
-  167,114: 
-
-
-160 ID ( )
+106 ID ( )
   168,3: MovePiece
   168,12: (
   168,13: )
@@ -3927,18 +3824,15 @@
 261 )
   168,13: )
 
-206 Comment CR
-  168,16: 'in: ypos, xpos, h
+206 CR
+  168,14:   
+
+206 CR_token2
   168,34: 
 
 
 
-215 CR_token2
-  168,34: 
-
-
-
-160 ID = Expr
+106 ID = Expr
   170,3: XOFFSET
   170,11: =
   170,13: XOFFSETBK
@@ -3950,11 +3844,11 @@
 70 ID
   170,13: XOFFSETBK
 
-5 CR_token2
+206 CR_token2
   170,22: 
 
 
-160 ID = Expr
+106 ID = Expr
   171,3: YOFFSET
   171,11: =
   171,13: YOFFSETBK
@@ -3966,16 +3860,17 @@
 70 ID
   171,13: YOFFSETBK
 
-5 CR_token2
+206 CR_token2
   171,22: 
 
 
 257 Stmt_token8
   172,1: EndSub
 
-146 Comment Start_repeat1
-  174,1: ' creates template that's a rotated basetemplate
-  175,1: Sub CopyPiece  'in basetemplate, template, rotation 
+97 Start_repeat1
+  173,1: 
+' creates template that's a rotated basetemplate
+Sub CopyPiece  'in basetemplate, template, rotation 
   L = Array.GetValue(basetemplate, "dim")
 
   If rotation = "CW" Then
@@ -4236,14 +4131,12 @@ Sub PrintScore
   GraphicsWindow.FontSize = 32
   GraphicsWindow.FontName = "Impact"
   GraphicsWindow.BrushColor = "Black"
-  GraphicsWindow.DrawText(505, 70, Text.Append(Text.GetSubText( "00000000", 0, 8 - Text.GetLength( score ) ), score))
-EndSub
+  GraphicsWindow.DrawText(505, 70, Text.Append(Text.GetSubText( "00000000"
 
-146 Stmt_token7 ID Comment CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   175,1: Sub
   175,5: CopyPiece
-  175,16: 'in basetemplate, template, rotation 
-  175,53: 
+  175,14:   'in basetemplate, template, rotation 
   L = Array.GetValue(basetemplate, "dim")
 
   If rotation = "CW" Then
@@ -4283,14 +4176,12 @@ EndSub
   Array.SetValue(template, "color", Array.GetValue(basetemplate, "color"))
   Array.SetValue(template, "dim", Array.GetValue(basetemplate, "dim"))
   Array.SetValue(template, "pviewx", Array.GetValue(basetemplate, "pviewx"))
-  Array.SetValue(template, "pviewy", Array.GetValue(basetemplate, "pviewy"))
+  Array.SetValue(template, "pviewy", A
+  216,1: rray.G
 
-  216,1: EndSub
-
-244 ID Comment CRStmtCRs Stmt_token8
+244 ID CRStmtCRs Stmt_token8
   175,5: CopyPiece
-  175,16: 'in basetemplate, template, rotation 
-  175,53: 
+  175,14:   'in basetemplate, template, rotation 
   L = Array.GetValue(basetemplate, "dim")
 
   If rotation = "CW" Then
@@ -4330,13 +4221,11 @@ EndSub
   Array.SetValue(template, "color", Array.GetValue(basetemplate, "color"))
   Array.SetValue(template, "dim", Array.GetValue(basetemplate, "dim"))
   Array.SetValue(template, "pviewx", Array.GetValue(basetemplate, "pviewx"))
-  Array.SetValue(template, "pviewy", Array.GetValue(basetemplate, "pviewy"))
+  Array.SetValue(template, "pviewy", A
+  216,1: rray.G
 
-  216,1: EndSub
-
-199 Comment CRStmtCRs Stmt_token8
-  175,16: 'in basetemplate, template, rotation 
-  175,53: 
+199 CRStmtCRs Stmt_token8
+  175,14:   'in basetemplate, template, rotation 
   L = Array.GetValue(basetemplate, "dim")
 
   If rotation = "CW" Then
@@ -4376,15 +4265,14 @@ EndSub
   Array.SetValue(template, "color", Array.GetValue(basetemplate, "color"))
   Array.SetValue(template, "dim", Array.GetValue(basetemplate, "dim"))
   Array.SetValue(template, "pviewx", Array.GetValue(basetemplate, "pviewx"))
-  Array.SetValue(template, "pviewy", Array.GetValue(basetemplate, "pviewy"))
-
-  216,1: EndSub
+  Array.SetValue(template, "pviewy", A
+  216,1: rray.G
 
 199 CR_token2
   175,53: 
 
 
-160 ID = Expr
+105 ID = Expr
   176,3: L
   176,5: =
   176,7: Array.GetValue(basetemplate, "dim")
@@ -4432,12 +4320,12 @@ EndSub
 249 )
   176,41: )
 
-49 CR_token2
+206 CR_token2
   176,42: 
 
 
 
-160 Stmt_token9 Expr Stmt_token10 Stmt_repeat1 MoreThanZeroElseIf
+106 Stmt_token9 Expr Stmt_token10 Stmt_repeat1 MoreThanZeroElseIf
   178,3: If
   178,6: rotation = "CW"
   178,22: Then
@@ -4525,15 +4413,14 @@ EndSub
   178,26: 
 
 
-109 Stmt_token4 ID = Expr Stmt_token5 Expr Comment Stmt_repeat1 Stmt_token6
+67 Stmt_token4 ID = Expr Stmt_token5 Expr Stmt_repeat1 Stmt_token6
   179,5: For
   179,9: i
   179,11: =
   179,13: 0
   179,15: to
   179,18: BOXES - 1
-  179,28: ' x' = y y' = L - 1 - x
-  179,51: 
+  179,27:  ' x' = y y' = L - 1 - x
       v = Array.GetValue(basetemplate, i)
 
       'x = Math.Floor(v/10)
@@ -4542,18 +4429,16 @@ EndSub
       ' new x and y
       x = (Math.Remainder(v, 10))
       y = (L - 1 - Math.Floor(v/10))
-      Array.SetValue(template, i, x * 10 + y)
+      Array.SetValue(t
+  189,5: ate, i
 
-  189,5: EndFor
-
-267 ID = Expr Stmt_token5 Expr Comment Stmt_repeat1 Stmt_token6
+267 ID = Expr Stmt_token5 Expr Stmt_repeat1 Stmt_token6
   179,9: i
   179,11: =
   179,13: 0
   179,15: to
   179,18: BOXES - 1
-  179,28: ' x' = y y' = L - 1 - x
-  179,51: 
+  179,27:  ' x' = y y' = L - 1 - x
       v = Array.GetValue(basetemplate, i)
 
       'x = Math.Floor(v/10)
@@ -4562,17 +4447,15 @@ EndSub
       ' new x and y
       x = (Math.Remainder(v, 10))
       y = (L - 1 - Math.Floor(v/10))
-      Array.SetValue(template, i, x * 10 + y)
+      Array.SetValue(t
+  189,5: ate, i
 
-  189,5: EndFor
-
-266 = Expr Stmt_token5 Expr Comment Stmt_repeat1 Stmt_token6
+266 = Expr Stmt_token5 Expr Stmt_repeat1 Stmt_token6
   179,11: =
   179,13: 0
   179,15: to
   179,18: BOXES - 1
-  179,28: ' x' = y y' = L - 1 - x
-  179,51: 
+  179,27:  ' x' = y y' = L - 1 - x
       v = Array.GetValue(basetemplate, i)
 
       'x = Math.Floor(v/10)
@@ -4581,18 +4464,16 @@ EndSub
       ' new x and y
       x = (Math.Remainder(v, 10))
       y = (L - 1 - Math.Floor(v/10))
-      Array.SetValue(template, i, x * 10 + y)
-
-  189,5: EndFor
+      Array.SetValue(t
+  189,5: ate, i
 
 56 NUM
   179,13: 0
 
-264 Stmt_token5 Expr Comment Stmt_repeat1 Stmt_token6
+264 Stmt_token5 Expr Stmt_repeat1 Stmt_token6
   179,15: to
   179,18: BOXES - 1
-  179,28: ' x' = y y' = L - 1 - x
-  179,51: 
+  179,27:  ' x' = y y' = L - 1 - x
       v = Array.GetValue(basetemplate, i)
 
       'x = Math.Floor(v/10)
@@ -4601,9 +4482,8 @@ EndSub
       ' new x and y
       x = (Math.Remainder(v, 10))
       y = (L - 1 - Math.Floor(v/10))
-      Array.SetValue(template, i, x * 10 + y)
-
-  189,5: EndFor
+      Array.SetValue(t
+  189,5: ate, i
 
 83 ID
   179,18: BOXES
@@ -4615,9 +4495,8 @@ EndSub
 144 NUM
   179,26: 1
 
-145 Comment Stmt_repeat1 Stmt_token6
-  179,28: ' x' = y y' = L - 1 - x
-  179,51: 
+145 Stmt_repeat1 Stmt_token6
+  179,27:  ' x' = y y' = L - 1 - x
       v = Array.GetValue(basetemplate, i)
 
       'x = Math.Floor(v/10)
@@ -4626,15 +4505,14 @@ EndSub
       ' new x and y
       x = (Math.Remainder(v, 10))
       y = (L - 1 - Math.Floor(v/10))
-      Array.SetValue(template, i, x * 10 + y)
+      Array.SetValue(t
+  189,5: ate, i
 
-  189,5: EndFor
-
-43 CR_token2
+145 CR_token2
   179,51: 
 
 
-137 ID = Expr
+88 ID = Expr
   180,7: v
   180,9: =
   180,11: Array.GetValue(basetemplate, i)
@@ -4682,44 +4560,37 @@ EndSub
 249 )
   180,41: )
 
-49 CR_token2
+203 CR_token2
   180,42: 
 
 
 
-177 Comment CRStmtCRs
-  182,7: 'x = Math.Floor(v/10)
+177 CRStmtCRs
+  182,1:  
+
+177 CR_token2
   182,28: 
 
 
-137 CR_token2
-  182,28: 
+177 CRStmtCRs
+  183,1:   
 
-
-137 Comment CRStmtCRs
-  183,7: 'y = Math.Remainder(v, 10)
+177 CR_token2
   183,33: 
 
 
 
-137 CR_token2
-  183,33: 
-
-
-
-137 Comment CRStmtCRs
-  185,7: ' new x and y
-  185,20: 
+177 CRStmtCRs
+  185,1:       ' new x and y
       x = (Math.Remainder(v, 10))
       y = (L - 1 - Math.Floor(v/10))
-      Array.SetValue(template, i, x * 10 + y)
+      Array.SetValue(templa
 
-
-137 CR_token2
+177 CR_token2
   185,20: 
 
 
-137 ID = Expr
+88 ID = Expr
   186,7: x
   186,9: =
   186,11: (Math.Remainder(v, 10))
@@ -4775,11 +4646,11 @@ EndSub
 235 )
   186,33: )
 
-37 CR_token2
+203 CR_token2
   186,34: 
 
 
-137 ID = Expr
+96 ID = Expr
   187,7: y
   187,9: =
   187,11: (L - 1 - Math.Floor(v/10))
@@ -4849,11 +4720,11 @@ EndSub
 235 )
   187,36: )
 
-37 CR_token2
+203 CR_token2
   187,37: 
 
 
-137 ID . ID ( Exprs )
+96 ID . ID ( Exprs )
   188,7: Array
   188,12: .
   188,13: SetValue
@@ -4913,27 +4784,25 @@ EndSub
 238 )
   188,45: )
 
-210 CR_token2
+203 CR_token2
   188,46: 
 
 
 177 Stmt_token6
   189,5: EndFor
 
-216 CR_token2
+207 CR_token2
   189,11: 
 
 
-122 Comment CRStmtCRs
-  190,3: ' Count-Cockwise is not currently used
+122 CRStmtCRs
+  190,1:  
+
+122 CR_token2
   190,41: 
 
 
-109 CR_token2
-  190,41: 
-
-
-109 MoreThanZeroElseIf_token1 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+122 MoreThanZeroElseIf_token1 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   191,3: ElseIf
   191,10: rotation = "CCW"
   191,27: Then
@@ -4995,15 +4864,14 @@ EndSub
   191,31: 
 
 
-109 Stmt_token4 ID = Expr Stmt_token5 Expr Comment Stmt_repeat1 Stmt_token6
+67 Stmt_token4 ID = Expr Stmt_token5 Expr Stmt_repeat1 Stmt_token6
   192,5: For
   192,9: i
   192,11: =
   192,13: 0
   192,15: to
   192,18: BOXES - 1
-  192,28: ' x' = L - 1 - y y' = x
-  192,51: 
+  192,27:  ' x' = L - 1 - y y' = x
       v = Array.GetValue(basetemplate, i)
       'x = Math.Floor(v/10)
       'y = Math.Remainder(v, 10)
@@ -5011,18 +4879,16 @@ EndSub
       ' new x and y
       x = (L - 1 - Math.Remainder(v, 10))
       y = Math.Floor(v/10)
-      Array.SetValue(template, i, x * 10 + y)
+      Array.SetValue(t
+  201,5: ate, i
 
-  201,5: EndFor
-
-267 ID = Expr Stmt_token5 Expr Comment Stmt_repeat1 Stmt_token6
+267 ID = Expr Stmt_token5 Expr Stmt_repeat1 Stmt_token6
   192,9: i
   192,11: =
   192,13: 0
   192,15: to
   192,18: BOXES - 1
-  192,28: ' x' = L - 1 - y y' = x
-  192,51: 
+  192,27:  ' x' = L - 1 - y y' = x
       v = Array.GetValue(basetemplate, i)
       'x = Math.Floor(v/10)
       'y = Math.Remainder(v, 10)
@@ -5030,17 +4896,15 @@ EndSub
       ' new x and y
       x = (L - 1 - Math.Remainder(v, 10))
       y = Math.Floor(v/10)
-      Array.SetValue(template, i, x * 10 + y)
+      Array.SetValue(t
+  201,5: ate, i
 
-  201,5: EndFor
-
-266 = Expr Stmt_token5 Expr Comment Stmt_repeat1 Stmt_token6
+266 = Expr Stmt_token5 Expr Stmt_repeat1 Stmt_token6
   192,11: =
   192,13: 0
   192,15: to
   192,18: BOXES - 1
-  192,28: ' x' = L - 1 - y y' = x
-  192,51: 
+  192,27:  ' x' = L - 1 - y y' = x
       v = Array.GetValue(basetemplate, i)
       'x = Math.Floor(v/10)
       'y = Math.Remainder(v, 10)
@@ -5048,18 +4912,16 @@ EndSub
       ' new x and y
       x = (L - 1 - Math.Remainder(v, 10))
       y = Math.Floor(v/10)
-      Array.SetValue(template, i, x * 10 + y)
-
-  201,5: EndFor
+      Array.SetValue(t
+  201,5: ate, i
 
 56 NUM
   192,13: 0
 
-264 Stmt_token5 Expr Comment Stmt_repeat1 Stmt_token6
+264 Stmt_token5 Expr Stmt_repeat1 Stmt_token6
   192,15: to
   192,18: BOXES - 1
-  192,28: ' x' = L - 1 - y y' = x
-  192,51: 
+  192,27:  ' x' = L - 1 - y y' = x
       v = Array.GetValue(basetemplate, i)
       'x = Math.Floor(v/10)
       'y = Math.Remainder(v, 10)
@@ -5067,9 +4929,8 @@ EndSub
       ' new x and y
       x = (L - 1 - Math.Remainder(v, 10))
       y = Math.Floor(v/10)
-      Array.SetValue(template, i, x * 10 + y)
-
-  201,5: EndFor
+      Array.SetValue(t
+  201,5: ate, i
 
 83 ID
   192,18: BOXES
@@ -5081,9 +4942,8 @@ EndSub
 144 NUM
   192,26: 1
 
-145 Comment Stmt_repeat1 Stmt_token6
-  192,28: ' x' = L - 1 - y y' = x
-  192,51: 
+145 Stmt_repeat1 Stmt_token6
+  192,27:  ' x' = L - 1 - y y' = x
       v = Array.GetValue(basetemplate, i)
       'x = Math.Floor(v/10)
       'y = Math.Remainder(v, 10)
@@ -5091,15 +4951,14 @@ EndSub
       ' new x and y
       x = (L - 1 - Math.Remainder(v, 10))
       y = Math.Floor(v/10)
-      Array.SetValue(template, i, x * 10 + y)
+      Array.SetValue(t
+  201,5: ate, i
 
-  201,5: EndFor
-
-43 CR_token2
+145 CR_token2
   192,51: 
 
 
-137 ID = Expr
+88 ID = Expr
   193,7: v
   193,9: =
   193,11: Array.GetValue(basetemplate, i)
@@ -5147,43 +5006,36 @@ EndSub
 249 )
   193,41: )
 
-49 CR_token2
+203 CR_token2
   193,42: 
 
 
-177 Comment CRStmtCRs
-  194,7: 'x = Math.Floor(v/10)
+177 CRStmtCRs
+  194,1:  
+
+177 CR_token2
   194,28: 
 
 
-137 CR_token2
-  194,28: 
+177 CRStmtCRs
+  195,1:   
 
-
-137 Comment CRStmtCRs
-  195,7: 'y = Math.Remainder(v, 10)
+177 CR_token2
   195,33: 
 
 
 
-137 CR_token2
-  195,33: 
-
-
-
-137 Comment CRStmtCRs
-  197,7: ' new x and y
-  197,20: 
+177 CRStmtCRs
+  197,1:       ' new x and y
       x = (L - 1 - Math.Remainder(v, 10))
       y = Math.Floor(v/10)
-      Array.SetValue(template, i, x * 10 + y)
+      Array.SetValue(templa
 
-
-137 CR_token2
+177 CR_token2
   197,20: 
 
 
-137 ID = Expr
+88 ID = Expr
   198,7: x
   198,9: =
   198,11: (L - 1 - Math.Remainder(v, 10))
@@ -5253,11 +5105,11 @@ EndSub
 235 )
   198,41: )
 
-37 CR_token2
+203 CR_token2
   198,42: 
 
 
-137 ID = Expr
+96 ID = Expr
   199,7: y
   199,9: =
   199,11: Math.Floor(v/10)
@@ -5305,11 +5157,11 @@ EndSub
 249 )
   199,26: )
 
-49 CR_token2
+203 CR_token2
   199,27: 
 
 
-137 ID . ID ( Exprs )
+96 ID . ID ( Exprs )
   200,7: Array
   200,12: .
   200,13: SetValue
@@ -5369,18 +5221,18 @@ EndSub
 238 )
   200,45: )
 
-210 CR_token2
+203 CR_token2
   200,46: 
 
 
 177 Stmt_token6
   201,5: EndFor
 
-216 CR_token2
+207 CR_token2
   201,11: 
 
 
-109 MoreThanZeroElseIf_token1 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+115 MoreThanZeroElseIf_token1 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   202,3: ElseIf
   202,10: rotation = "COPY"
   202,28: Then
@@ -5420,7 +5272,7 @@ EndSub
   202,32: 
 
 
-109 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+67 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   203,5: For
   203,9: i
   203,11: =
@@ -5474,11 +5326,11 @@ EndSub
 144 NUM
   203,26: 1
 
-43 CR_token2
+145 CR_token2
   203,27: 
 
 
-137 ID . ID ( Exprs )
+88 ID . ID ( Exprs )
   204,7: Array
   204,12: .
   204,13: SetValue
@@ -5560,18 +5412,18 @@ EndSub
 238 )
   204,66: )
 
-210 CR_token2
+203 CR_token2
   204,67: 
 
 
 177 Stmt_token6
   205,5: EndFor
 
-216 CR_token2
+207 CR_token2
   205,11: 
 
 
-109 OptionalElse_token2 CRStmtCRs OptionalElse_token1
+115 OptionalElse_token2 CRStmtCRs OptionalElse_token1
   206,3: Else
   206,7: 
     GraphicsWindow.ShowMessage("invalid parameter", "Error")
@@ -5583,7 +5435,7 @@ EndSub
   206,7: 
 
 
-163 ID . ID ( Exprs )
+113 ID . ID ( Exprs )
   207,5: GraphicsWindow
   207,19: .
   207,20: ShowMessage
@@ -5622,11 +5474,11 @@ EndSub
 238 )
   207,60: )
 
-210 CR_token2
+202 CR_token2
   207,61: 
 
 
-163 ID . ID ( )
+114 ID . ID ( )
   208,5: Program
   208,12: .
   208,13: End
@@ -5651,24 +5503,23 @@ EndSub
 27 )
   208,17: )
 
-208 CR_token2
+202 CR_token2
   208,18: 
 
 
 237 OptionalElse_token1
   209,3: EndIf
 
-209 CR_token2
+206 CR_token2
   209,8: 
 
 
 
-160 Comment TheRest
-  211,3: ' Copy the remain properties from basetemplate to template.
-  212,3: Array.SetValue(template, "color", Array.GetValue(basetemplate, "color"))
+106 TheRest
+  212,3:  Copy the remain properties from basetemplate to template.
+  Array.SetVal
 
-
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   212,3: Array
   212,8: .
   212,9: SetValue
@@ -5750,11 +5601,11 @@ EndSub
 238 )
   212,74: )
 
-210 CR_token2
+206 CR_token2
   212,75: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   213,3: Array
   213,8: .
   213,9: SetValue
@@ -5836,11 +5687,11 @@ EndSub
 238 )
   213,70: )
 
-210 CR_token2
+206 CR_token2
   213,71: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   214,3: Array
   214,8: .
   214,9: SetValue
@@ -5922,11 +5773,11 @@ EndSub
 238 )
   214,76: )
 
-210 CR_token2
+206 CR_token2
   214,77: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   215,3: Array
   215,8: .
   215,9: SetValue
@@ -6008,18 +5859,17 @@ EndSub
 238 )
   215,76: )
 
-210 CR_token2
+206 CR_token2
   215,77: 
 
 
 257 Stmt_token8
   216,1: EndSub
 
-146 Stmt_token7 ID Comment CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   218,1: Sub
   218,5: CreatePiece
-  218,17: ' in: template ret: h
-  218,38: 
+  218,16:  ' in: template ret: h
   ' Create a new handle, representing an arrayName, that will represent the piece
   hcount = hcount + 1
   h = Text.Append("piece", hcount)
@@ -6033,15 +5883,12 @@ EndSub
   For i = 0 to BOXES - 1
     s = Shapes.AddRectangle(BWIDTH, BWIDTH)
     Shapes.Move(s, -BWIDTH, -BWIDTH) ' move off screen
-    Array.SetValue(h, i, s)
-  EndFor
+    Array.SetVa
+  234,1: lue(h,
 
-  234,1: EndSub
-
-244 ID Comment CRStmtCRs Stmt_token8
+244 ID CRStmtCRs Stmt_token8
   218,5: CreatePiece
-  218,17: ' in: template ret: h
-  218,38: 
+  218,16:  ' in: template ret: h
   ' Create a new handle, representing an arrayName, that will represent the piece
   hcount = hcount + 1
   h = Text.Append("piece", hcount)
@@ -6055,14 +5902,11 @@ EndSub
   For i = 0 to BOXES - 1
     s = Shapes.AddRectangle(BWIDTH, BWIDTH)
     Shapes.Move(s, -BWIDTH, -BWIDTH) ' move off screen
-    Array.SetValue(h, i, s)
-  EndFor
+    Array.SetVa
+  234,1: lue(h,
 
-  234,1: EndSub
-
-199 Comment CRStmtCRs Stmt_token8
-  218,17: ' in: template ret: h
-  218,38: 
+199 CRStmtCRs Stmt_token8
+  218,16:  ' in: template ret: h
   ' Create a new handle, representing an arrayName, that will represent the piece
   hcount = hcount + 1
   h = Text.Append("piece", hcount)
@@ -6076,18 +5920,16 @@ EndSub
   For i = 0 to BOXES - 1
     s = Shapes.AddRectangle(BWIDTH, BWIDTH)
     Shapes.Move(s, -BWIDTH, -BWIDTH) ' move off screen
-    Array.SetValue(h, i, s)
-  EndFor
-
-  234,1: EndSub
+    Array.SetVa
+  234,1: lue(h,
 
 199 CR_token2
   218,38: 
 
 
-105 Comment CRStmtCRs_repeat1
-  219,3: ' Create a new handle, representing an arrayName, that will represent the piece
-  220,3: hcount = hcount + 1
+105 CRStmtCRs_repeat1
+  220,3:  Create a new handle, representing an arrayName, that will represent the piece
+  hcount = hcount + 1
   h = Text.Append("piece", hcount)
 
   Array.SetValue(h, -1, template) ' Array.GetValue(h, -1) = the template name
@@ -6098,12 +5940,9 @@ EndSub
 
   For i = 0 to BOXES - 1
     s = Shapes.AddRectangle(BWIDTH, BWIDTH)
-    Shapes.Move(s, -BWIDTH, -BWIDTH) ' move off screen
-    Array.SetValue(h, i, s)
-  EndFor
+    Shapes.
 
-
-160 ID = Expr
+105 ID = Expr
   220,3: hcount
   220,10: =
   220,12: hcount + 1
@@ -6122,11 +5961,11 @@ EndSub
 144 NUM
   220,21: 1
 
-43 CR_token2
+206 CR_token2
   220,22: 
 
 
-160 ID = Expr
+106 ID = Expr
   221,3: h
   221,5: =
   221,7: Text.Append("piece", hcount)
@@ -6174,12 +6013,12 @@ EndSub
 249 )
   221,34: )
 
-49 CR_token2
+206 CR_token2
   221,35: 
 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   223,3: Array
   223,8: .
   223,9: SetValue
@@ -6229,18 +6068,15 @@ EndSub
 238 )
   223,33: )
 
-206 Comment CR
-  223,35: ' Array.GetValue(h, -1) = the template name
+206 CR
+  223,34:  '
+
+206 CR_token2
   223,78: 
 
 
 
-210 CR_token2
-  223,78: 
-
-
-
-160 ID . ID = Expr
+106 ID . ID = Expr
   225,3: GraphicsWindow
   225,17: .
   225,18: PenWidth
@@ -6265,11 +6101,11 @@ EndSub
 57 NUM
   225,29: 1
 
-43 CR_token2
+206 CR_token2
   225,30: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   226,3: GraphicsWindow
   226,17: .
   226,18: PenColor
@@ -6294,11 +6130,11 @@ EndSub
 57 STR
   226,29: "Black"
 
-43 CR_token2
+206 CR_token2
   226,36: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   227,3: GraphicsWindow
   227,17: .
   227,18: BrushColor
@@ -6359,12 +6195,12 @@ EndSub
 249 )
   227,63: )
 
-49 CR_token2
+206 CR_token2
   227,64: 
 
 
 
-160 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+106 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   229,3: For
   229,7: i
   229,9: =
@@ -6426,11 +6262,11 @@ EndSub
 144 NUM
   229,24: 1
 
-43 CR_token2
+145 CR_token2
   229,25: 
 
 
-137 ID = Expr
+88 ID = Expr
   230,5: s
   230,7: =
   230,9: Shapes.AddRectangle(BWIDTH, BWIDTH)
@@ -6478,11 +6314,11 @@ EndSub
 249 )
   230,43: )
 
-49 CR_token2
+203 CR_token2
   230,44: 
 
 
-137 ID . ID ( Exprs )
+96 ID . ID ( Exprs )
   231,5: Shapes
   231,11: .
   231,12: Move
@@ -6536,16 +6372,14 @@ EndSub
 238 )
   231,36: )
 
-203 Comment CR
-  231,38: ' move off screen
+203 CR
+  231,37:  
+
+203 CR_token2
   231,55: 
 
 
-210 CR_token2
-  231,55: 
-
-
-137 ID . ID ( Exprs )
+96 ID . ID ( Exprs )
   232,5: Array
   232,10: .
   232,11: SetValue
@@ -6591,73 +6425,61 @@ EndSub
 238 )
   232,27: )
 
-210 CR_token2
+203 CR_token2
   232,28: 
 
 
 177 Stmt_token6
   233,3: EndFor
 
-216 CR_token2
+206 CR_token2
   233,9: 
 
 
 257 Stmt_token8
   234,1: EndSub
 
-146 Stmt_token7 ID Comment CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   236,1: Sub
   236,5: MovePiece
-  236,15: 'in: ypos, xpos, h. ypos/xpos is 0-19, representing the top/left box coordinate of the piece on the canvas. h returned by CreatePiece
-  236,148: 
+  236,14:  'in: ypos, xpos, h. ypos/xpos is 0-19, representing the top/left box coordinate of the piece on the canvas. h returned by CreatePiece
   For i = 0 to BOXES - 1
     v = Array.GetValue(Array.GetValue(h, -1), i)  ' Array.GetValue(h, -1) = the template name
     x = Math.Floor(v/10)
     y = Math.Remainder(v, 10)
 
     ' Array.GetValue(h, i) = box for piece h.
-    ' xpos/ypos = are topleft of shape. x/y is the box offset within the shape.
-    Shapes.Move(Array.GetValue(h, i), XOFFSET + xpos * BWIDTH + x * BWIDTH, YOFFSET + ypos * BWIDTH + y * BWIDTH)
-  EndFor
+    ' xpos/ypos = are topleft of shape. x/y is the box offset within 
+  246,1: the sh
 
-  246,1: EndSub
-
-244 ID Comment CRStmtCRs Stmt_token8
+244 ID CRStmtCRs Stmt_token8
   236,5: MovePiece
-  236,15: 'in: ypos, xpos, h. ypos/xpos is 0-19, representing the top/left box coordinate of the piece on the canvas. h returned by CreatePiece
-  236,148: 
+  236,14:  'in: ypos, xpos, h. ypos/xpos is 0-19, representing the top/left box coordinate of the piece on the canvas. h returned by CreatePiece
   For i = 0 to BOXES - 1
     v = Array.GetValue(Array.GetValue(h, -1), i)  ' Array.GetValue(h, -1) = the template name
     x = Math.Floor(v/10)
     y = Math.Remainder(v, 10)
 
     ' Array.GetValue(h, i) = box for piece h.
-    ' xpos/ypos = are topleft of shape. x/y is the box offset within the shape.
-    Shapes.Move(Array.GetValue(h, i), XOFFSET + xpos * BWIDTH + x * BWIDTH, YOFFSET + ypos * BWIDTH + y * BWIDTH)
-  EndFor
+    ' xpos/ypos = are topleft of shape. x/y is the box offset within 
+  246,1: the sh
 
-  246,1: EndSub
-
-199 Comment CRStmtCRs Stmt_token8
-  236,15: 'in: ypos, xpos, h. ypos/xpos is 0-19, representing the top/left box coordinate of the piece on the canvas. h returned by CreatePiece
-  236,148: 
+199 CRStmtCRs Stmt_token8
+  236,14:  'in: ypos, xpos, h. ypos/xpos is 0-19, representing the top/left box coordinate of the piece on the canvas. h returned by CreatePiece
   For i = 0 to BOXES - 1
     v = Array.GetValue(Array.GetValue(h, -1), i)  ' Array.GetValue(h, -1) = the template name
     x = Math.Floor(v/10)
     y = Math.Remainder(v, 10)
 
     ' Array.GetValue(h, i) = box for piece h.
-    ' xpos/ypos = are topleft of shape. x/y is the box offset within the shape.
-    Shapes.Move(Array.GetValue(h, i), XOFFSET + xpos * BWIDTH + x * BWIDTH, YOFFSET + ypos * BWIDTH + y * BWIDTH)
-  EndFor
-
-  246,1: EndSub
+    ' xpos/ypos = are topleft of shape. x/y is the box offset within 
+  246,1: the sh
 
 199 CR_token2
   236,148: 
 
 
-160 Stmt_token4 ID = Expr Stmt_token5 Expr Stmt_repeat1 Stmt_token6
+105 Stmt_token4 ID = Expr Stmt_token5 Expr Stmt_repeat1 Stmt_token6
   237,3: For
   237,7: i
   237,9: =
@@ -6735,11 +6557,11 @@ EndSub
 144 NUM
   237,24: 1
 
-43 CR_token2
+145 CR_token2
   237,25: 
 
 
-137 ID = Expr
+88 ID = Expr
   238,5: v
   238,7: =
   238,9: Array.GetValue(Array.GetValue(h, -1), i)
@@ -6827,16 +6649,14 @@ EndSub
 249 )
   238,48: )
 
-203 Comment CR
-  238,51: ' Array.GetValue(h, -1) = the template name
+203 CR
+  238,49:  
+
+203 CR_token2
   238,94: 
 
 
-49 CR_token2
-  238,94: 
-
-
-137 ID = Expr
+96 ID = Expr
   239,5: x
   239,7: =
   239,9: Math.Floor(v/10)
@@ -6884,11 +6704,11 @@ EndSub
 249 )
   239,24: )
 
-49 CR_token2
+203 CR_token2
   239,25: 
 
 
-137 ID = Expr
+96 ID = Expr
   240,5: y
   240,7: =
   240,9: Math.Remainder(v, 10)
@@ -6936,31 +6756,27 @@ EndSub
 249 )
   240,29: )
 
-49 CR_token2
+203 CR_token2
   240,30: 
 
 
 
-177 Comment CRStmtCRs
-  242,5: ' Array.GetValue(h, i) = box for piece h.
+177 CRStmtCRs
+  242,1:  
+
+177 CR_token2
   242,46: 
 
 
-137 CR_token2
-  242,46: 
+177 CRStmtCRs
+  243,1:     ' xpos/ypos = are topleft of shape. x/y is the box offset within the shape.
+    Shapes.Move(Array.GetValue(h, i
 
-
-137 Comment CRStmtCRs
-  243,5: ' xpos/ypos = are topleft of shape. x/y is the box offset within the shape.
-  243,80: 
-    Shapes.Move(Array.GetValue(h, i), XOFFSET + xpos * BWIDTH + x * BWIDTH, YOFFSET + ypos * BWIDTH + y * BWIDTH)
-
-
-137 CR_token2
+177 CR_token2
   243,80: 
 
 
-137 ID . ID ( Exprs )
+88 ID . ID ( Exprs )
   244,5: Shapes
   244,11: .
   244,12: Move
@@ -7098,25 +6914,24 @@ EndSub
 238 )
   244,113: )
 
-210 CR_token2
+203 CR_token2
   244,114: 
 
 
 177 Stmt_token6
   245,3: EndFor
 
-216 CR_token2
+206 CR_token2
   245,9: 
 
 
 257 Stmt_token8
   246,1: EndSub
 
-146 Stmt_token7 ID Comment CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   248,1: Sub
   248,5: ValidateMove
-  248,18: ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid, otherwise 0
-  248,116: 
+  248,17:  ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid, otherwise 0
   i = 0
   invalidMove = 0
   While i < BOXES
@@ -7137,19 +6952,12 @@ EndSub
     EndIf
 
     If Array.GetValue("c", (x + xpos + moveDirection) + (y + ypos) * CWIDTH) <> "." Then
-      invalidMove = 2
-      i = BOXES ' force getting out of the loop
-    EndIf
+      i
+  275,1: nvalid
 
-    i = i + 1
-  EndWhile
-
-  275,1: EndSub
-
-244 ID Comment CRStmtCRs Stmt_token8
+244 ID CRStmtCRs Stmt_token8
   248,5: ValidateMove
-  248,18: ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid, otherwise 0
-  248,116: 
+  248,17:  ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid, otherwise 0
   i = 0
   invalidMove = 0
   While i < BOXES
@@ -7170,18 +6978,11 @@ EndSub
     EndIf
 
     If Array.GetValue("c", (x + xpos + moveDirection) + (y + ypos) * CWIDTH) <> "." Then
-      invalidMove = 2
-      i = BOXES ' force getting out of the loop
-    EndIf
+      i
+  275,1: nvalid
 
-    i = i + 1
-  EndWhile
-
-  275,1: EndSub
-
-199 Comment CRStmtCRs Stmt_token8
-  248,18: ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid, otherwise 0
-  248,116: 
+199 CRStmtCRs Stmt_token8
+  248,17:  ' in: ypos, xpos, h, moveDirection ret: invalidMove = 1 or -1 or 2 if move is invalid, otherwise 0
   i = 0
   invalidMove = 0
   While i < BOXES
@@ -7202,20 +7003,14 @@ EndSub
     EndIf
 
     If Array.GetValue("c", (x + xpos + moveDirection) + (y + ypos) * CWIDTH) <> "." Then
-      invalidMove = 2
-      i = BOXES ' force getting out of the loop
-    EndIf
-
-    i = i + 1
-  EndWhile
-
-  275,1: EndSub
+      i
+  275,1: nvalid
 
 199 CR_token2
   248,116: 
 
 
-160 ID = Expr
+105 ID = Expr
   249,3: i
   249,5: =
   249,7: 0
@@ -7227,11 +7022,11 @@ EndSub
 70 NUM
   249,7: 0
 
-43 CR_token2
+206 CR_token2
   249,8: 
 
 
-160 ID = Expr
+106 ID = Expr
   250,3: invalidMove
   250,15: =
   250,17: 0
@@ -7243,11 +7038,11 @@ EndSub
 70 NUM
   250,17: 0
 
-43 CR_token2
+206 CR_token2
   250,18: 
 
 
-160 Stmt_token1 Expr Stmt_repeat1 Stmt_token2
+106 Stmt_token1 Expr Stmt_repeat1 Stmt_token2
   251,3: While
   251,9: i < BOXES
   251,18: 
@@ -7286,11 +7081,11 @@ EndSub
 129 ID
   251,13: BOXES
 
-5 CR_token2
+186 CR_token2
   251,18: 
 
 
-126 ID = Expr
+93 ID = Expr
   252,5: v
   252,7: =
   252,9: Array.GetValue(Array.GetValue(h, -1), i)
@@ -7378,20 +7173,16 @@ EndSub
 249 )
   252,48: )
 
-205 Comment CR
-  252,51: ' Array.GetValue(h, -1) = the template name
+205 CR
+  252,49:   
+
+205 CR_token2
   252,94: 
 
 
 
-49 CR_token2
-  252,94: 
-
-
-
-187 Comment CRStmtCRs
-  254,5: 'x/y is the box offset within the shape.
-  254,45: 
+187 CRStmtCRs
+  254,1:     'x/y is the box offset within the shape.
     x = Math.Floor(v/10)
     y = Math.Remainder(v, 10)
 
@@ -7407,17 +7198,13 @@ EndSub
 
     If Array.GetValue("c", (x + xpos + moveDirection) + (y + ypos) * CWIDTH) <> "." Then
       invalidMove = 2
-      i = BOXES ' force getting out of the loop
-    EndIf
+      i = BOXES ' force getti
 
-    i = i + 1
-
-
-126 CR_token2
+187 CR_token2
   254,45: 
 
 
-126 ID = Expr
+93 ID = Expr
   255,5: x
   255,7: =
   255,9: Math.Floor(v/10)
@@ -7465,11 +7252,11 @@ EndSub
 249 )
   255,24: )
 
-49 CR_token2
+205 CR_token2
   255,25: 
 
 
-126 ID = Expr
+95 ID = Expr
   256,5: y
   256,7: =
   256,9: Math.Remainder(v, 10)
@@ -7517,12 +7304,12 @@ EndSub
 249 )
   256,29: )
 
-49 CR_token2
+205 CR_token2
   256,30: 
 
 
 
-126 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+95 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   258,5: If
   258,8: (x + xpos + moveDirection) < 0
   258,39: Then
@@ -7576,7 +7363,7 @@ EndSub
   258,43: 
 
 
-109 ID = Expr
+67 ID = Expr
   259,7: invalidMove
   259,19: =
   259,21: -1
@@ -7592,11 +7379,11 @@ EndSub
 193 NUM
   259,22: 1
 
-43 CR_token2
+207 CR_token2
   259,23: 
 
 
-109 ID = Expr
+68 ID = Expr
   260,7: i
   260,9: =
   260,11: BOXES
@@ -7608,24 +7395,22 @@ EndSub
 70 ID
   260,11: BOXES
 
-207 Comment CR
-  260,17: ' force getting out of the loop
+207 CR
+  260,16:  
+
+207 CR_token2
   260,48: 
 
 
-5 CR_token2
-  260,48: 
-
-
-109 OptionalElse_token1
+122 OptionalElse_token1
   261,5: EndIf
 
-218 CR_token2
+205 CR_token2
   261,10: 
 
 
 
-126 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+95 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   263,5: If
   263,8: (x + xpos + moveDirection) >= CWIDTH
   263,45: Then
@@ -7679,7 +7464,7 @@ EndSub
   263,49: 
 
 
-109 ID = Expr
+67 ID = Expr
   264,7: invalidMove
   264,19: =
   264,21: 1
@@ -7691,11 +7476,11 @@ EndSub
 70 NUM
   264,21: 1
 
-43 CR_token2
+207 CR_token2
   264,22: 
 
 
-109 ID = Expr
+68 ID = Expr
   265,7: i
   265,9: =
   265,11: BOXES
@@ -7707,24 +7492,22 @@ EndSub
 70 ID
   265,11: BOXES
 
-207 Comment CR
-  265,17: ' force getting out of the loop
+207 CR
+  265,16:  
+
+207 CR_token2
   265,48: 
 
 
-5 CR_token2
-  265,48: 
-
-
-109 OptionalElse_token1
+122 OptionalElse_token1
   266,5: EndIf
 
-218 CR_token2
+205 CR_token2
   266,10: 
 
 
 
-126 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+95 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   268,5: If
   268,8: Array.GetValue("c", (x + xpos + moveDirection) + (y + ypos) * CWIDTH) <> "."
   268,85: Then
@@ -7843,7 +7626,7 @@ EndSub
   268,89: 
 
 
-109 ID = Expr
+67 ID = Expr
   269,7: invalidMove
   269,19: =
   269,21: 2
@@ -7855,11 +7638,11 @@ EndSub
 70 NUM
   269,21: 2
 
-43 CR_token2
+207 CR_token2
   269,22: 
 
 
-109 ID = Expr
+68 ID = Expr
   270,7: i
   270,9: =
   270,11: BOXES
@@ -7871,24 +7654,22 @@ EndSub
 70 ID
   270,11: BOXES
 
-207 Comment CR
-  270,17: ' force getting out of the loop
+207 CR
+  270,16:  
+
+207 CR_token2
   270,48: 
 
 
-5 CR_token2
-  270,48: 
-
-
-109 OptionalElse_token1
+122 OptionalElse_token1
   271,5: EndIf
 
-218 CR_token2
+205 CR_token2
   271,10: 
 
 
 
-126 ID = Expr
+95 ID = Expr
   273,5: i
   273,7: =
   273,9: i + 1
@@ -7907,25 +7688,24 @@ EndSub
 144 NUM
   273,13: 1
 
-43 CR_token2
+205 CR_token2
   273,14: 
 
 
 187 Stmt_token2
   274,3: EndWhile
 
-222 CR_token2
+206 CR_token2
   274,11: 
 
 
 257 Stmt_token8
   275,1: EndSub
 
-146 Stmt_token7 ID Comment CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   278,1: Sub
   278,5: CheckStop
-  278,15: ' in: ypos, xpos, h ret: done
-  278,44: 
+  278,14:  ' in: ypos, xpos, h ret: done
   done = 0
   i = 0
   While i < BOXES
@@ -7956,16 +7736,13 @@ EndSub
     score = score + 1
     PrintScore()
 
-    ' Delete clared lines
-    DeleteLines()
-  EndIf
+    ' Delete clared li
+  312,1: nes
+  
 
-  312,1: EndSub
-
-244 ID Comment CRStmtCRs Stmt_token8
+244 ID CRStmtCRs Stmt_token8
   278,5: CheckStop
-  278,15: ' in: ypos, xpos, h ret: done
-  278,44: 
+  278,14:  ' in: ypos, xpos, h ret: done
   done = 0
   i = 0
   While i < BOXES
@@ -7996,15 +7773,12 @@ EndSub
     score = score + 1
     PrintScore()
 
-    ' Delete clared lines
-    DeleteLines()
-  EndIf
+    ' Delete clared li
+  312,1: nes
+  
 
-  312,1: EndSub
-
-199 Comment CRStmtCRs Stmt_token8
-  278,15: ' in: ypos, xpos, h ret: done
-  278,44: 
+199 CRStmtCRs Stmt_token8
+  278,14:  ' in: ypos, xpos, h ret: done
   done = 0
   i = 0
   While i < BOXES
@@ -8035,17 +7809,15 @@ EndSub
     score = score + 1
     PrintScore()
 
-    ' Delete clared lines
-    DeleteLines()
-  EndIf
-
-  312,1: EndSub
+    ' Delete clared li
+  312,1: nes
+  
 
 199 CR_token2
   278,44: 
 
 
-160 ID = Expr
+105 ID = Expr
   279,3: done
   279,8: =
   279,10: 0
@@ -8057,11 +7829,11 @@ EndSub
 70 NUM
   279,10: 0
 
-43 CR_token2
+206 CR_token2
   279,11: 
 
 
-160 ID = Expr
+106 ID = Expr
   280,3: i
   280,5: =
   280,7: 0
@@ -8073,11 +7845,11 @@ EndSub
 70 NUM
   280,7: 0
 
-43 CR_token2
+206 CR_token2
   280,8: 
 
 
-160 Stmt_token1 Expr Stmt_repeat1 Stmt_token2
+106 Stmt_token1 Expr Stmt_repeat1 Stmt_token2
   281,3: While
   281,9: i < BOXES
   281,18: 
@@ -8106,11 +7878,11 @@ EndSub
 129 ID
   281,13: BOXES
 
-5 CR_token2
+186 CR_token2
   281,18: 
 
 
-126 ID = Expr
+93 ID = Expr
   282,5: v
   282,7: =
   282,9: Array.GetValue(Array.GetValue(h, -1), i)
@@ -8198,36 +7970,28 @@ EndSub
 249 )
   282,48: )
 
-205 Comment CR
-  282,51: ' Array.GetValue(h, -1) = the template name
+205 CR
+  282,49:   
+
+205 CR_token2
   282,94: 
 
 
 
-49 CR_token2
-  282,94: 
-
-
-
-187 Comment CRStmtCRs
-  284,5: 'x/y is the box offset within the shape.
-  284,45: 
+187 CRStmtCRs
+  284,1:     'x/y is the box offset within the shape.
     x = Math.Floor(v/10)
     y = Math.Remainder(v, 10)
 
     If y + ypos > CHEIGHT Or Array.GetValue("c", (x + xpos) + (y + ypos) * CWIDTH) <> "." Then
       done = 1
-      i = BOXES ' force getting out of the loop
-    EndIf
+      i = BOXES ' force getti
 
-    i = i + 1
-
-
-126 CR_token2
+187 CR_token2
   284,45: 
 
 
-126 ID = Expr
+93 ID = Expr
   285,5: x
   285,7: =
   285,9: Math.Floor(v/10)
@@ -8275,11 +8039,11 @@ EndSub
 249 )
   285,24: )
 
-49 CR_token2
+205 CR_token2
   285,25: 
 
 
-126 ID = Expr
+95 ID = Expr
   286,5: y
   286,7: =
   286,9: Math.Remainder(v, 10)
@@ -8327,12 +8091,12 @@ EndSub
 249 )
   286,29: )
 
-49 CR_token2
+205 CR_token2
   286,30: 
 
 
 
-126 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+95 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   288,5: If
   288,8: y + ypos > CHEIGHT Or Array.GetValue("c", (x + xpos) + (y + ypos) * CWIDTH) <> "."
   288,91: Then
@@ -8465,7 +8229,7 @@ EndSub
   288,95: 
 
 
-109 ID = Expr
+67 ID = Expr
   289,7: done
   289,12: =
   289,14: 1
@@ -8477,11 +8241,11 @@ EndSub
 70 NUM
   289,14: 1
 
-43 CR_token2
+207 CR_token2
   289,15: 
 
 
-109 ID = Expr
+68 ID = Expr
   290,7: i
   290,9: =
   290,11: BOXES
@@ -8493,24 +8257,22 @@ EndSub
 70 ID
   290,11: BOXES
 
-207 Comment CR
-  290,17: ' force getting out of the loop
+207 CR
+  290,16:  
+
+207 CR_token2
   290,48: 
 
 
-5 CR_token2
-  290,48: 
-
-
-109 OptionalElse_token1
+122 OptionalElse_token1
   291,5: EndIf
 
-218 CR_token2
+205 CR_token2
   291,10: 
 
 
 
-126 ID = Expr
+95 ID = Expr
   293,5: i
   293,7: =
   293,9: i + 1
@@ -8529,21 +8291,21 @@ EndSub
 144 NUM
   293,13: 1
 
-43 CR_token2
+205 CR_token2
   293,14: 
 
 
 187 Stmt_token2
   294,3: EndWhile
 
-222 CR_token2
+206 CR_token2
   294,11: 
 
 
 
-160 Comment TheRest
-  296,3: ' If we need to stop the piece, move the box handles to the canvas
-  297,3: If done = 1 Then
+106 TheRest
+  297,3:  If we need to stop the piece, move the box handles to the canvas
+  If done = 1 Then
     For i = 0 to BOXES - 1
       v = Array.GetValue(Array.GetValue(h, -1), i) ' Array.GetValue(h, -1) = the template name
       'x = Math.Floor(v/10)
@@ -8553,14 +8315,9 @@ EndSub
 
     ' 1 points for every piece successfully dropped
     score = score + 1
-    PrintScore()
+  
 
-    ' Delete clared lines
-    DeleteLines()
-  EndIf
-
-
-160 Stmt_token9 Expr Stmt_token10 Stmt_repeat1 MoreThanZeroElseIf
+106 Stmt_token9 Expr Stmt_token10 Stmt_repeat1 MoreThanZeroElseIf
   297,3: If
   297,6: done = 1
   297,15: Then
@@ -8614,7 +8371,7 @@ EndSub
   297,19: 
 
 
-109 Stmt_token4 ID = Expr Stmt_token5 Expr Stmt_repeat1 Stmt_token6
+67 Stmt_token4 ID = Expr Stmt_token5 Expr Stmt_repeat1 Stmt_token6
   298,5: For
   298,9: i
   298,11: =
@@ -8680,11 +8437,11 @@ EndSub
 144 NUM
   298,26: 1
 
-43 CR_token2
+145 CR_token2
   298,27: 
 
 
-137 ID = Expr
+88 ID = Expr
   299,7: v
   299,9: =
   299,11: Array.GetValue(Array.GetValue(h, -1), i)
@@ -8772,35 +8529,29 @@ EndSub
 249 )
   299,50: )
 
-203 Comment CR
-  299,52: ' Array.GetValue(h, -1) = the template name
+203 CR
+  299,51:  
+
+203 CR_token2
   299,95: 
 
 
-49 CR_token2
-  299,95: 
+177 CRStmtCRs
+  300,1:  
 
-
-177 Comment CRStmtCRs
-  300,7: 'x = Math.Floor(v/10)
+177 CR_token2
   300,28: 
 
 
-137 CR_token2
-  300,28: 
+177 CRStmtCRs
+  301,1:       'y = Math.Remainder(v, 10) 
+      Array.SetValue("c", (Math.Floor(v/10) + xpos) + (Math.Remainder(v, 10) + ypos - 1)
 
-
-137 Comment CRStmtCRs
-  301,7: 'y = Math.Remainder(v, 10) 
-  301,34: 
-      Array.SetValue("c", (Math.Floor(v/10) + xpos) + (Math.Remainder(v, 10) + ypos - 1) * CWIDTH, Array.GetValue(h, i))
-
-
-137 CR_token2
+177 CR_token2
   301,34: 
 
 
-137 ID . ID ( Exprs )
+88 ID . ID ( Exprs )
   302,7: Array
   302,12: .
   302,13: SetValue
@@ -9005,31 +8756,26 @@ EndSub
 238 )
   302,120: )
 
-210 CR_token2
+203 CR_token2
   302,121: 
 
 
 177 Stmt_token6
   303,5: EndFor
 
-216 CR_token2
+207 CR_token2
   303,11: 
 
 
 
-122 Comment CRStmtCRs
-  305,5: ' 1 points for every piece successfully dropped
-  305,52: 
-    score = score + 1
-    PrintScore()
+122 CRStmtCRs
+  305,1:     ' 1 points for every piece successful
 
-
-
-109 CR_token2
+122 CR_token2
   305,52: 
 
 
-109 ID = Expr
+67 ID = Expr
   306,5: score
   306,11: =
   306,13: score + 1
@@ -9048,11 +8794,11 @@ EndSub
 144 NUM
   306,21: 1
 
-43 CR_token2
+207 CR_token2
   306,22: 
 
 
-109 ID ( )
+68 ID ( )
   307,5: PrintScore
   307,15: (
   307,16: )
@@ -9064,22 +8810,19 @@ EndSub
 261 )
   307,16: )
 
-215 CR_token2
+207 CR_token2
   307,17: 
 
 
 
-109 Comment CRStmtCRs
-  309,5: ' Delete clared lines
-  309,26: 
-    DeleteLines()
+122 CRStmtCRs
+  309,1:     ' Delete clared
 
-
-109 CR_token2
+122 CR_token2
   309,26: 
 
 
-109 ID ( )
+67 ID ( )
   310,5: DeleteLines
   310,16: (
   310,17: )
@@ -9091,21 +8834,21 @@ EndSub
 261 )
   310,17: )
 
-215 CR_token2
+207 CR_token2
   310,18: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   311,3: EndIf
 
-218 CR_token2
+206 CR_token2
   311,8: 
 
 
 257 Stmt_token8
   312,1: EndSub
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   315,1: Sub
   315,5: DeleteLines
   315,16: 
@@ -9206,7 +8949,7 @@ EndSub
   315,16: 
 
 
-160 ID = Expr
+105 ID = Expr
   316,3: linesCleared
   316,16: =
   316,18: 0
@@ -9218,14 +8961,14 @@ EndSub
 70 NUM
   316,18: 0
 
-43 CR_token2
+206 CR_token2
   316,19: 
 
 
 
-106 Comment TheRest
-  318,3: ' Iterate over each row, starting from the bottom
-  319,3: For y = CHEIGHT - 1 to 0 Step -1
+106 TheRest
+  319,3:  Iterate over each row, starting from the bottom
+  For y = CHEIGHT - 1 to 0 Step -1
 
     ' Check to see if the whole row is filled
     x = CWIDTH
@@ -9255,14 +8998,8 @@ EndSub
             Array.SetValue("c", x1 + y1 * CWIDTH, piece)
             Shapes.Move(piece, Shapes.GetLeft(piece), Shapes.GetTop(piece) + BWIDTH)
           EndFor
-        EndFor
-      EndIf
-    EndWhile
-  EndFor
 
-
-
-160 Stmt_token4 ID = Expr Stmt_token5 Expr OptStep Stmt_repeat1 Stmt_token6
+106 Stmt_token4 ID = Expr Stmt_token5 Expr OptStep Stmt_repeat1 Stmt_token6
   319,3: For
   319,7: y
   319,9: =
@@ -9444,7 +9181,7 @@ EndSub
 83 NUM
   319,26: 0
 
-43 OptStep_token1 Expr
+145 OptStep_token1 Expr
   319,28: Step
   319,33: -1
 
@@ -9455,14 +9192,13 @@ EndSub
 193 NUM
   319,34: 1
 
-43 CR_token2
+185 CR_token2
   319,35: 
 
 
 
-190 Comment CRStmtCRs
-  321,5: ' Check to see if the whole row is filled
-  321,46: 
+190 CRStmtCRs
+  321,1:     ' Check to see if the whole row is filled
     x = CWIDTH
     While x = CWIDTH
       x = 0
@@ -9489,17 +9225,13 @@ EndSub
             piece = Array.GetValue("c", x1 + (y1 - 1) * CWIDTH)
             Array.SetValue("c", x1 + y1 * CWIDTH, piece)
             Shapes.Move(piece, Shapes.GetLeft(piece), Shapes.GetTop(piece) + BWIDTH)
-          EndFor
-        EndFor
-      EndIf
-    EndWhile
+          En
 
-
-137 CR_token2
+190 CR_token2
   321,46: 
 
 
-137 ID = Expr
+88 ID = Expr
   322,5: x
   322,7: =
   322,9: CWIDTH
@@ -9511,11 +9243,11 @@ EndSub
 70 ID
   322,9: CWIDTH
 
-5 CR_token2
+203 CR_token2
   322,15: 
 
 
-137 Stmt_token1 Expr Stmt_repeat1 Stmt_token2
+96 Stmt_token1 Expr Stmt_repeat1 Stmt_token2
   323,5: While
   323,11: x = CWIDTH
   323,21: 
@@ -9559,11 +9291,11 @@ EndSub
 123 ID
   323,15: CWIDTH
 
-5 CR_token2
+186 CR_token2
   323,21: 
 
 
-126 ID = Expr
+93 ID = Expr
   324,7: x
   324,9: =
   324,11: 0
@@ -9575,11 +9307,11 @@ EndSub
 70 NUM
   324,11: 0
 
-43 CR_token2
+205 CR_token2
   324,12: 
 
 
-126 Stmt_token1 Expr CRStmtCRs Stmt_token2
+95 Stmt_token1 Expr CRStmtCRs Stmt_token2
   325,7: While
   325,13: x < CWIDTH
   325,23: 
@@ -9601,11 +9333,11 @@ EndSub
 129 ID
   325,17: CWIDTH
 
-5 CR_token2
+186 CR_token2
   325,23: 
 
 
-126 ID = Expr
+93 ID = Expr
   326,9: piece
   326,15: =
   326,17: Array.GetValue("c", x + y * CWIDTH)
@@ -9667,11 +9399,11 @@ EndSub
 249 )
   326,51: )
 
-49 CR_token2
+205 CR_token2
   326,52: 
 
 
-126 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+95 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   327,9: If
   327,12: piece = "."
   327,24: then
@@ -9701,7 +9433,7 @@ EndSub
   327,28: 
 
 
-109 ID = Expr
+67 ID = Expr
   328,11: x
   328,13: =
   328,15: CWIDTH
@@ -9713,18 +9445,18 @@ EndSub
 70 ID
   328,15: CWIDTH
 
-5 CR_token2
+207 CR_token2
   328,21: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   329,9: EndIf
 
-218 CR_token2
+205 CR_token2
   329,14: 
 
 
-126 ID = Expr
+95 ID = Expr
   330,9: x
   330,11: =
   330,13: x + 1
@@ -9743,21 +9475,20 @@ EndSub
 144 NUM
   330,17: 1
 
-43 CR_token2
+205 CR_token2
   330,18: 
 
 
 187 Stmt_token2
   331,7: EndWhile
 
-222 CR_token2
+205 CR_token2
   331,15: 
 
 
 
-187 Comment CRStmtCRs
-  333,7: ' if non of them were empty (i.e "."), then remove the line.
-  333,67: 
+187 CRStmtCRs
+  333,1:       ' if non of them were empty (i.e "."), then remove the line.
       If x = CWIDTH Then
 
         ' Delete the line
@@ -9771,17 +9502,13 @@ EndSub
           For x1 = 0 to CWIDTH - 1
             piece = Array.GetValue("c", x1 + (y1 - 1) * CWIDTH)
             Array.SetValue("c", x1 + y1 * CWIDTH, piece)
-            Shapes.Move(piece, Shapes.GetLeft(piece), Shapes.GetTop(piece) + BWIDTH)
-          EndFor
-        EndFor
-      EndIf
+            Shapes.Move(piece, Shapes.GetLeft(piece), Shapes.Ge
 
-
-126 CR_token2
+187 CR_token2
   333,67: 
 
 
-126 Stmt_token9 Expr Stmt_token10 Stmt_repeat1 MoreThanZeroElseIf
+93 Stmt_token9 Expr Stmt_token10 Stmt_repeat1 MoreThanZeroElseIf
   334,7: If
   334,10: x = CWIDTH
   334,21: Then
@@ -9840,21 +9567,18 @@ EndSub
 
 
 
-122 Comment CRStmtCRs
-  336,9: ' Delete the line
-  336,26: 
+122 CRStmtCRs
+  336,1:         ' Delete the line
         For x1 = 0 to CWIDTH - 1
           Shapes.Remove(Array.GetValue("c", x1 + y * CWIDTH))
         EndFor
-        linesCleared = linesCleared + 1
+        linesCle
 
-
-
-109 CR_token2
+122 CR_token2
   336,26: 
 
 
-109 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+67 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   337,9: For
   337,13: x1
   337,16: =
@@ -9908,11 +9632,11 @@ EndSub
 144 NUM
   337,32: 1
 
-43 CR_token2
+145 CR_token2
   337,33: 
 
 
-137 ID . ID ( Exprs )
+88 ID . ID ( Exprs )
   338,11: Shapes
   338,17: .
   338,18: Remove
@@ -9994,18 +9718,18 @@ EndSub
 238 )
   338,61: )
 
-210 CR_token2
+203 CR_token2
   338,62: 
 
 
 177 Stmt_token6
   339,9: EndFor
 
-216 CR_token2
+207 CR_token2
   339,15: 
 
 
-109 ID = Expr
+68 ID = Expr
   340,9: linesCleared
   340,22: =
   340,24: linesCleared + 1
@@ -10024,28 +9748,24 @@ EndSub
 144 NUM
   340,39: 1
 
-43 CR_token2
+207 CR_token2
   340,40: 
 
 
 
-109 Comment CRStmtCRs
-  342,9: ' Move everything else down one.
-  342,41: 
+122 CRStmtCRs
+  342,1:         ' Move everything else down one.
         For y1 = y To 1 Step -1
           For x1 = 0 to CWIDTH - 1
             piece = Array.GetValue("c", x1 + (y1 - 1) * CWIDTH)
             Array.SetValue("c", x1 + y1 * CWIDTH, piece)
-            Shapes.Move(piece, Shapes.GetLeft(piece), Shapes.GetTop(piece) + BWIDTH)
-          EndFor
-        EndFor
+            Shapes.Move(piece, Shapes.GetLeft(piece), Shapes.GetTop(piece) + 
 
-
-109 CR_token2
+122 CR_token2
   342,41: 
 
 
-109 Stmt_token4 ID = Expr Stmt_token5 Expr OptStep CRStmtCRs Stmt_token6
+67 Stmt_token4 ID = Expr Stmt_token5 Expr OptStep CRStmtCRs Stmt_token6
   343,9: For
   343,13: y1
   343,16: =
@@ -10112,7 +9832,7 @@ EndSub
 83 NUM
   343,23: 1
 
-43 OptStep_token1 Expr
+145 OptStep_token1 Expr
   343,25: Step
   343,30: -1
 
@@ -10123,11 +9843,11 @@ EndSub
 193 NUM
   343,31: 1
 
-43 CR_token2
+185 CR_token2
   343,32: 
 
 
-137 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+88 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   344,11: For
   344,15: x1
   344,18: =
@@ -10189,11 +9909,11 @@ EndSub
 144 NUM
   344,34: 1
 
-43 CR_token2
+145 CR_token2
   344,35: 
 
 
-137 ID = Expr
+88 ID = Expr
   345,13: piece
   345,19: =
   345,21: Array.GetValue("c", x1 + (y1 - 1) * CWIDTH)
@@ -10270,11 +9990,11 @@ EndSub
 249 )
   345,63: )
 
-49 CR_token2
+203 CR_token2
   345,64: 
 
 
-137 ID . ID ( Exprs )
+96 ID . ID ( Exprs )
   346,13: Array
   346,18: .
   346,19: SetValue
@@ -10334,11 +10054,11 @@ EndSub
 238 )
   346,56: )
 
-210 CR_token2
+203 CR_token2
   346,57: 
 
 
-137 ID . ID ( Exprs )
+96 ID . ID ( Exprs )
   347,13: Shapes
   347,19: .
   347,20: Move
@@ -10449,47 +10169,47 @@ EndSub
 238 )
   347,84: )
 
-210 CR_token2
+203 CR_token2
   347,85: 
 
 
 177 Stmt_token6
   348,11: EndFor
 
-216 CR_token2
+203 CR_token2
   348,17: 
 
 
 190 Stmt_token6
   349,9: EndFor
 
-224 CR_token2
+207 CR_token2
   349,15: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   350,7: EndIf
 
-218 CR_token2
+205 CR_token2
   350,12: 
 
 
 187 Stmt_token2
   351,5: EndWhile
 
-222 CR_token2
+203 CR_token2
   351,13: 
 
 
 190 Stmt_token6
   352,3: EndFor
 
-224 CR_token2
+206 CR_token2
   352,9: 
 
 
 
-160 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+106 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   354,3: If
   354,6: linesCleared > 0
   354,23: Then
@@ -10521,7 +10241,7 @@ EndSub
   354,27: 
 
 
-109 ID = Expr
+67 ID = Expr
   355,5: score
   355,11: =
   355,13: score + 100 * Math.Round(linesCleared * 2.15 - 1)
@@ -10590,11 +10310,11 @@ EndSub
 249 )
   355,61: )
 
-49 CR_token2
+207 CR_token2
   355,62: 
 
 
-109 ID ( )
+68 ID ( )
   356,5: PrintScore
   356,15: (
   356,16: )
@@ -10606,21 +10326,21 @@ EndSub
 261 )
   356,16: )
 
-215 CR_token2
+207 CR_token2
   356,17: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   357,3: EndIf
 
-218 CR_token2
+206 CR_token2
   357,8: 
 
 
 257 Stmt_token8
   358,1: EndSub
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   360,1: Sub
   360,5: SetupCanvas
   360,16: 
@@ -10761,9 +10481,11 @@ EndSub
   360,16: 
 
 
-105 Comment CRStmtCRs_repeat1
-  361,1: ' GraphicsWindow.DrawResizedImage( Flickr.GetRandomPicture( "bricks" ), 0, 0, GraphicsWindow.Width, GraphicsWindow.Height)
-  364,3: GraphicsWindow.BrushColor = GraphicsWindow.BackgroundColor
+105 CRStmtCRs_repeat1
+  364,3: phicsWindow.DrawResizedImage( Flickr.GetRandomPicture( "bricks" ), 0, 0, GraphicsWindow.Width, GraphicsWindow.Height)
+
+
+  GraphicsWindow.BrushColor = GraphicsWindow.BackgroundColor
   GraphicsWindow.FillRectangle(XOFFSET, YOFFSET, CWIDTH*BWIDTH, CHEIGHT*BWIDTH)
 
   Program.Delay(200)
@@ -10819,12 +10541,8 @@ EndSub
   GraphicsWindow.FontSize = 16
   GraphicsWindow.DrawText(x - 20, y + 440, "ver.0.1")
 
-  Program.Delay(200) ' without this delay, the above text will use the fontsize of the score 
-  score = 0
-  PrintScore()
 
-
-160 ID . ID = Expr
+105 ID . ID = Expr
   364,3: GraphicsWindow
   364,17: .
   364,18: BrushColor
@@ -10858,11 +10576,11 @@ EndSub
 260 ID
   364,46: BackgroundColor
 
-24 CR_token2
+206 CR_token2
   364,61: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   365,3: GraphicsWindow
   365,17: .
   365,18: FillRectangle
@@ -10929,12 +10647,12 @@ EndSub
 238 )
   365,79: )
 
-210 CR_token2
+206 CR_token2
   365,80: 
 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   367,3: Program
   367,10: .
   367,11: Delay
@@ -10966,11 +10684,11 @@ EndSub
 238 )
   367,20: )
 
-210 CR_token2
+206 CR_token2
   367,21: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   368,3: GraphicsWindow
   368,17: .
   368,18: PenWidth
@@ -10995,11 +10713,11 @@ EndSub
 57 NUM
   368,29: 1
 
-43 CR_token2
+206 CR_token2
   368,30: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   369,3: GraphicsWindow
   369,17: .
   369,18: PenColor
@@ -11024,11 +10742,11 @@ EndSub
 57 STR
   369,29: "Pink"
 
-43 CR_token2
+206 CR_token2
   369,35: 
 
 
-160 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+106 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   370,3: For
   370,7: x
   370,9: =
@@ -11094,11 +10812,11 @@ EndSub
 144 NUM
   370,23: 1
 
-43 CR_token2
+145 CR_token2
   370,24: 
 
 
-137 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+88 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   371,5: For
   371,9: y
   371,11: =
@@ -11156,11 +10874,11 @@ EndSub
 144 NUM
   371,26: 1
 
-43 CR_token2
+145 CR_token2
   371,27: 
 
 
-137 ID . ID ( Exprs )
+88 ID . ID ( Exprs )
   372,7: Array
   372,12: .
   372,13: SetValue
@@ -11220,16 +10938,14 @@ EndSub
 238 )
   372,46: )
 
-203 Comment CR
-  372,48: ' "." indicates spot is free
+203 CR
+  372,47:  
+
+203 CR_token2
   372,76: 
 
 
-210 CR_token2
-  372,76: 
-
-
-137 ID . ID ( Exprs )
+96 ID . ID ( Exprs )
   373,7: GraphicsWindow
   373,21: .
   373,22: DrawRectangle
@@ -11310,26 +11026,26 @@ EndSub
 238 )
   373,94: )
 
-210 CR_token2
+203 CR_token2
   373,95: 
 
 
 177 Stmt_token6
   374,5: EndFor
 
-216 CR_token2
+203 CR_token2
   374,11: 
 
 
 177 Stmt_token6
   375,3: EndFor
 
-216 CR_token2
+206 CR_token2
   375,9: 
 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   377,3: GraphicsWindow
   377,17: .
   377,18: PenWidth
@@ -11354,11 +11070,11 @@ EndSub
 57 NUM
   377,29: 4
 
-43 CR_token2
+206 CR_token2
   377,30: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   378,3: GraphicsWindow
   378,17: .
   378,18: PenColor
@@ -11383,11 +11099,11 @@ EndSub
 57 STR
   378,29: "Black"
 
-43 CR_token2
+206 CR_token2
   378,36: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   379,3: GraphicsWindow
   379,17: .
   379,18: DrawLine
@@ -11454,11 +11170,11 @@ EndSub
 238 )
   379,78: )
 
-210 CR_token2
+206 CR_token2
   379,79: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   380,3: GraphicsWindow
   380,17: .
   380,18: DrawLine
@@ -11553,11 +11269,11 @@ EndSub
 238 )
   380,110: )
 
-210 CR_token2
+206 CR_token2
   380,111: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   381,3: GraphicsWindow
   381,17: .
   381,18: DrawLine
@@ -11652,12 +11368,12 @@ EndSub
 238 )
   381,111: )
 
-210 CR_token2
+206 CR_token2
   381,112: 
 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   383,3: GraphicsWindow
   383,17: .
   383,18: PenColor
@@ -11682,11 +11398,11 @@ EndSub
 57 STR
   383,29: "Lime"
 
-43 CR_token2
+206 CR_token2
   383,35: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   384,3: GraphicsWindow
   384,17: .
   384,18: DrawLine
@@ -11774,11 +11490,11 @@ EndSub
 238 )
   384,90: )
 
-210 CR_token2
+206 CR_token2
   384,91: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   385,3: GraphicsWindow
   385,17: .
   385,18: DrawLine
@@ -11894,11 +11610,11 @@ EndSub
 238 )
   385,122: )
 
-210 CR_token2
+206 CR_token2
   385,123: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   386,3: GraphicsWindow
   386,17: .
   386,18: DrawLine
@@ -12021,12 +11737,12 @@ EndSub
 238 )
   386,127: )
 
-210 CR_token2
+206 CR_token2
   386,128: 
 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   388,3: GraphicsWindow
   388,17: .
   388,18: PenColor
@@ -12051,11 +11767,11 @@ EndSub
 57 STR
   388,29: "Black"
 
-43 CR_token2
+206 CR_token2
   388,36: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   389,3: GraphicsWindow
   389,17: .
   389,18: BrushColor
@@ -12080,11 +11796,11 @@ EndSub
 57 STR
   389,31: "Pink"
 
-43 CR_token2
+206 CR_token2
   389,37: 
 
 
-160 ID = Expr
+106 ID = Expr
   390,3: x
   390,5: =
   390,7: XOFFSET + PREVIEW_xpos * BWIDTH - BWIDTH
@@ -12117,11 +11833,11 @@ EndSub
 144 ID
   390,41: BWIDTH
 
-5 CR_token2
+206 CR_token2
   390,47: 
 
 
-160 ID = Expr
+106 ID = Expr
   391,3: y
   391,5: =
   391,7: YOFFSET + PREVIEW_ypos * BWIDTH - BWIDTH
@@ -12154,11 +11870,11 @@ EndSub
 144 ID
   391,41: BWIDTH
 
-5 CR_token2
+206 CR_token2
   391,47: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   392,3: GraphicsWindow
   392,17: .
   392,18: FillRectangle
@@ -12225,11 +11941,11 @@ EndSub
 238 )
   392,60: )
 
-210 CR_token2
+206 CR_token2
   392,61: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   393,3: GraphicsWindow
   393,17: .
   393,18: DrawRectangle
@@ -12296,12 +12012,12 @@ EndSub
 238 )
   393,60: )
 
-210 CR_token2
+206 CR_token2
   393,61: 
 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   395,3: GraphicsWindow
   395,17: .
   395,18: FillRectangle
@@ -12368,11 +12084,11 @@ EndSub
 238 )
   395,57: )
 
-210 CR_token2
+206 CR_token2
   395,58: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   396,3: GraphicsWindow
   396,17: .
   396,18: DrawRectangle
@@ -12439,12 +12155,12 @@ EndSub
 238 )
   396,57: )
 
-210 CR_token2
+206 CR_token2
   396,58: 
 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   398,3: GraphicsWindow
   398,17: .
   398,18: BrushColor
@@ -12469,11 +12185,11 @@ EndSub
 57 STR
   398,31: "Black"
 
-43 CR_token2
+206 CR_token2
   398,38: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   399,3: GraphicsWindow
   399,17: .
   399,18: FontItalic
@@ -12498,11 +12214,11 @@ EndSub
 57 STR
   399,31: "False"
 
-43 CR_token2
+206 CR_token2
   399,38: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   400,3: GraphicsWindow
   400,17: .
   400,18: FontName
@@ -12527,11 +12243,11 @@ EndSub
 57 STR
   400,29: "Comic Sans MS"
 
-43 CR_token2
+206 CR_token2
   400,44: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   401,3: GraphicsWindow
   401,17: .
   401,18: FontSize
@@ -12556,11 +12272,11 @@ EndSub
 57 NUM
   401,29: 16
 
-43 CR_token2
+206 CR_token2
   401,31: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   402,3: GraphicsWindow
   402,17: .
   402,18: DrawText
@@ -12613,11 +12329,11 @@ EndSub
 238 )
   402,59: )
 
-210 CR_token2
+206 CR_token2
   402,60: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   403,3: GraphicsWindow
   403,17: .
   403,18: DrawText
@@ -12677,11 +12393,11 @@ EndSub
 238 )
   403,74: )
 
-210 CR_token2
+206 CR_token2
   403,75: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   404,3: GraphicsWindow
   404,17: .
   404,18: DrawText
@@ -12741,11 +12457,11 @@ EndSub
 238 )
   404,76: )
 
-210 CR_token2
+206 CR_token2
   404,77: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   405,3: GraphicsWindow
   405,17: .
   405,18: DrawText
@@ -12805,11 +12521,11 @@ EndSub
 238 )
   405,69: )
 
-210 CR_token2
+206 CR_token2
   405,70: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   406,3: GraphicsWindow
   406,17: .
   406,18: DrawText
@@ -12869,11 +12585,11 @@ EndSub
 238 )
   406,69: )
 
-210 CR_token2
+206 CR_token2
   406,70: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   407,3: GraphicsWindow
   407,17: .
   407,18: DrawText
@@ -12926,12 +12642,12 @@ EndSub
 238 )
   407,59: )
 
-210 CR_token2
+206 CR_token2
   407,60: 
 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   409,3: Program
   409,10: .
   409,11: Delay
@@ -12963,18 +12679,15 @@ EndSub
 238 )
   409,20: )
 
-206 Comment CR
-  409,22: ' without this delay, the above text will use the fontsize of the score 
+206 CR
+  409,21:  '
+
+206 CR_token2
   409,94: 
 
 
 
-210 CR_token2
-  409,94: 
-
-
-
-160 ID . ID = Expr
+106 ID . ID = Expr
   411,3: GraphicsWindow
   411,17: .
   411,18: BrushColor
@@ -12999,11 +12712,11 @@ EndSub
 57 STR
   411,31: "Black"
 
-43 CR_token2
+206 CR_token2
   411,38: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   412,3: GraphicsWindow
   412,17: .
   412,18: FontName
@@ -13028,11 +12741,11 @@ EndSub
 57 STR
   412,29: "Georgia"
 
-43 CR_token2
+206 CR_token2
   412,38: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   413,3: GraphicsWindow
   413,17: .
   413,18: FontItalic
@@ -13057,11 +12770,11 @@ EndSub
 57 STR
   413,31: "True"
 
-43 CR_token2
+206 CR_token2
   413,37: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   414,3: GraphicsWindow
   414,17: .
   414,18: FontSize
@@ -13086,11 +12799,11 @@ EndSub
 57 NUM
   414,29: 36
 
-43 CR_token2
+206 CR_token2
   414,31: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   415,3: GraphicsWindow
   415,17: .
   415,18: DrawText
@@ -13150,11 +12863,11 @@ EndSub
 238 )
   415,64: )
 
-210 CR_token2
+206 CR_token2
   415,65: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   416,3: Program
   416,10: .
   416,11: Delay
@@ -13186,16 +12899,14 @@ EndSub
 238 )
   416,20: )
 
-206 Comment CR
-  416,22: ' without this delay, the above text will use the fontsize of the score 
+206 CR
+  416,21:  
+
+206 CR_token2
   416,94: 
 
 
-210 CR_token2
-  416,94: 
-
-
-160 ID . ID = Expr
+106 ID . ID = Expr
   417,3: GraphicsWindow
   417,17: .
   417,18: FontSize
@@ -13220,11 +12931,11 @@ EndSub
 57 NUM
   417,29: 16
 
-43 CR_token2
+206 CR_token2
   417,31: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   418,3: GraphicsWindow
   418,17: .
   418,18: DrawText
@@ -13284,12 +12995,12 @@ EndSub
 238 )
   418,53: )
 
-210 CR_token2
+206 CR_token2
   418,54: 
 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   420,3: Program
   420,10: .
   420,11: Delay
@@ -13321,16 +13032,14 @@ EndSub
 238 )
   420,20: )
 
-206 Comment CR
-  420,22: ' without this delay, the above text will use the fontsize of the score 
+206 CR
+  420,21:  
+
+206 CR_token2
   420,94: 
 
 
-210 CR_token2
-  420,94: 
-
-
-160 ID = Expr
+106 ID = Expr
   421,3: score
   421,9: =
   421,11: 0
@@ -13342,11 +13051,11 @@ EndSub
 70 NUM
   421,11: 0
 
-43 CR_token2
+206 CR_token2
   421,12: 
 
 
-160 ID ( )
+106 ID ( )
   422,3: PrintScore
   422,13: (
   422,14: )
@@ -13358,14 +13067,14 @@ EndSub
 261 )
   422,14: )
 
-215 CR_token2
+206 CR_token2
   422,15: 
 
 
 257 Stmt_token8
   423,1: EndSub
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   426,1: Sub
   426,5: PrintScore
   426,15: 
@@ -13402,7 +13111,7 @@ EndSub
   426,15: 
 
 
-160 ID . ID = Expr
+105 ID . ID = Expr
   427,3: GraphicsWindow
   427,17: .
   427,18: PenWidth
@@ -13427,11 +13136,11 @@ EndSub
 57 NUM
   427,29: 4
 
-43 CR_token2
+206 CR_token2
   427,30: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   428,3: GraphicsWindow
   428,17: .
   428,18: BrushColor
@@ -13456,11 +13165,11 @@ EndSub
 57 STR
   428,31: "Pink"
 
-43 CR_token2
+206 CR_token2
   428,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   429,3: GraphicsWindow
   429,17: .
   429,18: FillRectangle
@@ -13513,11 +13222,11 @@ EndSub
 238 )
   429,48: )
 
-210 CR_token2
+206 CR_token2
   429,49: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   430,3: GraphicsWindow
   430,17: .
   430,18: BrushColor
@@ -13542,11 +13251,11 @@ EndSub
 57 STR
   430,31: "Black"
 
-43 CR_token2
+206 CR_token2
   430,38: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   431,3: GraphicsWindow
   431,17: .
   431,18: DrawRectangle
@@ -13599,11 +13308,11 @@ EndSub
 238 )
   431,48: )
 
-210 CR_token2
+206 CR_token2
   431,49: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   432,3: GraphicsWindow
   432,17: .
   432,18: FontItalic
@@ -13628,11 +13337,11 @@ EndSub
 57 STR
   432,31: "False"
 
-43 CR_token2
+206 CR_token2
   432,38: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   433,3: GraphicsWindow
   433,17: .
   433,18: FontSize
@@ -13657,11 +13366,11 @@ EndSub
 57 NUM
   433,29: 32
 
-43 CR_token2
+206 CR_token2
   433,31: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   434,3: GraphicsWindow
   434,17: .
   434,18: FontName
@@ -13686,11 +13395,11 @@ EndSub
 57 STR
   434,29: "Impact"
 
-43 CR_token2
+206 CR_token2
   434,37: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   435,3: GraphicsWindow
   435,17: .
   435,18: BrushColor
@@ -13715,11 +13424,11 @@ EndSub
 57 STR
   435,31: "Black"
 
-43 CR_token2
+206 CR_token2
   435,38: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   436,3: GraphicsWindow
   436,17: .
   436,18: DrawText
@@ -13880,14 +13589,14 @@ EndSub
 238 )
   436,117: )
 
-210 CR_token2
+206 CR_token2
   436,118: 
 
 
 257 Stmt_token8
   437,1: EndSub
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   440,1: Sub
   440,5: SetupTemplates
   440,19: 
@@ -14094,14 +13803,287 @@ EndSub
   440,19: 
 
 
-105 Comment Comment Comment Comment Comment Comment CRStmtCRs_repeat1
-  441,3: ' each piece has 4 boxes.
-  442,3: ' the index of each entry within a piece represents the box number (1-4)
-  443,3: ' the value of each entry represents to box zero-based box coordinate within the piece: tens place is x, ones place y
+105 CRStmtCRs_repeat1
+  443,3: each piece has 4 boxes.
+  ' the index of each entry within a piece represents the box number (1-4)
+  ' the value of each entry represents to box zero-based box coordinate within the piece: tens place is x, ones place y
+
+  '_X_
+  '_X_
+  '_XX
+
+  Array.SetValue("template1", 0, 10)
+  Array.SetValue("template1", 1, 11)
+  Array.SetValue("template1", 2, 12)
+  Array.SetValue("template1", 3, 22)
+  Array.SetValue("template1", "color", "Yellow")
+  Array.SetValue("template1", "dim", 3)
+  Array.SetValue("template1", "pviewx", -12)
+  Array.SetValue("template1", "pviewy", 12)
+
+
+  '_X_
+  '_X_
+  'XX_
+  Array.SetValue("template2", 0, 10)
+  Array.SetValue("template2", 1, 11)
+  Array.SetValue("template2", 2, 12)
+  Array.SetValue("template2", 3, 02)
+  Array.SetValue("template2", "color", "Magenta")
+  Array.SetValue("template2", "dim", 3)
+  Array.SetValue("template2", "pviewx", 12)
+  Array.SetValue("template2", "pviewy", 12)
+
+
+  '_X_
+  'XXX
+  '_
+  Array.SetValue("template3", 0, 10)
+  Array.SetValue("template3", 1, 01)
+  Array.SetValue("template3", 2, 11)
+  Array.SetValue("template3", 3, 21)
+  Array.SetValue("template3", "color", "Gray")
+  Array.SetValue("template3", "dim", 3)
+  Array.SetValue("template3", "pviewx", 0)
+  Array.SetValue("template3", "pviewy", 25)
+
+
+  'XX_
+  'XX_
+  '_
+  Array.SetValue("template4", 0, 00)
+  Array.SetValue("template4", 1, 10)
+  Array.SetValue("template4", 2, 01)
+  Array.SetValue("template4", 3, 11)
+  Array.SetValue("template4", "color", "Cyan")
+  Array.SetValue("template4", "dim", 2)
+  Array.SetValue("template4", "pviewx", 12)
+  Array.SetValue("template4", "pviewy", 25)
+
+
+  'XX_
+  '_XX
+  '_
+  Array.SetValue("template5", 0, 00)
+  Array.SetValue("template5", 1, 10)
+  Array.SetValue("template5", 2, 11)
+  Array.SetValue("template5", 3, 21)
+  Array.SetValue("template5", "color", "Green")
+  Array.SetValue("template5", "dim", 3)
+  Array.SetValue("template5", "pviewx", 0)
+  Array.SetValue("template5", "pviewy", 25)
+
+
+  '_XX
+  'XX_
+  '_
+  Array.SetValue("template6", 0, 10)
+  Array.SetValue("template6", 1, 20)
+  Array.SetValue("template6", 2, 01)
+  Array.SetValue("template6", 3, 11)
+  Array.SetValue("template6", "color", "Blue")
+  Array.SetValue("template6", "dim", 3)
+  Array.SetValue("template6", "pviewx", 0)
+  Array.SetValue("template6", "pviewy", 25)
+
+
+  '_X
+  '_X
+  '_X
+  '_X
+  Array.SetValue("template7", 0, 10)
+  Array.SetValue("template7", 1, 11)
+  
+
+105 CRStmtCRs_repeat1
+  443,3:  the index of each entry within a piece represents the box number (1-4)
+  ' the value of each entry represents to box zero-based box coordinate within the piece: tens place is x, ones place y
+
+  '_X_
+  '_X_
+  '_XX
+
+  Array.SetValue("template1", 0, 10)
+  Array.SetValue("template1", 1, 11)
+  Array.SetValue("template1", 2, 12)
+  Array.SetValue("template1", 3, 22)
+  Array.SetValue("template1", "color", "Yellow")
+  Array.SetValue("template1", "dim", 3)
+  Array.SetValue("template1", "pviewx", -12)
+  Array.SetValue("template1", "pviewy", 12)
+
+
+  '_X_
+  '_X_
+  'XX_
+  Array.SetValue("template2", 0, 10)
+  Array.SetValue("template2", 1, 11)
+  Array.SetValue("template2", 2, 12)
+  Array.SetValue("template2", 3, 02)
+  Array.SetValue("template2", "color", "Magenta")
+  Array.SetValue("template2", "dim", 3)
+  Array.SetValue("template2", "pviewx", 12)
+  Array.SetValue("template2", "pviewy", 12)
+
+
+  '_X_
+  'XXX
+  '_
+  Array.SetValue("template3", 0, 10)
+  Array.SetValue("template3", 1, 01)
+  Array.SetValue("template3", 2, 11)
+  Array.SetValue("template3", 3, 21)
+  Array.SetValue("template3", "color", "Gray")
+  Array.SetValue("template3", "dim", 3)
+  Array.SetValue("template3", "pviewx", 0)
+  Array.SetValue("template3", "pviewy", 25)
+
+
+  'XX_
+  'XX_
+  '_
+  Array.SetValue("template4", 0, 00)
+  Array.SetValue("template4", 1, 10)
+  Array.SetValue("template4", 2, 01)
+  Array.SetValue("template4", 3, 11)
+  Array.SetValue("template4", "color", "Cyan")
+  Array.SetValue("template4", "dim", 2)
+  Array.SetValue("template4", "pviewx", 12)
+  Array.SetValue("template4", "pviewy", 25)
+
+
+  'XX_
+  '_XX
+  '_
+  Array.SetValue("template5", 0, 00)
+  Array.SetValue("template5", 1, 10)
+  Array.SetValue("template5", 2, 11)
+  Array.SetValue("template5", 3, 21)
+  Array.SetValue("template5", "color", "Green")
+  Array.SetValue("template5", "dim", 3)
+  Array.SetValue("template5", "pviewx", 0)
+  Array.SetValue("template5", "pviewy", 25)
+
+
+  '_XX
+  'XX_
+  '_
+  Array.SetValue("template6", 0, 10)
+  Array.SetValue("template6", 1, 20)
+  Array.SetValue("template6", 2, 01)
+  Array.SetValue("template6", 3, 11)
+  Array.SetValue("template6", "color", "Blue")
+  Array.SetValue("template6", "dim", 3)
+  Array.SetValue("template6", "pviewx", 0)
+  Array.SetValue("template6", "pviewy", 25)
+
+
+  '_X
+  '_X
+  '_X
+  '_X
+  Array.SetValue("template7", 0, 10)
+  Array.SetValue("template7", 1, 11)
+  Array.SetValue("template7",
+
+105 CRStmtCRs_repeat1
+  444,3:  the value of each entry represents to box zero-based box coordinate within the piece: tens place is x, ones place y
+
+  '_X_
+  '_X_
+  '_XX
+
+  Array.SetValue("template1", 0, 10)
+  Array.SetValue("template1", 1, 11)
+  Array.SetValue("template1", 2, 12)
+  Array.SetValue("template1", 3, 22)
+  Array.SetValue("template1", "color", "Yellow")
+  Array.SetValue("template1", "dim", 3)
+  Array.SetValue("template1", "pviewx", -12)
+  Array.SetValue("template1", "pviewy", 12)
+
+
+  '_X_
+  '_X_
+  'XX_
+  Array.SetValue("template2", 0, 10)
+  Array.SetValue("template2", 1, 11)
+  Array.SetValue("template2", 2, 12)
+  Array.SetValue("template2", 3, 02)
+  Array.SetValue("template2", "color", "Magenta")
+  Array.SetValue("template2", "dim", 3)
+  Array.SetValue("template2", "pviewx", 12)
+  Array.SetValue("template2", "pviewy", 12)
+
+
+  '_X_
+  'XXX
+  '_
+  Array.SetValue("template3", 0, 10)
+  Array.SetValue("template3", 1, 01)
+  Array.SetValue("template3", 2, 11)
+  Array.SetValue("template3", 3, 21)
+  Array.SetValue("template3", "color", "Gray")
+  Array.SetValue("template3", "dim", 3)
+  Array.SetValue("template3", "pviewx", 0)
+  Array.SetValue("template3", "pviewy", 25)
+
+
+  'XX_
+  'XX_
+  '_
+  Array.SetValue("template4", 0, 00)
+  Array.SetValue("template4", 1, 10)
+  Array.SetValue("template4", 2, 01)
+  Array.SetValue("template4", 3, 11)
+  Array.SetValue("template4", "color", "Cyan")
+  Array.SetValue("template4", "dim", 2)
+  Array.SetValue("template4", "pviewx", 12)
+  Array.SetValue("template4", "pviewy", 25)
+
+
+  'XX_
+  '_XX
+  '_
+  Array.SetValue("template5", 0, 00)
+  Array.SetValue("template5", 1, 10)
+  Array.SetValue("template5", 2, 11)
+  Array.SetValue("template5", 3, 21)
+  Array.SetValue("template5", "color", "Green")
+  Array.SetValue("template5", "dim", 3)
+  Array.SetValue("template5", "pviewx", 0)
+  Array.SetValue("template5", "pviewy", 25)
+
+
+  '_XX
+  'XX_
+  '_
+  Array.SetValue("template6", 0, 10)
+  Array.SetValue("template6", 1, 20)
+  Array.SetValue("template6", 2, 01)
+  Array.SetValue("template6", 3, 11)
+  Array.SetValue("template6", "color", "Blue")
+  Array.SetValue("template6", "dim", 3)
+  Array.SetValue("template6", "pviewx", 0)
+  Array.SetValue("template6", "pviewy", 25)
+
+
+  '_X
+  '_X
+  '_X
+  '_X
+  Array.SetValue("template7", 0, 10)
+  Array.SetValue("template7", 1, 11)
+  Array.SetValue("template7", 2, 12)
+  Array.SetValue("template7", 3, 13)
+  Array.SetValue("template7", 
+
+105 CRStmtCRs_repeat1
   445,3: '_X_
-  446,3: '_X_
-  447,3: '_XX
-  449,3: Array.SetValue("template1", 0, 10)
+  '_X_
+  '_XX
+
+  Array.SetValue("template1", 0, 10)
   Array.SetValue("template1", 1, 11)
   Array.SetValue("template1", 2, 12)
   Array.SetValue("template1", 3, 22)
@@ -14187,16 +14169,13 @@ EndSub
   Array.SetValue("template7", "color", "Red")
   Array.SetValue("template7", "dim", 4)
   Array.SetValue("template7", "pviewx", 0)
-  Array.SetValue("template7", "pviewy", 0)
+  Array.SetValue("tem
 
+105 CRStmtCRs_repeat1
+  447,3: _X_
+  '_XX
 
-105 Comment Comment Comment Comment Comment CRStmtCRs_repeat1
-  442,3: ' the index of each entry within a piece represents the box number (1-4)
-  443,3: ' the value of each entry represents to box zero-based box coordinate within the piece: tens place is x, ones place y
-  445,3: '_X_
-  446,3: '_X_
-  447,3: '_XX
-  449,3: Array.SetValue("template1", 0, 10)
+  Array.SetValue("template1", 0, 10)
   Array.SetValue("template1", 1, 11)
   Array.SetValue("template1", 2, 12)
   Array.SetValue("template1", 3, 22)
@@ -14282,15 +14261,12 @@ EndSub
   Array.SetValue("template7", "color", "Red")
   Array.SetValue("template7", "dim", 4)
   Array.SetValue("template7", "pviewx", 0)
-  Array.SetValue("template7", "pviewy", 0)
+  Array.SetValue("template7",
 
+105 CRStmtCRs_repeat1
+  448,3: _XX
 
-105 Comment Comment Comment Comment CRStmtCRs_repeat1
-  443,3: ' the value of each entry represents to box zero-based box coordinate within the piece: tens place is x, ones place y
-  445,3: '_X_
-  446,3: '_X_
-  447,3: '_XX
-  449,3: Array.SetValue("template1", 0, 10)
+  Array.SetValue("template1", 0, 10)
   Array.SetValue("template1", 1, 11)
   Array.SetValue("template1", 2, 12)
   Array.SetValue("template1", 3, 22)
@@ -14376,286 +14352,9 @@ EndSub
   Array.SetValue("template7", "color", "Red")
   Array.SetValue("template7", "dim", 4)
   Array.SetValue("template7", "pviewx", 0)
-  Array.SetValue("template7", "pviewy", 0)
+  Array.SetValue("template7", "pview
 
-
-105 Comment Comment Comment CRStmtCRs_repeat1
-  445,3: '_X_
-  446,3: '_X_
-  447,3: '_XX
-  449,3: Array.SetValue("template1", 0, 10)
-  Array.SetValue("template1", 1, 11)
-  Array.SetValue("template1", 2, 12)
-  Array.SetValue("template1", 3, 22)
-  Array.SetValue("template1", "color", "Yellow")
-  Array.SetValue("template1", "dim", 3)
-  Array.SetValue("template1", "pviewx", -12)
-  Array.SetValue("template1", "pviewy", 12)
-
-
-  '_X_
-  '_X_
-  'XX_
-  Array.SetValue("template2", 0, 10)
-  Array.SetValue("template2", 1, 11)
-  Array.SetValue("template2", 2, 12)
-  Array.SetValue("template2", 3, 02)
-  Array.SetValue("template2", "color", "Magenta")
-  Array.SetValue("template2", "dim", 3)
-  Array.SetValue("template2", "pviewx", 12)
-  Array.SetValue("template2", "pviewy", 12)
-
-
-  '_X_
-  'XXX
-  '_
-  Array.SetValue("template3", 0, 10)
-  Array.SetValue("template3", 1, 01)
-  Array.SetValue("template3", 2, 11)
-  Array.SetValue("template3", 3, 21)
-  Array.SetValue("template3", "color", "Gray")
-  Array.SetValue("template3", "dim", 3)
-  Array.SetValue("template3", "pviewx", 0)
-  Array.SetValue("template3", "pviewy", 25)
-
-
-  'XX_
-  'XX_
-  '_
-  Array.SetValue("template4", 0, 00)
-  Array.SetValue("template4", 1, 10)
-  Array.SetValue("template4", 2, 01)
-  Array.SetValue("template4", 3, 11)
-  Array.SetValue("template4", "color", "Cyan")
-  Array.SetValue("template4", "dim", 2)
-  Array.SetValue("template4", "pviewx", 12)
-  Array.SetValue("template4", "pviewy", 25)
-
-
-  'XX_
-  '_XX
-  '_
-  Array.SetValue("template5", 0, 00)
-  Array.SetValue("template5", 1, 10)
-  Array.SetValue("template5", 2, 11)
-  Array.SetValue("template5", 3, 21)
-  Array.SetValue("template5", "color", "Green")
-  Array.SetValue("template5", "dim", 3)
-  Array.SetValue("template5", "pviewx", 0)
-  Array.SetValue("template5", "pviewy", 25)
-
-
-  '_XX
-  'XX_
-  '_
-  Array.SetValue("template6", 0, 10)
-  Array.SetValue("template6", 1, 20)
-  Array.SetValue("template6", 2, 01)
-  Array.SetValue("template6", 3, 11)
-  Array.SetValue("template6", "color", "Blue")
-  Array.SetValue("template6", "dim", 3)
-  Array.SetValue("template6", "pviewx", 0)
-  Array.SetValue("template6", "pviewy", 25)
-
-
-  '_X
-  '_X
-  '_X
-  '_X
-  Array.SetValue("template7", 0, 10)
-  Array.SetValue("template7", 1, 11)
-  Array.SetValue("template7", 2, 12)
-  Array.SetValue("template7", 3, 13)
-  Array.SetValue("template7", "color", "Red")
-  Array.SetValue("template7", "dim", 4)
-  Array.SetValue("template7", "pviewx", 0)
-  Array.SetValue("template7", "pviewy", 0)
-
-
-105 Comment Comment CRStmtCRs_repeat1
-  446,3: '_X_
-  447,3: '_XX
-  449,3: Array.SetValue("template1", 0, 10)
-  Array.SetValue("template1", 1, 11)
-  Array.SetValue("template1", 2, 12)
-  Array.SetValue("template1", 3, 22)
-  Array.SetValue("template1", "color", "Yellow")
-  Array.SetValue("template1", "dim", 3)
-  Array.SetValue("template1", "pviewx", -12)
-  Array.SetValue("template1", "pviewy", 12)
-
-
-  '_X_
-  '_X_
-  'XX_
-  Array.SetValue("template2", 0, 10)
-  Array.SetValue("template2", 1, 11)
-  Array.SetValue("template2", 2, 12)
-  Array.SetValue("template2", 3, 02)
-  Array.SetValue("template2", "color", "Magenta")
-  Array.SetValue("template2", "dim", 3)
-  Array.SetValue("template2", "pviewx", 12)
-  Array.SetValue("template2", "pviewy", 12)
-
-
-  '_X_
-  'XXX
-  '_
-  Array.SetValue("template3", 0, 10)
-  Array.SetValue("template3", 1, 01)
-  Array.SetValue("template3", 2, 11)
-  Array.SetValue("template3", 3, 21)
-  Array.SetValue("template3", "color", "Gray")
-  Array.SetValue("template3", "dim", 3)
-  Array.SetValue("template3", "pviewx", 0)
-  Array.SetValue("template3", "pviewy", 25)
-
-
-  'XX_
-  'XX_
-  '_
-  Array.SetValue("template4", 0, 00)
-  Array.SetValue("template4", 1, 10)
-  Array.SetValue("template4", 2, 01)
-  Array.SetValue("template4", 3, 11)
-  Array.SetValue("template4", "color", "Cyan")
-  Array.SetValue("template4", "dim", 2)
-  Array.SetValue("template4", "pviewx", 12)
-  Array.SetValue("template4", "pviewy", 25)
-
-
-  'XX_
-  '_XX
-  '_
-  Array.SetValue("template5", 0, 00)
-  Array.SetValue("template5", 1, 10)
-  Array.SetValue("template5", 2, 11)
-  Array.SetValue("template5", 3, 21)
-  Array.SetValue("template5", "color", "Green")
-  Array.SetValue("template5", "dim", 3)
-  Array.SetValue("template5", "pviewx", 0)
-  Array.SetValue("template5", "pviewy", 25)
-
-
-  '_XX
-  'XX_
-  '_
-  Array.SetValue("template6", 0, 10)
-  Array.SetValue("template6", 1, 20)
-  Array.SetValue("template6", 2, 01)
-  Array.SetValue("template6", 3, 11)
-  Array.SetValue("template6", "color", "Blue")
-  Array.SetValue("template6", "dim", 3)
-  Array.SetValue("template6", "pviewx", 0)
-  Array.SetValue("template6", "pviewy", 25)
-
-
-  '_X
-  '_X
-  '_X
-  '_X
-  Array.SetValue("template7", 0, 10)
-  Array.SetValue("template7", 1, 11)
-  Array.SetValue("template7", 2, 12)
-  Array.SetValue("template7", 3, 13)
-  Array.SetValue("template7", "color", "Red")
-  Array.SetValue("template7", "dim", 4)
-  Array.SetValue("template7", "pviewx", 0)
-  Array.SetValue("template7", "pviewy", 0)
-
-
-105 Comment CRStmtCRs_repeat1
-  447,3: '_XX
-  449,3: Array.SetValue("template1", 0, 10)
-  Array.SetValue("template1", 1, 11)
-  Array.SetValue("template1", 2, 12)
-  Array.SetValue("template1", 3, 22)
-  Array.SetValue("template1", "color", "Yellow")
-  Array.SetValue("template1", "dim", 3)
-  Array.SetValue("template1", "pviewx", -12)
-  Array.SetValue("template1", "pviewy", 12)
-
-
-  '_X_
-  '_X_
-  'XX_
-  Array.SetValue("template2", 0, 10)
-  Array.SetValue("template2", 1, 11)
-  Array.SetValue("template2", 2, 12)
-  Array.SetValue("template2", 3, 02)
-  Array.SetValue("template2", "color", "Magenta")
-  Array.SetValue("template2", "dim", 3)
-  Array.SetValue("template2", "pviewx", 12)
-  Array.SetValue("template2", "pviewy", 12)
-
-
-  '_X_
-  'XXX
-  '_
-  Array.SetValue("template3", 0, 10)
-  Array.SetValue("template3", 1, 01)
-  Array.SetValue("template3", 2, 11)
-  Array.SetValue("template3", 3, 21)
-  Array.SetValue("template3", "color", "Gray")
-  Array.SetValue("template3", "dim", 3)
-  Array.SetValue("template3", "pviewx", 0)
-  Array.SetValue("template3", "pviewy", 25)
-
-
-  'XX_
-  'XX_
-  '_
-  Array.SetValue("template4", 0, 00)
-  Array.SetValue("template4", 1, 10)
-  Array.SetValue("template4", 2, 01)
-  Array.SetValue("template4", 3, 11)
-  Array.SetValue("template4", "color", "Cyan")
-  Array.SetValue("template4", "dim", 2)
-  Array.SetValue("template4", "pviewx", 12)
-  Array.SetValue("template4", "pviewy", 25)
-
-
-  'XX_
-  '_XX
-  '_
-  Array.SetValue("template5", 0, 00)
-  Array.SetValue("template5", 1, 10)
-  Array.SetValue("template5", 2, 11)
-  Array.SetValue("template5", 3, 21)
-  Array.SetValue("template5", "color", "Green")
-  Array.SetValue("template5", "dim", 3)
-  Array.SetValue("template5", "pviewx", 0)
-  Array.SetValue("template5", "pviewy", 25)
-
-
-  '_XX
-  'XX_
-  '_
-  Array.SetValue("template6", 0, 10)
-  Array.SetValue("template6", 1, 20)
-  Array.SetValue("template6", 2, 01)
-  Array.SetValue("template6", 3, 11)
-  Array.SetValue("template6", "color", "Blue")
-  Array.SetValue("template6", "dim", 3)
-  Array.SetValue("template6", "pviewx", 0)
-  Array.SetValue("template6", "pviewy", 25)
-
-
-  '_X
-  '_X
-  '_X
-  '_X
-  Array.SetValue("template7", 0, 10)
-  Array.SetValue("template7", 1, 11)
-  Array.SetValue("template7", 2, 12)
-  Array.SetValue("template7", 3, 13)
-  Array.SetValue("template7", "color", "Red")
-  Array.SetValue("template7", "dim", 4)
-  Array.SetValue("template7", "pviewx", 0)
-  Array.SetValue("template7", "pviewy", 0)
-
-
-160 ID . ID ( Exprs )
+105 ID . ID ( Exprs )
   449,3: Array
   449,8: .
   449,9: SetValue
@@ -14701,11 +14400,11 @@ EndSub
 238 )
   449,36: )
 
-210 CR_token2
+206 CR_token2
   449,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   450,3: Array
   450,8: .
   450,9: SetValue
@@ -14751,11 +14450,11 @@ EndSub
 238 )
   450,36: )
 
-210 CR_token2
+206 CR_token2
   450,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   451,3: Array
   451,8: .
   451,9: SetValue
@@ -14801,11 +14500,11 @@ EndSub
 238 )
   451,36: )
 
-210 CR_token2
+206 CR_token2
   451,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   452,3: Array
   452,8: .
   452,9: SetValue
@@ -14851,11 +14550,11 @@ EndSub
 238 )
   452,36: )
 
-210 CR_token2
+206 CR_token2
   452,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   453,3: Array
   453,8: .
   453,9: SetValue
@@ -14901,11 +14600,11 @@ EndSub
 238 )
   453,48: )
 
-210 CR_token2
+206 CR_token2
   453,49: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   454,3: Array
   454,8: .
   454,9: SetValue
@@ -14951,11 +14650,11 @@ EndSub
 238 )
   454,39: )
 
-210 CR_token2
+206 CR_token2
   454,40: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   455,3: Array
   455,8: .
   455,9: SetValue
@@ -15005,11 +14704,11 @@ EndSub
 238 )
   455,44: )
 
-210 CR_token2
+206 CR_token2
   455,45: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   456,3: Array
   456,8: .
   456,9: SetValue
@@ -15055,31 +14754,28 @@ EndSub
 238 )
   456,43: )
 
-210 CR_token2
+206 CR_token2
   456,44: 
 
 
 
 
-107 Comment Comment Comment TheRest
-  459,3: '_X_
+107 TheRest
+  460,3: _X_
+  '_X_
+  'XX_
+  Array.SetValue(
+
+107 TheRest
   460,3: '_X_
+  'XX_
+  Array.SetValue("templ
+
+107 TheRest
   461,3: 'XX_
-  462,3: Array.SetValue("template2", 0, 10)
+  Array.SetValue("template2", 
 
-
-107 Comment Comment TheRest
-  460,3: '_X_
-  461,3: 'XX_
-  462,3: Array.SetValue("template2", 0, 10)
-
-
-107 Comment TheRest
-  461,3: 'XX_
-  462,3: Array.SetValue("template2", 0, 10)
-
-
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   462,3: Array
   462,8: .
   462,9: SetValue
@@ -15125,11 +14821,11 @@ EndSub
 238 )
   462,36: )
 
-210 CR_token2
+206 CR_token2
   462,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   463,3: Array
   463,8: .
   463,9: SetValue
@@ -15175,11 +14871,11 @@ EndSub
 238 )
   463,36: )
 
-210 CR_token2
+206 CR_token2
   463,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   464,3: Array
   464,8: .
   464,9: SetValue
@@ -15225,11 +14921,11 @@ EndSub
 238 )
   464,36: )
 
-210 CR_token2
+206 CR_token2
   464,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   465,3: Array
   465,8: .
   465,9: SetValue
@@ -15275,11 +14971,11 @@ EndSub
 238 )
   465,36: )
 
-210 CR_token2
+206 CR_token2
   465,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   466,3: Array
   466,8: .
   466,9: SetValue
@@ -15325,11 +15021,11 @@ EndSub
 238 )
   466,49: )
 
-210 CR_token2
+206 CR_token2
   466,50: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   467,3: Array
   467,8: .
   467,9: SetValue
@@ -15375,11 +15071,11 @@ EndSub
 238 )
   467,39: )
 
-210 CR_token2
+206 CR_token2
   467,40: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   468,3: Array
   468,8: .
   468,9: SetValue
@@ -15425,11 +15121,11 @@ EndSub
 238 )
   468,43: )
 
-210 CR_token2
+206 CR_token2
   468,44: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   469,3: Array
   469,8: .
   469,9: SetValue
@@ -15475,31 +15171,28 @@ EndSub
 238 )
   469,43: )
 
-210 CR_token2
+206 CR_token2
   469,44: 
 
 
 
 
-107 Comment Comment Comment TheRest
-  472,3: '_X_
+107 TheRest
+  473,3: _X_
+  'XXX
+  '_
+  Array.SetValue("t
+
+107 TheRest
   473,3: 'XXX
+  '_
+  Array.SetValue("templat
+
+107 TheRest
   474,3: '_
-  475,3: Array.SetValue("template3", 0, 10)
+  Array.SetValue("template3", 0,
 
-
-107 Comment Comment TheRest
-  473,3: 'XXX
-  474,3: '_
-  475,3: Array.SetValue("template3", 0, 10)
-
-
-107 Comment TheRest
-  474,3: '_
-  475,3: Array.SetValue("template3", 0, 10)
-
-
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   475,3: Array
   475,8: .
   475,9: SetValue
@@ -15545,11 +15238,11 @@ EndSub
 238 )
   475,36: )
 
-210 CR_token2
+206 CR_token2
   475,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   476,3: Array
   476,8: .
   476,9: SetValue
@@ -15595,11 +15288,11 @@ EndSub
 238 )
   476,36: )
 
-210 CR_token2
+206 CR_token2
   476,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   477,3: Array
   477,8: .
   477,9: SetValue
@@ -15645,11 +15338,11 @@ EndSub
 238 )
   477,36: )
 
-210 CR_token2
+206 CR_token2
   477,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   478,3: Array
   478,8: .
   478,9: SetValue
@@ -15695,11 +15388,11 @@ EndSub
 238 )
   478,36: )
 
-210 CR_token2
+206 CR_token2
   478,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   479,3: Array
   479,8: .
   479,9: SetValue
@@ -15745,11 +15438,11 @@ EndSub
 238 )
   479,46: )
 
-210 CR_token2
+206 CR_token2
   479,47: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   480,3: Array
   480,8: .
   480,9: SetValue
@@ -15795,11 +15488,11 @@ EndSub
 238 )
   480,39: )
 
-210 CR_token2
+206 CR_token2
   480,40: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   481,3: Array
   481,8: .
   481,9: SetValue
@@ -15845,11 +15538,11 @@ EndSub
 238 )
   481,42: )
 
-210 CR_token2
+206 CR_token2
   481,43: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   482,3: Array
   482,8: .
   482,9: SetValue
@@ -15895,31 +15588,28 @@ EndSub
 238 )
   482,43: )
 
-210 CR_token2
+206 CR_token2
   482,44: 
 
 
 
 
-107 Comment Comment Comment TheRest
-  485,3: 'XX_
+107 TheRest
+  486,3: XX_
+  'XX_
+  '_
+  Array.SetValue("t
+
+107 TheRest
   486,3: 'XX_
+  '_
+  Array.SetValue("templat
+
+107 TheRest
   487,3: '_
-  488,3: Array.SetValue("template4", 0, 00)
+  Array.SetValue("template4", 0,
 
-
-107 Comment Comment TheRest
-  486,3: 'XX_
-  487,3: '_
-  488,3: Array.SetValue("template4", 0, 00)
-
-
-107 Comment TheRest
-  487,3: '_
-  488,3: Array.SetValue("template4", 0, 00)
-
-
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   488,3: Array
   488,8: .
   488,9: SetValue
@@ -15965,11 +15655,11 @@ EndSub
 238 )
   488,36: )
 
-210 CR_token2
+206 CR_token2
   488,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   489,3: Array
   489,8: .
   489,9: SetValue
@@ -16015,11 +15705,11 @@ EndSub
 238 )
   489,36: )
 
-210 CR_token2
+206 CR_token2
   489,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   490,3: Array
   490,8: .
   490,9: SetValue
@@ -16065,11 +15755,11 @@ EndSub
 238 )
   490,36: )
 
-210 CR_token2
+206 CR_token2
   490,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   491,3: Array
   491,8: .
   491,9: SetValue
@@ -16115,11 +15805,11 @@ EndSub
 238 )
   491,36: )
 
-210 CR_token2
+206 CR_token2
   491,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   492,3: Array
   492,8: .
   492,9: SetValue
@@ -16165,11 +15855,11 @@ EndSub
 238 )
   492,46: )
 
-210 CR_token2
+206 CR_token2
   492,47: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   493,3: Array
   493,8: .
   493,9: SetValue
@@ -16215,11 +15905,11 @@ EndSub
 238 )
   493,39: )
 
-210 CR_token2
+206 CR_token2
   493,40: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   494,3: Array
   494,8: .
   494,9: SetValue
@@ -16265,11 +15955,11 @@ EndSub
 238 )
   494,43: )
 
-210 CR_token2
+206 CR_token2
   494,44: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   495,3: Array
   495,8: .
   495,9: SetValue
@@ -16315,31 +16005,28 @@ EndSub
 238 )
   495,43: )
 
-210 CR_token2
+206 CR_token2
   495,44: 
 
 
 
 
-107 Comment Comment Comment TheRest
-  498,3: 'XX_
+107 TheRest
+  499,3: XX_
+  '_XX
+  '_
+  Array.SetValue("t
+
+107 TheRest
   499,3: '_XX
+  '_
+  Array.SetValue("templat
+
+107 TheRest
   500,3: '_
-  501,3: Array.SetValue("template5", 0, 00)
+  Array.SetValue("template5", 0,
 
-
-107 Comment Comment TheRest
-  499,3: '_XX
-  500,3: '_
-  501,3: Array.SetValue("template5", 0, 00)
-
-
-107 Comment TheRest
-  500,3: '_
-  501,3: Array.SetValue("template5", 0, 00)
-
-
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   501,3: Array
   501,8: .
   501,9: SetValue
@@ -16385,11 +16072,11 @@ EndSub
 238 )
   501,36: )
 
-210 CR_token2
+206 CR_token2
   501,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   502,3: Array
   502,8: .
   502,9: SetValue
@@ -16435,11 +16122,11 @@ EndSub
 238 )
   502,36: )
 
-210 CR_token2
+206 CR_token2
   502,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   503,3: Array
   503,8: .
   503,9: SetValue
@@ -16485,11 +16172,11 @@ EndSub
 238 )
   503,36: )
 
-210 CR_token2
+206 CR_token2
   503,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   504,3: Array
   504,8: .
   504,9: SetValue
@@ -16535,11 +16222,11 @@ EndSub
 238 )
   504,36: )
 
-210 CR_token2
+206 CR_token2
   504,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   505,3: Array
   505,8: .
   505,9: SetValue
@@ -16585,11 +16272,11 @@ EndSub
 238 )
   505,47: )
 
-210 CR_token2
+206 CR_token2
   505,48: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   506,3: Array
   506,8: .
   506,9: SetValue
@@ -16635,11 +16322,11 @@ EndSub
 238 )
   506,39: )
 
-210 CR_token2
+206 CR_token2
   506,40: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   507,3: Array
   507,8: .
   507,9: SetValue
@@ -16685,11 +16372,11 @@ EndSub
 238 )
   507,42: )
 
-210 CR_token2
+206 CR_token2
   507,43: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   508,3: Array
   508,8: .
   508,9: SetValue
@@ -16735,31 +16422,28 @@ EndSub
 238 )
   508,43: )
 
-210 CR_token2
+206 CR_token2
   508,44: 
 
 
 
 
-107 Comment Comment Comment TheRest
-  511,3: '_XX
+107 TheRest
+  512,3: _XX
+  'XX_
+  '_
+  Array.SetValue("t
+
+107 TheRest
   512,3: 'XX_
+  '_
+  Array.SetValue("templat
+
+107 TheRest
   513,3: '_
-  514,3: Array.SetValue("template6", 0, 10)
+  Array.SetValue("template6", 0,
 
-
-107 Comment Comment TheRest
-  512,3: 'XX_
-  513,3: '_
-  514,3: Array.SetValue("template6", 0, 10)
-
-
-107 Comment TheRest
-  513,3: '_
-  514,3: Array.SetValue("template6", 0, 10)
-
-
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   514,3: Array
   514,8: .
   514,9: SetValue
@@ -16805,11 +16489,11 @@ EndSub
 238 )
   514,36: )
 
-210 CR_token2
+206 CR_token2
   514,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   515,3: Array
   515,8: .
   515,9: SetValue
@@ -16855,11 +16539,11 @@ EndSub
 238 )
   515,36: )
 
-210 CR_token2
+206 CR_token2
   515,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   516,3: Array
   516,8: .
   516,9: SetValue
@@ -16905,11 +16589,11 @@ EndSub
 238 )
   516,36: )
 
-210 CR_token2
+206 CR_token2
   516,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   517,3: Array
   517,8: .
   517,9: SetValue
@@ -16955,11 +16639,11 @@ EndSub
 238 )
   517,36: )
 
-210 CR_token2
+206 CR_token2
   517,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   518,3: Array
   518,8: .
   518,9: SetValue
@@ -17005,11 +16689,11 @@ EndSub
 238 )
   518,46: )
 
-210 CR_token2
+206 CR_token2
   518,47: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   519,3: Array
   519,8: .
   519,9: SetValue
@@ -17055,11 +16739,11 @@ EndSub
 238 )
   519,39: )
 
-210 CR_token2
+206 CR_token2
   519,40: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   520,3: Array
   520,8: .
   520,9: SetValue
@@ -17105,11 +16789,11 @@ EndSub
 238 )
   520,42: )
 
-210 CR_token2
+206 CR_token2
   520,43: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   521,3: Array
   521,8: .
   521,9: SetValue
@@ -17155,39 +16839,35 @@ EndSub
 238 )
   521,43: )
 
-210 CR_token2
+206 CR_token2
   521,44: 
 
 
 
 
-107 Comment Comment Comment Comment TheRest
-  524,3: '_X
+107 TheRest
+  525,3: _X
+  '_X
+  '_X
+  '_X
+  Array.SetVal
+
+107 TheRest
   525,3: '_X
+  '_X
+  '_X
+  Array.SetValue("t
+
+107 TheRest
   526,3: '_X
+  '_X
+  Array.SetValue("templat
+
+107 TheRest
   527,3: '_X
-  528,3: Array.SetValue("template7", 0, 10)
+  Array.SetValue("template7", 0
 
-
-107 Comment Comment Comment TheRest
-  525,3: '_X
-  526,3: '_X
-  527,3: '_X
-  528,3: Array.SetValue("template7", 0, 10)
-
-
-107 Comment Comment TheRest
-  526,3: '_X
-  527,3: '_X
-  528,3: Array.SetValue("template7", 0, 10)
-
-
-107 Comment TheRest
-  527,3: '_X
-  528,3: Array.SetValue("template7", 0, 10)
-
-
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   528,3: Array
   528,8: .
   528,9: SetValue
@@ -17233,11 +16913,11 @@ EndSub
 238 )
   528,36: )
 
-210 CR_token2
+206 CR_token2
   528,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   529,3: Array
   529,8: .
   529,9: SetValue
@@ -17283,11 +16963,11 @@ EndSub
 238 )
   529,36: )
 
-210 CR_token2
+206 CR_token2
   529,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   530,3: Array
   530,8: .
   530,9: SetValue
@@ -17333,11 +17013,11 @@ EndSub
 238 )
   530,36: )
 
-210 CR_token2
+206 CR_token2
   530,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   531,3: Array
   531,8: .
   531,9: SetValue
@@ -17383,11 +17063,11 @@ EndSub
 238 )
   531,36: )
 
-210 CR_token2
+206 CR_token2
   531,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   532,3: Array
   532,8: .
   532,9: SetValue
@@ -17433,11 +17113,11 @@ EndSub
 238 )
   532,45: )
 
-210 CR_token2
+206 CR_token2
   532,46: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   533,3: Array
   533,8: .
   533,9: SetValue
@@ -17483,11 +17163,11 @@ EndSub
 238 )
   533,39: )
 
-210 CR_token2
+206 CR_token2
   533,40: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   534,3: Array
   534,8: .
   534,9: SetValue
@@ -17533,11 +17213,11 @@ EndSub
 238 )
   534,42: )
 
-210 CR_token2
+206 CR_token2
   534,43: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   535,3: Array
   535,8: .
   535,9: SetValue
@@ -17583,7 +17263,7 @@ EndSub
 238 )
   535,42: )
 
-210 CR_token2
+206 CR_token2
   535,43: 
 
 

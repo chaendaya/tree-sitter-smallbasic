@@ -1,6 +1,6 @@
-1 Comment Start_repeat1 end
-  1,1: 'Initialise graphics window
-  2,1: GraphicsWindow.Hide()
+0 Start_repeat1
+  2,1: Initialise graphics window
+GraphicsWindow.Hide()
 gw = 800
 gh = 600
 GraphicsWindow.CanResize = "False"
@@ -443,10 +443,7 @@ Sub reset
       Xpos[i] = x
       Ypos[i] = y
       Xvel[i] = u
-      Yvel[i] = v
-    EndIf
-  EndFor
-EndSub
+      Yvel[i] = 
 
 1 ID . ID ( )
   2,1: GraphicsWindow
@@ -473,7 +470,7 @@ EndSub
 25 )
   2,21: )
 
-162 ID = Expr
+97 ID = Expr
   3,1: gw
   3,4: =
   3,6: 800
@@ -485,7 +482,7 @@ EndSub
 73 NUM
   3,6: 800
 
-9 ID = Expr
+97 ID = Expr
   4,1: gh
   4,4: =
   4,6: 600
@@ -497,7 +494,7 @@ EndSub
 73 NUM
   4,6: 600
 
-9 ID . ID = Expr
+97 ID . ID = Expr
   5,1: GraphicsWindow
   5,15: .
   5,16: CanResize
@@ -522,7 +519,7 @@ EndSub
 75 STR
   5,28: "False"
 
-9 ID . ID = Expr
+97 ID . ID = Expr
   6,1: GraphicsWindow
   6,15: .
   6,16: Top
@@ -578,7 +575,7 @@ EndSub
 155 NUM
   6,42: 2
 
-9 ID . ID = Expr
+97 ID . ID = Expr
   7,1: GraphicsWindow
   7,15: .
   7,16: Left
@@ -634,7 +631,7 @@ EndSub
 155 NUM
   7,42: 2
 
-9 ID . ID = Expr
+97 ID . ID = Expr
   8,1: GraphicsWindow
   8,15: .
   8,16: Title
@@ -659,7 +656,7 @@ EndSub
 75 STR
   8,24: "Bouncing balls with realistic collision physics"
 
-9 ID . ID = Expr
+97 ID . ID = Expr
   9,1: GraphicsWindow
   9,15: .
   9,16: Width
@@ -684,7 +681,7 @@ EndSub
 75 ID
   9,24: gw
 
-2 ID . ID = Expr
+97 ID . ID = Expr
   10,1: GraphicsWindow
   10,15: .
   10,16: Height
@@ -709,7 +706,7 @@ EndSub
 75 ID
   10,25: gh
 
-2 ID . ID = Expr
+97 ID . ID = Expr
   11,1: GraphicsWindow
   11,15: .
   11,16: BackgroundColor
@@ -734,11 +731,11 @@ EndSub
 75 STR
   11,34: "LightBlue"
 
-101 Comment Prog
-  13,1: 'Reduce gw for options
-  14,1: gw = gw-200
+101 Prog
+  12,1: 
+'Reduce gw
 
-9 ID = Expr
+97 ID = Expr
   14,1: gw
   14,4: =
   14,6: gw-200
@@ -757,7 +754,7 @@ EndSub
 143 NUM
   14,9: 200
 
-9 ID . ID = Expr
+97 ID . ID = Expr
   15,1: GraphicsWindow
   15,15: .
   15,16: MouseDown
@@ -782,21 +779,20 @@ EndSub
 75 ID
   15,28: OnMouseDown
 
-2 ID :
+97 ID :
   17,1: Start
   17,6: :
 
 188 :
   17,6: :
 
-171 Comment Start_repeat1
-  19,1: ' Gravity, friction and attraction to mouse
-  20,1: grav = 0.0 ' 0 for none
-fric = 0 ' 0 for none
-follow = 0 'attract to mouse
-attract = 0
+101 Start_repeat1
+  18,1: 
+' Gravity, friction and attraction to mouse
+grav = 0.0 ' 0 for none
+fric = 0 ' 0 for 
 
-171 ID = Expr
+97 ID = Expr
   20,1: grav
   20,6: =
   20,8: 0.0
@@ -808,11 +804,10 @@ attract = 0
 73 NUM
   20,8: 0.0
 
-101 Comment Prog
-  20,12: ' 0 for none
-  21,1: fric = 0
+101 Prog
+  21,1: ' 0 for 
 
-9 ID = Expr
+97 ID = Expr
   21,1: fric
   21,6: =
   21,8: 0
@@ -824,12 +819,11 @@ attract = 0
 73 NUM
   21,8: 0
 
-9 Comment Start_repeat1
-  21,10: ' 0 for none
-  22,1: follow = 0 'attract to mouse
-attract = 0
+101 Start_repeat1
+  22,1: ' 0 for none
+follow = 0 'attract to mous
 
-9 ID = Expr
+97 ID = Expr
   22,1: follow
   22,8: =
   22,10: 0
@@ -841,11 +835,10 @@ attract = 0
 73 NUM
   22,10: 0
 
-101 Comment Prog
-  22,12: 'attract to mouse
-  23,1: attract = 0
+101 Prog
+  23,1: 'attract to
 
-9 ID = Expr
+97 ID = Expr
   23,1: attract
   23,9: =
   23,11: 0
@@ -857,9 +850,9 @@ attract = 0
 73 NUM
   23,11: 0
 
-9 Comment Start_repeat1
-  23,13: 'attract balls to each other
-  24,1: dt = 1 'timestep (speed)
+101 Start_repeat1
+  24,1: 'attract balls to each other
+dt = 1 'timestep (speed)
 shape = 0 '0:ball,1 square
 elastic = 1 '1 fully elastic collisions
 Colour = "Yellow"
@@ -867,10 +860,9 @@ Colour = "Yellow"
 'Initialise some balls
 radius = 20
 diam = 2*radius
-nball = Math.Floor(gw/diam)
-istart = "True"
+nball = Math.F
 
-9 ID = Expr
+97 ID = Expr
   24,1: dt
   24,4: =
   24,6: 1
@@ -882,11 +874,10 @@ istart = "True"
 73 NUM
   24,6: 1
 
-101 Comment Prog
-  24,8: 'timestep (speed)
-  25,1: shape = 0
+101 Prog
+  25,1: 'timestep
 
-9 ID = Expr
+97 ID = Expr
   25,1: shape
   25,7: =
   25,9: 0
@@ -898,12 +889,12 @@ istart = "True"
 73 NUM
   25,9: 0
 
-9 Comment Start_repeat1
-  25,11: '0:ball,1 square
-  26,1: elastic = 1 '1 fully elastic collisions
-Colour = "Yellow"
+101 Start_repeat1
+  26,1: '0:ball,1 square
+elastic = 1 '1 fully elastic collisions
 
-9 ID = Expr
+
+97 ID = Expr
   26,1: elastic
   26,9: =
   26,11: 1
@@ -915,11 +906,10 @@ Colour = "Yellow"
 73 NUM
   26,11: 1
 
-101 Comment Prog
-  26,13: '1 fully elastic collisions
-  27,1: Colour = "Yellow"
+101 Prog
+  27,1: '1 fully elastic 
 
-9 ID = Expr
+97 ID = Expr
   27,1: Colour
   27,8: =
   27,10: "Yellow"
@@ -931,14 +921,14 @@ Colour = "Yellow"
 73 STR
   27,10: "Yellow"
 
-9 Comment Start_repeat1
-  29,1: 'Initialise some balls
-  30,1: radius = 20
+101 Start_repeat1
+  28,1: 
+'Initialise some balls
+radius = 20
 diam = 2*radius
-nball = Math.Floor(gw/diam)
-istart = "True"
+nball = Math.Floor(
 
-9 ID = Expr
+97 ID = Expr
   30,1: radius
   30,8: =
   30,10: 20
@@ -950,7 +940,7 @@ istart = "True"
 73 NUM
   30,10: 20
 
-9 ID = Expr
+97 ID = Expr
   31,1: diam
   31,6: =
   31,8: 2*radius
@@ -969,7 +959,7 @@ istart = "True"
 155 ID
   31,10: radius
 
-2 ID = Expr
+97 ID = Expr
   32,1: nball
   32,7: =
   32,9: Math.Floor(gw/diam)
@@ -1017,7 +1007,7 @@ istart = "True"
 250 )
   32,27: )
 
-20 ID = Expr
+97 ID = Expr
   33,1: istart
   33,8: =
   33,10: "True"
@@ -1029,7 +1019,7 @@ istart = "True"
 73 STR
   33,10: "True"
 
-9 ID ( )
+97 ID ( )
   34,1: reset
   34,6: (
   34,7: )
@@ -1041,7 +1031,7 @@ istart = "True"
 256 )
   34,7: )
 
-150 ID = Expr
+97 ID = Expr
   35,1: ireset
   35,8: =
   35,10: "False"
@@ -1053,7 +1043,7 @@ istart = "True"
 73 STR
   35,10: "False"
 
-9 ID = Expr
+97 ID = Expr
   36,1: istart
   36,8: =
   36,10: "False"
@@ -1065,7 +1055,7 @@ istart = "True"
 73 STR
   36,10: "False"
 
-9 ID = Expr
+97 ID = Expr
   37,1: iend
   37,6: =
   37,8: "False"
@@ -1077,7 +1067,7 @@ istart = "True"
 73 STR
   37,8: "False"
 
-9 ID = Expr
+97 ID = Expr
   38,1: iselect
   38,9: =
   38,11: "False"
@@ -1089,7 +1079,7 @@ istart = "True"
 73 STR
   38,11: "False"
 
-9 ID = Expr
+97 ID = Expr
   39,1: ioptions
   39,10: =
   39,12: "False"
@@ -1101,9 +1091,10 @@ istart = "True"
 73 STR
   39,12: "False"
 
-9 Comment Start_repeat1
-  41,1: 'Show window - an MS comment
-  42,1: GraphicsWindow.Show()
+101 Start_repeat1
+  40,1: 
+'Show window - an MS comment
+GraphicsWindow.Show()
 
 'Main loop
 While ("True")
@@ -1152,11 +1143,9 @@ While ("True")
   EndIf
 ' If (isCollision) Then
 ' Sound.PlayClick()
-' EndIf
-  Program.Delay(10)
-EndWhile
+' EndI
 
-9 ID . ID ( )
+97 ID . ID ( )
   42,1: GraphicsWindow
   42,15: .
   42,16: Show
@@ -1181,9 +1170,10 @@ EndWhile
 25 )
   42,21: )
 
-101 Comment Prog
-  44,1: 'Main loop
-  45,1: While ("True")
+101 Prog
+  43,1: 
+'Main loop
+While ("True")
   If (ioptions) Then
     options()
     ioptions = "False"
@@ -1230,10 +1220,9 @@ EndWhile
 ' If (isCollision) Then
 ' Sound.PlayClick()
 ' EndIf
-  Program.Delay(10)
-EndWhile
+  Program.Delay(
 
-162 Stmt_token1 Expr Stmt_repeat1 Stmt_token2
+97 Stmt_token1 Expr Stmt_repeat1 Stmt_token2
   45,1: While
   45,7: ("True")
   45,15: 
@@ -1298,11 +1287,11 @@ EndWhile
 235 )
   45,14: )
 
-37 CR_token2
+192 CR_token2
   45,15: 
 
 
-126 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+93 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   46,3: If
   46,6: (ioptions)
   46,17: Then
@@ -1335,7 +1324,7 @@ EndWhile
   46,21: 
 
 
-109 ID ( )
+67 ID ( )
   47,5: options
   47,12: (
   47,13: )
@@ -1347,11 +1336,11 @@ EndWhile
 261 )
   47,13: )
 
-215 CR_token2
+207 CR_token2
   47,14: 
 
 
-109 ID = Expr
+68 ID = Expr
   48,5: ioptions
   48,14: =
   48,16: "False"
@@ -1363,18 +1352,18 @@ EndWhile
 70 STR
   48,16: "False"
 
-43 CR_token2
+207 CR_token2
   48,23: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   49,3: EndIf
 
-218 CR_token2
+205 CR_token2
   49,8: 
 
 
-126 ID = Expr
+95 ID = Expr
   50,3: energy
   50,10: =
   50,12: 0.0
@@ -1386,11 +1375,11 @@ EndWhile
 70 NUM
   50,12: 0.0
 
-43 CR_token2
+205 CR_token2
   50,15: 
 
 
-126 ID = Expr
+95 ID = Expr
   51,3: isCollision
   51,15: =
   51,17: "False"
@@ -1402,11 +1391,11 @@ EndWhile
 70 STR
   51,17: "False"
 
-43 CR_token2
+205 CR_token2
   51,24: 
 
 
-126 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+95 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   52,3: If
   52,6: (iselect)
   52,16: Then
@@ -1459,7 +1448,7 @@ EndWhile
   52,20: 
 
 
-109 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+67 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   53,5: For
   53,9: i
   53,11: =
@@ -1538,11 +1527,11 @@ EndWhile
 83 ID
   53,18: nball
 
-5 CR_token2
+145 CR_token2
   53,23: 
 
 
-137 ID = Expr
+88 ID = Expr
   54,7: x
   54,9: =
   54,11: Xpos[i]
@@ -1566,11 +1555,11 @@ EndWhile
 233 ]
   54,17: ]
 
-8 CR_token2
+203 CR_token2
   54,18: 
 
 
-137 ID = Expr
+96 ID = Expr
   55,7: y
   55,9: =
   55,11: Ypos[i]
@@ -1594,11 +1583,11 @@ EndWhile
 233 ]
   55,17: ]
 
-8 CR_token2
+203 CR_token2
   55,18: 
 
 
-137 ID = Expr
+96 ID = Expr
   56,7: dist
   56,12: =
   56,14: (xm-x)*(xm-x)+(ym-y)*(ym-y)
@@ -1691,11 +1680,11 @@ EndWhile
 235 )
   56,40: )
 
-37 CR_token2
+203 CR_token2
   56,41: 
 
 
-137 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+96 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   57,7: If
   57,10: (dist < radius*radius)
   57,33: Then
@@ -1746,7 +1735,7 @@ EndWhile
   57,37: 
 
 
-109 ID = Expr
+67 ID = Expr
   58,9: u
   58,11: =
   58,13: 0
@@ -1758,11 +1747,11 @@ EndWhile
 70 NUM
   58,13: 0
 
-43 CR_token2
+207 CR_token2
   58,14: 
 
 
-109 ID = Expr
+68 ID = Expr
   59,9: v
   59,11: =
   59,13: 0
@@ -1774,11 +1763,11 @@ EndWhile
 70 NUM
   59,13: 0
 
-43 CR_token2
+207 CR_token2
   59,14: 
 
 
-109 ID Idxs = Expr
+68 ID Idxs = Expr
   60,9: Xvel
   60,13: [i]
   60,17: =
@@ -1802,11 +1791,11 @@ EndWhile
 55 ID
   60,19: u
 
-5 CR_token2
+207 CR_token2
   60,20: 
 
 
-109 ID Idxs = Expr
+68 ID Idxs = Expr
   61,9: Yvel
   61,13: [i]
   61,17: =
@@ -1830,25 +1819,25 @@ EndWhile
 55 ID
   61,19: v
 
-5 CR_token2
+207 CR_token2
   61,20: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   62,7: EndIf
 
-218 CR_token2
+203 CR_token2
   62,12: 
 
 
 177 Stmt_token6
   63,5: EndFor
 
-216 CR_token2
+207 CR_token2
   63,11: 
 
 
-109 ID = Expr
+68 ID = Expr
   64,5: iselect
   64,13: =
   64,15: "False"
@@ -1860,18 +1849,18 @@ EndWhile
 70 STR
   64,15: "False"
 
-43 CR_token2
+207 CR_token2
   64,22: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   65,3: EndIf
 
-218 CR_token2
+205 CR_token2
   65,8: 
 
 
-126 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+95 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   66,3: For
   66,7: i
   66,9: =
@@ -1934,11 +1923,11 @@ EndWhile
 83 ID
   66,16: nball
 
-5 CR_token2
+145 CR_token2
   66,21: 
 
 
-137 ID ( )
+88 ID ( )
   67,5: update
   67,11: (
   67,12: )
@@ -1950,11 +1939,11 @@ EndWhile
 261 )
   67,12: )
 
-215 CR_token2
+203 CR_token2
   67,13: 
 
 
-137 ID ( )
+96 ID ( )
   68,5: move
   68,9: (
   68,10: )
@@ -1966,11 +1955,11 @@ EndWhile
 261 )
   68,10: )
 
-215 CR_token2
+203 CR_token2
   68,11: 
 
 
-137 ID = Expr
+96 ID = Expr
   69,5: u
   69,7: =
   69,9: Xvel[i]
@@ -1994,11 +1983,11 @@ EndWhile
 233 ]
   69,15: ]
 
-8 CR_token2
+203 CR_token2
   69,16: 
 
 
-137 ID = Expr
+96 ID = Expr
   70,5: v
   70,7: =
   70,9: Yvel[i]
@@ -2022,11 +2011,11 @@ EndWhile
 233 ]
   70,15: ]
 
-8 CR_token2
+203 CR_token2
   70,16: 
 
 
-137 ID = Expr
+96 ID = Expr
   71,5: energy
   71,12: =
   71,14: energy+(u*u+v*v)
@@ -2074,18 +2063,18 @@ EndWhile
 235 )
   71,29: )
 
-37 CR_token2
+203 CR_token2
   71,30: 
 
 
 177 Stmt_token6
   72,3: EndFor
 
-216 CR_token2
+205 CR_token2
   72,9: 
 
 
-126 ID = Expr
+95 ID = Expr
   73,3: energy
   73,10: =
   73,12: dt*dt*energy
@@ -2111,11 +2100,11 @@ EndWhile
 157 ID
   73,18: energy
 
-5 CR_token2
+205 CR_token2
   73,24: 
 
 
-126 ID = Expr
+95 ID = Expr
   74,3: energy
   74,10: =
   74,12: Math.Floor(energy)
@@ -2156,11 +2145,11 @@ EndWhile
 249 )
   74,29: )
 
-49 CR_token2
+205 CR_token2
   74,30: 
 
 
-126 ID . ID = Expr
+95 ID . ID = Expr
   75,3: GraphicsWindow
   75,17: .
   75,18: BrushColor
@@ -2185,11 +2174,11 @@ EndWhile
 57 STR
   75,31: "LightBlue"
 
-43 CR_token2
+205 CR_token2
   75,42: 
 
 
-126 ID . ID ( Exprs )
+95 ID . ID ( Exprs )
   76,3: GraphicsWindow
   76,17: .
   76,18: FillRectangle
@@ -2249,11 +2238,11 @@ EndWhile
 238 )
   76,48: )
 
-210 CR_token2
+205 CR_token2
   76,49: 
 
 
-126 ID . ID = Expr
+95 ID . ID = Expr
   77,3: GraphicsWindow
   77,17: .
   77,18: BrushColor
@@ -2278,11 +2267,11 @@ EndWhile
 57 STR
   77,31: "Black"
 
-43 CR_token2
+205 CR_token2
   77,38: 
 
 
-126 ID . ID ( Exprs )
+95 ID . ID ( Exprs )
   78,3: GraphicsWindow
   78,17: .
   78,18: DrawText
@@ -2342,11 +2331,11 @@ EndWhile
 238 )
   78,53: )
 
-210 CR_token2
+205 CR_token2
   78,54: 
 
 
-126 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+95 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   79,3: If
   79,6: (ireset)
   79,15: Then
@@ -2379,7 +2368,7 @@ EndWhile
   79,19: 
 
 
-109 ID ( )
+67 ID ( )
   80,5: reset
   80,10: (
   80,11: )
@@ -2391,11 +2380,11 @@ EndWhile
 261 )
   80,11: )
 
-215 CR_token2
+207 CR_token2
   80,12: 
 
 
-109 ID = Expr
+68 ID = Expr
   81,5: ireset
   81,12: =
   81,14: "False"
@@ -2407,18 +2396,18 @@ EndWhile
 70 STR
   81,14: "False"
 
-43 CR_token2
+207 CR_token2
   81,21: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   82,3: EndIf
 
-218 CR_token2
+205 CR_token2
   82,8: 
 
 
-126 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+95 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   83,3: If
   83,6: (istart)
   83,15: Then
@@ -2449,25 +2438,25 @@ EndWhile
   83,19: 
 
 
-109 Stmt_token3 ID
+67 Stmt_token3 ID
   84,5: Goto
   84,10: Start
 
 253 ID
   84,10: Start
 
-227 CR_token2
+207 CR_token2
   84,15: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   85,3: EndIf
 
-218 CR_token2
+205 CR_token2
   85,8: 
 
 
-126 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+95 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   86,3: If
   86,6: (iend)
   86,13: Then
@@ -2498,7 +2487,7 @@ EndWhile
   86,17: 
 
 
-109 ID . ID ( )
+67 ID . ID ( )
   87,5: Program
   87,12: .
   87,13: End
@@ -2523,46 +2512,40 @@ EndWhile
 27 )
   87,17: )
 
-208 CR_token2
+207 CR_token2
   87,18: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   88,3: EndIf
 
-218 CR_token2
+205 CR_token2
   88,8: 
 
 
-179 Comment CRStmtCRs
-  89,1: ' If (isCollision) Then
+179 CRStmtCRs
+  89,1: '
+
+179 CR_token2
   89,24: 
 
 
-126 CR_token2
-  89,24: 
+179 CRStmtCRs
+  90,1: '
 
-
-126 Comment CRStmtCRs
-  90,1: ' Sound.PlayClick()
+179 CR_token2
   90,20: 
 
 
-126 CR_token2
-  90,20: 
-
-
-126 Comment CRStmtCRs
+179 CRStmtCRs
   91,1: ' EndIf
-  91,8: 
-  Program.Delay(10)
+  Program.Del
 
-
-126 CR_token2
+179 CR_token2
   91,8: 
 
 
-126 ID . ID ( Exprs )
+93 ID . ID ( Exprs )
   92,3: Program
   92,10: .
   92,11: Delay
@@ -2594,16 +2577,17 @@ EndWhile
 238 )
   92,19: )
 
-210 CR_token2
+205 CR_token2
   92,20: 
 
 
 179 Stmt_token2
   93,1: EndWhile
 
-146 Comment Start_repeat1
-  95,1: 'Update ball positions
-  96,1: Sub update
+101 Start_repeat1
+  94,1: 
+'Update ball positions
+Sub update
   u = Xvel[i]
   v = Yvel[i]
   u = Math.Min(100,Math.Max(u,-100))
@@ -2918,10 +2902,9 @@ Sub OnMouseDown
   If (xm < gw) Then
     iselect = "True"
   EndIf
-  ioptions = "True"
-EndSub
+  
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   96,1: Sub
   96,5: update
   96,11: 
@@ -2962,7 +2945,7 @@ EndSub
   96,11: 
 
 
-160 ID = Expr
+105 ID = Expr
   97,3: u
   97,5: =
   97,7: Xvel[i]
@@ -2986,11 +2969,11 @@ EndSub
 233 ]
   97,13: ]
 
-8 CR_token2
+206 CR_token2
   97,14: 
 
 
-160 ID = Expr
+106 ID = Expr
   98,3: v
   98,5: =
   98,7: Yvel[i]
@@ -3014,11 +2997,11 @@ EndSub
 233 ]
   98,13: ]
 
-8 CR_token2
+206 CR_token2
   98,14: 
 
 
-160 ID = Expr
+106 ID = Expr
   99,3: u
   99,5: =
   99,7: Math.Min(100,Math.Max(u,-100))
@@ -3106,11 +3089,11 @@ EndSub
 249 )
   99,36: )
 
-49 CR_token2
+206 CR_token2
   99,37: 
 
 
-160 ID = Expr
+106 ID = Expr
   100,3: v
   100,5: =
   100,7: Math.Min(100,Math.Max(v,-100))
@@ -3198,11 +3181,11 @@ EndSub
 249 )
   100,36: )
 
-49 CR_token2
+206 CR_token2
   100,37: 
 
 
-160 ID = Expr
+106 ID = Expr
   101,3: x
   101,5: =
   101,7: Xpos[i]+dt*u
@@ -3240,11 +3223,11 @@ EndSub
 157 ID
   101,18: u
 
-5 CR_token2
+206 CR_token2
   101,19: 
 
 
-160 ID = Expr
+106 ID = Expr
   102,3: y
   102,5: =
   102,7: Ypos[i]+dt*v
@@ -3282,11 +3265,11 @@ EndSub
 157 ID
   102,18: v
 
-5 CR_token2
+206 CR_token2
   102,19: 
 
 
-160 ID ( )
+106 ID ( )
   103,3: bounce
   103,9: (
   103,10: )
@@ -3298,11 +3281,11 @@ EndSub
 261 )
   103,10: )
 
-215 CR_token2
+206 CR_token2
   103,11: 
 
 
-160 ID ( )
+106 ID ( )
   104,3: gravity
   104,10: (
   104,11: )
@@ -3314,11 +3297,11 @@ EndSub
 261 )
   104,11: )
 
-215 CR_token2
+206 CR_token2
   104,12: 
 
 
-160 ID ( )
+106 ID ( )
   105,3: collision
   105,12: (
   105,13: )
@@ -3330,11 +3313,11 @@ EndSub
 261 )
   105,13: )
 
-215 CR_token2
+206 CR_token2
   105,14: 
 
 
-160 ID ( )
+106 ID ( )
   106,3: attraction
   106,13: (
   106,14: )
@@ -3346,11 +3329,11 @@ EndSub
 261 )
   106,14: )
 
-215 CR_token2
+206 CR_token2
   106,15: 
 
 
-160 ID Idxs = Expr
+106 ID Idxs = Expr
   107,3: Xpos
   107,7: [i]
   107,11: =
@@ -3374,11 +3357,11 @@ EndSub
 55 ID
   107,13: x
 
-5 CR_token2
+206 CR_token2
   107,14: 
 
 
-160 ID Idxs = Expr
+106 ID Idxs = Expr
   108,3: Ypos
   108,7: [i]
   108,11: =
@@ -3402,16 +3385,17 @@ EndSub
 55 ID
   108,13: y
 
-5 CR_token2
+206 CR_token2
   108,14: 
 
 
 257 Stmt_token8
   109,1: EndSub
 
-101 Comment Prog
-  111,1: 'Check for edge bounces
-  112,1: Sub bounce
+101 Prog
+  110,1: 
+'Check for edge bounces
+Sub bounce
   If (x < radius) Then
     Xvel[i] = -Xvel[i]
     x = radius
@@ -3426,11 +3410,9 @@ EndSub
   EndIf
   If (y > gh-radius) Then
     Yvel[i] = -Yvel[i]
-    y = gh-radius
-  EndIf
-EndSub
+    y =
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   112,1: Sub
   112,5: bounce
   112,11: 
@@ -3479,7 +3461,7 @@ EndSub
   112,11: 
 
 
-160 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+105 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   113,3: If
   113,6: (x < radius)
   113,19: Then
@@ -3519,7 +3501,7 @@ EndSub
   113,23: 
 
 
-109 ID Idxs = Expr
+67 ID Idxs = Expr
   114,5: Xvel
   114,9: [i]
   114,13: =
@@ -3559,11 +3541,11 @@ EndSub
 233 ]
   114,22: ]
 
-8 CR_token2
+207 CR_token2
   114,23: 
 
 
-109 ID = Expr
+68 ID = Expr
   115,5: x
   115,7: =
   115,9: radius
@@ -3575,18 +3557,18 @@ EndSub
 70 ID
   115,9: radius
 
-5 CR_token2
+207 CR_token2
   115,15: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   116,3: EndIf
 
-218 CR_token2
+206 CR_token2
   116,8: 
 
 
-160 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+106 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   117,3: If
   117,6: (x > gw-radius)
   117,22: Then
@@ -3633,7 +3615,7 @@ EndSub
   117,26: 
 
 
-109 ID Idxs = Expr
+67 ID Idxs = Expr
   118,5: Xvel
   118,9: [i]
   118,13: =
@@ -3673,11 +3655,11 @@ EndSub
 233 ]
   118,22: ]
 
-8 CR_token2
+207 CR_token2
   118,23: 
 
 
-109 ID = Expr
+68 ID = Expr
   119,5: x
   119,7: =
   119,9: gw-radius
@@ -3696,18 +3678,18 @@ EndSub
 144 ID
   119,12: radius
 
-5 CR_token2
+207 CR_token2
   119,18: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   120,3: EndIf
 
-218 CR_token2
+206 CR_token2
   120,8: 
 
 
-160 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+106 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   121,3: If
   121,6: (y < radius)
   121,19: Then
@@ -3747,7 +3729,7 @@ EndSub
   121,23: 
 
 
-109 ID Idxs = Expr
+67 ID Idxs = Expr
   122,5: Yvel
   122,9: [i]
   122,13: =
@@ -3787,11 +3769,11 @@ EndSub
 233 ]
   122,22: ]
 
-8 CR_token2
+207 CR_token2
   122,23: 
 
 
-109 ID = Expr
+68 ID = Expr
   123,5: y
   123,7: =
   123,9: radius
@@ -3803,18 +3785,18 @@ EndSub
 70 ID
   123,9: radius
 
-5 CR_token2
+207 CR_token2
   123,15: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   124,3: EndIf
 
-218 CR_token2
+206 CR_token2
   124,8: 
 
 
-160 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+106 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   125,3: If
   125,6: (y > gh-radius)
   125,22: Then
@@ -3861,7 +3843,7 @@ EndSub
   125,26: 
 
 
-109 ID Idxs = Expr
+67 ID Idxs = Expr
   126,5: Yvel
   126,9: [i]
   126,13: =
@@ -3901,11 +3883,11 @@ EndSub
 233 ]
   126,22: ]
 
-8 CR_token2
+207 CR_token2
   126,23: 
 
 
-109 ID = Expr
+68 ID = Expr
   127,5: y
   127,7: =
   127,9: gh-radius
@@ -3924,23 +3906,24 @@ EndSub
 144 ID
   127,12: radius
 
-5 CR_token2
+207 CR_token2
   127,18: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   128,3: EndIf
 
-218 CR_token2
+206 CR_token2
   128,8: 
 
 
 257 Stmt_token8
   129,1: EndSub
 
-146 Comment Start_repeat1
-  131,1: 'Check for collisions
-  132,1: Sub collision
+101 Start_repeat1
+  130,1: 
+'Check for collisions
+Sub collision
   'Only check each pair once
   For j = i+1 To nball
     xi = x
@@ -4030,10 +4013,9 @@ Sub gravity
   v = Yvel[i]
   fricscale = (1-fric/Math.SquareRoot(1+u*u+v*v))
   Xvel[i] = follow*xm/dist+fricscale*u
-  Yvel[i] = follow*ym/dist+fricscale*v+grav
-EndSub
+  Yvel[i] = follow*ym/dist+
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   132,1: Sub
   132,5: collision
   132,14: 
@@ -4202,9 +4184,9 @@ EndSub
   132,14: 
 
 
-105 Comment TheRest
-  133,3: 'Only check each pair once
-  134,3: For j = i+1 To nball
+105 TheRest
+  134,3: Only check each pair once
+  For j = i+1 To nball
     xi = x
     yi = y
     xj = Xpos[j]
@@ -4276,12 +4258,9 @@ EndSub
       Xpos[j] = xj
       Ypos[j] = yj
       x = xi
-      y = yi
-    EndIf
-  EndFor
+    
 
-
-160 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+105 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   134,3: For
   134,7: j
   134,9: =
@@ -4623,11 +4602,11 @@ EndSub
 83 ID
   134,18: nball
 
-5 CR_token2
+145 CR_token2
   134,23: 
 
 
-137 ID = Expr
+88 ID = Expr
   135,5: xi
   135,8: =
   135,10: x
@@ -4639,11 +4618,11 @@ EndSub
 70 ID
   135,10: x
 
-5 CR_token2
+203 CR_token2
   135,11: 
 
 
-137 ID = Expr
+96 ID = Expr
   136,5: yi
   136,8: =
   136,10: y
@@ -4655,11 +4634,11 @@ EndSub
 70 ID
   136,10: y
 
-5 CR_token2
+203 CR_token2
   136,11: 
 
 
-137 ID = Expr
+96 ID = Expr
   137,5: xj
   137,8: =
   137,10: Xpos[j]
@@ -4683,11 +4662,11 @@ EndSub
 233 ]
   137,16: ]
 
-8 CR_token2
+203 CR_token2
   137,17: 
 
 
-137 ID = Expr
+96 ID = Expr
   138,5: yj
   138,8: =
   138,10: Ypos[j]
@@ -4711,11 +4690,11 @@ EndSub
 233 ]
   138,16: ]
 
-8 CR_token2
+203 CR_token2
   138,17: 
 
 
-137 ID = Expr
+96 ID = Expr
   139,5: dx
   139,8: =
   139,10: xi-xj
@@ -4734,11 +4713,11 @@ EndSub
 144 ID
   139,13: xj
 
-5 CR_token2
+203 CR_token2
   139,15: 
 
 
-137 ID = Expr
+96 ID = Expr
   140,5: dy
   140,8: =
   140,10: yi-yj
@@ -4757,11 +4736,11 @@ EndSub
 144 ID
   140,13: yj
 
-5 CR_token2
+203 CR_token2
   140,15: 
 
 
-137 ID = Expr
+96 ID = Expr
   141,5: dist
   141,10: =
   141,12: Math.SquareRoot(dx*dx+dy*dy)
@@ -4823,11 +4802,11 @@ EndSub
 249 )
   141,39: )
 
-49 CR_token2
+203 CR_token2
   141,40: 
 
 
-137 Stmt_token9 Expr Stmt_token10 Stmt_repeat1 MoreThanZeroElseIf
+96 Stmt_token9 Expr Stmt_token10 Stmt_repeat1 MoreThanZeroElseIf
   142,5: If
   142,8: (dist < diam)
   142,22: Then
@@ -4991,7 +4970,7 @@ EndSub
   142,26: 
 
 
-109 ID = Expr
+67 ID = Expr
   143,7: isCollision
   143,19: =
   143,21: "True"
@@ -5003,24 +4982,21 @@ EndSub
 70 STR
   143,21: "True"
 
-43 CR_token2
+207 CR_token2
   143,27: 
 
 
-122 Comment CRStmtCRs
-  144,7: 'Get ball vectors
-  144,24: 
+122 CRStmtCRs
+  144,1:       'Get ball vectors
       ui = Xvel[i]
       vi = Yvel[i]
-      uj = Xvel[j]
-      vj = Yvel[j]
+      uj = Xvel
 
-
-109 CR_token2
+122 CR_token2
   144,24: 
 
 
-109 ID = Expr
+67 ID = Expr
   145,7: ui
   145,10: =
   145,12: Xvel[i]
@@ -5044,11 +5020,11 @@ EndSub
 233 ]
   145,18: ]
 
-8 CR_token2
+207 CR_token2
   145,19: 
 
 
-109 ID = Expr
+68 ID = Expr
   146,7: vi
   146,10: =
   146,12: Yvel[i]
@@ -5072,11 +5048,11 @@ EndSub
 233 ]
   146,18: ]
 
-8 CR_token2
+207 CR_token2
   146,19: 
 
 
-109 ID = Expr
+68 ID = Expr
   147,7: uj
   147,10: =
   147,12: Xvel[j]
@@ -5100,11 +5076,11 @@ EndSub
 233 ]
   147,18: ]
 
-8 CR_token2
+207 CR_token2
   147,19: 
 
 
-109 ID = Expr
+68 ID = Expr
   148,7: vj
   148,10: =
   148,12: Yvel[j]
@@ -5128,13 +5104,12 @@ EndSub
 233 ]
   148,18: ]
 
-8 CR_token2
+207 CR_token2
   148,19: 
 
 
-109 Comment CRStmtCRs
-  149,7: 'Move backwards (forwards if dt < 0) in time until balls are just touching
-  149,81: 
+122 CRStmtCRs
+  149,1:       'Move backwards (forwards if dt < 0) in time until balls are just touching
       CoefA = (ui-uj)*(ui-uj)+(vi-vj)*(vi-vj)
       CoefB = 2*((ui-uj)*(xi-xj)+(vi-vj)*(yi-yj))
       CoefC = (xi-xj)*(xi-xj)+(yi-yj)*(yi-yj)-diam*diam
@@ -5146,18 +5121,13 @@ EndSub
         Else
           t = (-CoefB+Math.SquareRoot(CoefB*CoefB-4*CoefA*CoefC))/(2*CoefA)
         EndIf
-      EndIF
-      xi = xi+t*ui
-      yi = yi+t*vi
-      xj = xj+t*uj
-      yj = yj+t*vj
+      En
 
-
-109 CR_token2
+122 CR_token2
   149,81: 
 
 
-109 ID = Expr
+67 ID = Expr
   150,7: CoefA
   150,13: =
   150,15: (ui-uj)*(ui-uj)+(vi-vj)*(vi-vj)
@@ -5250,11 +5220,11 @@ EndSub
 235 )
   150,45: )
 
-37 CR_token2
+207 CR_token2
   150,46: 
 
 
-109 ID = Expr
+68 ID = Expr
   151,7: CoefB
   151,13: =
   151,15: 2*((ui-uj)*(xi-xj)+(vi-vj)*(yi-yj))
@@ -5362,11 +5332,11 @@ EndSub
 235 )
   151,49: )
 
-37 CR_token2
+207 CR_token2
   151,50: 
 
 
-109 ID = Expr
+68 ID = Expr
   152,7: CoefC
   152,13: =
   152,15: (xi-xj)*(xi-xj)+(yi-yj)*(yi-yj)-diam*diam
@@ -5473,11 +5443,11 @@ EndSub
 157 ID
   152,52: diam
 
-5 CR_token2
+207 CR_token2
   152,56: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   153,7: If
   153,10: (CoefA = 0)
   153,22: Then
@@ -5527,7 +5497,7 @@ EndSub
   153,26: 
 
 
-109 ID = Expr
+67 ID = Expr
   154,9: t
   154,11: =
   154,13: -CoefC/CoefB
@@ -5550,11 +5520,11 @@ EndSub
 157 ID
   154,20: CoefB
 
-5 CR_token2
+207 CR_token2
   154,25: 
 
 
-109 OptionalElse_token2 CRStmtCRs OptionalElse_token1
+122 OptionalElse_token2 CRStmtCRs OptionalElse_token1
   155,7: Else
   155,11: 
         If (dt >= 0) Then
@@ -5569,7 +5539,7 @@ EndSub
   155,11: 
 
 
-163 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+113 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   156,9: If
   156,12: (dt >= 0)
   156,22: Then
@@ -5611,7 +5581,7 @@ EndSub
   156,26: 
 
 
-109 ID = Expr
+67 ID = Expr
   157,11: t
   157,13: =
   157,15: (-CoefB-Math.SquareRoot(CoefB*CoefB-4*CoefA*CoefC))/(2*CoefA)
@@ -5721,11 +5691,11 @@ EndSub
 235 )
   157,75: )
 
-37 CR_token2
+207 CR_token2
   157,76: 
 
 
-109 OptionalElse_token2 CRStmtCRs OptionalElse_token1
+122 OptionalElse_token2 CRStmtCRs OptionalElse_token1
   158,9: Else
   158,13: 
           t = (-CoefB+Math.SquareRoot(CoefB*CoefB-4*CoefA*CoefC))/(2*CoefA)
@@ -5736,7 +5706,7 @@ EndSub
   158,13: 
 
 
-163 ID = Expr
+113 ID = Expr
   159,11: t
   159,13: =
   159,15: (-CoefB+Math.SquareRoot(CoefB*CoefB-4*CoefA*CoefC))/(2*CoefA)
@@ -5846,25 +5816,25 @@ EndSub
 235 )
   159,75: )
 
-37 CR_token2
+202 CR_token2
   159,76: 
 
 
 237 OptionalElse_token1
   160,9: EndIf
 
-209 CR_token2
+202 CR_token2
   160,14: 
 
 
 237 OptionalElse_token1
   161,7: EndIF
 
-209 CR_token2
+207 CR_token2
   161,12: 
 
 
-109 ID = Expr
+68 ID = Expr
   162,7: xi
   162,10: =
   162,12: xi+t*ui
@@ -5890,11 +5860,11 @@ EndSub
 157 ID
   162,17: ui
 
-5 CR_token2
+207 CR_token2
   162,19: 
 
 
-109 ID = Expr
+68 ID = Expr
   163,7: yi
   163,10: =
   163,12: yi+t*vi
@@ -5920,11 +5890,11 @@ EndSub
 157 ID
   163,17: vi
 
-5 CR_token2
+207 CR_token2
   163,19: 
 
 
-109 ID = Expr
+68 ID = Expr
   164,7: xj
   164,10: =
   164,12: xj+t*uj
@@ -5950,11 +5920,11 @@ EndSub
 157 ID
   164,17: uj
 
-5 CR_token2
+207 CR_token2
   164,19: 
 
 
-109 ID = Expr
+68 ID = Expr
   165,7: yj
   165,10: =
   165,12: yj+t*vj
@@ -5980,13 +5950,12 @@ EndSub
 157 ID
   165,17: vj
 
-5 CR_token2
+207 CR_token2
   165,19: 
 
 
-109 Comment Stmt_repeat1
-  166,7: 'Centre of momentum coordinates
-  166,38: 
+122 Stmt_repeat1
+  166,1:       'Centre of momentum coordinates
       mx = (ui+uj)/2
       my = (vi+vj)/2
       ui = ui-mx
@@ -5997,15 +5966,13 @@ EndSub
       dx = xi-xj
       dy = yi-yj
       dist = Math.SquareRoot(dx*dx+dy*dy)
-      dx = dx/dist
-      dy = dy/dist
+ 
 
-
-109 CR_token2
+122 CR_token2
   166,38: 
 
 
-109 ID = Expr
+67 ID = Expr
   167,7: mx
   167,10: =
   167,12: (ui+uj)/2
@@ -6039,11 +6006,11 @@ EndSub
 157 NUM
   167,20: 2
 
-43 CR_token2
+207 CR_token2
   167,21: 
 
 
-109 ID = Expr
+68 ID = Expr
   168,7: my
   168,10: =
   168,12: (vi+vj)/2
@@ -6077,11 +6044,11 @@ EndSub
 157 NUM
   168,20: 2
 
-43 CR_token2
+207 CR_token2
   168,21: 
 
 
-109 ID = Expr
+68 ID = Expr
   169,7: ui
   169,10: =
   169,12: ui-mx
@@ -6100,11 +6067,11 @@ EndSub
 144 ID
   169,15: mx
 
-5 CR_token2
+207 CR_token2
   169,17: 
 
 
-109 ID = Expr
+68 ID = Expr
   170,7: vi
   170,10: =
   170,12: vi-my
@@ -6123,11 +6090,11 @@ EndSub
 144 ID
   170,15: my
 
-5 CR_token2
+207 CR_token2
   170,17: 
 
 
-109 ID = Expr
+68 ID = Expr
   171,7: uj
   171,10: =
   171,12: uj-mx
@@ -6146,11 +6113,11 @@ EndSub
 144 ID
   171,15: mx
 
-5 CR_token2
+207 CR_token2
   171,17: 
 
 
-109 ID = Expr
+68 ID = Expr
   172,7: vj
   172,10: =
   172,12: vj-my
@@ -6169,25 +6136,22 @@ EndSub
 144 ID
   172,15: my
 
-5 CR_token2
+207 CR_token2
   172,17: 
 
 
-142 Comment CRStmtCRs
-  173,7: 'New centre to centre line
-  173,33: 
+142 CRStmtCRs
+  173,1:       'New centre to centre line
       dx = xi-xj
       dy = yi-yj
       dist = Math.SquareRoot(dx*dx+dy*dy)
-      dx = dx/dist
-      dy = dy/dist
+      
 
-
-109 CR_token2
+122 CR_token2
   173,33: 
 
 
-109 ID = Expr
+67 ID = Expr
   174,7: dx
   174,10: =
   174,12: xi-xj
@@ -6206,11 +6170,11 @@ EndSub
 144 ID
   174,15: xj
 
-5 CR_token2
+207 CR_token2
   174,17: 
 
 
-109 ID = Expr
+68 ID = Expr
   175,7: dy
   175,10: =
   175,12: yi-yj
@@ -6229,11 +6193,11 @@ EndSub
 144 ID
   175,15: yj
 
-5 CR_token2
+207 CR_token2
   175,17: 
 
 
-109 ID = Expr
+68 ID = Expr
   176,7: dist
   176,12: =
   176,14: Math.SquareRoot(dx*dx+dy*dy)
@@ -6295,11 +6259,11 @@ EndSub
 249 )
   176,41: )
 
-49 CR_token2
+207 CR_token2
   176,42: 
 
 
-109 ID = Expr
+68 ID = Expr
   177,7: dx
   177,10: =
   177,12: dx/dist
@@ -6318,11 +6282,11 @@ EndSub
 157 ID
   177,15: dist
 
-5 CR_token2
+207 CR_token2
   177,19: 
 
 
-109 ID = Expr
+68 ID = Expr
   178,7: dy
   178,10: =
   178,12: dy/dist
@@ -6341,13 +6305,12 @@ EndSub
 157 ID
   178,15: dist
 
-5 CR_token2
+207 CR_token2
   178,19: 
 
 
-109 Comment Stmt_repeat1
-  179,7: 'Reflect balls velocity vectors in centre to centre line
-  179,63: 
+122 Stmt_repeat1
+  179,1:       'Reflect balls velocity vectors in centre to centre line
       OB = -(dx*ui+dy*vi)
       ui = ui+2*OB*dx
       vi = vi+2*OB*dy
@@ -6366,17 +6329,13 @@ EndSub
       xj = xj-t*uj
       yj = yj-t*vj
       'Set velocities
-      Xvel[i] = ui
-      Yvel[i] = vi
-      Xvel[j] = uj
-      Yvel[j] = vj
+      Xvel[i] 
 
-
-109 CR_token2
+122 CR_token2
   179,63: 
 
 
-109 ID = Expr
+67 ID = Expr
   180,7: OB
   180,10: =
   180,12: -(dx*ui+dy*vi)
@@ -6421,11 +6380,11 @@ EndSub
 235 )
   180,25: )
 
-37 CR_token2
+207 CR_token2
   180,26: 
 
 
-109 ID = Expr
+68 ID = Expr
   181,7: ui
   181,10: =
   181,12: ui+2*OB*dx
@@ -6458,11 +6417,11 @@ EndSub
 157 ID
   181,20: dx
 
-5 CR_token2
+207 CR_token2
   181,22: 
 
 
-109 ID = Expr
+68 ID = Expr
   182,7: vi
   182,10: =
   182,12: vi+2*OB*dy
@@ -6495,11 +6454,11 @@ EndSub
 157 ID
   182,20: dy
 
-5 CR_token2
+207 CR_token2
   182,22: 
 
 
-109 ID = Expr
+68 ID = Expr
   183,7: OB
   183,10: =
   183,12: -(dx*uj+dy*vj)
@@ -6544,11 +6503,11 @@ EndSub
 235 )
   183,25: )
 
-37 CR_token2
+207 CR_token2
   183,26: 
 
 
-109 ID = Expr
+68 ID = Expr
   184,7: uj
   184,10: =
   184,12: uj+2*OB*dx
@@ -6581,11 +6540,11 @@ EndSub
 157 ID
   184,20: dx
 
-5 CR_token2
+207 CR_token2
   184,22: 
 
 
-109 ID = Expr
+68 ID = Expr
   185,7: vj
   185,10: =
   185,12: vj+2*OB*dy
@@ -6618,25 +6577,21 @@ EndSub
 157 ID
   185,20: dy
 
-5 CR_token2
+207 CR_token2
   185,22: 
 
 
-142 Comment CRStmtCRs
-  186,7: 'Back to moving coordinates with elastic velocity change
-  186,63: 
+142 CRStmtCRs
+  186,1:       'Back to moving coordinates with elastic velocity change
       e = Math.SquareRoot(elastic)
       ui = e*(ui+mx)
-      vi = e*(vi+my)
-      uj = e*(uj+mx)
-      vj = e*(vj+my)
+ 
 
-
-109 CR_token2
+122 CR_token2
   186,63: 
 
 
-109 ID = Expr
+67 ID = Expr
   187,7: e
   187,9: =
   187,11: Math.SquareRoot(elastic)
@@ -6677,11 +6632,11 @@ EndSub
 249 )
   187,34: )
 
-49 CR_token2
+207 CR_token2
   187,35: 
 
 
-109 ID = Expr
+68 ID = Expr
   188,7: ui
   188,10: =
   188,12: e*(ui+mx)
@@ -6715,11 +6670,11 @@ EndSub
 235 )
   188,20: )
 
-37 CR_token2
+207 CR_token2
   188,21: 
 
 
-109 ID = Expr
+68 ID = Expr
   189,7: vi
   189,10: =
   189,12: e*(vi+my)
@@ -6753,11 +6708,11 @@ EndSub
 235 )
   189,20: )
 
-37 CR_token2
+207 CR_token2
   189,21: 
 
 
-109 ID = Expr
+68 ID = Expr
   190,7: uj
   190,10: =
   190,12: e*(uj+mx)
@@ -6791,11 +6746,11 @@ EndSub
 235 )
   190,20: )
 
-37 CR_token2
+207 CR_token2
   190,21: 
 
 
-109 ID = Expr
+68 ID = Expr
   191,7: vj
   191,10: =
   191,12: e*(vj+my)
@@ -6829,13 +6784,12 @@ EndSub
 235 )
   191,20: )
 
-37 CR_token2
+207 CR_token2
   191,21: 
 
 
-109 Comment Stmt_repeat1
-  192,7: 'Move to new bounced position
-  192,36: 
+142 Stmt_repeat1
+  192,1:       'Move to new bounced position
       xi = xi-t*ui
       yi = yi-t*vi
       xj = xj-t*uj
@@ -6843,15 +6797,13 @@ EndSub
       'Set velocities
       Xvel[i] = ui
       Yvel[i] = vi
-      Xvel[j] = uj
-      Yvel[j] = vj
+   
 
-
-109 CR_token2
+122 CR_token2
   192,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   193,7: xi
   193,10: =
   193,12: xi-t*ui
@@ -6877,11 +6829,11 @@ EndSub
 157 ID
   193,17: ui
 
-5 CR_token2
+207 CR_token2
   193,19: 
 
 
-109 ID = Expr
+68 ID = Expr
   194,7: yi
   194,10: =
   194,12: yi-t*vi
@@ -6907,11 +6859,11 @@ EndSub
 157 ID
   194,17: vi
 
-5 CR_token2
+207 CR_token2
   194,19: 
 
 
-109 ID = Expr
+68 ID = Expr
   195,7: xj
   195,10: =
   195,12: xj-t*uj
@@ -6937,11 +6889,11 @@ EndSub
 157 ID
   195,17: uj
 
-5 CR_token2
+207 CR_token2
   195,19: 
 
 
-109 ID = Expr
+68 ID = Expr
   196,7: yj
   196,10: =
   196,12: yj-t*vj
@@ -6967,24 +6919,21 @@ EndSub
 157 ID
   196,17: vj
 
-5 CR_token2
+207 CR_token2
   196,19: 
 
 
-142 Comment CRStmtCRs
-  197,7: 'Set velocities
-  197,22: 
+142 CRStmtCRs
+  197,1:       'Set velocities
       Xvel[i] = ui
       Yvel[i] = vi
-      Xvel[j] = uj
-      Yvel[j] = vj
+      Xvel[j] = u
 
-
-109 CR_token2
+122 CR_token2
   197,22: 
 
 
-109 ID Idxs = Expr
+67 ID Idxs = Expr
   198,7: Xvel
   198,11: [i]
   198,15: =
@@ -7008,11 +6957,11 @@ EndSub
 55 ID
   198,17: ui
 
-5 CR_token2
+207 CR_token2
   198,19: 
 
 
-109 ID Idxs = Expr
+68 ID Idxs = Expr
   199,7: Yvel
   199,11: [i]
   199,15: =
@@ -7036,11 +6985,11 @@ EndSub
 55 ID
   199,17: vi
 
-5 CR_token2
+207 CR_token2
   199,19: 
 
 
-109 ID Idxs = Expr
+68 ID Idxs = Expr
   200,7: Xvel
   200,11: [j]
   200,15: =
@@ -7064,11 +7013,11 @@ EndSub
 55 ID
   200,17: uj
 
-5 CR_token2
+207 CR_token2
   200,19: 
 
 
-109 ID Idxs = Expr
+68 ID Idxs = Expr
   201,7: Yvel
   201,11: [j]
   201,15: =
@@ -7092,24 +7041,21 @@ EndSub
 55 ID
   201,17: vj
 
-5 CR_token2
+207 CR_token2
   201,19: 
 
 
-109 Comment CRStmtCRs
-  202,7: 'Set position
-  202,20: 
+122 CRStmtCRs
+  202,1:       'Set position
       Xpos[j] = xj
       Ypos[j] = yj
-      x = xi
-      y = yi
+      x
 
-
-109 CR_token2
+122 CR_token2
   202,20: 
 
 
-109 ID Idxs = Expr
+67 ID Idxs = Expr
   203,7: Xpos
   203,11: [j]
   203,15: =
@@ -7133,11 +7079,11 @@ EndSub
 55 ID
   203,17: xj
 
-5 CR_token2
+207 CR_token2
   203,19: 
 
 
-109 ID Idxs = Expr
+68 ID Idxs = Expr
   204,7: Ypos
   204,11: [j]
   204,15: =
@@ -7161,11 +7107,11 @@ EndSub
 55 ID
   204,17: yj
 
-5 CR_token2
+207 CR_token2
   204,19: 
 
 
-109 ID = Expr
+68 ID = Expr
   205,7: x
   205,9: =
   205,11: xi
@@ -7177,11 +7123,11 @@ EndSub
 70 ID
   205,11: xi
 
-5 CR_token2
+207 CR_token2
   205,13: 
 
 
-109 ID = Expr
+68 ID = Expr
   206,7: y
   206,9: =
   206,11: yi
@@ -7193,30 +7139,31 @@ EndSub
 70 ID
   206,11: yi
 
-5 CR_token2
+207 CR_token2
   206,13: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   207,5: EndIf
 
-218 CR_token2
+203 CR_token2
   207,10: 
 
 
 177 Stmt_token6
   208,3: EndFor
 
-216 CR_token2
+206 CR_token2
   208,9: 
 
 
 257 Stmt_token8
   209,1: EndSub
 
-101 Comment Prog
-  211,1: 'Gravity and friction and follow mouse
-  212,1: Sub gravity
+101 Prog
+  210,1: 
+'Gravity and friction and follow mouse
+Sub gravity
   xm = GraphicsWindow.MouseX-x
   ym = GraphicsWindow.MouseY-y
   dist = xm*xm+ym*ym
@@ -7226,10 +7173,9 @@ EndSub
   v = Yvel[i]
   fricscale = (1-fric/Math.SquareRoot(1+u*u+v*v))
   Xvel[i] = follow*xm/dist+fricscale*u
-  Yvel[i] = follow*ym/dist+fricscale*v+grav
-EndSub
+  Yvel[i] 
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   212,1: Sub
   212,5: gravity
   212,12: 
@@ -7266,7 +7212,7 @@ EndSub
   212,12: 
 
 
-160 ID = Expr
+105 ID = Expr
   213,3: xm
   213,6: =
   213,8: GraphicsWindow.MouseX-x
@@ -7294,11 +7240,11 @@ EndSub
 144 ID
   213,30: x
 
-5 CR_token2
+206 CR_token2
   213,31: 
 
 
-160 ID = Expr
+106 ID = Expr
   214,3: ym
   214,6: =
   214,8: GraphicsWindow.MouseY-y
@@ -7326,11 +7272,11 @@ EndSub
 144 ID
   214,30: y
 
-5 CR_token2
+206 CR_token2
   214,31: 
 
 
-160 ID = Expr
+106 ID = Expr
   215,3: dist
   215,8: =
   215,10: xm*xm+ym*ym
@@ -7363,11 +7309,11 @@ EndSub
 157 ID
   215,19: ym
 
-5 CR_token2
+206 CR_token2
   215,21: 
 
 
-160 ID = Expr
+106 ID = Expr
   216,3: dist
   216,8: =
   216,10: Math.Max(dist,radius*radius)
@@ -7422,19 +7368,18 @@ EndSub
 249 )
   216,37: )
 
-49 CR_token2
+206 CR_token2
   216,38: 
 
 
-160 Comment CRStmtCRs_repeat1
-  217,3: 'dist = dist*Math.SquareRoot(dist)
-  218,3: u = Xvel[i]
+106 CRStmtCRs_repeat1
+  218,3: dist = dist*Math.SquareRoot(dist)
+  u = Xvel[i]
   v = Yvel[i]
   fricscale = (1-fric/Math.SquareRoot(1+u*u+v*v))
-  Xvel[i] = follow*xm/dist+fricscale*u
+  X
 
-
-160 ID = Expr
+106 ID = Expr
   218,3: u
   218,5: =
   218,7: Xvel[i]
@@ -7458,11 +7403,11 @@ EndSub
 233 ]
   218,13: ]
 
-8 CR_token2
+206 CR_token2
   218,14: 
 
 
-160 ID = Expr
+106 ID = Expr
   219,3: v
   219,5: =
   219,7: Yvel[i]
@@ -7486,11 +7431,11 @@ EndSub
 233 ]
   219,13: ]
 
-8 CR_token2
+206 CR_token2
   219,14: 
 
 
-160 ID = Expr
+106 ID = Expr
   220,3: fricscale
   220,13: =
   220,15: (1-fric/Math.SquareRoot(1+u*u+v*v))
@@ -7581,11 +7526,11 @@ EndSub
 235 )
   220,49: )
 
-37 CR_token2
+206 CR_token2
   220,50: 
 
 
-160 ID Idxs = Expr
+106 ID Idxs = Expr
   221,3: Xvel
   221,7: [i]
   221,11: =
@@ -7637,11 +7582,11 @@ EndSub
 157 ID
   221,38: u
 
-5 CR_token2
+206 CR_token2
   221,39: 
 
 
-160 ID Idxs = Expr
+106 ID Idxs = Expr
   222,3: Yvel
   222,7: [i]
   222,11: =
@@ -7700,16 +7645,17 @@ EndSub
 144 ID
   222,40: grav
 
-5 CR_token2
+206 CR_token2
   222,44: 
 
 
 257 Stmt_token8
   223,1: EndSub
 
-146 Comment Start_repeat1
-  225,1: 'Attract-repell balls to each other
-  226,1: Sub attraction
+101 Start_repeat1
+  224,1: 
+'Attract-repell balls to each other
+Sub attraction
   If (attract <> 0) Then
     For j = i+1 To nball
       xm = Xpos[j]-x
@@ -7892,12 +7838,9 @@ Sub OnMouseDown
   EndIf
   'Select a ball
   If (xm < gw) Then
-    iselect = "True"
-  EndIf
-  ioptions = "True"
-EndSub
+    iselect = "Tru
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   226,1: Sub
   226,5: attraction
   226,15: 
@@ -7940,7 +7883,7 @@ EndSub
   226,15: 
 
 
-160 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+105 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   227,3: If
   227,6: (attract <> 0)
   227,21: Then
@@ -7998,7 +7941,7 @@ EndSub
   227,25: 
 
 
-109 Stmt_token4 ID = Expr Stmt_token5 Expr Stmt_repeat1 Stmt_token6
+67 Stmt_token4 ID = Expr Stmt_token5 Expr Stmt_repeat1 Stmt_token6
   228,5: For
   228,9: j
   228,11: =
@@ -8084,11 +8027,11 @@ EndSub
 83 ID
   228,20: nball
 
-5 CR_token2
+145 CR_token2
   228,25: 
 
 
-137 ID = Expr
+88 ID = Expr
   229,7: xm
   229,10: =
   229,12: Xpos[j]-x
@@ -8119,11 +8062,11 @@ EndSub
 144 ID
   229,20: x
 
-5 CR_token2
+203 CR_token2
   229,21: 
 
 
-137 ID = Expr
+96 ID = Expr
   230,7: ym
   230,10: =
   230,12: Ypos[j]-y
@@ -8154,11 +8097,11 @@ EndSub
 144 ID
   230,20: y
 
-5 CR_token2
+203 CR_token2
   230,21: 
 
 
-137 ID = Expr
+96 ID = Expr
   231,7: dist
   231,12: =
   231,14: xm*xm+ym*ym
@@ -8191,11 +8134,11 @@ EndSub
 157 ID
   231,23: ym
 
-5 CR_token2
+203 CR_token2
   231,25: 
 
 
-137 ID = Expr
+96 ID = Expr
   232,7: dist
   232,12: =
   232,14: Math.Max(dist,radius*radius)
@@ -8250,24 +8193,22 @@ EndSub
 249 )
   232,41: )
 
-49 CR_token2
+203 CR_token2
   232,42: 
 
 
-177 Comment CRStmtCRs
-  233,7: 'dist = dist*Math.SquareRoot(dist)
-  233,41: 
+177 CRStmtCRs
+  233,1:       'dist = dist*Math.SquareRoot(dist)
       Xvel[i] = attract*xm/dist+Xvel[i]
       Yvel[i] = attract*ym/dist+Yvel[i]
       Xvel[j] = attract*xm/dist+Xvel[j]
-      Yvel[j] = -attract*ym/dist+Yvel[j]
+ 
 
-
-137 CR_token2
+177 CR_token2
   233,41: 
 
 
-137 ID Idxs = Expr
+88 ID Idxs = Expr
   234,7: Xvel
   234,11: [i]
   234,15: =
@@ -8324,11 +8265,11 @@ EndSub
 233 ]
   234,39: ]
 
-8 CR_token2
+203 CR_token2
   234,40: 
 
 
-137 ID Idxs = Expr
+96 ID Idxs = Expr
   235,7: Yvel
   235,11: [i]
   235,15: =
@@ -8385,11 +8326,11 @@ EndSub
 233 ]
   235,39: ]
 
-8 CR_token2
+203 CR_token2
   235,40: 
 
 
-137 ID Idxs = Expr
+96 ID Idxs = Expr
   236,7: Xvel
   236,11: [j]
   236,15: =
@@ -8446,11 +8387,11 @@ EndSub
 233 ]
   236,39: ]
 
-8 CR_token2
+203 CR_token2
   236,40: 
 
 
-137 ID Idxs = Expr
+96 ID Idxs = Expr
   237,7: Yvel
   237,11: [j]
   237,15: =
@@ -8511,35 +8452,35 @@ EndSub
 233 ]
   237,40: ]
 
-8 CR_token2
+203 CR_token2
   237,41: 
 
 
 177 Stmt_token6
   238,5: EndFor
 
-216 CR_token2
+207 CR_token2
   238,11: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   239,3: EndIf
 
-218 CR_token2
+206 CR_token2
   239,8: 
 
 
 257 Stmt_token8
   240,1: EndSub
 
-101 Comment Prog
-  242,1: 'Move ball
-  243,1: Sub move
+101 Prog
+  241,1: 
+'Move ball
+Sub move
   ball = balls[i]
-  Shapes.Move(ball,x-radius,y-radius)
-EndSub
+  Shapes.Move(ball,x-radius,y-ra
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   243,1: Sub
   243,5: move
   243,9: 
@@ -8560,7 +8501,7 @@ EndSub
   243,9: 
 
 
-160 ID = Expr
+105 ID = Expr
   244,3: ball
   244,8: =
   244,10: balls[i]
@@ -8584,11 +8525,11 @@ EndSub
 233 ]
   244,17: ]
 
-8 CR_token2
+206 CR_token2
   244,18: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   245,3: Shapes
   245,9: .
   245,10: Move
@@ -8648,16 +8589,17 @@ EndSub
 238 )
   245,37: )
 
-210 CR_token2
+206 CR_token2
   245,38: 
 
 
 257 Stmt_token8
   246,1: EndSub
 
-146 Comment Start_repeat1
-  248,1: 'Update options display
-  249,1: Sub options
+101 Start_repeat1
+  247,1: 
+'Update options display
+Sub options
   GraphicsWindow.PenColor = "Black"
   GraphicsWindow.DrawLine(gw,0,gw,gh)
   GraphicsWindow.BrushColor = "LightBlue"
@@ -8819,10 +8761,9 @@ Sub OnMouseDown
   If (xm < gw) Then
     iselect = "True"
   EndIf
-  ioptions = "True"
-EndSub
+ 
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   249,1: Sub
   249,5: options
   249,12: 
@@ -8965,7 +8906,7 @@ EndSub
   249,12: 
 
 
-160 ID . ID = Expr
+105 ID . ID = Expr
   250,3: GraphicsWindow
   250,17: .
   250,18: PenColor
@@ -8990,11 +8931,11 @@ EndSub
 57 STR
   250,29: "Black"
 
-43 CR_token2
+206 CR_token2
   250,36: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   251,3: GraphicsWindow
   251,17: .
   251,18: DrawLine
@@ -9047,11 +8988,11 @@ EndSub
 238 )
   251,37: )
 
-210 CR_token2
+206 CR_token2
   251,38: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   252,3: GraphicsWindow
   252,17: .
   252,18: BrushColor
@@ -9076,11 +9017,11 @@ EndSub
 57 STR
   252,31: "LightBlue"
 
-43 CR_token2
+206 CR_token2
   252,42: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   253,3: GraphicsWindow
   253,17: .
   253,18: FillRectangle
@@ -9147,11 +9088,11 @@ EndSub
 238 )
   253,50: )
 
-210 CR_token2
+206 CR_token2
   253,51: 
 
 
-160 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+106 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   254,3: For
   254,7: i
   254,9: =
@@ -9198,11 +9139,11 @@ EndSub
 83 NUM
   254,16: 5
 
-43 CR_token2
+145 CR_token2
   254,17: 
 
 
-137 ID . ID ( Exprs )
+88 ID . ID ( Exprs )
   255,5: GraphicsWindow
   255,19: .
   255,20: DrawLine
@@ -9297,18 +9238,18 @@ EndSub
 238 )
   255,59: )
 
-210 CR_token2
+203 CR_token2
   255,60: 
 
 
 177 Stmt_token6
   256,3: EndFor
 
-216 CR_token2
+206 CR_token2
   256,9: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   257,3: GraphicsWindow
   257,17: .
   257,18: DrawLine
@@ -9375,12 +9316,12 @@ EndSub
 238 )
   257,47: )
 
-210 CR_token2
+206 CR_token2
   257,48: 
 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   259,3: GraphicsWindow
   259,17: .
   259,18: BrushColor
@@ -9405,11 +9346,11 @@ EndSub
 57 STR
   259,31: "Black"
 
-43 CR_token2
+206 CR_token2
   259,38: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   260,3: GraphicsWindow
   260,17: .
   260,18: DrawBoundText
@@ -9469,11 +9410,11 @@ EndSub
 238 )
   260,53: )
 
-210 CR_token2
+206 CR_token2
   260,54: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   261,3: GraphicsWindow
   261,17: .
   261,18: DrawBoundText
@@ -9533,11 +9474,11 @@ EndSub
 238 )
   261,48: )
 
-210 CR_token2
+206 CR_token2
   261,49: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   262,3: GraphicsWindow
   262,17: .
   262,18: DrawBoundText
@@ -9597,11 +9538,11 @@ EndSub
 238 )
   262,55: )
 
-210 CR_token2
+206 CR_token2
   262,56: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   263,3: GraphicsWindow
   263,17: .
   263,18: DrawBoundText
@@ -9661,11 +9602,11 @@ EndSub
 238 )
   263,49: )
 
-210 CR_token2
+206 CR_token2
   263,50: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   264,3: GraphicsWindow
   264,17: .
   264,18: DrawBoundText
@@ -9725,11 +9666,11 @@ EndSub
 238 )
   264,53: )
 
-210 CR_token2
+206 CR_token2
   264,54: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   265,3: GraphicsWindow
   265,17: .
   265,18: DrawBoundText
@@ -9789,11 +9730,11 @@ EndSub
 238 )
   265,51: )
 
-210 CR_token2
+206 CR_token2
   265,52: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   266,3: GraphicsWindow
   266,17: .
   266,18: DrawBoundText
@@ -9853,11 +9794,11 @@ EndSub
 238 )
   266,51: )
 
-210 CR_token2
+206 CR_token2
   266,52: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   267,3: GraphicsWindow
   267,17: .
   267,18: DrawBoundText
@@ -9917,11 +9858,11 @@ EndSub
 238 )
   267,51: )
 
-210 CR_token2
+206 CR_token2
   267,52: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   268,3: GraphicsWindow
   268,17: .
   268,18: DrawBoundText
@@ -9981,11 +9922,11 @@ EndSub
 238 )
   268,52: )
 
-210 CR_token2
+206 CR_token2
   268,53: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   269,3: GraphicsWindow
   269,17: .
   269,18: DrawBoundText
@@ -10045,11 +9986,11 @@ EndSub
 238 )
   269,50: )
 
-210 CR_token2
+206 CR_token2
   269,51: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   270,3: GraphicsWindow
   270,17: .
   270,18: DrawBoundText
@@ -10109,11 +10050,11 @@ EndSub
 238 )
   270,91: )
 
-210 CR_token2
+206 CR_token2
   270,92: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   271,3: GraphicsWindow
   271,17: .
   271,18: BrushColor
@@ -10138,11 +10079,11 @@ EndSub
 57 STR
   271,31: "Red"
 
-43 CR_token2
+206 CR_token2
   271,36: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   272,3: GraphicsWindow
   272,17: .
   272,18: DrawBoundText
@@ -10202,11 +10143,11 @@ EndSub
 238 )
   272,52: )
 
-210 CR_token2
+206 CR_token2
   272,53: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   273,3: GraphicsWindow
   273,17: .
   273,18: DrawBoundText
@@ -10266,11 +10207,11 @@ EndSub
 238 )
   273,52: )
 
-210 CR_token2
+206 CR_token2
   273,53: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   274,3: GraphicsWindow
   274,17: .
   274,18: DrawBoundText
@@ -10330,11 +10271,11 @@ EndSub
 238 )
   274,50: )
 
-210 CR_token2
+206 CR_token2
   274,51: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   275,3: GraphicsWindow
   275,17: .
   275,18: DrawBoundText
@@ -10394,11 +10335,11 @@ EndSub
 238 )
   275,51: )
 
-210 CR_token2
+206 CR_token2
   275,52: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   276,3: GraphicsWindow
   276,17: .
   276,18: DrawBoundText
@@ -10458,11 +10399,11 @@ EndSub
 238 )
   276,51: )
 
-210 CR_token2
+206 CR_token2
   276,52: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   277,3: GraphicsWindow
   277,17: .
   277,18: DrawBoundText
@@ -10522,11 +10463,11 @@ EndSub
 238 )
   277,51: )
 
-210 CR_token2
+206 CR_token2
   277,52: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   278,3: GraphicsWindow
   278,17: .
   278,18: DrawBoundText
@@ -10586,11 +10527,11 @@ EndSub
 238 )
   278,51: )
 
-210 CR_token2
+206 CR_token2
   278,52: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   279,3: GraphicsWindow
   279,17: .
   279,18: BrushColor
@@ -10615,11 +10556,11 @@ EndSub
 57 STR
   279,31: "Blue"
 
-43 CR_token2
+206 CR_token2
   279,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   280,3: GraphicsWindow
   280,17: .
   280,18: DrawBoundText
@@ -10679,11 +10620,11 @@ EndSub
 238 )
   280,50: )
 
-210 CR_token2
+206 CR_token2
   280,51: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   281,3: GraphicsWindow
   281,17: .
   281,18: DrawBoundText
@@ -10743,11 +10684,11 @@ EndSub
 238 )
   281,51: )
 
-210 CR_token2
+206 CR_token2
   281,52: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   282,3: GraphicsWindow
   282,17: .
   282,18: DrawBoundText
@@ -10807,11 +10748,11 @@ EndSub
 238 )
   282,51: )
 
-210 CR_token2
+206 CR_token2
   282,52: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   283,3: GraphicsWindow
   283,17: .
   283,18: DrawBoundText
@@ -10871,11 +10812,11 @@ EndSub
 238 )
   283,51: )
 
-210 CR_token2
+206 CR_token2
   283,52: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   284,3: GraphicsWindow
   284,17: .
   284,18: DrawBoundText
@@ -10935,12 +10876,12 @@ EndSub
 238 )
   284,51: )
 
-210 CR_token2
+206 CR_token2
   284,52: 
 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   286,3: GraphicsWindow
   286,17: .
   286,18: BrushColor
@@ -10965,11 +10906,11 @@ EndSub
 57 STR
   286,31: "Black"
 
-43 CR_token2
+206 CR_token2
   286,38: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   287,3: GraphicsWindow
   287,17: .
   287,18: DrawBoundText
@@ -11029,11 +10970,11 @@ EndSub
 238 )
   287,52: )
 
-210 CR_token2
+206 CR_token2
   287,53: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   288,3: GraphicsWindow
   288,17: .
   288,18: DrawBoundText
@@ -11093,11 +11034,11 @@ EndSub
 238 )
   288,47: )
 
-210 CR_token2
+206 CR_token2
   288,48: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   289,3: GraphicsWindow
   289,17: .
   289,18: DrawBoundText
@@ -11157,11 +11098,11 @@ EndSub
 238 )
   289,58: )
 
-210 CR_token2
+206 CR_token2
   289,59: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   290,3: GraphicsWindow
   290,17: .
   290,18: DrawBoundText
@@ -11221,11 +11162,11 @@ EndSub
 238 )
   290,53: )
 
-210 CR_token2
+206 CR_token2
   290,54: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   291,3: GraphicsWindow
   291,17: .
   291,18: DrawBoundText
@@ -11285,11 +11226,11 @@ EndSub
 238 )
   291,55: )
 
-210 CR_token2
+206 CR_token2
   291,56: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   292,3: GraphicsWindow
   292,17: .
   292,18: DrawBoundText
@@ -11349,11 +11290,11 @@ EndSub
 238 )
   292,53: )
 
-210 CR_token2
+206 CR_token2
   292,54: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   293,3: GraphicsWindow
   293,17: .
   293,18: DrawBoundText
@@ -11413,11 +11354,11 @@ EndSub
 238 )
   293,54: )
 
-210 CR_token2
+206 CR_token2
   293,55: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   294,3: GraphicsWindow
   294,17: .
   294,18: BrushColor
@@ -11442,11 +11383,11 @@ EndSub
 57 STR
   294,31: "Red"
 
-43 CR_token2
+206 CR_token2
   294,36: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   295,3: GraphicsWindow
   295,17: .
   295,18: DrawBoundText
@@ -11506,11 +11447,11 @@ EndSub
 238 )
   295,51: )
 
-210 CR_token2
+206 CR_token2
   295,52: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   296,3: GraphicsWindow
   296,17: .
   296,18: DrawBoundText
@@ -11570,11 +11511,11 @@ EndSub
 238 )
   296,52: )
 
-210 CR_token2
+206 CR_token2
   296,53: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   297,3: GraphicsWindow
   297,17: .
   297,18: DrawBoundText
@@ -11634,11 +11575,11 @@ EndSub
 238 )
   297,52: )
 
-210 CR_token2
+206 CR_token2
   297,53: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   298,3: GraphicsWindow
   298,17: .
   298,18: BrushColor
@@ -11663,11 +11604,11 @@ EndSub
 57 STR
   298,31: "Blue"
 
-43 CR_token2
+206 CR_token2
   298,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   299,3: GraphicsWindow
   299,17: .
   299,18: DrawBoundText
@@ -11727,11 +11668,11 @@ EndSub
 238 )
   299,51: )
 
-210 CR_token2
+206 CR_token2
   299,52: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   300,3: GraphicsWindow
   300,17: .
   300,18: DrawBoundText
@@ -11791,11 +11732,11 @@ EndSub
 238 )
   300,52: )
 
-210 CR_token2
+206 CR_token2
   300,53: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   301,3: GraphicsWindow
   301,17: .
   301,18: DrawBoundText
@@ -11855,11 +11796,11 @@ EndSub
 238 )
   301,52: )
 
-210 CR_token2
+206 CR_token2
   301,53: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   302,3: GraphicsWindow
   302,17: .
   302,18: BrushColor
@@ -11884,11 +11825,11 @@ EndSub
 57 STR
   302,31: "Red"
 
-43 CR_token2
+206 CR_token2
   302,36: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   303,3: GraphicsWindow
   303,17: .
   303,18: DrawBoundText
@@ -11948,11 +11889,11 @@ EndSub
 238 )
   303,51: )
 
-210 CR_token2
+206 CR_token2
   303,52: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   304,3: GraphicsWindow
   304,17: .
   304,18: BrushColor
@@ -11977,11 +11918,11 @@ EndSub
 57 STR
   304,31: "Blue"
 
-43 CR_token2
+206 CR_token2
   304,37: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   305,3: GraphicsWindow
   305,17: .
   305,18: DrawBoundText
@@ -12041,11 +11982,11 @@ EndSub
 238 )
   305,52: )
 
-210 CR_token2
+206 CR_token2
   305,53: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   306,3: GraphicsWindow
   306,17: .
   306,18: BrushColor
@@ -12070,11 +12011,11 @@ EndSub
 57 STR
   306,31: "Yellow"
 
-43 CR_token2
+206 CR_token2
   306,39: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   307,3: GraphicsWindow
   307,17: .
   307,18: DrawBoundText
@@ -12134,11 +12075,11 @@ EndSub
 238 )
   307,54: )
 
-210 CR_token2
+206 CR_token2
   307,55: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   308,3: GraphicsWindow
   308,17: .
   308,18: BrushColor
@@ -12163,11 +12104,11 @@ EndSub
 57 STR
   308,31: "Black"
 
-43 CR_token2
+206 CR_token2
   308,38: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   309,3: GraphicsWindow
   309,17: .
   309,18: DrawBoundText
@@ -12227,11 +12168,11 @@ EndSub
 238 )
   309,53: )
 
-210 CR_token2
+206 CR_token2
   309,54: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   310,3: GraphicsWindow
   310,17: .
   310,18: BrushColor
@@ -12256,11 +12197,11 @@ EndSub
 57 STR
   310,31: "Red"
 
-43 CR_token2
+206 CR_token2
   310,36: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   311,3: GraphicsWindow
   311,17: .
   311,18: DrawBoundText
@@ -12320,11 +12261,11 @@ EndSub
 238 )
   311,54: )
 
-210 CR_token2
+206 CR_token2
   311,55: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   312,3: GraphicsWindow
   312,17: .
   312,18: DrawBoundText
@@ -12384,16 +12325,17 @@ EndSub
 238 )
   312,54: )
 
-210 CR_token2
+206 CR_token2
   312,55: 
 
 
 257 Stmt_token8
   313,1: EndSub
 
-101 Comment Prog
-  315,1: 'Change settings
-  316,1: Sub OnMouseDown
+101 Prog
+  314,1: 
+'Change settings
+Sub OnMouseDown
   xm = GraphicsWindow.MouseX
   ym = GraphicsWindow.MouseY
   'Left column settings
@@ -12488,10 +12430,9 @@ EndSub
   If (xm < gw) Then
     iselect = "True"
   EndIf
-  ioptions = "True"
-EndSub
+  ioptio
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   316,1: Sub
   316,5: OnMouseDown
   316,16: 
@@ -12698,7 +12639,7 @@ EndSub
   316,16: 
 
 
-160 ID = Expr
+105 ID = Expr
   317,3: xm
   317,6: =
   317,8: GraphicsWindow.MouseX
@@ -12719,11 +12660,11 @@ EndSub
 260 ID
   317,23: MouseX
 
-24 CR_token2
+206 CR_token2
   317,29: 
 
 
-160 ID = Expr
+106 ID = Expr
   318,3: ym
   318,6: =
   318,8: GraphicsWindow.MouseY
@@ -12744,13 +12685,13 @@ EndSub
 260 ID
   318,23: MouseY
 
-24 CR_token2
+206 CR_token2
   318,29: 
 
 
-160 Comment TheRest
-  319,3: 'Left column settings
-  320,3: If (xm > gw+15 And xm < gw+85) Then
+106 TheRest
+  320,3: Left column settings
+  If (xm > gw+15 And xm < gw+85) Then
     If (ym > 60 And ym < 75) Then
       grav = grav+0.01
     EndIf
@@ -12790,12 +12731,9 @@ EndSub
       ireset = "True"
     EndIf
     If (ym > 580 And ym < 595) Then
-      istart = "True"
-    EndIf
-  EndIf
+      istart = "T
 
-
-160 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+106 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   320,3: If
   320,6: (xm > gw+15 And xm < gw+85)
   320,34: Then
@@ -12941,7 +12879,7 @@ EndSub
   320,38: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+67 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   321,5: If
   321,8: (ym > 60 And ym < 75)
   321,30: Then
@@ -12993,7 +12931,7 @@ EndSub
   321,34: 
 
 
-109 ID = Expr
+67 ID = Expr
   322,7: grav
   322,12: =
   322,14: grav+0.01
@@ -13012,18 +12950,18 @@ EndSub
 144 NUM
   322,19: 0.01
 
-43 CR_token2
+207 CR_token2
   322,23: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   323,5: EndIf
 
-218 CR_token2
+207 CR_token2
   323,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   324,5: If
   324,8: (ym > 80 And ym < 95)
   324,30: Then
@@ -13075,7 +13013,7 @@ EndSub
   324,34: 
 
 
-109 ID = Expr
+67 ID = Expr
   325,7: grav
   325,12: =
   325,14: grav-0.01
@@ -13094,18 +13032,18 @@ EndSub
 144 NUM
   325,19: 0.01
 
-43 CR_token2
+207 CR_token2
   325,23: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   326,5: EndIf
 
-218 CR_token2
+207 CR_token2
   326,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   327,5: If
   327,8: (ym > 160 And ym < 175)
   327,32: Then
@@ -13157,7 +13095,7 @@ EndSub
   327,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   328,7: fric
   328,12: =
   328,14: fric+0.001
@@ -13176,18 +13114,18 @@ EndSub
 144 NUM
   328,19: 0.001
 
-43 CR_token2
+207 CR_token2
   328,24: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   329,5: EndIf
 
-218 CR_token2
+207 CR_token2
   329,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   330,5: If
   330,8: (ym > 180 And ym < 195)
   330,32: Then
@@ -13239,7 +13177,7 @@ EndSub
   330,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   331,7: fric
   331,12: =
   331,14: fric-0.001
@@ -13258,18 +13196,18 @@ EndSub
 144 NUM
   331,19: 0.001
 
-43 CR_token2
+207 CR_token2
   331,24: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   332,5: EndIf
 
-218 CR_token2
+207 CR_token2
   332,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   333,5: If
   333,8: (ym > 260 And ym < 275)
   333,32: Then
@@ -13321,7 +13259,7 @@ EndSub
   333,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   334,7: follow
   334,14: =
   334,16: follow+1
@@ -13340,18 +13278,18 @@ EndSub
 144 NUM
   334,23: 1
 
-43 CR_token2
+207 CR_token2
   334,24: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   335,5: EndIf
 
-218 CR_token2
+207 CR_token2
   335,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   336,5: If
   336,8: (ym > 280 And ym < 295)
   336,32: Then
@@ -13403,7 +13341,7 @@ EndSub
   336,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   337,7: follow
   337,14: =
   337,16: follow-1
@@ -13422,18 +13360,18 @@ EndSub
 144 NUM
   337,23: 1
 
-43 CR_token2
+207 CR_token2
   337,24: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   338,5: EndIf
 
-218 CR_token2
+207 CR_token2
   338,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   339,5: If
   339,8: (ym > 360 And ym < 375)
   339,32: Then
@@ -13489,7 +13427,7 @@ EndSub
   339,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   340,7: radius
   340,14: =
   340,16: radius+1
@@ -13508,11 +13446,11 @@ EndSub
 144 NUM
   340,23: 1
 
-43 CR_token2
+207 CR_token2
   340,24: 
 
 
-109 ID = Expr
+68 ID = Expr
   341,7: diam
   341,12: =
   341,14: 2*radius
@@ -13531,11 +13469,11 @@ EndSub
 157 ID
   341,16: radius
 
-5 CR_token2
+207 CR_token2
   341,22: 
 
 
-109 ID = Expr
+68 ID = Expr
   342,7: ireset
   342,14: =
   342,16: "True"
@@ -13547,18 +13485,18 @@ EndSub
 70 STR
   342,16: "True"
 
-43 CR_token2
+207 CR_token2
   342,22: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   343,5: EndIf
 
-218 CR_token2
+207 CR_token2
   343,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   344,5: If
   344,8: (ym > 380 And ym < 395)
   344,32: Then
@@ -13616,7 +13554,7 @@ EndSub
   344,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   345,7: radius
   345,14: =
   345,16: radius-1
@@ -13635,11 +13573,11 @@ EndSub
 144 NUM
   345,23: 1
 
-43 CR_token2
+207 CR_token2
   345,24: 
 
 
-109 ID = Expr
+68 ID = Expr
   346,7: radius
   346,14: =
   346,16: Math.Max(1,radius)
@@ -13687,11 +13625,11 @@ EndSub
 249 )
   346,33: )
 
-49 CR_token2
+207 CR_token2
   346,34: 
 
 
-109 ID = Expr
+68 ID = Expr
   347,7: diam
   347,12: =
   347,14: 2*radius
@@ -13710,11 +13648,11 @@ EndSub
 157 ID
   347,16: radius
 
-5 CR_token2
+207 CR_token2
   347,22: 
 
 
-109 ID = Expr
+68 ID = Expr
   348,7: ireset
   348,14: =
   348,16: "True"
@@ -13726,18 +13664,18 @@ EndSub
 70 STR
   348,16: "True"
 
-43 CR_token2
+207 CR_token2
   348,22: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   349,5: EndIf
 
-218 CR_token2
+207 CR_token2
   349,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   350,5: If
   350,8: (ym > 460 And ym < 475)
   350,32: Then
@@ -13791,7 +13729,7 @@ EndSub
   350,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   351,7: nball
   351,13: =
   351,15: nball+1
@@ -13810,11 +13748,11 @@ EndSub
 144 NUM
   351,21: 1
 
-43 CR_token2
+207 CR_token2
   351,22: 
 
 
-109 ID = Expr
+68 ID = Expr
   352,7: ireset
   352,14: =
   352,16: "True"
@@ -13826,18 +13764,18 @@ EndSub
 70 STR
   352,16: "True"
 
-43 CR_token2
+207 CR_token2
   352,22: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   353,5: EndIf
 
-218 CR_token2
+207 CR_token2
   353,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   354,5: If
   354,8: (ym > 480 And ym < 495)
   354,32: Then
@@ -13893,7 +13831,7 @@ EndSub
   354,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   355,7: nball
   355,13: =
   355,15: nball-1
@@ -13912,11 +13850,11 @@ EndSub
 144 NUM
   355,21: 1
 
-43 CR_token2
+207 CR_token2
   355,22: 
 
 
-109 ID = Expr
+68 ID = Expr
   356,7: nball
   356,13: =
   356,15: Math.Max(1,nball)
@@ -13964,11 +13902,11 @@ EndSub
 249 )
   356,31: )
 
-49 CR_token2
+207 CR_token2
   356,32: 
 
 
-109 ID = Expr
+68 ID = Expr
   357,7: ireset
   357,14: =
   357,16: "True"
@@ -13980,18 +13918,18 @@ EndSub
 70 STR
   357,16: "True"
 
-43 CR_token2
+207 CR_token2
   357,22: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   358,5: EndIf
 
-218 CR_token2
+207 CR_token2
   358,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   359,5: If
   359,8: (ym > 580 And ym < 595)
   359,32: Then
@@ -14043,7 +13981,7 @@ EndSub
   359,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   360,7: istart
   360,14: =
   360,16: "True"
@@ -14055,27 +13993,27 @@ EndSub
 70 STR
   360,16: "True"
 
-43 CR_token2
+207 CR_token2
   360,22: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   361,5: EndIf
 
-218 CR_token2
+207 CR_token2
   361,10: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   362,3: EndIf
 
-218 CR_token2
+206 CR_token2
   362,8: 
 
 
-160 Comment CRStmtCRs_repeat1
-  363,3: 'Right column settings
-  364,3: If (xm > gw+115 And xm < gw+185) Then
+106 CRStmtCRs_repeat1
+  364,3: Right column settings
+  If (xm > gw+115 And xm < gw+185) Then
     If (ym > 60 And ym < 75) Then
       dt = dt+0.1
     EndIf
@@ -14120,11 +14058,9 @@ EndSub
   EndIf
   'Select a ball
   If (xm < gw) Then
-    iselect = "True"
-  EndIf
+    i
 
-
-160 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+106 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   364,3: If
   364,6: (xm > gw+115 And xm < gw+185)
   364,36: Then
@@ -14270,7 +14206,7 @@ EndSub
   364,40: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+67 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   365,5: If
   365,8: (ym > 60 And ym < 75)
   365,30: Then
@@ -14322,7 +14258,7 @@ EndSub
   365,34: 
 
 
-109 ID = Expr
+67 ID = Expr
   366,7: dt
   366,10: =
   366,12: dt+0.1
@@ -14341,18 +14277,18 @@ EndSub
 144 NUM
   366,15: 0.1
 
-43 CR_token2
+207 CR_token2
   366,18: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   367,5: EndIf
 
-218 CR_token2
+207 CR_token2
   367,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   368,5: If
   368,8: (ym > 80 And ym < 95)
   368,30: Then
@@ -14404,7 +14340,7 @@ EndSub
   368,34: 
 
 
-109 ID = Expr
+67 ID = Expr
   369,7: dt
   369,10: =
   369,12: dt-0.1
@@ -14423,18 +14359,18 @@ EndSub
 144 NUM
   369,15: 0.1
 
-43 CR_token2
+207 CR_token2
   369,18: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   370,5: EndIf
 
-218 CR_token2
+207 CR_token2
   370,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   371,5: If
   371,8: (ym > 160 And ym < 175)
   371,32: Then
@@ -14486,7 +14422,7 @@ EndSub
   371,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   372,7: attract
   372,15: =
   372,17: attract+1
@@ -14505,18 +14441,18 @@ EndSub
 144 NUM
   372,25: 1
 
-43 CR_token2
+207 CR_token2
   372,26: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   373,5: EndIf
 
-218 CR_token2
+207 CR_token2
   373,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   374,5: If
   374,8: (ym > 180 And ym < 195)
   374,32: Then
@@ -14568,7 +14504,7 @@ EndSub
   374,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   375,7: attract
   375,15: =
   375,17: attract-1
@@ -14587,18 +14523,18 @@ EndSub
 144 NUM
   375,25: 1
 
-43 CR_token2
+207 CR_token2
   375,26: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   376,5: EndIf
 
-218 CR_token2
+207 CR_token2
   376,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   377,5: If
   377,8: (ym > 260 And ym < 275)
   377,32: Then
@@ -14650,7 +14586,7 @@ EndSub
   377,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   378,7: elastic
   378,15: =
   378,17: elastic+0.01
@@ -14669,18 +14605,18 @@ EndSub
 144 NUM
   378,25: 0.01
 
-43 CR_token2
+207 CR_token2
   378,29: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   379,5: EndIf
 
-218 CR_token2
+207 CR_token2
   379,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   380,5: If
   380,8: (ym > 280 And ym < 295)
   380,32: Then
@@ -14732,7 +14668,7 @@ EndSub
   380,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   381,7: elastic
   381,15: =
   381,17: elastic-0.01
@@ -14751,18 +14687,18 @@ EndSub
 144 NUM
   381,25: 0.01
 
-43 CR_token2
+207 CR_token2
   381,29: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   382,5: EndIf
 
-218 CR_token2
+207 CR_token2
   382,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   383,5: If
   383,8: (ym > 340 And ym < 355)
   383,32: Then
@@ -14816,7 +14752,7 @@ EndSub
   383,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   384,7: Colour
   384,14: =
   384,16: "Red"
@@ -14828,11 +14764,11 @@ EndSub
 70 STR
   384,16: "Red"
 
-43 CR_token2
+207 CR_token2
   384,21: 
 
 
-109 ID = Expr
+68 ID = Expr
   385,7: ireset
   385,14: =
   385,16: "True"
@@ -14844,18 +14780,18 @@ EndSub
 70 STR
   385,16: "True"
 
-43 CR_token2
+207 CR_token2
   385,22: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   386,5: EndIf
 
-218 CR_token2
+207 CR_token2
   386,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   387,5: If
   387,8: (ym > 360 And ym < 375)
   387,32: Then
@@ -14909,7 +14845,7 @@ EndSub
   387,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   388,7: Colour
   388,14: =
   388,16: "Blue"
@@ -14921,11 +14857,11 @@ EndSub
 70 STR
   388,16: "Blue"
 
-43 CR_token2
+207 CR_token2
   388,22: 
 
 
-109 ID = Expr
+68 ID = Expr
   389,7: ireset
   389,14: =
   389,16: "True"
@@ -14937,18 +14873,18 @@ EndSub
 70 STR
   389,16: "True"
 
-43 CR_token2
+207 CR_token2
   389,22: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   390,5: EndIf
 
-218 CR_token2
+207 CR_token2
   390,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   391,5: If
   391,8: (ym > 380 And ym < 395)
   391,32: Then
@@ -15002,7 +14938,7 @@ EndSub
   391,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   392,7: Colour
   392,14: =
   392,16: "Yellow"
@@ -15014,11 +14950,11 @@ EndSub
 70 STR
   392,16: "Yellow"
 
-43 CR_token2
+207 CR_token2
   392,24: 
 
 
-109 ID = Expr
+68 ID = Expr
   393,7: ireset
   393,14: =
   393,16: "True"
@@ -15030,18 +14966,18 @@ EndSub
 70 STR
   393,16: "True"
 
-43 CR_token2
+207 CR_token2
   393,22: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   394,5: EndIf
 
-218 CR_token2
+207 CR_token2
   394,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   395,5: If
   395,8: (ym > 440 And ym < 455)
   395,32: Then
@@ -15095,7 +15031,7 @@ EndSub
   395,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   396,7: Shape
   396,13: =
   396,15: 0
@@ -15107,11 +15043,11 @@ EndSub
 70 NUM
   396,15: 0
 
-43 CR_token2
+207 CR_token2
   396,16: 
 
 
-109 ID = Expr
+68 ID = Expr
   397,7: ireset
   397,14: =
   397,16: "True"
@@ -15123,18 +15059,18 @@ EndSub
 70 STR
   397,16: "True"
 
-43 CR_token2
+207 CR_token2
   397,22: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   398,5: EndIf
 
-218 CR_token2
+207 CR_token2
   398,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   399,5: If
   399,8: (ym > 460 And ym < 475)
   399,32: Then
@@ -15188,7 +15124,7 @@ EndSub
   399,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   400,7: Shape
   400,13: =
   400,15: 1
@@ -15200,11 +15136,11 @@ EndSub
 70 NUM
   400,15: 1
 
-43 CR_token2
+207 CR_token2
   400,16: 
 
 
-109 ID = Expr
+68 ID = Expr
   401,7: ireset
   401,14: =
   401,16: "True"
@@ -15216,18 +15152,18 @@ EndSub
 70 STR
   401,16: "True"
 
-43 CR_token2
+207 CR_token2
   401,22: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   402,5: EndIf
 
-218 CR_token2
+207 CR_token2
   402,10: 
 
 
-109 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+68 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   403,5: If
   403,8: (ym > 580 And ym < 595)
   403,32: Then
@@ -15279,7 +15215,7 @@ EndSub
   403,36: 
 
 
-109 ID = Expr
+67 ID = Expr
   404,7: iend
   404,12: =
   404,14: "True"
@@ -15291,32 +15227,30 @@ EndSub
 70 STR
   404,14: "True"
 
-43 CR_token2
+207 CR_token2
   404,20: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   405,5: EndIf
 
-218 CR_token2
+207 CR_token2
   405,10: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   406,3: EndIf
 
-218 CR_token2
+206 CR_token2
   406,8: 
 
 
-107 Comment TheRest
-  407,3: 'Select a ball
-  408,3: If (xm < gw) Then
-    iselect = "True"
-  EndIf
+107 TheRest
+  408,3: Select a ball
+  If (xm < gw) Then
+    iselect =
 
-
-160 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+106 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   408,3: If
   408,6: (xm < gw)
   408,16: Then
@@ -15354,7 +15288,7 @@ EndSub
   408,20: 
 
 
-109 ID = Expr
+67 ID = Expr
   409,5: iselect
   409,13: =
   409,15: "True"
@@ -15366,18 +15300,18 @@ EndSub
 70 STR
   409,15: "True"
 
-43 CR_token2
+207 CR_token2
   409,21: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   410,3: EndIf
 
-218 CR_token2
+206 CR_token2
   410,8: 
 
 
-160 ID = Expr
+106 ID = Expr
   411,3: ioptions
   411,12: =
   411,14: "True"
@@ -15389,16 +15323,17 @@ EndSub
 70 STR
   411,14: "True"
 
-43 CR_token2
+206 CR_token2
   411,20: 
 
 
 257 Stmt_token8
   412,1: EndSub
 
-146 Comment Prog
-  414,1: 'Reset new balls
-  415,1: Sub reset
+97 Prog
+  413,1: 
+'Reset new balls
+Sub reset
   mball = Array.GetItemCount(balls)
   For i = 1 To mball
     balls[i] = ""
@@ -15429,11 +15364,9 @@ EndSub
       Ypos[i] = y
       Xvel[i] = u
       Yvel[i] = v
-    EndIf
-  EndFor
-EndSub
+    End
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   415,1: Sub
   415,5: reset
   415,10: 
@@ -15514,7 +15447,7 @@ EndSub
   415,10: 
 
 
-160 ID = Expr
+105 ID = Expr
   416,3: mball
   416,9: =
   416,11: Array.GetItemCount(balls)
@@ -15555,11 +15488,11 @@ EndSub
 249 )
   416,35: )
 
-49 CR_token2
+206 CR_token2
   416,36: 
 
 
-160 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+106 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   417,3: For
   417,7: i
   417,9: =
@@ -15630,11 +15563,11 @@ EndSub
 83 ID
   417,16: mball
 
-5 CR_token2
+145 CR_token2
   417,21: 
 
 
-137 ID Idxs = Expr
+88 ID Idxs = Expr
   418,5: balls
   418,10: [i]
   418,14: =
@@ -15658,11 +15591,11 @@ EndSub
 55 STR
   418,16: ""
 
-43 CR_token2
+203 CR_token2
   418,18: 
 
 
-137 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+96 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   419,5: If
   419,8: (istart Or i > nball)
   419,30: Then
@@ -15713,7 +15646,7 @@ EndSub
   419,34: 
 
 
-109 ID Idxs = Expr
+67 ID Idxs = Expr
   420,7: Xpos
   420,11: [i]
   420,15: =
@@ -15737,11 +15670,11 @@ EndSub
 55 STR
   420,17: ""
 
-43 CR_token2
+207 CR_token2
   420,19: 
 
 
-109 ID Idxs = Expr
+68 ID Idxs = Expr
   421,7: Ypos
   421,11: [i]
   421,15: =
@@ -15765,11 +15698,11 @@ EndSub
 55 STR
   421,17: ""
 
-43 CR_token2
+207 CR_token2
   421,19: 
 
 
-109 ID Idxs = Expr
+68 ID Idxs = Expr
   422,7: Xvel
   422,11: [i]
   422,15: =
@@ -15793,11 +15726,11 @@ EndSub
 55 STR
   422,17: ""
 
-43 CR_token2
+207 CR_token2
   422,19: 
 
 
-109 ID Idxs = Expr
+68 ID Idxs = Expr
   423,7: Yvel
   423,11: [i]
   423,15: =
@@ -15821,25 +15754,25 @@ EndSub
 55 STR
   423,17: ""
 
-43 CR_token2
+207 CR_token2
   423,19: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   424,5: EndIf
 
-218 CR_token2
+203 CR_token2
   424,10: 
 
 
 177 Stmt_token6
   425,3: EndFor
 
-216 CR_token2
+206 CR_token2
   425,9: 
 
 
-160 ID . ID ( )
+106 ID . ID ( )
   426,3: GraphicsWindow
   426,17: .
   426,18: Clear
@@ -15864,11 +15797,11 @@ EndSub
 27 )
   426,24: )
 
-208 CR_token2
+206 CR_token2
   426,25: 
 
 
-160 ID ( )
+106 ID ( )
   427,3: options
   427,10: (
   427,11: )
@@ -15880,11 +15813,11 @@ EndSub
 261 )
   427,11: )
 
-215 CR_token2
+206 CR_token2
   427,12: 
 
 
-160 ID . ID = Expr
+106 ID . ID = Expr
   428,3: GraphicsWindow
   428,17: .
   428,18: BrushColor
@@ -15909,11 +15842,11 @@ EndSub
 57 ID
   428,31: Colour
 
-5 CR_token2
+206 CR_token2
   428,37: 
 
 
-160 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+106 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   429,3: For
   429,7: i
   429,9: =
@@ -16024,11 +15957,11 @@ EndSub
 83 ID
   429,16: nball
 
-5 CR_token2
+145 CR_token2
   429,21: 
 
 
-137 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+88 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   430,5: If
   430,8: (shape = 0)
   430,20: Then
@@ -16066,7 +15999,7 @@ EndSub
   430,24: 
 
 
-109 ID = Expr
+67 ID = Expr
   431,7: ball
   431,12: =
   431,14: Shapes.AddEllipse(diam,diam)
@@ -16114,18 +16047,18 @@ EndSub
 249 )
   431,41: )
 
-49 CR_token2
+207 CR_token2
   431,42: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   432,5: EndIf
 
-218 CR_token2
+203 CR_token2
   432,10: 
 
 
-137 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+96 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   433,5: If
   433,8: (shape = 1)
   433,20: Then
@@ -16163,7 +16096,7 @@ EndSub
   433,24: 
 
 
-109 ID = Expr
+67 ID = Expr
   434,7: ball
   434,12: =
   434,14: Shapes.AddRectangle(diam,diam)
@@ -16211,18 +16144,18 @@ EndSub
 249 )
   434,43: )
 
-49 CR_token2
+207 CR_token2
   434,44: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   435,5: EndIf
 
-218 CR_token2
+203 CR_token2
   435,10: 
 
 
-137 ID Idxs = Expr
+96 ID Idxs = Expr
   436,5: balls
   436,10: [i]
   436,14: =
@@ -16246,11 +16179,11 @@ EndSub
 55 ID
   436,16: ball
 
-5 CR_token2
+203 CR_token2
   436,20: 
 
 
-137 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+96 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   437,5: If
   437,8: (istart Or i > mball)
   437,30: Then
@@ -16309,7 +16242,7 @@ EndSub
   437,34: 
 
 
-109 ID = Expr
+67 ID = Expr
   438,7: x
   438,9: =
   438,11: Math.GetRandomNumber(gw)
@@ -16350,11 +16283,11 @@ EndSub
 249 )
   438,34: )
 
-49 CR_token2
+207 CR_token2
   438,35: 
 
 
-109 ID = Expr
+68 ID = Expr
   439,7: y
   439,9: =
   439,11: Math.GetRandomNumber(gh)
@@ -16395,11 +16328,11 @@ EndSub
 249 )
   439,34: )
 
-49 CR_token2
+207 CR_token2
   439,35: 
 
 
-109 ID = Expr
+68 ID = Expr
   440,7: u
   440,9: =
   440,11: Math.GetRandomNumber(500)/100-3
@@ -16454,11 +16387,11 @@ EndSub
 144 NUM
   440,41: 3
 
-43 CR_token2
+207 CR_token2
   440,42: 
 
 
-109 ID = Expr
+68 ID = Expr
   441,7: v
   441,9: =
   441,11: Math.GetRandomNumber(500)/100-3
@@ -16513,11 +16446,11 @@ EndSub
 144 NUM
   441,41: 3
 
-43 CR_token2
+207 CR_token2
   441,42: 
 
 
-109 ID Idxs = Expr
+68 ID Idxs = Expr
   442,7: Xpos
   442,11: [i]
   442,15: =
@@ -16541,11 +16474,11 @@ EndSub
 55 ID
   442,17: x
 
-5 CR_token2
+207 CR_token2
   442,18: 
 
 
-109 ID Idxs = Expr
+68 ID Idxs = Expr
   443,7: Ypos
   443,11: [i]
   443,15: =
@@ -16569,11 +16502,11 @@ EndSub
 55 ID
   443,17: y
 
-5 CR_token2
+207 CR_token2
   443,18: 
 
 
-109 ID Idxs = Expr
+68 ID Idxs = Expr
   444,7: Xvel
   444,11: [i]
   444,15: =
@@ -16597,11 +16530,11 @@ EndSub
 55 ID
   444,17: u
 
-5 CR_token2
+207 CR_token2
   444,18: 
 
 
-109 ID Idxs = Expr
+68 ID Idxs = Expr
   445,7: Yvel
   445,11: [i]
   445,15: =
@@ -16625,21 +16558,21 @@ EndSub
 55 ID
   445,17: v
 
-5 CR_token2
+207 CR_token2
   445,18: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   446,5: EndIf
 
-218 CR_token2
+203 CR_token2
   446,10: 
 
 
 177 Stmt_token6
   447,3: EndFor
 
-216 CR_token2
+206 CR_token2
   447,9: 
 
 

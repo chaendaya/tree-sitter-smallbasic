@@ -10,7 +10,7 @@
 73 NUM
   1,8: 8
 
-9 ID = Expr
+97 ID = Expr
   2,1: columns
   2,9: =
   2,11: 8
@@ -22,7 +22,7 @@
 73 NUM
   2,11: 8
 
-9 ID = Expr
+97 ID = Expr
   3,1: size
   3,6: =
   3,8: 40
@@ -34,7 +34,7 @@
 73 NUM
   3,8: 40
 
-9 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+97 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   5,1: For
   5,5: r
   5,7: =
@@ -97,11 +97,11 @@
 58 ID
   5,14: rows
 
-5 CR_token2
+140 CR_token2
   5,18: 
 
 
-137 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+88 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   6,3: For
   6,7: c
   6,9: =
@@ -156,11 +156,11 @@
 83 ID
   6,16: columns
 
-5 CR_token2
+145 CR_token2
   6,23: 
 
 
-137 ID . ID = Expr
+88 ID . ID = Expr
   7,5: GraphicsWindow
   7,19: .
   7,20: BrushColor
@@ -207,11 +207,11 @@
 26 )
   7,63: )
 
-47 CR_token2
+203 CR_token2
   7,64: 
 
 
-137 ID Idxs = Expr
+96 ID Idxs = Expr
   8,5: boxes
   8,10: [r][c]
   8,17: =
@@ -284,11 +284,11 @@
 249 )
   8,49: )
 
-49 CR_token2
+203 CR_token2
   8,50: 
 
 
-137 ID . ID ( Exprs )
+96 ID . ID ( Exprs )
   9,5: Shapes
   9,11: .
   9,12: Move
@@ -373,21 +373,21 @@
 238 )
   9,48: )
 
-210 CR_token2
+203 CR_token2
   9,49: 
 
 
 177 Stmt_token6
   10,3: EndFor
 
-216 CR_token2
+203 CR_token2
   10,9: 
 
 
 189 Stmt_token6
   11,1: EndFor
 
-151 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+97 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   13,1: For
   13,5: r
   13,7: =
@@ -446,11 +446,11 @@
 58 ID
   13,14: rows
 
-5 CR_token2
+140 CR_token2
   13,18: 
 
 
-137 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+88 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   14,3: For
   14,7: c
   14,9: =
@@ -501,11 +501,11 @@
 83 ID
   14,16: columns
 
-5 CR_token2
+145 CR_token2
   14,23: 
 
 
-137 ID . ID ( Exprs )
+88 ID . ID ( Exprs )
   15,5: Shapes
   15,11: .
   15,12: Animate
@@ -583,11 +583,11 @@
 238 )
   15,43: )
 
-210 CR_token2
+203 CR_token2
   15,44: 
 
 
-137 ID . ID ( Exprs )
+96 ID . ID ( Exprs )
   16,5: Program
   16,12: .
   16,13: Delay
@@ -619,14 +619,14 @@
 238 )
   16,22: )
 
-210 CR_token2
+203 CR_token2
   16,23: 
 
 
 177 Stmt_token6
   17,3: EndFor
 
-216 CR_token2
+203 CR_token2
   17,9: 
 
 

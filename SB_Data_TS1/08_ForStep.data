@@ -49,7 +49,7 @@
 58 NUM
   1,15: 1
 
-43 OptStep_token1 Expr
+140 OptStep_token1 Expr
   1,17: Step
   1,22: -1
 
@@ -60,11 +60,11 @@
 193 NUM
   1,23: 1
 
-43 CR_token2
+178 CR_token2
   1,27: 
 
 
-137 ID . ID ( Exprs )
+88 ID . ID ( Exprs )
   2,2: TextWindow
   2,12: .
   2,13: WriteLine
@@ -96,7 +96,7 @@
 238 )
   2,24: )
 
-210 CR_token2
+203 CR_token2
   2,26: 
 
 

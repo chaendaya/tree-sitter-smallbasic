@@ -35,7 +35,7 @@
 63 STR
   1,26: "Robert"
 
-9 ID Idxs = Expr
+97 ID Idxs = Expr
   2,1: friends
   2,8: ["Rob"]["Phone"]
   2,25: =
@@ -72,7 +72,7 @@
 63 STR
   2,27: "555-6789"
 
-9 ID Idxs = Expr
+97 ID Idxs = Expr
   4,1: friends
   4,8: ["VJ"]["Name"]
   4,23: =
@@ -109,7 +109,7 @@
 63 STR
   4,25: "Vijaye"
 
-9 ID Idxs = Expr
+97 ID Idxs = Expr
   5,1: friends
   5,8: ["VJ"]["Phone"]
   5,24: =
@@ -146,7 +146,7 @@
 63 STR
   5,26: "555-4567"
 
-9 ID Idxs = Expr
+97 ID Idxs = Expr
   7,1: friends
   7,8: ["Ash"]["Name"]
   7,24: =
@@ -183,7 +183,7 @@
 63 STR
   7,26: "Ashley"
 
-9 ID Idxs = Expr
+97 ID Idxs = Expr
   8,1: friends
   8,8: ["Ash"]["Phone"]
   8,25: =
@@ -220,7 +220,7 @@
 63 STR
   8,27: "555-2345"
 
-9 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   10,1: TextWindow
   10,11: .
   10,12: Write
@@ -252,7 +252,7 @@
 240 )
   10,40: )
 
-175 ID = Expr
+97 ID = Expr
   11,1: nickname
   11,10: =
   11,12: TextWindow.Read()
@@ -286,7 +286,7 @@
 21 )
   11,28: )
 
-19 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   13,1: TextWindow
   13,11: .
   13,12: WriteLine
@@ -350,7 +350,7 @@
 240 )
   13,58: )
 
-175 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   14,1: TextWindow
   14,11: .
   14,12: WriteLine

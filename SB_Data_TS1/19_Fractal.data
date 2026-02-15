@@ -23,7 +23,7 @@
 75 STR
   1,34: "Black"
 
-9 ID = Expr
+97 ID = Expr
   2,1: x
   2,3: =
   2,5: 100
@@ -35,7 +35,7 @@
 73 NUM
   2,5: 100
 
-9 ID = Expr
+97 ID = Expr
   3,1: y
   3,3: =
   3,5: 100
@@ -47,7 +47,7 @@
 73 NUM
   3,5: 100
 
-9 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+97 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   5,1: For
   5,5: i
   5,7: =
@@ -158,11 +158,11 @@
 58 NUM
   5,14: 100000
 
-43 CR_token2
+140 CR_token2
   5,23: 
 
 
-137 ID = Expr
+88 ID = Expr
   6,2: r
   6,4: =
   6,6: Math.GetRandomNumber(3)
@@ -203,11 +203,11 @@
 249 )
   6,28: )
 
-49 CR_token2
+203 CR_token2
   6,32: 
 
 
-137 ID = Expr
+96 ID = Expr
   7,2: ux
   7,5: =
   7,7: 150
@@ -219,11 +219,11 @@
 70 NUM
   7,7: 150
 
-43 CR_token2
+203 CR_token2
   7,13: 
 
 
-137 ID = Expr
+96 ID = Expr
   8,2: uy
   8,5: =
   8,7: 30
@@ -235,12 +235,12 @@
 70 NUM
   8,7: 30
 
-43 CR_token2
+203 CR_token2
   8,12: 
 
 
 
-137 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+96 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   10,2: If
   10,5: (r = 1)
   10,13: then
@@ -280,7 +280,7 @@
   10,22: 
 
 
-109 ID = Expr
+67 ID = Expr
   11,3: ux
   11,6: =
   11,8: 30
@@ -292,11 +292,11 @@
 70 NUM
   11,8: 30
 
-43 CR_token2
+207 CR_token2
   11,15: 
 
 
-109 ID = Expr
+68 ID = Expr
   12,3: uy
   12,6: =
   12,8: 1000
@@ -308,19 +308,19 @@
 70 NUM
   12,8: 1000
 
-43 CR_token2
+207 CR_token2
   12,15: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   13,2: EndIf
 
-218 CR_token2
+203 CR_token2
   13,13: 
 
 
 
-137 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+96 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   15,2: If
   15,5: (r = 2)
   15,13: Then
@@ -360,7 +360,7 @@
   15,22: 
 
 
-109 ID = Expr
+67 ID = Expr
   16,3: ux
   16,6: =
   16,8: 1000
@@ -372,11 +372,11 @@
 70 NUM
   16,8: 1000
 
-43 CR_token2
+207 CR_token2
   16,17: 
 
 
-109 ID = Expr
+68 ID = Expr
   17,3: uy
   17,6: =
   17,8: 1000
@@ -388,19 +388,19 @@
 70 NUM
   17,8: 1000
 
-43 CR_token2
+207 CR_token2
   17,15: 
 
 
-109 OptionalElse_token1
+122 OptionalElse_token1
   18,2: EndIf
 
-218 CR_token2
+203 CR_token2
   18,13: 
 
 
 
-137 ID = Expr
+96 ID = Expr
   20,2: x
   20,4: =
   20,6: (x + ux) / 2
@@ -434,11 +434,11 @@
 157 NUM
   20,17: 2
 
-43 CR_token2
+203 CR_token2
   20,21: 
 
 
-137 ID = Expr
+96 ID = Expr
   21,2: y
   21,4: =
   21,6: (y + uy) / 2
@@ -472,11 +472,11 @@
 157 NUM
   21,17: 2
 
-43 CR_token2
+203 CR_token2
   21,25: 
 
 
-137 ID . ID ( Exprs )
+96 ID . ID ( Exprs )
   22,2: GraphicsWindow
   22,16: .
   22,17: SetPixel
@@ -522,7 +522,7 @@
 238 )
   22,44: )
 
-210 CR_token2
+203 CR_token2
   22,46: 
 
 

@@ -30,7 +30,7 @@
 240 )
   1,37: )
 
-175 ID = Expr
+97 ID = Expr
   2,1: name
   2,6: =
   2,8: TextWindow.Read()
@@ -64,7 +64,7 @@
 21 )
   2,24: )
 
-19 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   3,1: TextWindow
   3,11: .
   3,12: WriteLine

@@ -23,7 +23,7 @@
 75 STR
   1,29: "Blue"
 
-9 ID . ID = Expr
+97 ID . ID = Expr
   2,1: GraphicsWindow
   2,15: .
   2,16: MouseDown
@@ -48,7 +48,7 @@
 75 ID
   2,28: OnMouseDown
 
-2 ID . ID = Expr
+97 ID . ID = Expr
   3,1: GraphicsWindow
   3,15: .
   3,16: KeyDown
@@ -73,7 +73,7 @@
 75 ID
   3,26: OnKeyDown
 
-2 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   5,1: Sub
   5,5: OnKeyDown
   5,17: 
@@ -92,7 +92,7 @@
   5,17: 
 
 
-160 ID . ID = Expr
+105 ID . ID = Expr
   6,2: GraphicsWindow
   6,16: .
   6,17: BrushColor
@@ -139,14 +139,14 @@
 26 )
   6,60: )
 
-47 CR_token2
+206 CR_token2
   6,62: 
 
 
 257 Stmt_token8
   7,1: EndSub
 
-146 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   9,1: Sub
   9,5: OnMouseDown
   9,19: 
@@ -169,7 +169,7 @@
   9,19: 
 
 
-160 ID = Expr
+105 ID = Expr
   10,2: x
   10,4: =
   10,6: GraphicsWindow.MouseX - 10
@@ -197,11 +197,11 @@
 144 NUM
   10,30: 10
 
-43 CR_token2
+206 CR_token2
   10,35: 
 
 
-160 ID = Expr
+106 ID = Expr
   11,2: y
   11,4: =
   11,6: GraphicsWindow.MouseY - 10
@@ -229,11 +229,11 @@
 144 NUM
   11,30: 10
 
-43 CR_token2
+206 CR_token2
   11,35: 
 
 
-160 ID . ID ( Exprs )
+106 ID . ID ( Exprs )
   12,2: GraphicsWindow
   12,16: .
   12,17: FillEllipse
@@ -286,7 +286,7 @@
 238 )
   12,41: )
 
-210 CR_token2
+206 CR_token2
   12,43: 
 
 

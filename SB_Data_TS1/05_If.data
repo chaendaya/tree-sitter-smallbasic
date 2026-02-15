@@ -45,7 +45,7 @@
   1,29: 
 
 
-109 ID . ID ( Exprs )
+67 ID . ID ( Exprs )
   2,2: TextWindow
   2,12: .
   2,13: WriteLine
@@ -77,14 +77,14 @@
 238 )
   2,43: )
 
-210 CR_token2
+207 CR_token2
   2,45: 
 
 
-109 OptionalElse_token1
+119 OptionalElse_token1
   3,1: EndIf
 
-172 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
+97 Stmt_token9 Expr Stmt_token10 CRStmtCRs MoreThanZeroElseIf
   4,1: If
   4,4: (Clock.Hour >= 12)
   4,23: Then
@@ -131,7 +131,7 @@
   4,30: 
 
 
-109 ID . ID ( Exprs )
+67 ID . ID ( Exprs )
   5,2: TextWindow
   5,12: .
   5,13: WriteLine
@@ -163,10 +163,10 @@
 238 )
   5,43: )
 
-210 CR_token2
+207 CR_token2
   5,45: 
 
 
-109 OptionalElse_token1
+119 OptionalElse_token1
   6,1: EndIf
 

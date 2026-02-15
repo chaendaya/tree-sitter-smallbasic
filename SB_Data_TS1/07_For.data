@@ -45,11 +45,11 @@
 58 NUM
   1,14: 24
 
-43 CR_token2
+140 CR_token2
   1,19: 
 
 
-137 ID . ID ( Exprs )
+88 ID . ID ( Exprs )
   2,2: TextWindow
   2,12: .
   2,13: WriteLine
@@ -81,7 +81,7 @@
 238 )
   2,24: )
 
-210 CR_token2
+203 CR_token2
   2,26: 
 
 

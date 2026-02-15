@@ -23,7 +23,7 @@
 75 NUM
   1,24: 400
 
-9 ID . ID = Expr
+97 ID . ID = Expr
   2,1: GraphicsWindow
   2,15: .
   2,16: Height
@@ -48,7 +48,7 @@
 75 NUM
   2,25: 300
 
-9 ID . ID = Expr
+97 ID . ID = Expr
   3,1: GraphicsWindow
   3,15: .
   3,16: PenColor
@@ -73,7 +73,7 @@
 75 STR
   3,27: "Red"
 
-9 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   4,1: GraphicsWindow
   4,15: .
   4,16: DrawRectangle
@@ -126,7 +126,7 @@
 240 )
   4,45: )
 
-175 ID . ID = Expr
+97 ID . ID = Expr
   5,1: GraphicsWindow
   5,15: .
   5,16: BrushColor
@@ -151,7 +151,7 @@
 75 STR
   5,29: "Green"
 
-9 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   6,1: GraphicsWindow
   6,15: .
   6,16: FillRectangle

@@ -30,7 +30,7 @@
 240 )
   1,53: )
 
-175 ID = Expr
+97 ID = Expr
   2,1: fahr
   2,6: =
   2,8: TextWindow.ReadNumber()
@@ -64,7 +64,7 @@
 21 )
   2,30: )
 
-19 ID = Expr
+97 ID = Expr
   3,1: celsius
   3,9: =
   3,11: 5 * (fahr - 32) / 9
@@ -105,7 +105,7 @@
 155 NUM
   3,29: 9
 
-9 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   4,1: TextWindow
   4,11: .
   4,12: WriteLine

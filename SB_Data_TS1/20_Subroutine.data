@@ -10,7 +10,7 @@
 256 )
   1,11: )
 
-150 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   2,1: TextWindow
   2,11: .
   2,12: Write
@@ -42,7 +42,7 @@
 240 )
   2,37: )
 
-175 ID = Expr
+97 ID = Expr
   3,1: name
   3,6: =
   3,8: TextWindow.Read()
@@ -76,7 +76,7 @@
 21 )
   3,24: )
 
-19 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   4,1: TextWindow
   4,11: .
   4,12: Write
@@ -115,7 +115,7 @@
 240 )
   4,46: )
 
-175 ID ( )
+97 ID ( )
   5,1: PrintTime
   5,10: (
   5,11: )
@@ -127,7 +127,7 @@
 256 )
   5,11: )
 
-150 Stmt_token7 ID CRStmtCRs Stmt_token8
+97 Stmt_token7 ID CRStmtCRs Stmt_token8
   6,1: Sub
   6,5: PrintTime
   6,17: 
@@ -146,7 +146,7 @@
   6,17: 
 
 
-160 ID . ID ( Exprs )
+105 ID . ID ( Exprs )
   7,2: TextWindow
   7,12: .
   7,13: WriteLine
@@ -187,7 +187,7 @@
 238 )
   7,33: )
 
-210 CR_token2
+206 CR_token2
   7,35: 
 
 

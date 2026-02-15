@@ -49,11 +49,11 @@
 58 NUM
   1,14: 5
 
-43 CR_token2
+140 CR_token2
   1,18: 
 
 
-137 ID . ID ( Exprs )
+88 ID . ID ( Exprs )
   2,2: TextWindow
   2,12: .
   2,13: Write
@@ -99,11 +99,11 @@
 238 )
   2,48: )
 
-210 CR_token2
+203 CR_token2
   2,52: 
 
 
-137 ID Idxs = Expr
+96 ID Idxs = Expr
   3,2: name
   3,6: [i]
   3,10: =
@@ -127,14 +127,14 @@
 55 ID
   3,12: i
 
-5 CR_token2
+203 CR_token2
   3,13: 
 
 
 189 Stmt_token6
   4,1: EndFor
 
-151 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   5,1: TextWindow
   5,11: .
   5,12: Write
@@ -166,7 +166,7 @@
 240 )
   5,26: )
 
-175 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
+97 Stmt_token4 ID = Expr Stmt_token5 Expr CRStmtCRs Stmt_token6
   6,1: For
   6,5: i
   6,7: =
@@ -213,11 +213,11 @@
 58 NUM
   6,14: 5
 
-43 CR_token2
+140 CR_token2
   6,18: 
 
 
-137 ID . ID ( Exprs )
+88 ID . ID ( Exprs )
   7,2: TextWindow
   7,12: .
   7,13: Write
@@ -268,14 +268,14 @@
 238 )
   7,33: )
 
-210 CR_token2
+203 CR_token2
   7,35: 
 
 
 189 Stmt_token6
   8,1: EndFor
 
-151 ID . ID ( Exprs )
+97 ID . ID ( Exprs )
   9,1: TextWindow
   9,11: .
   9,12: WriteLine
