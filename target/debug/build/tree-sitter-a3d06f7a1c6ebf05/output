@@ -1,0 +1,275 @@
+cargo:rerun-if-env-changed=TREE_SITTER_STATIC_ANALYSIS
+cargo:rerun-if-changed=src\alloc.c
+cargo:rerun-if-changed=src\alloc.h
+cargo:rerun-if-changed=src\array.h
+cargo:rerun-if-changed=src\atomic.h
+cargo:rerun-if-changed=src\clock.h
+cargo:rerun-if-changed=src\error_costs.h
+cargo:rerun-if-changed=src\get_changed_ranges.c
+cargo:rerun-if-changed=src\get_changed_ranges.h
+cargo:rerun-if-changed=src\host.h
+cargo:rerun-if-changed=src\language.c
+cargo:rerun-if-changed=src\language.h
+cargo:rerun-if-changed=src\length.h
+cargo:rerun-if-changed=src\lexer.c
+cargo:rerun-if-changed=src\lexer.h
+cargo:rerun-if-changed=src\lib.c
+cargo:rerun-if-changed=src\node.c
+cargo:rerun-if-changed=src\parser.c
+cargo:rerun-if-changed=src\point.h
+cargo:rerun-if-changed=src\query.c
+cargo:rerun-if-changed=src\reduce_action.h
+cargo:rerun-if-changed=src\reusable_node.h
+cargo:rerun-if-changed=src\stack.c
+cargo:rerun-if-changed=src\stack.h
+cargo:rerun-if-changed=src\subtree.c
+cargo:rerun-if-changed=src\subtree.h
+cargo:rerun-if-changed=src\tree.c
+cargo:rerun-if-changed=src\tree.h
+cargo:rerun-if-changed=src\tree_cursor.c
+cargo:rerun-if-changed=src\tree_cursor.h
+cargo:rerun-if-changed=src\unicode
+cargo:rerun-if-changed=src\unicode.h
+OUT_DIR = Some(C:\PL\tree-sitter-smallbasic\target\debug\build\tree-sitter-a3d06f7a1c6ebf05\out)
+OPT_LEVEL = Some(0)
+TARGET = Some(x86_64-pc-windows-msvc)
+cargo:rerun-if-env-changed=VCINSTALLDIR
+VCINSTALLDIR = None
+cargo:rerun-if-env-changed=VSTEL_MSBuildProjectFullPath
+VSTEL_MSBuildProjectFullPath = None
+cargo:rerun-if-env-changed=VSCMD_ARG_VCVARS_SPECTRE
+VSCMD_ARG_VCVARS_SPECTRE = None
+cargo:rerun-if-env-changed=WindowsSdkDir
+WindowsSdkDir = None
+cargo:rerun-if-env-changed=WindowsSDKVersion
+WindowsSDKVersion = None
+cargo:rerun-if-env-changed=LIB
+LIB = None
+PATH = Some(C:\PL\tree-sitter-smallbasic\target\debug\deps;C:\PL\tree-sitter-smallbasic\target\debug;C:\Users\User\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib\rustlib\x86_64-pc-windows-msvc\lib;c:\Users\User\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\User\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Users\User\Downloads\WINDOWS.X64_193000_db_home\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Bandizip\;C:\Users\User\Desktop\ì´í˜„ì§„\java jdk\jdk-20\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Users\User\.cargo\bin;C:\Program Files\Elixir\bin;C:\Program Files\Erlang OTP\bin;C:\Users\User\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\User\AppData\Local\Programs\Python\Python311\;C:\Users\User\AppData\Local\Microsoft\WindowsApps;;C:\Users\User\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2023.1.2\bin;;C:\ghcup\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.6\bin;;C:\Users\User\AppData\Roaming\npm;C:\Users\User\.rustup\toolchains\stable-x86_64-pc-windows-msvc\bin)
+cargo:rerun-if-env-changed=INCLUDE
+INCLUDE = None
+HOST = Some(x86_64-pc-windows-msvc)
+cargo:rerun-if-env-changed=CC_x86_64-pc-windows-msvc
+CC_x86_64-pc-windows-msvc = None
+cargo:rerun-if-env-changed=CC_x86_64_pc_windows_msvc
+CC_x86_64_pc_windows_msvc = None
+cargo:rerun-if-env-changed=HOST_CC
+HOST_CC = None
+cargo:rerun-if-env-changed=CC
+CC = None
+cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+CRATE_CC_NO_DEFAULTS = None
+CARGO_CFG_TARGET_FEATURE = Some(cmpxchg16b,fxsr,sse,sse2,sse3)
+DEBUG = Some(true)
+cargo:rerun-if-env-changed=CFLAGS
+CFLAGS = None
+cargo:rerun-if-env-changed=HOST_CFLAGS
+HOST_CFLAGS = None
+cargo:rerun-if-env-changed=CFLAGS_x86_64_pc_windows_msvc
+CFLAGS_x86_64_pc_windows_msvc = None
+cargo:rerun-if-env-changed=CFLAGS_x86_64-pc-windows-msvc
+CFLAGS_x86_64-pc-windows-msvc = None
+CARGO_ENCODED_RUSTFLAGS = Some()
+OUT_DIR = Some(C:\PL\tree-sitter-smallbasic\target\debug\build\tree-sitter-a3d06f7a1c6ebf05\out)
+cargo:rerun-if-env-changed=CC_ENABLE_DEBUG_OUTPUT
+cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+CRATE_CC_NO_DEFAULTS = None
+TARGET = Some(x86_64-pc-windows-msvc)
+CARGO_CFG_TARGET_FEATURE = Some(cmpxchg16b,fxsr,sse,sse2,sse3)
+HOST = Some(x86_64-pc-windows-msvc)
+cargo:rerun-if-env-changed=CFLAGS
+CFLAGS = None
+cargo:rerun-if-env-changed=HOST_CFLAGS
+HOST_CFLAGS = None
+cargo:rerun-if-env-changed=CFLAGS_x86_64_pc_windows_msvc
+CFLAGS_x86_64_pc_windows_msvc = None
+cargo:rerun-if-env-changed=CFLAGS_x86_64-pc-windows-msvc
+CFLAGS_x86_64-pc-windows-msvc = None
+OUT_DIR = Some(C:\PL\tree-sitter-smallbasic\target\debug\build\tree-sitter-a3d06f7a1c6ebf05\out)
+cargo:rerun-if-env-changed=CC_ENABLE_DEBUG_OUTPUT
+cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+CRATE_CC_NO_DEFAULTS = None
+TARGET = Some(x86_64-pc-windows-msvc)
+CARGO_CFG_TARGET_FEATURE = Some(cmpxchg16b,fxsr,sse,sse2,sse3)
+HOST = Some(x86_64-pc-windows-msvc)
+cargo:rerun-if-env-changed=CFLAGS
+CFLAGS = None
+cargo:rerun-if-env-changed=HOST_CFLAGS
+HOST_CFLAGS = None
+cargo:rerun-if-env-changed=CFLAGS_x86_64_pc_windows_msvc
+CFLAGS_x86_64_pc_windows_msvc = None
+cargo:rerun-if-env-changed=CFLAGS_x86_64-pc-windows-msvc
+CFLAGS_x86_64-pc-windows-msvc = None
+cargo:rerun-if-env-changed=CC_ENABLE_DEBUG_OUTPUT
+lib.c
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\include\tree_sitter/api.h(1): warning C4819: ÇöÀç ÄÚµå ÆäÀÌÁö(949)¿¡¼­ Ç¥½ÃÇÒ ¼ö ¾ø´Â ¹®ÀÚ°¡ ÆÄÀÏ¿¡ µé¾î ÀÖ½À´Ï´Ù. µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÇÁö ¾Ê°Ô ÇÏ·Á¸é ÇØ´ç ÆÄÀÏÀ» À¯´ÏÄÚµå Çü½ÄÀ¸·Î ÀúÀåÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./alloc.c(35): warning C4232: ºñÇ¥ÁØ È®ÀåÀÌ »ç¿ëµÊ: 'ts_current_free': dllimport 'free'ÀÇ ÁÖ¼Ò°¡ Á¤ÀûÀÌ ¾Æ´Õ´Ï´Ù. ID°¡ º¸ÀåµÇÁö ¾Ê½À´Ï´Ù.
+C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_malloc.h(89): note: 'free' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.h(35): warning C4201: ºñÇ¥ÁØ È®ÀåÀÌ »ç¿ëµÊ: ±¸Á¶Ã¼/°ø¿ë ±¸Á¶Ã¼ÀÇ ÀÌ¸§ÀÌ ¾ø½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.h(146): warning C4201: ºñÇ¥ÁØ È®ÀåÀÌ »ç¿ëµÊ: ±¸Á¶Ã¼/°ø¿ë ±¸Á¶Ã¼ÀÇ ÀÌ¸§ÀÌ ¾ø½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.h(153): warning C4201: ºñÇ¥ÁØ È®ÀåÀÌ »ç¿ëµÊ: ±¸Á¶Ã¼/°ø¿ë ±¸Á¶Ã¼ÀÇ ÀÌ¸§ÀÌ ¾ø½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./language.h(86): warning C4456: 'i' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./language.h(83): note: 'i' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./node.c(111): warning C4244: 'ÃÊ±âÈ­ Áß': 'uint32_t'¿¡¼­ 'TSSymbol'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./node.c(415): warning C4244: 'ÃÊ±âÈ­ Áß': 'uint32_t'¿¡¼­ 'TSSymbol'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./node.c(421): warning C4244: 'ÃÊ±âÈ­ Áß': 'uint32_t'¿¡¼­ 'TSSymbol'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./node.c(443): warning C4244: 'ÃÊ±âÈ­ Áß': 'uint32_t'¿¡¼­ 'TSSymbol'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./parser.c(874): warning C4456: 'children' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./parser.c(858): note: 'children' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./parser.c(997): warning C4456: 'i' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./parser.c(992): note: 'i' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./parser.c(1015): warning C4244: '=': 'const uint32_t'¿¡¼­ 'TSSymbol'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./parser.c(1021): warning C4456: 'i' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./parser.c(992): note: 'i' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./parser.c(1044): warning C4456: 'i' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./parser.c(992): note: 'i' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./parser.c(1818): warning C4996: 'fdopen': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _fdopen. See online help for details.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(334): warning C4244: 'ÇÔ¼ö': '__int64'¿¡¼­ 'uint32_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(338): warning C4244: '=': 'uint32_t'¿¡¼­ 'uint8_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(369): warning C4244: 'ÇÔ¼ö': 'int32_t'¿¡¼­ 'wint_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(384): warning C4244: 'ÇÔ¼ö': 'int32_t'¿¡¼­ 'wint_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(391): warning C4244: 'ÇÔ¼ö': 'int32_t'¿¡¼­ 'wint_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(401): warning C4244: 'return': '__int64'¿¡¼­ 'uint32_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(469): warning C4244: 'return': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(791): warning C4244: 'return': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1419): warning C4456: 'exists' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1253): note: 'exists' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1421): warning C4456: 'exists' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1253): note: 'exists' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1459): warning C4244: '=': 'unsigned int'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1683): warning C4456: 'i' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1671): note: 'i' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1683): warning C4456: 'exists' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1679): note: 'exists' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1746): warning C4456: 'i' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1671): note: 'i' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1746): warning C4456: 'exists' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1679): note: 'exists' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1515): warning C4244: 'ÃÊ±âÈ­ Áß': 'const uint32_t'¿¡¼­ 'TSSymbol'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1672): warning C4244: 'ÃÊ±âÈ­ Áß': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1970): warning C4244: '=': 'unsigned int'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(1996): warning C4244: '=': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2098): warning C4456: 'length' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2067): note: 'length' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2121): warning C4456: 'id' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2068): note: 'id' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2136): warning C4456: 'length' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2067): note: 'length' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2137): warning C4456: 'id' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2068): note: 'id' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2067): warning C4244: 'ÃÊ±âÈ­ Áß': '__int64'¿¡¼­ 'uint32_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2098): warning C4244: 'ÃÊ±âÈ­ Áß': '__int64'¿¡¼­ 'uint32_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2136): warning C4244: 'ÃÊ±âÈ­ Áß': '__int64'¿¡¼­ 'uint32_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2181): warning C4244: 'ÃÊ±âÈ­ Áß': 'const uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2225): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2237): warning C4244: '=': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2238): warning C4244: '=': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2336): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2440): warning C4244: 'ÇÔ¼ö': 'const uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2472): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2492): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2572): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2573): warning C4244: '=': 'const uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2586): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2587): warning C4244: '=': 'const uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2596): warning C4244: '=': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2610): warning C4244: '=': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2305): warning C4244: 'ÃÊ±âÈ­ Áß': '__int64'¿¡¼­ 'uint32_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2356): warning C4244: 'ÃÊ±âÈ­ Áß': '__int64'¿¡¼­ 'uint32_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2389): warning C4244: 'ÃÊ±âÈ­ Áß': '__int64'¿¡¼­ 'uint32_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2419): warning C4244: 'ÃÊ±âÈ­ Áß': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2500): warning C4244: 'ÃÊ±âÈ­ Áß': '__int64'¿¡¼­ 'uint32_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2619): warning C4244: 'ÃÊ±âÈ­ Áß': '__int64'¿¡¼­ 'uint32_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2754): warning C4456: 'step' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2732): note: 'step' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2763): warning C4244: 'ÃÊ±âÈ­ Áß': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2764): warning C4244: 'ÃÊ±âÈ­ Áß': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2833): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2842): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2850): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(2939): warning C4244: 'ÇÔ¼ö': 'int'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3063): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3126): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3130): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3227): warning C4244: 'ÃÊ±âÈ­ Áß': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3278): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3288): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3336): warning C4244: 'ÇÔ¼ö': 'const uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3326): warning C4244: 'ÃÊ±âÈ­ Áß': '__int64'¿¡¼­ 'uint32_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3356): warning C4018: '>': signed ¶Ç´Â unsigned°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3405): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3476): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3594): warning C4456: 'i' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3568): note: 'i' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3666): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3751): warning C4456: 'state' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3595): note: 'state' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3752): warning C4456: 'next_step' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3743): note: 'next_step' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3792): warning C4456: 'i' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3568): note: 'i' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3831): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3845): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3919): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3922): warning C4244: '=': 'const uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3923): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3937): warning C4244: 'ÇÔ¼ö': 'const uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3951): warning C4244: 'ÇÔ¼ö': 'const uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3990): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(3997): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(4043): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(4046): warning C4244: '=': 'const uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./query.c(4061): warning C4244: 'ÇÔ¼ö': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./stack.c(336): warning C4456: 'iterator' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./stack.c(319): note: 'iterator' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(182): warning C4244: 'ÃÊ±âÈ­ Áß': 'TSSymbol'¿¡¼­ 'uint8_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(185): warning C4244: 'ÃÊ±âÈ­ Áß': 'uint32_t'¿¡¼­ 'uint8_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(183): warning C4244: 'ÃÊ±âÈ­ Áß': 'uint32_t'¿¡¼­ 'uint8_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(186): warning C4244: 'ÃÊ±âÈ­ Áß': 'uint32_t'¿¡¼­ 'uint8_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(232): warning C4244: '=': 'TSSymbol'¿¡¼­ 'uint8_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(492): warning C4244: '=': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(494): warning C4244: '=': 'uint32_t'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(516): warning C4267: '=': 'size_t'¿¡¼­ 'uint32_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(533): warning C4244: 'ÃÊ±âÈ­ Áß': 'unsigned int'¿¡¼­ 'uint16_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(648): warning C4459: 'StackEntry' ¼±¾ğÀº Àü¿ª ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./reusable_node.h(7): note: 'StackEntry' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(662): warning C4457: 'edit' ¼±¾ğÀº ÇÔ¼ö ¸Å°³ º¯¼ö¸¦ ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(644): note: 'edit' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(708): warning C4244: '=': 'uint32_t'¿¡¼­ 'uint8_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(709): warning C4244: '=': 'uint32_t'¿¡¼­ 'uint8_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(710): warning C4244: '=': 'uint32_t'¿¡¼­ 'uint8_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(711): warning C4244: '=': 'uint32_t'¿¡¼­ 'uint8_t'(À¸)·Î º¯È¯ÇÏ¸é¼­ µ¥ÀÌÅÍ°¡ ¼Õ½ÇµÉ ¼ö ÀÖ½À´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(903): warning C4457: 'alias_symbol' ¼±¾ğÀº ÇÔ¼ö ¸Å°³ º¯¼ö¸¦ ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(836): note: 'alias_symbol' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(906): warning C4457: 'alias_is_named' ¼±¾ğÀº ÇÔ¼ö ¸Å°³ º¯¼ö¸¦ ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(836): note: 'alias_is_named' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(911): warning C4456: 'i' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(894): note: 'i' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(995): warning C4457: 'alias_symbol' ¼±¾ğÀº ÇÔ¼ö ¸Å°³ º¯¼ö¸¦ ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./subtree.c(954): note: 'alias_symbol' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./tree_cursor.c(368): warning C4456: 'i' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./tree_cursor.c(291): note: 'i' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./tree_cursor.c(378): warning C4456: 'i' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./tree_cursor.c(291): note: 'i' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./tree_cursor.c(448): warning C4456: 'i' ¼±¾ğÀº ÀÌÀü ·ÎÄÃ ¼±¾ğÀ» ¼û±é´Ï´Ù.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\./tree_cursor.c(423): note: 'i' ¼±¾ğÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.
+C:\Users\User\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tree-sitter-0.20.10\src\tree_cursor.c(130) : warning C4702: Á¢±ÙÇÒ ¼ö ¾ø´Â ÄÚµåÀÔ´Ï´Ù.
+cargo:rerun-if-env-changed=AR_x86_64-pc-windows-msvc
+AR_x86_64-pc-windows-msvc = None
+cargo:rerun-if-env-changed=AR_x86_64_pc_windows_msvc
+AR_x86_64_pc_windows_msvc = None
+cargo:rerun-if-env-changed=HOST_AR
+HOST_AR = None
+cargo:rerun-if-env-changed=AR
+AR = None
+cargo:rerun-if-env-changed=ARFLAGS
+ARFLAGS = None
+cargo:rerun-if-env-changed=HOST_ARFLAGS
+HOST_ARFLAGS = None
+cargo:rerun-if-env-changed=ARFLAGS_x86_64_pc_windows_msvc
+ARFLAGS_x86_64_pc_windows_msvc = None
+cargo:rerun-if-env-changed=ARFLAGS_x86_64-pc-windows-msvc
+ARFLAGS_x86_64-pc-windows-msvc = None
+cargo:rustc-link-search=native=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\atlmfc\lib\x64
+cargo:rustc-link-lib=static=tree-sitter
+cargo:rustc-link-search=native=C:\PL\tree-sitter-smallbasic\target\debug\build\tree-sitter-a3d06f7a1c6ebf05\out
